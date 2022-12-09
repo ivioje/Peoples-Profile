@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 310px !important;
+  overflow-x: hidden;
+}
+
+.primary-gradient {
+  background: linear-gradient(180deg, #548CA8 0%, #334257 100%);
+}
+
+a {
+  position: relative;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #F6F5F5;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.hero-border {
+  border-bottom: 5px #548CA8 dashed;
+}
+.cta-button {
+  border-top: 2px dashed #0C0E0F8F;
+  border-bottom: 2px dashed #548CA8E0;
+  border-left: 2px dashed #548CA8E0;
+  border-right: 2px dashed #548CA8E0;
+}
+img {
+  width: auto;
+  height: auto;
+}
