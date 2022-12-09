@@ -17,7 +17,9 @@ const Navbar = () => {
                 <ul className='list-none md:flex hidden justify-end items-center flex-1'>
                     {navLinks.map((navlink) => (
                         <li key={navlink.id} className='md:text-dimWhite px-3 cursor-pointer' >
-                            <a href={`#${navlink.id}`} className={navlink.item ? 'font-bold' : 'font-normal'} >{navlink.title}</a>
+                            <a href={`#${navlink.id}`} className={navlink.item ? 'font-bold' : 'font-normal'} >
+                                {navlink.title}
+                            </a>
                         </li>
                     ))}
                     <GetStarted />
@@ -40,7 +42,7 @@ const Navbar = () => {
                             </li>
                         ))}
                         <div className='mt-2'>
-                        <GetStarted />
+                            <GetStarted />
                         </div>
                     </ul>
                 </div>
