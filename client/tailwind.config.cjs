@@ -15,6 +15,9 @@ module.exports = {
       },
       dropShadow: {
         'mid': '0px 6px 2px #548CA8'
+      },
+      textColor: {
+        text_color: 'rgba(0, 0, 0, 0.85);'
       }
     },
     screens: {
