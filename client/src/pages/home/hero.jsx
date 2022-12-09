@@ -1,6 +1,7 @@
 import React from 'react';
-import heroImg from '../../assets/heroImg.png'
-import styles from '../../style';
+import heroImg from '../../assets/heroImg.png';
+import styles from '../../style'
+import { BsArrowRight } from 'react-icons/bs'
 
 const Hero = () => (
     <section className={`bg-primary md:h-[90vh] flex-col flex justify-center items-center md:flex-row `}>
@@ -16,20 +17,26 @@ const Hero = () => (
             <GetStarted />
         </div>
 
-        <div className='min-w-[330px] sm:w-full sm:h-full px-5 md:px-0 md:w-[702px] md:h-[492px] md:mr-[74px] md:pl-2 md:block flex justify-center'>
-            <img src={heroImg} alt='hero image' className='object-cover'/>
+        <div className='min-w-[330px] sm:w-full sm:h-full px-5 md:px-0 md:w-[702px] md:h-[492px] md:mr-[74px] md:pl-2 
+        md:block flex justify-center'>
+            <img src={heroImg} alt='hero image' className='object-cover' />
         </div>
     </section>
 )
 
-export default Hero
-
 
 const GetStarted = () => (
-    <div className=' md:text-center '>
-        <button className='text-[20px] font-medium cta-button w-[180px] md:w-[248px] h-[42px] rounded-[40px] hover:drop-shadow-mid
-         hover:transition'>
-            GET STARTED
+    <div className='flex md:justify-center justify-start '>
+        <button className= {`${styles.flexCenter} px-3 md:px-8 text-[20px] font-medium 
+        cta-button w-[200px] md:w-[248px] h-[45px] rounded-[40px] hover:drop-shadow-mid
+         hover:transition`}>
+            GET STARTED {' '} 
+            <span><BsArrowRight /></span>
+            
         </button>
     </div>
 )
+
+
+export default Hero
+
