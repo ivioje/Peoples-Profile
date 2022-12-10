@@ -11,7 +11,7 @@ const Hero = () => (
                 Upload and view profiles all in {' '}
                 <span className='font-bold hero-border'>one place</span>
             </h1>
-            <p className='text-[14px] md:w-[90%] md:text-[16px] pr-8 md:pl-0 my-8 md:pr-4 leading-6'>
+            <p className='md:w-[90%] text-[16px] pr-8 md:pl-0 my-8 md:pr-4 leading-6'>
                 Easily upload your professional profile for recruiters and potential partners
                 to view. Expand your network of collaborators by browsing through profiles.
                 Choose from several templates to create a stunning profile.
