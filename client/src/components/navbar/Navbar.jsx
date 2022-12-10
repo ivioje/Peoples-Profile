@@ -9,14 +9,14 @@ import GetStarted from './GetStarted';
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     return (
-        <section className={`bg-primary h-[100px] md:h-[81px] w-[100%] ${styles.flexCenter} flex-wrap min-w-[310px]`}>
-            <div className=' mx-6 md:mx-[74px] md:w-[165px] w-[100px] h-[28px]'>
+        <section className={`bg-primary h-[100px] ex:h-[81px] w-[100%] ${styles.flexCenter} flex-wrap min-w-[310px]`}>
+            <div className=' mx-6 ex:mx-[74px] ex:w-[165px] w-[100px] h-[28px]'>
                 <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[160px]' />
             </div>
             <div className={`mx-[74px] font-poppins ${styles.flexCenter}`}>
-                <ul className='list-none md:flex hidden justify-end items-center flex-1'>
+                <ul className='list-none ex:flex hidden justify-end items-center flex-1'>
                     {navLinks.map((navlink) => (
-                        <li key={navlink.id} className='md:text-dimWhite px-3 cursor-pointer' >
+                        <li key={navlink.id} className='ex:text-dimWhite px-3 cursor-pointer' >
                             <a href={`#${navlink.id}`} className={navlink.item ? 'font-bold' : 'font-normal'} >
                                 {navlink.title}
                             </a>
@@ -26,7 +26,7 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            <div className='md:hidden flex '>
+            <div className='ex:hidden flex '>
                 <img src={toggle ? close : menu} alt='menu' className='mr-6 w-[28px] h-[28px] object-contain cursor-pointer'
                     onClick={() => setToggle((prev) => !prev)}
                 />
