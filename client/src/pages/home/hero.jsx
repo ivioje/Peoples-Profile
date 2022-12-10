@@ -20,7 +20,7 @@ const Hero = () => (
         </div>
 
         <div className='min-w-[330px] sm:w-full sm:h-full px-5 md:px-0 md:w-[702px] md:h-[492px] 
-        md:mr-[74px] md:pl-2 md:block flex justify-center'>
+        md:mr-[74px] md:my-0 my-5 md:pl-2 md:block flex justify-center'>
             <img src={heroImg} alt='hero image' className='object-cover' />
         </div>
     </section>
