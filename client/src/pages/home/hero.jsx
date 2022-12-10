@@ -7,7 +7,8 @@ const Hero = () => (
     <section className={`bg-primary md:h-[90vh] flex-col flex justify-center items-center md:flex-row `}>
         <div className='w-full mt-10 md:mt-0 md:w-[50%] px-10 md:px-0 md:ml-[74px] font-poppins 
         text-dimWhite pr-2 md:mb-0 mb-5' >
-            <h1 className='text-[30px] md:text-[45px] font-normal'>Upload and view profiles all in {' '}
+            <h1 className='text-[35px] md:text-[45px] font-[500]'>
+                Upload and view profiles all in {' '}
                 <span className='font-bold hero-border'>one place</span>
             </h1>
             <p className='text-[14px] md:w-[90%] md:text-[16px] pr-8 md:pl-0 my-8 md:pr-4 leading-6'>
@@ -28,12 +29,12 @@ const Hero = () => (
 
 const GetStarted = () => (
     <div className='flex md:justify-center justify-start '>
-        <button className= {`${styles.flexCenter} px-3 md:px-8 text-[20px] font-medium 
+        <button className={`${styles.flexCenter} px-3 md:px-8 text-[20px] font-medium 
         cta-button w-[200px] md:w-[248px] h-[45px] rounded-[40px] hover:drop-shadow-mid
          hover:transition`}>
-            GET STARTED {' '} 
+            GET STARTED {' '}
             <span><BsArrowRight /></span>
-            
+
         </button>
     </div>
 )

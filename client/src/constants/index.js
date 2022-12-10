@@ -1,6 +1,6 @@
-import templateImg from '../assets/templateImg.svg';
-import uploadImg from '../assets/uploadImg.png';
-import viewImg from '../assets/viewImg.svg'
+import person1 from '../assets/person1.jpg';
+import person2 from '../assets/person2.png';
+import person3 from '../assets/person3.png';
 
 export const navLinks = [
     {
@@ -46,23 +46,23 @@ export const stats = [
     },
 ]
 
-export const features = [
+export const testimonials = [
     {
         id: 1,
-        img: uploadImg,
-        title: 'Upload Profiles With Ease',
-        content: 'Upload your professional profile for others to connect with you. Easily upload your employees profile. You can upload unlimited number of profiles.'
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum cursus sed commodo habitant scelerisque egestas et facilisi. Risus cras at diam, magna urna mollis proin amet et. Vel vulputate consequat enim ullamcorper nulla orci tempor nulla.',
+        name: 'Taylor Lee',
+        photo: person1
     },
     {
         id: 2,
-        img: viewImg,
-        title: 'View, Search, Share, Save and Connect',
-        content: 'View and search from several profiles and find out who fits the job. You can also view profiles of employees from various companies and connect. Share or save a profile for later.'
+        content: 'There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies',
+        name: 'Lynda Lee',
+        photo: person2
     },
     {
         id: 3,
-        img: templateImg,
-        title: 'Use Templates',
-        conten: 'Choose from several templates tailored to your profession. You can also request for a template if you can’t find a template that suits your need. Easily bookmark a template for later.'
+        content: 'Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program',
+        name: 'Richard Smith',
+        photo: person3
     },
 ]

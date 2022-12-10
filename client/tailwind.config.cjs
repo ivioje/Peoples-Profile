@@ -13,8 +13,9 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         firaSans: ['Fira Sans Condensed', 'sans-serif']
       },
-      dropShadow: {
-        'mid': '0px 6px 2px #548CA8'
+      shadow: {
+        'mid': '0px 6px 2px #548CA8',
+        'dark': '0px 3px 5px 1px rgba(66,66,66,0.75)'
       },
       textColor: {
         text_color: 'rgba(0, 0, 0, 0.85);'

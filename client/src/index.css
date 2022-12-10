@@ -93,3 +93,40 @@ img {
     transform: translateY(0);
   }
 }
+
+.btn {
+transition: all 0.5s;
+}
+
+.btn span {
+  position: relative;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.btn:hover span {
+  padding-right: 25px;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.carousel .control-dots li {
+  background: linear-gradient(180deg, rgba(84, 140, 168, 0.85) 0%, rgba(51, 66, 87, 0.85) 100%) !important;
+  height: 10px !important;
+  width: 10px !important;
+}
+.carousel.carousel-slider .control-arrow {
+  background: linear-gradient(180deg, rgba(84, 140, 168, 0.85) 0%, rgba(51, 66, 87, 0.85) 100%) !important;
+  height: 50px;
+}
