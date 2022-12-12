@@ -17,7 +17,7 @@ const Stats = () => {
             <div className='flex justify-between py-[88px]'>
                 {stats.map((stat) => (
                     <div key={stat.id} className='flex flex-col w-1/2'>
-                        <h1 className='text-gradient font-firaSans text-[30px] md:text-[50px] font-[500]'>
+                        <h1 className='text_shine text-gradient font-poppins text-[30px] md:text-[50px] font-[800]'>
                             <CountUp delay={1} duration={8} end={stat.value} />
                         </h1>
                         <h6 className='text-text_color font-poppins'>{stat.title}</h6>

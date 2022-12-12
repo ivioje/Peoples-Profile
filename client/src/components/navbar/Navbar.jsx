@@ -9,8 +9,8 @@ import GetStarted from './GetStarted';
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     return (
-        <section className={`bg-primary h-[100px] ex:h-[81px] w-[100%] ${styles.flexCenter} flex-wrap min-w-[310px]`}>
-            <div className=' mx-6 ex:mx-[74px] ex:w-[165px] w-[100px] h-[28px]'>
+        <section className={`bg-primary h-[100px] ex:h-[81px] w-[100%] ${styles.flexCenter} flex-wrap`}>
+            <div className=' mx-2 sm:mx-6 ex:mx-[74px] ex:w-[165px] w-[100px] h-[28px]'>
                 <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[160px]' />
             </div>
             <div className={`mx-[74px] font-poppins ${styles.flexCenter}`}>
@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
 
             <div className='ex:hidden flex '>
-                <img src={toggle ? close : menu} alt='menu' className='mr-6 w-[28px] h-[28px] object-contain cursor-pointer'
+                <img src={toggle ? close : menu} alt='menu' className='mr-2 sm:mr-6 w-[28px] h-[28px] object-contain cursor-pointer'
                     onClick={() => setToggle((prev) => !prev)}
                 />
 

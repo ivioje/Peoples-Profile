@@ -28,7 +28,7 @@ const Hero = () => (
 
 
 const GetStarted = () => (
-    <div className='flex md:justify-center justify-start '>
+    <div className='flex justify-start '>
         <button className={`${styles.flexCenter} px-3 md:px-8 text-[20px] font-medium 
         cta-button w-[200px] md:w-[248px] h-[45px] rounded-[40px] hover:drop-shadow-mid
          hover:transition`}>
