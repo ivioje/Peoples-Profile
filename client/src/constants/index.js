@@ -29,7 +29,7 @@ export const stats = [
     {
         id: 1,
         value: 1500,
-        title: 'profiles',
+        title: 'Profiles',
         duration: 2
     },
     {
@@ -64,5 +64,40 @@ export const testimonials = [
         content: 'Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program',
         name: 'Richard Smith',
         photo: person3
+    },
+]
+
+export const quickLinks = [
+    {
+        id: 'home',
+        title: 'Home',
+    },
+    {
+        id: 'profiles',
+        title: 'Profiles',
+    },
+    {
+        id: 'templates',
+        title: 'Templates',
+    },
+    {
+        id: 'guide',
+        title: 'Guide',
+    },
+    {
+        id: 'about',
+        title: 'About',
+    },
+    {
+        id: 'upload',
+        title: 'Upload Profile',
+    },
+    {
+        id: 'view',
+        title: 'View Profile',
+    },
+    {
+        id: 'templates',
+        title: 'Templates',
     },
 ]

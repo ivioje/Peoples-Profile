@@ -17,7 +17,7 @@ const Navbar = () => {
                 <ul className='list-none ex:flex hidden justify-end items-center flex-1'>
                     {navLinks.map((navlink) => (
                         <li key={navlink.id} className='ex:text-dimWhite px-3 cursor-pointer' >
-                            <a href={`#${navlink.id}`} className={navlink.item ? 'font-bold' : 'font-normal'} >
+                            <a href={`#${navlink.id}`} className={navlink.item ? 'font-bold navLinks' : 'font-normal navLinks'} >
                                 {navlink.title}
                             </a>
                         </li>
@@ -36,7 +36,7 @@ const Navbar = () => {
                     <ul className='list-none flex flex-col justify-end items-center flex-1'>
                         {navLinks.map((nav, index) => (
                             <li key={nav.id} className={'font-poppins font-normal cursor-pointer text-[16px] my-2 text-dimWhite'}>
-                                <a href={`#${nav.id}`}>
+                                <a href={`#${nav.id}`} className='navLinks'>
                                     {nav.title}
                                 </a>
                             </li>
