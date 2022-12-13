@@ -4,7 +4,7 @@ import { quickLinks } from '../../constants'
 import logo from '../../assets/logo.svg'
 
 const Footer = () => (
-    <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-dimWhite 
+    <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-lightGray 
     font-poppins text-[15px] sm:text-[16px]'>
         <div className='flex flex-col md:flex-row justify-between pb-10'>
             <div className='p-4'>
