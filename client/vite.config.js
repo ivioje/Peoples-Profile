@@ -7,7 +7,7 @@ export default defineConfig({
 
   build: {
     rollupOptions: {
-      external: ['aos/dist/aos.css']
+      external: ['aos/dist/aos.css', 'aos']
     }
   }
 })
