@@ -7,8 +7,7 @@ const Footer = () => (
     <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-lightGray 
     font-poppins text-[15px] sm:text-[16px]'>
         <div className='flex flex-col md:flex-row justify-between pb-10'>
-            <div data-aos='fade-up' data-aos-duration='1000'
-                className='p-4'>
+            <div className='p-4'>
                 <div className=''>
                     <img src={logo} alt='peoples profile logo' />
                 </div>
@@ -20,8 +19,7 @@ const Footer = () => (
                 </div>
             </div>
 
-            <div data-aos='fade-up' data-aos-duration='2000'
-                className='p-4'>
+            <div className='p-4'>
                 <h3>Quick Links</h3>
                 <hr className='opacity-20' />
                 <div className='flex justify-between flex-wrap my-4 '>
@@ -38,8 +36,7 @@ const Footer = () => (
                 </div>
             </div>
 
-            <div data-aos='fade-up' data-aos-duration='3000'
-                className='p-4 mt-1 sm:mt-9'>
+            <div className='p-4 mt-1 sm:mt-9'>
                 <h3 className='font-firaSans text-[20px] py-2'>
                     Subscribe to join our mailing list
                 </h3>
@@ -54,11 +51,9 @@ const Footer = () => (
             </div>
         </div>
         <hr className='opacity-10' />
-        <div data-aos='fade-up' data-aos-duration='4000'
-            className='text-center py-6'>
+        <div className='text-center py-6'>
             <p>&#169;2022 Peoples profile. All rights reserved.</p>
-            <small data-aos='fade-up' data-aos-duration='4000'
-                className='font-firaSans font-extralight opacity-90'>
+            <small className='font-firaSans font-extralight opacity-90'>
                 Built by <a href='#' className='underline'>Rhoda I.E.</a>
             </small>
         </div>
