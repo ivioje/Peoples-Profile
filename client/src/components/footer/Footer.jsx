@@ -25,12 +25,12 @@ const Footer = () => (
                 <div className='flex justify-between flex-wrap my-4 '>
                     <div className='flex flex-col mr-20 pt-2'>
                         {quickLinks.slice(0, 5).map((link) => (
-                            <a href='#' key={link.id}>{link.title}</a>
+                            <a href='#' key={link.id} className='p-1'>{link.title}</a>
                         ))}
                     </div>
                     <div className='flex flex-col pt-2'>
                         {quickLinks.slice(5, 8).map((link) => (
-                            <a href='#' key={link.id}>{link.title}</a>
+                            <a href='#' key={link.id} className='p-1'>{link.title}</a>
                         ))}
                     </div>
                 </div>
@@ -50,7 +50,7 @@ const Footer = () => (
                 </div>
             </div>
         </div>
-        <hr className='opacity-20' />
+        <hr className='opacity-10' />
         <div className='text-center py-6'>
             <p>&#169;2022 Peoples profile. All rights reserved.</p>
             <small className='font-firaSans font-extralight opacity-90'>
