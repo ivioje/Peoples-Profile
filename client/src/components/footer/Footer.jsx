@@ -5,7 +5,7 @@ import logo from '../../assets/logo.svg'
 
 const Footer = () => (
     <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-dimWhite 
-    font-poppins text-[16px]'>
+    font-poppins text-[15px] sm:text-[16px]'>
         <div className='flex flex-col md:flex-row justify-between pb-10'>
             <div className='p-4'>
                 <div className=''>
