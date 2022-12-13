@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImg from '../../assets/heroImg.png';
+import heroImg from '../../assets/hero-img.svg';
 import styles from '../../style'
 import { BsArrowRight } from 'react-icons/bs'
 
