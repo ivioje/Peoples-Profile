@@ -1,5 +1,5 @@
 import React from 'react';
-import uploadImg from '../../assets/uploadImg.png'
+import uploadImg from '../../assets/uploadImg.svg'
 import Button from '../../components/Button';
 
 const Upload = () => {

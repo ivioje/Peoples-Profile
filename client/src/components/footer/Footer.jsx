@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import { quickLinks } from '../../constants'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.svg'
 
 const Footer = () => (
     <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-dimWhite 
@@ -11,7 +11,8 @@ const Footer = () => (
                 <div className=''>
                     <img src={logo} alt='peoples profile logo' />
                 </div>
-                <div className='flex text-center justify-between flex-wrap px-4 my-8 text-xl w-[150px]'>
+                <div className='flex text-center justify-between flex-wrap px-4 my-8 
+                text-xl w-[150px]'>
                     <a href='#'><BsTwitter /></a>
                     <a href='#'><BsGithub /></a>
                     <a href='#'><BsLinkedin /></a>
@@ -41,8 +42,11 @@ const Footer = () => (
                 </h3>
                 <div className=''>
                     <input type='text' name='email' placeholder='Email address'
-                        className='h-[47px] p-3 bg-lightGray ss:rounded-tl-lg ss:rounded-bl-lg w-[200px] xs:w-3/4' />
-                    <button className='h-[45px] p-2 border border-gray-100'>Subscribe</button>
+                        className='h-[47px] p-3 bg-lightGray ss:rounded-tl-lg 
+                        ss:rounded-bl-lg w-[200px] xs:w-3/4 text-text_color' />
+                    <button className='h-[45px] p-2 border border-gray-100'>
+                        Subscribe
+                    </button>
                 </div>
             </div>
         </div>
