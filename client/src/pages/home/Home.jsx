@@ -11,14 +11,14 @@ import ViewProfiles from './viewProfiles'
 const Home = () => {
   return (
     <section>
-        <Navbar />
-        <Hero />
-        <Stats />
-        <Upload />
-        <ViewProfiles />
-        <UseTemplates />
-        <Testimonials />
-        <Footer />
+      <Navbar />
+      <Hero />
+      <Stats />
+      <Upload />
+      <ViewProfiles />
+      <UseTemplates />
+      <Testimonials />
+      <Footer />
     </section>
   )
 }

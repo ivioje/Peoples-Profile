@@ -5,9 +5,9 @@ import { BsArrowRight } from 'react-icons/bs'
 
 const Hero = () => (
     <section
-    className={`bg-primary md:h-[90vh] flex-col flex justify-center items-center md:flex-row `}>
+        className={`bg-primary md:h-[90vh] flex-col flex justify-center items-center md:flex-row `}>
         <div data-aos='fade-up' data-aos-duration='1000'
-        className='w-full mt-10 md:mt-0 md:w-[50%] px-4 ex:px-0 ex:ml-[74px] font-poppins 
+            className='w-full mt-10 md:mt-0 md:w-[50%] px-4 ex:px-0 ex:ml-[74px] font-poppins 
         text-dimWhite pr-2 md:mb-0 mb-5' >
             <h1 className='text-[35px] ex:text-[45px] font-[500]'>
                 Upload and view profiles all in {' '}
@@ -21,10 +21,12 @@ const Hero = () => (
             <GetStarted />
         </div>
 
-        <div data-aos='fade-up' data-aos-duration='2000'
-        className='min-w-[330px] sm:w-full sm:h-full px-5 md:px-0 md:w-[702px] md:h-[492px] 
-        md:mr-[74px] md:my-0 my-5 md:pl-2 md:block flex justify-center'>
-            <img src={heroImg} alt='hero image' className='object-cover' />
+        <div data-aos='fade-up' data-aos-duration='2000' className='min-w-[330px] sm:w-full sm:h-full 
+        px-5 md:px-0 md:w-[702px] md:h-[492px] md:mr-[74px] md:my-0 my-5 md:pl-2 md:block flex justify-center
+        relative'>
+            <img src={heroImg} alt='hero image' className='object-cover z-[5]' />
+            <div className='absolute z-[0] w-[50%] h-[50%] right-20 red__gradient' />
+            <div className='absolute z-[1] w-[80%] h-[80%] rounded-full bottom-40 black__gradient' />
         </div>
     </section>
 )

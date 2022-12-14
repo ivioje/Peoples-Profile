@@ -7,7 +7,7 @@ const ViewProfiles = () => {
         <section className='flex justify-between items-center md:flex-row-reverse flex-col
          my-[45px] md:my-[54px] md:px-[100px] px-4 w-full'>
             <div data-aos='fade-left'
-            className='w-full md:w-[40%] px-3 md:pt-10 pt-5'>
+                className='w-full md:w-[40%] px-3 md:pt-10 pt-5'>
                 <h1 className='text-[30px] md:text-[40px] font-[700] text-text_color font-firaSans'>
                     View, Search, Share, Save and Connect
                 </h1>
@@ -21,7 +21,7 @@ const ViewProfiles = () => {
                 </button>
             </div>
             <div data-aos='fade-right'
-            className='w-full flex justify-center md:justify-start md:w-[500px] md:my-0 my-10'>
+                className='w-full flex justify-center md:justify-start md:w-[500px] md:my-0 my-10'>
                 <img src={viewImg} alt='upload' className='' />
             </div>
         </section>
