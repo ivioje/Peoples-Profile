@@ -8,12 +8,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+
 }
 
 body {
   /* min-width: 310px !important; */
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 .primary-gradient {
@@ -202,6 +202,7 @@ img {
 .black__gradient {
   background: rgba(0, 0, 0, 0.6);
   filter: blur(750px);
+  opacity: .8;
 }
 
 .red__gradient {
@@ -213,7 +214,7 @@ img {
 
 @-moz-document url-prefix() {
   .black__gradient {
-    opacity: .2;
+    opacity: .1;
   }
 
   .red__gradient {
@@ -223,7 +224,7 @@ img {
 
 @supports (-moz-appearance:none) {
   .black__gradient {
-    opacity: .2;
+    opacity: .1;
   }
 
   .red__gradient {

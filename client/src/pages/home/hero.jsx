@@ -26,7 +26,7 @@ const Hero = () => (
         relative'>
             <img src={heroImg} alt='hero image' className='object-cover z-[5]' />
             <div className='absolute z-[0] w-[50%] h-[50%] bottom-10 right-20 red__gradient' />
-            <div className='absolute z-[1] w-[80%] h-[80%] rounded-full bottom-40 black__gradient' />
+            <div className='absolute z-[1] w-[80%] h-[80%] rounded-full right-40 bottom-40 black__gradient' />
         </div>
     </section>
 )
