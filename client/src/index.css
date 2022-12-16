@@ -201,12 +201,12 @@ img {
 
 .black__gradient {
   background: rgba(0, 0, 0, 0.6);
-  filter: blur(300px);
+  filter: blur(500px);
 }
 
 .red__gradient {
   background: rgba(156, 7, 7, 0.6);
-  filter: blur(400px);
+  filter: blur(500px);
 }
 
 /*applies to firefox only */
