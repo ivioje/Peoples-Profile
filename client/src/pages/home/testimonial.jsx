@@ -20,8 +20,7 @@ const Testimonials = () => {
                 showStatus={false}
             >
                 {testimonials.map((testimonial) => (
-                    <div data-aos='fade-up' data-aos-duration='2000'
-                        key={testimonial.id} className='flex justify-center items-center'>
+                    <div data-aos='fade-up' key={testimonial.id} className='flex justify-center items-center'>
                         <div className='p-3 flex justify-center items-center w-full md:w-[70%] flex-col-reverse md:flex-row'>
                             <div className='flex flex-col pl-10 pr-4 md:w-[90vw]'>
                                 <p className='text-left text-[14px] md:text-[16px]'>{testimonial.content}</p>

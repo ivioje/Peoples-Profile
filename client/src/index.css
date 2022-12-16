@@ -208,3 +208,25 @@ img {
   background: rgba(156, 7, 7, 0.6);
   filter: blur(400px);
 }
+
+/*applies to firefox only */
+
+@-moz-document url-prefix() {
+  .black__gradient {
+    opacity: .2;
+  }
+
+  .red__gradient {
+    opacity: .1;
+  }
+}
+
+@supports (-moz-appearance:none) {
+  .black__gradient {
+    opacity: .2;
+  }
+
+  .red__gradient {
+   opacity: .1;
+  }
+}
