@@ -37,7 +37,7 @@ const Footer = () => (
             </div>
             <div className='absolute z-[0] w-[60%] h-[70%] right-20 black__gradient' />
 
-            <div className='p-4 mt-1 sm:mt-9' data-aos='fade-up' data-aos-duration='3000'>
+            <div className='p-4 mt-1 sm:mt-9' data-aos='fade-up'>
                 <h3 className='font-firaSans text-[20px] py-2'>
                     Subscribe to join our mailing list
                 </h3>
