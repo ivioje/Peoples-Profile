@@ -1,12 +1,10 @@
 import React from 'react';
 import uploadImg from '../../assets/uploadImg.svg'
-import Button from '../../components/Button';
 
 const Upload = () => {
   return (
     <section className='flex justify-between items-center flex-col md:flex-row my-[45px] md:my-[54px] md:px-[100px] px-4 w-full'>
-      <div data-aos='fade-right'
-        className='w-full md:w-[40%] px-3 pt-5 md:pt-10'>
+      <div className='w-full md:w-[40%] px-3 pt-5 md:pt-10'>
         <h1 className='text-[30px] md:text-[40px] font-[700] text-text_color font-firaSans'>
           Upload Profiles with Ease
         </h1>
@@ -19,8 +17,7 @@ const Upload = () => {
           <span>Upload Profiles</span>
         </button>
       </div>
-      <div data-aos='fade-left'
-        className='w-full flex justify-center md:w-[500px] md:my-0 my-6'>
+      <div className='w-full flex justify-center md:w-[500px] md:my-0 my-6'>
         <img src={uploadImg} alt='upload' />
       </div>
     </section>

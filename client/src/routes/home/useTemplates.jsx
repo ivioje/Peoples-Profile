@@ -1,13 +1,11 @@
 import React from 'react';
 import templateImg from '../../assets/templateImg.svg'
-import Button from '../../components/Button';
 
 const UseTemplates = () => {
     return (
         <section className='flex justify-between items-center md:flex-row flex-col 
         my-[45px] md:my-[54px] md:px-[100px] px-4 w-full'>
-            <div data-aos='fade-right'
-                className='w-full md:w-[40%] px-3 pt-5 md:pt-10'>
+            <div className='w-full md:w-[40%] px-3 pt-5 md:pt-10'>
                 <h1 className='text-[30px] md:text-[40px] font-[700] text-text_color font-firaSans'>
                     Use Templates
                 </h1>
@@ -21,8 +19,7 @@ const UseTemplates = () => {
                     <span>Use Templates</span>
                 </button>
             </div>
-            <div data-aos='fade-left'
-                className='w-full flex justify-center md:w-[500px] md:my-0 my-10'>
+            <div className='w-full flex justify-center md:w-[500px] md:my-0 my-10'>
                 <img src={templateImg} alt='upload' />
             </div>
         </section>

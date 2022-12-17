@@ -1,3 +1,4 @@
+import { BsBag, BsBuilding, BsPerson } from 'react-icons/bs';
 import person1 from '../assets/person1.jpg';
 import person2 from '../assets/person2.png';
 import person3 from '../assets/person3.png';
@@ -99,5 +100,122 @@ export const quickLinks = [
     {
         id: 'templates',
         title: 'Templates',
+    },
+]
+
+export const filterButtons = [
+    {
+        id: 1,
+        name: 'Organization',
+        icon: BsBuilding
+    },
+    {
+        id: 2,
+        name: 'Work',
+        icon: BsBag
+    },
+    {
+        id: 3,
+        name: 'Education',
+        icon: ''
+    },
+    {
+        id: 4,
+        name: 'Gender',
+        icon: BsPerson
+    }
+]
+
+export const cardItems = [
+    {
+        id: 0,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person1,
+        fill: false
+    },
+    {
+        id: 1,
+        name: 'Esther Smith',
+        work: 'Backend Developer',
+        photo: person1,
+        fill: false
+    },
+    {
+        id: 2,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person2,
+        fill: false
+    },
+    {
+        id: 3,
+        name: 'Taylor Lee',
+        work: 'Data Scientist',
+        photo: person1,
+        fill: false
+    },
+    {
+        id: 4,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person1,
+        fill: false
+    },
+    {
+        id: 5,
+        name: 'Taylor Lee',
+        work: 'Senior Frontend Developer',
+        photo: person3,
+        fill: false
+    },
+    {
+        id: 6,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person3,
+        fill: false
+    },
+    {
+        id: 7,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person1,
+        fill: false
+    },
+    {
+        id: 8,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person2,
+        fill: false
+    },
+    {
+        id: 9,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person3,
+        fill: false
+    },
+    {
+        id: 10,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person1,
+        fill: false
+    },
+    {
+        id: 11,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person2,
+        fill: false
+    },
+    {
+        id: 12,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person1,
+        fill: false
     },
 ]

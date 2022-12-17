@@ -7,7 +7,7 @@ const Footer = () => (
     <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-lightGray 
     font-poppins text-[15px] sm:text-[16px]'>
         <div className='flex flex-col md:flex-row justify-between pb-10 relative'>
-            <div className='p-4' data-aos='fade-up'>
+            <div className='p-4'>
                 <div className=''>
                     <img src={logo} alt='peoples profile logo' />
                 </div>
@@ -19,7 +19,7 @@ const Footer = () => (
                 </div>
             </div>
 
-            <div className='p-4' data-aos='fade-up' data-aos-duration='2000'>
+            <div className='p-4'>
                 <h3>Quick Links</h3>
                 <hr className='opacity-20' />
                 <div className='flex justify-between flex-wrap my-4 '>
@@ -38,7 +38,7 @@ const Footer = () => (
             <div className='absolute z-[0] w-[60%] h-[70%] right-20 black__gradient' />
 
             <div className='p-4 mt-1 sm:mt-9'>
-                <h3 data-aos='fade-up' className='font-firaSans text-[20px] py-2'>
+                <h3 className='font-firaSans text-[20px] py-2'>
                     Subscribe to join our mailing list
                 </h3>
                 <div className='flex flex-col justify-between xs:flex-row xs:justify-start'>
