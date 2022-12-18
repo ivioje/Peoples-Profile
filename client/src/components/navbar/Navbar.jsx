@@ -5,7 +5,8 @@ import close from '../../assets/close.svg';
 import menu from '../../assets/menu.svg';
 import styles from '../../style'
 import GetStarted from './GetStarted';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
+import Footer from '../footer/Footer';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -13,7 +14,9 @@ const Navbar = () => {
         <>
             <section className={`bg-primary h-[80px] ex:h-[71px] w-[100%] ${styles.flexCenter} flex-wrap`}>
                 <div className=' mx-2 sm:mx-6 ex:mx-[74px] ex:w-[165px] w-[100px] h-[28px]'>
-                    <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[160px]' />
+                    <Link to='/'>
+                        <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[160px]' />
+                    </Link>
                 </div>
                 <div className={`mx-[74px] font-poppins ${styles.flexCenter}`}>
                     <ul className='list-none ex:flex hidden justify-end items-center flex-1'>
@@ -53,6 +56,7 @@ const Navbar = () => {
             </section>
 
             <Outlet />
+            <Footer />
         </>
     )
 }

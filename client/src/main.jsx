@@ -6,7 +6,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/home/Home'
 import Profiles from './routes/profiles/Profiles'
 import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
 
 const router = createBrowserRouter([
   {
@@ -16,18 +15,18 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+
+      },
+      {
+        path: '/home',
+        element: <Home />
       },
       {
         path: '/profiles',
         element: <Profiles />
       },
-    ]
-  },
-  {
-    element: <Footer />
+    ],
   }
-
-
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
