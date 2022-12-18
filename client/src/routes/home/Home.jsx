@@ -13,7 +13,6 @@ const Home = () => {
       <ViewProfiles />
       <UseTemplates />
       <Testimonials />
-      <Footer />
     </div>
   )
 }

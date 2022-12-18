@@ -29,7 +29,7 @@ const Navbar = () => {
                 </div>
 
                 <div className='ex:hidden flex '>
-                    <img src={toggle ? close : menu} alt='menu' className='mr-2 sm:mr-6 w-[28px] h-[28px] object-contain cursor-pointer'
+                    <img src={toggle ? close : menu} alt='menu' className='mr-4 sm:mr-6 w-[28px] h-[28px] object-contain cursor-pointer'
                         onClick={() => setToggle((prev) => !prev)}
                     />
 

@@ -24,14 +24,14 @@ const Cards = () => {
                             rounded-[50%] shadow-xl bg-cover bg-center'
                             style={{ 'backgroundImage': `url(${items.photo})` }}
                         />
-                        <button className='absolute top-[110px] right-0 bg-white w-[40px] h-[40px]
-                        flex items-center justify-center text-[19px] rounded-full mr-2 shadow text-primary'
+                        <button className='absolute xs:top-[110px] right-0 bg-white w-[30px] xs:w-[40px] h-[30px] xs:h-[40px]
+                        flex items-center justify-center text-[14px] xs:text-[19px] rounded-full mr-2 shadow text-primary'
                             onClick={() => setFill(items.id)}>
                             {fill === items.id ? <BsHeartFill /> : <BsHeart />}
                         </button>
                         {/* <CardButton filled={items.fill} setFill={setFill} fill={fill} /> */}
 
-                        <div className='w-full p-2 bg-primary text-lightGray text-center'>
+                        <div className='flex flex-col w-full p-2 bg-primary text-lightGray text-center'>
                             <h4 className='card_text_gradient px-1 pt-1 uppercase font-[500] text-[15px]'>{items.name}</h4>
                             <p className='px-1 pb-3 text-[14px] font-[500]'>{items.work}</p>
                             <div className='flex justify-between items-center'>

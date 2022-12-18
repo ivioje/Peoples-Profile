@@ -14,10 +14,11 @@ const Header = () => {
                     className='h-[47px] w-full text-text_color px-4 bg-lightGray rounded-[14px]'
                 />
             </div>
-            <div className='flex items-center p-3 font-[500]'>
+            <div className='flex items-center justify-center flex-wrap sm:p-3 font-[500] mb-2'>
                 {filterButtons.map((item) => (
-                    <button key={item.id} className='border flex items-center justify-between p-2 m-4 text-text_color'>
-                       {item.name} <BsArrowDown />
+                    <button key={item.id} className='border flex items-center justify-between p-2 m-1 sm:m-4 
+                    text-text_color sm:text-[16px] text-[14px] '>
+                        {item.name} <BsArrowDown />
                     </button>
                 ))}
 
