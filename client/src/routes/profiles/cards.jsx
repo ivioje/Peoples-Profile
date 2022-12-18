@@ -17,7 +17,7 @@ const Cards = () => {
         <section className=''>
             <div className='flex justify-center flex-wrap font-poppins'>
                 {cardItems.map((items) => (
-                    <div key={items.id} className='w-[40%] xs:w-[215px] border border-gray-100 flex flex-col items-center justify-between pt-3
+                    <div key={items.id} className='w-[42%] xs:w-[215px] border border-gray-100 flex flex-col items-center justify-between pt-3
                     my-6 mx-2 top-[-10px] min-w-[40px] rounded-t-[26px] relative '>
 
                         <div className='w-[80px] h-[80px] xs:w-[100px] xs:h-[100px] mb-4 border border-white 
@@ -25,7 +25,7 @@ const Cards = () => {
                             style={{ 'backgroundImage': `url(${items.photo})` }}
                         />
                         <button className='absolute xs:top-[110px] right-0 bg-white w-[30px] xs:w-[40px] h-[30px] xs:h-[40px]
-                        flex items-center justify-center text-[14px] xs:text-[19px] rounded-full mr-2 shadow text-primary'
+                        flex items-center justify-center text-[14px] xs:text-[19px] rounded-full mr-1 ss:mr-2 shadow text-primary'
                             onClick={() => setFill(items.id)}>
                             {fill === items.id ? <BsHeartFill /> : <BsHeart />}
                         </button>
