@@ -20,22 +20,23 @@ const Footer = () => (
             </div>
 
             <div className='p-4'>
-                <h3>Quick Links</h3>
+                <h3 className='font-firaSans'>Quick Links</h3>
                 <hr className='opacity-20' />
                 <div className='flex justify-between flex-wrap my-4 '>
                     <div className='flex flex-col mr-20 pt-2'>
                         {quickLinks.slice(0, 5).map((link) => (
-                            <a href='#' key={link.id} className='p-1'>{link.title}</a>
+                            <a href={`/${link.title.toLowerCase()}`} key={link.id} className='p-1'>{link.title}</a>
                         ))}
                     </div>
                     <div className='flex flex-col pt-2'>
                         {quickLinks.slice(5, 8).map((link) => (
-                            <a href='#' key={link.id} className='p-1'>{link.title}</a>
+                            <a href={`/${link.title.toLowerCase()}`} key={link.id} className='p-1'>
+                                {link.title}
+                            </a>
                         ))}
                     </div>
                 </div>
             </div>
-            <div className='absolute z-[0] w-[60%] h-[70%] right-20 black__gradient' />
 
             <div className='p-4 mt-1 sm:mt-9'>
                 <h3 className='font-firaSans text-[20px] py-2'>
