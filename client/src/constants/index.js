@@ -219,3 +219,52 @@ export const cardItems = [
         fill: false
     },
 ]
+
+export const tempItems = [
+    {
+        id: 1,
+        type: 'Developer',
+        color: 'rgba(0, 0, 0, 0.85)',
+    },
+
+    {
+        id: 2,
+        type: 'Project Manager',
+        color: '#548CA8',
+    },
+    {
+        id: 3,
+        type: 'UI/UX Designer',
+        color: '#8197A8',
+    },
+    {
+        id: 4,
+        type: 'ML Engineer',
+        color: '#0A66C2D1',
+    },
+    {
+        id: 5,
+        type: 'Cloud Engineer',
+        color: '#334257',
+    },
+    {
+        id: 6,
+        type: 'Data Scientist',
+        color: 'rgba(61, 147, 153, 0.85)',
+    },
+    {
+        id: 7,
+        type: 'Sales Manager',
+        color: 'rgba(21, 147, 124, 0.82)',
+    },
+    {
+        id: 8,
+        type: 'Data Analyst',
+        color: 'rgba(181, 78, 139, 0.82)',
+    },
+    {
+        id: 9,
+        type: 'Social Media Manager',
+        color: 'rgba(191, 53, 103, 0.82)',
+    },
+]

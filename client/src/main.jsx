@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/home/Home'
 import Profiles from './routes/profiles/Profiles'
 import Navbar from './components/navbar/Navbar'
+import Templates from './routes/templates/Templates'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/profiles',
         element: <Profiles />
+      },
+      {
+        path: '/templates',
+        element: <Templates />
       },
     ],
   }

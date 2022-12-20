@@ -25,7 +25,8 @@ const Header = () => {
             </div>
 
             <p className='text-text_color font-normal font-poppins'>
-                <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>Log in</Link> to save favourites.
+                <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>
+                    Log in</Link> to save favourites.
             </p>
         </section>
     )

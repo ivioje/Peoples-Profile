@@ -12,7 +12,7 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     return (
         <>
-            <section className={`bg-primary h-[80px] ex:h-[71px] w-[100%] ${styles.flexCenter} flex-wrap`}>
+            <section className={`bg-primary h-[80px] ex:h-[71px] w-[100%] ${styles.flexBtw} flex-wrap`}>
                 <div className=' mx-2 sm:mx-6 ex:mx-[74px] ex:w-[165px] w-[100px] h-[28px]'>
                     <Link to='/'>
                         <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[160px]' />
