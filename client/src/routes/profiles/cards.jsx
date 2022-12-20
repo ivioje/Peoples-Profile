@@ -37,7 +37,7 @@ const Cards = () => {
                             <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px]'>
                                 {items.name}
                             </h4>
-                            <p className='px-1 pb-3 text-[14px] font-[500]'>
+                            <p className='px-1 pb-3 text-[14px]'>
                                 {items.work}
                             </p>
                             <div className='flex justify-between items-center'>
