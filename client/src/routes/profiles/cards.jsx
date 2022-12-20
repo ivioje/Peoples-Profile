@@ -34,7 +34,7 @@ const Cards = () => {
                         {/* <CardButton filled={items.fill} setFill={setFill} fill={fill} /> */}
 
                         <div className='flex flex-col w-full p-2 bg-primary text-lightGray text-center'>
-                            <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px]'>
+                            <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px] font-firaSans'>
                                 {items.name}
                             </h4>
                             <p className='px-1 pb-3 text-[14px]'>
