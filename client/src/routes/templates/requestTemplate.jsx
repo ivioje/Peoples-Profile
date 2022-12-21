@@ -5,10 +5,10 @@ import styles from '../../style';
 
 const RequestTemplate = () => {
     return (
-        <section className='bg-cover bg-no-repeat bg-bottom font-firaSans relative h-[90vh] '
+        <section className='bg-cover bg-no-repeat bg-bottom font-firaSans relative '
             style={{ 'backgroundImage': `url(${wave})` }}>
-            <div className={`${styles.flexStart} div-overlay px-2 absolute h-full`}>
-                <h1 className='md:text-[64px] ss:text-[30px] text-[22px] text-gradient font-[600] pt-7 pb-2 '>
+            <div className={`${styles.flexStart} div-overlay px-2 h-full`}>
+                <h1 className='md:text-[64px] ss:text-[30px] text-[22px] text-gradient font-[600] pt-[40px] pb-2 '>
                     Request for a template
                 </h1>
                 <p className='font-poppins text-text_color text-center md:w-1/2 sm:text-[20px] font-[500] opacity-80 '>
@@ -19,11 +19,11 @@ const RequestTemplate = () => {
                     or request for a template by filling in the form below. We will review your submission and be in touch with you!
                 </p>
 
-                <form className={`${styles.flexCol} py-2 requestForm`}>
+                <form className={`${styles.flexCol} py-8 requestForm`}>
                     <input name='name' type='text' placeholder='Template name' className='' />
                     <textarea name='description' rows='3' cols='21' type='text' placeholder='Template description' className='' />
                     <input name='email' type='email' placeholder='Email address' className='' />
-                    <button type='submit' className='request-btn text-dimWhite text-[18px] primary-gradient w-full mx-2 font-[500] '>
+                    <button type='submit' className='request-btn text-dimWhite text-[18px] primary-gradient w-[200px] font-[500] '>
                         Request Template
                     </button>
                 </form>
