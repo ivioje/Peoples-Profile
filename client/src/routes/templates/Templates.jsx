@@ -1,6 +1,7 @@
 import React from 'react'
 import Search from '../../components/Search'
 import Header from './header'
+import RequestTemplate from './requestTemplate'
 import TemplatesList from './templatesList'
 
 const Templates = () => (
@@ -8,6 +9,7 @@ const Templates = () => (
         <Header />
         <Search />
         <TemplatesList />
+        <RequestTemplate />
     </section>
 )
 

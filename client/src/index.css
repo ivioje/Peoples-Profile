@@ -263,3 +263,19 @@ img {
 .overlay:hover {
   opacity: 1;
 }
+
+.div-overlay{
+  background: rgba(246, 245, 245, 0.37);
+}
+.requestForm >* {
+padding: 1rem;
+margin: .5rem;
+border: 1px solid rgb(233, 233, 233);
+opacity: .7;
+border-radius: 10px;
+}
+.request-btn {
+  opacity: 1;
+  padding: .3rem;
+
+}
