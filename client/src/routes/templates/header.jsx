@@ -12,7 +12,7 @@ const Header = () => (
         </div>
 
         <p className='text-center font-normal py-6 px-1'>
-            <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>
+            <Link to='/login' className='border-b-2 border-dotted border-gray-500 text-gradient'>
                 Log in</Link> to use and bookmark a template
         </p>
     </div>

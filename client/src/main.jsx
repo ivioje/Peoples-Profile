@@ -7,11 +7,14 @@ import Home from './routes/home/Home'
 import Profiles from './routes/profiles/Profiles'
 import Navbar from './components/navbar/Navbar'
 import Templates from './routes/templates/Templates'
+import Guide from './routes/guide/Guide'
+import ErrorPage from './ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Navbar />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/templates',
         element: <Templates />
+      },
+      {
+        path: '/guide',
+        element: <Guide />
       },
     ],
   }
