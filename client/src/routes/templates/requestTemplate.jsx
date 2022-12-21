@@ -19,7 +19,7 @@ const RequestTemplate = () => {
                     or request for a template by filling in the form below. We will review your submission and be in touch with you!
                 </p>
 
-                <form className={`${styles.flexCol} py-8 requestForm w-full sm:w-auto`}>
+                <form className={`${styles.flexCol} pt-8 pb-[40px] requestForm w-full sm:w-auto`}>
                     <input name='name' type='text' placeholder='Template name' className='' />
                     <textarea name='description' rows='3' cols='21' type='text' placeholder='Template description' className='' />
                     <input name='email' type='email' placeholder='Email address' className='' />
