@@ -9,6 +9,7 @@ import Navbar from './components/navbar/Navbar'
 import Templates from './routes/templates/Templates'
 import Guide from './routes/guide/Guide'
 import ErrorPage from './ErrorPage'
+import Login from './routes/login/Login'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/guide',
         element: <Guide />
+      },
+      {
+        path: '/login',
+        element: <Login />
       },
     ],
   }

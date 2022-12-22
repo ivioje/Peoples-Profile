@@ -5,12 +5,14 @@ import { cardItems } from '../../constants'
 import CardButton from './cardButton'
 
 const Cards = () => {
-    const [fill, setFill] = useState(null);
-    let id;
+    const [fill, setFill] = useState(cardItems.map(items => items.fill));
+   
+    console.log(fill);
 
     const getRandomId = (min, max) => {
-        id = Math.random() * (max - min) + min;
+       let id = Math.random() * (max - min) + min;
         return id;
+        
     }
 
     return (
@@ -28,8 +30,8 @@ const Cards = () => {
 
                         <button className='absolute xs:top-[110px] right-0 bg-dimWhite w-[30px] xs:w-[40px] 
                         h-[30px] xs:h-[40px] flex items-center justify-center text-[14px] xs:text-[19px] rounded-full 
-                        mr-1 ss:mr-2 shadow-lg outline-none xs:shadow text-primary' onClick={() => setFill(items.id)}>
-                            {fill === items.id ? <BsHeartFill /> : <BsHeart />}
+                        mr-1 ss:mr-2 shadow-lg outline-none xs:shadow text-primary' onClick={() => setFill((prev) => !prev)}>
+                            {fill ? <BsHeartFill /> : <BsHeart />}
                         </button>
                         {/* <CardButton filled={items.fill} setFill={setFill} fill={fill} /> */}
 
