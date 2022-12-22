@@ -5,11 +5,11 @@ import styles from '../../style'
 const Login = () => {
     return (
         <section className={`font-poppins div-overlay ${styles.flexCenter} text-text_color p-1`}>
-            <div className={`bg-white ${styles.flexBtw} flex-col p-10 my-10 md:my-16 sm:my-12 md:w-[590px] sm:w-[60%] w-[90%] rounded-[34px] `}>
+            <div className={`bg-white ${styles.flexBtw} flex-col p-10 my-10 md:my-16 sm:my-12 md:w-[590px] sm:w-[60%] w-full rounded-[34px] `}>
                 <h2 className='font-[600] p-1 text-[22px]'>Welcome back!</h2>
                 <p>Log in to continue</p>
 
-                <form className={`${styles.flexBtw} flex-col mt-12 w-[90%]`}>
+                <form className={`${styles.flexBtw} flex-col mt-12 w-full sm:w-[90%]`}>
                     <input name='email' type='text' placeholder='Email address or username'
                         className='h-9 p-2 mb-8 placeholder:text-text_color placeholder:font-[100] bg-slate-50 rounded w-full border border-gray-100' />
                     <input name='password' type='password' placeholder='Password'
@@ -30,7 +30,7 @@ const Login = () => {
                             alt='' className='w-[25px] h-[25px] mx-3 ' />
                         <button className=' p-1  rounded-[4px]'>Continue with Google</button>
                     </div>
-                    <p>Don't have an account?
+                    <p className='text-center'>Don't have an account?
                         <Link to='/signin' className='text-primary'>
                             {' '} Sign in
                         </Link>
