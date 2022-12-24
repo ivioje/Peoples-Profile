@@ -33,13 +33,13 @@ const Hero = () => (
 
 
 const GetStarted = () => (
-    <div className={`${styles.flexCenter} flex justify-start rounded-[100%] border w-[100px] h-[100px] sm:h-[150px] sm:w-[150px]
-    font-[900] text-lightGray relative bg-lightGray p-2 text-[18px]`}>
+    <div className={`${styles.flexCenter} flex justify-start border-[2px] w-1/2 border-dotted border-t-primary
+    border-b-[#548CA8] border-l-[#548CA8] border-r-[#548CA8] font-[900] text-lightGray relative bg-lightGray p-1 text-[20px]`}>
         <Link to='/signup'>
             <button className='text-gradient'>
-                GET <br /> STARTED {' '}
+                GET STARTED {' '}
             </button>
-                <span className=' absolute rotate-[-45deg] text-primary text-[25px] p-1'><BsArrowRight /></span>
+                <span className=' absolute rotate-[-45deg] text-primary p-1'><BsArrowRight /></span>
         </Link>
     </div>
 )
