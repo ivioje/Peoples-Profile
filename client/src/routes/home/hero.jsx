@@ -2,6 +2,7 @@ import React from 'react';
 import heroImg from '../../assets/hero-img.svg';
 import styles from '../../style'
 import { BsArrowRight } from 'react-icons/bs'
+import { Link } from 'react-router-dom';
 
 const Hero = () => (
     <section
@@ -32,14 +33,14 @@ const Hero = () => (
 
 
 const GetStarted = () => (
-    <div className='flex justify-start '>
-        <button className={`${styles.flexCenter} px-3 md:px-8 text-[20px] font-medium 
-        cta-button w-[200px] md:w-[248px] h-[45px] rounded-[40px] hover:drop-shadow-mid
-         hover:transition`}>
-            GET STARTED {' '}
-            <span><BsArrowRight /></span>
-
-        </button>
+    <div className={`${styles.flexCenter} flex justify-start rounded-[100%] border w-[100px] h-[100px] sm:h-[150px] sm:w-[150px]
+    font-[900] text-lightGray relative bg-lightGray p-2 text-[18px]`}>
+        <Link to='/signup'>
+            <button className='text-gradient'>
+                GET <br /> STARTED {' '}
+            </button>
+                <span className=' absolute rotate-[-45deg] text-primary text-[25px] p-1'><BsArrowRight /></span>
+        </Link>
     </div>
 )
 

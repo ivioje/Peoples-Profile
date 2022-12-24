@@ -10,6 +10,7 @@ import Templates from './routes/templates/Templates'
 import Guide from './routes/guide/Guide'
 import ErrorPage from './ErrorPage'
 import Login from './routes/login/Login'
+import SignUp from './routes/sign-in/SignUp'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/signup',
+        element: <SignUp />
       },
     ],
   }

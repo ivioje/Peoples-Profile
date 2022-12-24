@@ -6,7 +6,7 @@ const Header = () => (
     <div className='font-poppins text-text_color'>
         <div className='h-[140px] relative'>
             <img src={bgImg} alt='cover' className='object-cover h-[140px] w-full' />
-            <h2 className='text-lightGray xs:text-text_color overlay flex items-center justify-center text-[20px] ss:text-[30px] font-[600] p-1'>
+            <h2 className='text-lightGray overlay flex items-center justify-center text-[20px] ss:text-[30px] font-[600] p-1'>
                 Choose from several templates <br /> to suit your need.
             </h2>
         </div>
