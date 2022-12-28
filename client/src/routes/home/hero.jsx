@@ -39,7 +39,9 @@ const GetStarted = () => (
             <button className='text-gradient mx-2'>
                 GET STARTED {' '}
             </button>
-            <span className='mx-2 absolute rotate-[-45deg] text-primary p-1'><BsArrowRight /></span>
+            <span className='xs:inline-block hidden mx-2 absolute rotate-[-45deg] text-primary p-1'>
+                <BsArrowRight />
+            </span>
         </div>
     </Link>
 )
