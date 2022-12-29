@@ -274,3 +274,7 @@ width: 90%;
   opacity: 1;
   padding: .3rem;
 }
+.share >* {
+  margin: 3px;
+  padding: 2px;
+}
