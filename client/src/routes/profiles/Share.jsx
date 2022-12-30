@@ -8,6 +8,7 @@ const Share = () => {
       <button className='absolute top-0 right-0 text-[26px]'>
         <BsX />
       </button>
+      <small className='font-firaSans text-gray-500'>Share on</small>
       <div className={`${styles.flexBtw} flex-wrap text-xl text-primary share mt-1`}>
         <a href='#'><BsTwitter /></a>
         <a href='#'><BsGithub /></a>

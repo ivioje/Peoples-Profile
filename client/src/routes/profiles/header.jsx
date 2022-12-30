@@ -3,6 +3,7 @@ import { BsArrowDown } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import Search from '../../components/Search'
 import { filterButtons } from '../../constants'
+import OrganizationFilter from './OrganizationFilter'
 
 const Header = () => {
     return (
@@ -18,8 +19,8 @@ const Header = () => {
                         {item.name} <BsArrowDown />
                     </button>
                 ))}
-
             </div>
+            <OrganizationFilter />
 
             <p className='text-text_color font-normal font-poppins'>
                 <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>
