@@ -5,7 +5,7 @@ import close from '../../assets/close.svg';
 import menu from '../../assets/menu.svg';
 import styles from '../../style'
 import GetStarted from './GetStarted';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, NavLink } from 'react-router-dom';
 import Footer from '../footer/Footer';
 
 const Navbar = () => {
@@ -21,11 +21,11 @@ const Navbar = () => {
                 <div className={`mx-[74px] font-poppins ${styles.flexCenter}`}>
                     <ul className='list-none ex:flex hidden justify-end items-center flex-1'>
                         {navLinks.map((navlink) => (
-                            <li key={navlink.id} className='ex:text-dimWhite px-3 cursor-pointer' >
-                                <a href={`/${navlink.id}`} className={navlink.item ? 'font-bold navLinks' : 'font-normal navLinks'} >
+                            <div key={navlink.id} className='ex:text-dimWhite px-3 cursor-pointer' >
+                                <NavLink to={`/${navlink.id}`} className={navlink.item ? 'font-bold navLinks' : 'font-normal navLinks'} >
                                     {navlink.title}
-                                </a>
-                            </li>
+                                </NavLink>
+                            </div>
                         ))}
                         <GetStarted />
                     </ul>
@@ -40,11 +40,11 @@ const Navbar = () => {
                  rounded-xl sidebar mt-7 z-[1]`}>
                         <ul className='list-none flex flex-col justify-end items-center flex-1'>
                             {navLinks.map((nav, index) => (
-                                <li key={nav.id} className={'font-poppins font-normal cursor-pointer text-[16px] my-2 text-dimWhite'}>
-                                    <a href={`/${nav.id}`} className='navLinks'>
+                                <div key={nav.id} className={'font-poppins font-normal cursor-pointer text-[16px] my-2 text-dimWhite'}>
+                                    <NavLink to={`/${nav.id}`} className='navLinks'>
                                         {nav.title}
-                                    </a>
-                                </li>
+                                    </NavLink>
+                                </div>
                             ))}
                             <div className='mt-2'>
                                 <GetStarted />
