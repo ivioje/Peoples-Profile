@@ -41,7 +41,7 @@ const { photo, name, work } = item
                 </div>
             </div>
             {/*share component */}
-            <Share />
+            {/* <Share /> */}
         </div>
     )
 }
