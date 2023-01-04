@@ -3,12 +3,13 @@ import { BsArrowDown } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import Search from '../../components/Search'
 import { filterButtons } from '../../constants'
+import styles from '../../style'
 import JobFilter from './jobFilter'
 import OrganizationFilter from './OrganizationFilter'
 
 const Header = () => {
     return (
-        <section className='flex flex-col items-center justify-between p-8 font-firaSans'>
+        <section className={`${styles.flexBtw} flex-col p-4 xs:p-8 font-firaSans`}>
             <h2 className='text-primary text-[25px] uppercase font-[600]'>
                 search for profiles
             </h2>
