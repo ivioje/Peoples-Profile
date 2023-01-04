@@ -11,10 +11,10 @@ const OrganizationFilter = () => {
     }
 
     return (
-        <section className='  font-poppins  relative text-text_color md:w-[650px] w-full ss:w-[90%] z-50 '>
-            <div className='border absolute left-0   p-3 rounded-2xl bg-white'>
+        <section className='font-poppins text-[14px]  relative text-text_color md:w-[650px] w-[100vw] xs:w-[90%] z-50 '>
+            <div className='border absolute left-0   p-3 rounded-2xl bg-white xs:mx-0 mx-2'>
                 <div className={``}>
-                    <p className='m-2 text-[14px] '>
+                    <p className='m-2 text-[16px] '>
                         Filter profiles by organization or company.
                     </p>
 
