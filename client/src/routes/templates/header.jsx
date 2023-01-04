@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import bgImg from '../../assets/tempHeaderImg.jpg'
 
 const Header = () => (
-    <div className='font-poppins text-text_color'>
+    <div className='font-poppins '>
         <div className='h-[140px] relative'>
             <img src={bgImg} alt='cover' className='object-cover h-[140px] w-full' />
             <h2 className='text-lightGray overlay flex items-center justify-center text-[20px] ss:text-[30px] font-[600] p-1'>

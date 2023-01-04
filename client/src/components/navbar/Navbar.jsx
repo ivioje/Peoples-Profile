@@ -37,7 +37,7 @@ const Navbar = () => {
                     />
 
                     <div className={`${toggle ? 'flex' : 'hidden'} p-6 primary-gradient absolute top-20 right-0 mx-4 my-2 
-                 rounded-xl sidebar mt-7 z-[1]`}>
+                 rounded-xl sidebar mt-7 z-50`}>
                         <ul className='list-none flex flex-col justify-end items-center flex-1'>
                             {navLinks.map((nav, index) => (
                                 <div key={nav.id} className={'font-poppins font-normal cursor-pointer text-[16px] my-2 text-dimWhite'}>

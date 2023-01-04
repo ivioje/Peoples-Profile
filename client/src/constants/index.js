@@ -273,46 +273,57 @@ export const organizations = [
     {
         org: 'Google',
         job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         org: 'Microsoft Corporation',
         job: 'Product designer',
+        edu: 'B.Sc Mathematics',
     },
     {
         org: 'Google',
         job: 'Fullstack developer',
+        edu: 'PhD Robotics engineering',
     },
     {
         org: 'Google',
         job: 'Senior analyst',
+        edu: 'HND Civil engineering',
     },
     {
         org: 'Google',
         job: 'ML engineer',
+        edu: 'PhD Biology',
     },
     {
         org: 'Google',
         job: 'Data Analyst',
+        edu: 'PhD Econimics',
     },
     {
         org: 'Google',
         job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         org: 'Google',
         job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         org: 'Google',
         job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         org: 'Google',
         job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         org: 'Google',
         job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         org: 'Google',

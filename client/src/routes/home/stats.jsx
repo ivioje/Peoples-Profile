@@ -11,7 +11,7 @@ const Stats = () => {
                     <img src={shield} alt='shield' />
                 </div>
                 <h2 className='text-gradient text-[25px] md:text-[30px] font-[800]'>Safe and Trusted</h2>
-                <p className='text-text_color'>Peoples profiles is trusted by hundreds of people, worldwide.</p>
+                <p className=''>Peoples profiles is trusted by hundreds of people, worldwide.</p>
             </div>
 
             <div className='flex justify-between py-[88px]'>
@@ -20,7 +20,7 @@ const Stats = () => {
                         <h1 className='text_shine text-gradient font-poppins text-[30px] md:text-[50px] font-[800]'>
                             <CountUp delay={1} duration={8} end={stat.value} />
                         </h1>
-                        <h6 className='text-text_color font-poppins'>{stat.title}</h6>
+                        <h6 className=' font-poppins'>{stat.title}</h6>
                     </div>
                 ))}
             </div>

@@ -12,7 +12,7 @@ const TemplatesList = () => {
                     <h1 style={{ 'background': `${item.color}` }} className='text-lightGray text-[20px] font-[600] p-1 '>
                         {item.type} {' '} Template
                     </h1>
-                    <p className='font-poppins text-text_color px-1 py-4'>Sit faucibus molestie diam quis ultricies.
+                    <p className='font-poppins  px-1 py-4'>Sit faucibus molestie diam quis ultricies.
                         Nunc ultricies eu justo, in egestas id auctor proin dui.
                     </p>
                     <div className={`${styles.flexBtw} p-1`}>

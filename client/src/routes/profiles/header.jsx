@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Search from '../../components/Search'
 import { filterButtons } from '../../constants'
 import styles from '../../style'
+import EducationFilter from './educationFilter'
 import JobFilter from './jobFilter'
 import OrganizationFilter from './OrganizationFilter'
 
@@ -14,18 +15,18 @@ const Header = () => {
                 search for profiles
             </h2>
             <Search />
-            <div className='flex items-center justify-center flex-wrap sm:p-3 font-[500] mb-2'>
+            <div className={`${styles.flexCenter} flex-wrap sm:p-3 font-[500] mb-2`}>
                 {filterButtons.slice(0, 10).map((item) => (
-                    <button key={item.id} className='border flex items-center justify-between p-2 m-1 sm:m-4 
-                    text-text_color sm:text-[16px] text-[14px] '>
+                    <button key={item.id} className={`${styles.flexBtw} border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]`}>
                         {item.name} <BsArrowDown />
                     </button>
                 ))}
             </div>
             {/* <OrganizationFilter /> */}
-            <JobFilter />
+            {/* <JobFilter /> */}
+            <EducationFilter />
 
-            <p className='text-text_color font-normal font-poppins'>
+            <p className='font-normal font-poppins'>
                 <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>
                     Log in</Link> to save favourites.
             </p>

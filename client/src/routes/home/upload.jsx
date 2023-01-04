@@ -5,10 +5,10 @@ const Upload = () => {
   return (
     <section className='flex justify-between items-center flex-col md:flex-row my-[45px] md:my-[54px] md:px-[100px] px-4 w-full'>
       <div className='w-full md:w-[40%] px-3 pt-5 md:pt-10'>
-        <h1 className='text-[30px] md:text-[40px] font-[700] text-text_color font-firaSans'>
+        <h1 className='text-[30px] md:text-[40px] font-[700]  font-firaSans'>
           Upload Profiles with Ease
         </h1>
-        <p className='font-poppins font-[16px] text-text_color py-4'>
+        <p className='font-poppins font-[16px]  py-4'>
           Upload your professional profile for others to connect with you.
           Easily upload your employees profile. You can upload unlimited number of profiles.
         </p>

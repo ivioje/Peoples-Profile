@@ -5,7 +5,7 @@ import { testimonials } from '../../constants';
 
 const Testimonials = () => {
     return (
-        <section className='bg-secondary w-full font-poppins text-text_color py-14'>
+        <section className='bg-secondary w-full font-poppins  py-14'>
             <h1 className='text-center text-gradient text-[25px] md:text-[30px] font-[800] pb-5'>
                 See what others are saying
             </h1>

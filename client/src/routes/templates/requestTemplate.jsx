@@ -11,7 +11,7 @@ const RequestTemplate = () => {
                 <h1 className='md:text-[64px] ss:text-[30px] text-[22px] text-gradient font-[600] pt-[40px] pb-2 '>
                     Request for a template
                 </h1>
-                <p className='font-poppins text-text_color text-center w-full md:w-1/2 sm:text-[20px] font-[500] opacity-80 '>
+                <p className='font-poppins  text-center w-full md:w-1/2 sm:text-[20px] font-[500] opacity-80 '>
                     Can’t find a template that suits your need? Use our {' '}
                     <Link className='text-gradient border-b-2 border-dotted border-gray-500'>
                         basic template {' '}
