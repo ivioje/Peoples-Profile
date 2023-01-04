@@ -272,42 +272,55 @@ export const tempItems = [
 export const organizations = [
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Microsoft Corporation',
+        job: 'Product designer',
     },
     {
         org: 'Google',
+        job: 'Fullstack developer',
     },
     {
         org: 'Google',
+        job: 'Senior analyst',
     },
     {
         org: 'Google',
+        job: 'ML engineer',
     },
     {
         org: 'Google',
+        job: 'Data Analyst',
     },
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Google',
+        job: 'Software engineer',
     },
     {
         org: 'Google',
