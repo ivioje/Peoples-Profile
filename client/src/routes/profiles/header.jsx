@@ -5,6 +5,7 @@ import Search from '../../components/Search'
 import { filterButtons } from '../../constants'
 import styles from '../../style'
 import EducationFilter from './educationFilter'
+import GenderFilter from './genderFilter'
 import JobFilter from './jobFilter'
 import OrganizationFilter from './OrganizationFilter'
 
@@ -24,7 +25,8 @@ const Header = () => {
             </div>
             {/* <OrganizationFilter /> */}
             {/* <JobFilter /> */}
-            <EducationFilter />
+            {/* <EducationFilter /> */}
+            <GenderFilter />
 
             <p className='font-normal font-poppins'>
                 <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>

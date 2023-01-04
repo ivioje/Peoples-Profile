@@ -11,7 +11,7 @@ const EducationFilter = () => {
     }
 
     return (
-        <section className='font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] z-40 '>
+        <section className='font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] xs:left-[100px] z-40 '>
             <div className='border-t absolute left-0 p-3 rounded-[26px] shadow-xl bg-white ss:mx-0 mx-2'>
                 <div className={`${styles.flexBtw} `}>
                     <p className='m-2 text-[16px] '>

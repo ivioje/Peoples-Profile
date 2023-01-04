@@ -298,7 +298,7 @@ export const organizations = [
     {
         org: 'Google',
         job: 'Data Analyst',
-        edu: 'PhD Econimics',
+        edu: 'PhD Economics',
     },
     {
         org: 'Google',

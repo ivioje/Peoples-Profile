@@ -280,8 +280,7 @@ width: 90%;
   padding: 2px;
 }
 
-/*scroll bar */
-/* width */
+/*custom scroll bar */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -297,7 +296,62 @@ width: 90%;
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/*custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border: 1px solid rgb(172, 169, 169);
+}
+.checkContent label {
+  width: 40%;
+  position: relative;
+  padding: 12px;
+  cursor: pointer;
+}
+.checkContent label h6 {
+  left: 0;
+  top: 0;
+  margin: 2px 0px 0px 5px;
+  position: absolute;
+}
+.checkContent input:checked ~ .checkmark {
+  background-color: #334257;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.checkContent input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkContent .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* Hide the browser's default checkbox */
+.checkContent input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
