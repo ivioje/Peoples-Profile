@@ -268,3 +268,176 @@ export const tempItems = [
         color: 'rgba(191, 53, 103, 0.82)',
     },
 ]
+
+export const organizations = [
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Microsoft Corporation',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+
+    {
+        org: 'Google',
+    },
+
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+]

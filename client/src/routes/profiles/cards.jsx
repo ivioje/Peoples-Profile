@@ -9,12 +9,6 @@ const Cards = () => {
    const [fill, setFill] = useState([]);
     const [open, setOpen] = useState(false)
 
-
-    const getRandomId = (min, max) => {
-        let id = Math.random() * (max - min) + min;
-        return id;
-    }
-
     const toggleFavourites = (item) => {
         setFill([...fill, item])
         console.log(fill);
