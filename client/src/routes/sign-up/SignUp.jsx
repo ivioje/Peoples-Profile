@@ -23,7 +23,7 @@ const SignUp = () => {
                     <div className={`${styles.flexBtw} flex-wrap w-full text-[15px]`}>
                         <p>Passwords must be at least 8 characters long</p>
                     </div>
-                    <Link to='/dashboard' className='w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center '>
+                    <Link to='/success' className='w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center '>
                         Sign Up
                     </Link>
                     <p>Or</p>

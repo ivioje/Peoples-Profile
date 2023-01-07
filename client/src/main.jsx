@@ -10,7 +10,8 @@ import Templates from './routes/templates/Templates'
 import Guide from './routes/guide/Guide'
 import ErrorPage from './ErrorPage'
 import Login from './routes/login/Login'
-import SignUp from './routes/sign-in/SignUp'
+import SignUp from './routes/sign-up/SignUp'
+import SuccessPage from './routes/SuccessPage'
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignUp />
+      },
+      {
+        path: '/success',
+        element: <SuccessPage />
       },
     ],
   }
