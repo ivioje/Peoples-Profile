@@ -12,6 +12,7 @@ import ErrorPage from './ErrorPage'
 import Login from './routes/login/Login'
 import SignUp from './routes/sign-up/SignUp'
 import SuccessPage from './routes/SuccessPage'
+import DashboardNav from './components/dashboard/navbar/Navbar'
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,15 @@ const router = createBrowserRouter([
         element: <SuccessPage />
       },
     ],
+  },
+  {
+    path: '/dashboard',
+    element: <DashboardNav />,
+    children: [
+      {
+        
+      }
+    ]
   }
 ])
 
