@@ -103,6 +103,35 @@ img {
   }
 }
 
+.dashBSidebar {
+  -webkit-animation: slide-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
 .btn {
   transition: all 0.5s;
 }

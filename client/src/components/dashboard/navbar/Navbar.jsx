@@ -11,12 +11,12 @@ const DashboardNav = () => {
     return (
         <>
             <section className={`bg-secondary h-[80px] ex:h-[71px] w-[100%] ${styles.flexBtw} flex-wrap`}>
-                <div className=' mx-2 sm:mx-6 ex:mx-[74px] ex:w-[165px] w-[100px] h-[28px]'>
+                <div className=' mx-1 ex:w-[165px] w-[100px] h-[28px]'>
                     <Link to='/dashboard'>
                         <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[160px]' />
                     </Link>
                 </div>
-                <div className={`mx-[74px] font-poppins ${styles.flexCenter}`}>
+                <div className={` font-poppins ${styles.flexCenter}`}>
                     <ul className='list-none ex:flex hidden justify-end items-center flex-1'>
                         ...
                     </ul>
