@@ -8,7 +8,7 @@ const DashboardNav = () => {
         <>
             <section className={` h-full w-full ss:w-[350px] ${styles.flexBtw} flex-wrap relative`}>
                 <div className={` font-poppins ${styles.flexCol} `}>
-                    <ul className='list-none flex hide flex-col justify-center items-start flex-1'>
+                    <ul className='list-none flex hide flex-col justify-center items-start flex-1 pt-20 pl-20 pr-2 pb-2'>
                         <a>Overview</a>
                         <a>Uploaded profiles</a>
                     </ul>
@@ -22,7 +22,7 @@ const DashboardNav = () => {
                     </span>
 
                     <div className={`${toggle ? 'flex' : 'hidden'} p-6 dashBSidebar h-full flex-col`}>
-                        <ul className={`flex justify-start absolute h-[500px] w-[100vw] left-0 flex-col z-1 p-5`}>
+                        <ul className={`flex justify-start absolute h-[500px] w-[100vw] left-0 flex-col z-1 pt-8 pb-2 px-1`}>
                             <a>Overview</a>
                             <a>Uploaded profiles</a>
 
