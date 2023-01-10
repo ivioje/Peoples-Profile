@@ -465,3 +465,30 @@ export const organizations = [
         org: 'Google',
     },
 ]
+
+export const sidenavItems = [
+    {
+        id: 'overview',
+        title: 'Overview',
+    },
+    {
+        id: 'uploads',
+        title: 'Uploaded profiles',
+    },
+    {
+        id: 'saved',
+        title: 'Saved profiles',
+    },
+    {
+        id: 'bookmarks',
+        title: 'Bookmarked templates',
+    },
+    {
+        id: 'shared',
+        title: 'Shared profiles',
+    },
+    {
+        id: 'trash',
+        title: 'Trash',
+    },
+]
