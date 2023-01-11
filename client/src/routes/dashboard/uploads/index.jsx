@@ -2,7 +2,7 @@ import React from 'react'
 
 const UploadedProfiles = () => {
   return (
-    <div className='border'>UploadedProfiles</div>
+    <div className=''>UploadedProfiles</div>
   )
 }
 
