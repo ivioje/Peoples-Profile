@@ -13,6 +13,12 @@ import Login from './routes/login/Login'
 import SignUp from './routes/sign-up/SignUp'
 import SuccessPage from './routes/SuccessPage'
 import DashboardNav from './components/dashboard/navbar/Navbar'
+import Overview from './routes/dashboard/overview'
+import UploadedProfiles from './routes/dashboard/uploads'
+import SavedProfiles from './routes/dashboard/saved'
+import Bookmarks from './routes/dashboard/bookmarked'
+import Sharedprofiles from './routes/dashboard/shared'
+import Trash from './routes/dashboard/trash'
 
 const router = createBrowserRouter([
   {
@@ -60,8 +66,29 @@ const router = createBrowserRouter([
     element: <DashboardNav />,
     children: [
       {
-        
-      }
+        path: 'overview',
+        element: <Overview />
+      },
+      {
+        path: 'uploads',
+        element: <UploadedProfiles />
+      },
+      {
+        path: 'saved',
+        element: <SavedProfiles />
+      },
+      {
+        path: 'bookmarks',
+        element: <Bookmarks />
+      },
+      {
+        path: 'shared',
+        element: <Sharedprofiles />
+      },
+      {
+        path: 'trash',
+        element: <Trash />
+      },
     ]
   }
 ])

@@ -12,7 +12,7 @@ const DashboardNav = () => {
         <>
             <section className={`bg-secondary h-[80px] ex:h-[71px] w-[100%] ${styles.flexBtw} flex-wrap`}>
                 <div className=' mx-1 ex:w-[165px] w-[100px] h-[28px]'>
-                    <Link to='/dashboard'>
+                    <Link to='/dashboard/overview'>
                         <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[160px]' />
                     </Link>
                 </div>
@@ -38,7 +38,6 @@ const DashboardNav = () => {
 
             </section>
 
-            <Outlet />
             <Sidenav />
         </>
     )

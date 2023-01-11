@@ -19,12 +19,12 @@ const GenderFilter = () => {
                 <div className={`${styles.flexBtw} flex-wrap h-[50px] checkContent `}>
                     <label className='border'>
                         <input type='checkbox' className=' ' />{' '}
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                         <h6>Male</h6>
                     </label>
                     <label className='border'>
                         <input type='checkbox' />{' '}
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                         <h6>Female</h6>
                     </label>
                 </div>

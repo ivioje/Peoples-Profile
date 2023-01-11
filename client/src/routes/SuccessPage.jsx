@@ -10,7 +10,7 @@ export default function SuccessPage() {
             <h1 className='font-[900] text-[20px] my-8 '>
                 Account creation successful!
             </h1>
-            <Link to='/dashboard' className='font-bold text-primary text-[18px]'>
+            <Link to='/dashboard/overview' className='font-bold text-primary text-[18px]'>
                 Go to dashboard
             </Link>
         </div>

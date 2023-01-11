@@ -21,7 +21,7 @@ const Login = () => {
                         </label>
                         <p className='text-gradient cursor-pointer'>Forgot password?</p>
                     </div>
-                    <Link to='/dashboard' className='w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center '>
+                    <Link to='/dashboard/overview' className='w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center '>
                         Log in
                     </Link>
                     <p>Or</p>

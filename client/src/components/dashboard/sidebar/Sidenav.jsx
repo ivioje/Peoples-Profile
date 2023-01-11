@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import { BsChevronRight, BsX } from 'react-icons/bs';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { sidenavItems } from '../../../constants';
 import styles from '../../../style'
 
 const DashboardNav = () => {
     const [toggle, setToggle] = useState(false);
+
+    let activeStyle = {
+        color: 'text-primary',
+        background: 'rgba(51, 66, 87, 0.26)'
+    }
     return (
-        <>
+        <div className=' flex'>
             <section className={` h-full w-full ss:w-[350px] ${styles.flexBtw} flex-wrap relative`}>
                 <div className={` font-poppins ${styles.flexCol} `}>
                     <ul className='list-none flex hide flex-col justify-center items-start flex-1 pt-20 pl-20 pr-2 pb-2'>
                         {
                             sidenavItems.map((item => (
-                                <NavLink to={`/${item.id}`} key={item.id} className='py-2'>
+                                <NavLink to={`${item.id}`} key={item.id} className='py-2 w-full pl-1 rounded-[3px]'
+                                    style={({ isActive }) => isActive ? activeStyle : undefined}>
                                     {item.title}
                                 </NavLink>
                             )))
@@ -40,9 +46,12 @@ const DashboardNav = () => {
                         </ul>
                     </div>
                 </div>
-
             </section>
-        </>
+                <div id='detail'>
+                    <Outlet />
+                </div>
+
+        </div>
     )
 }
 
