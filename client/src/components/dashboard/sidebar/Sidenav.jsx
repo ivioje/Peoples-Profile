@@ -35,7 +35,7 @@ const DashboardNav = () => {
                     </span>
 
                     <div className={`${toggle ? 'flex' : 'hidden'} dashBSidebar h-full flex-col items-center justify-between `}>
-                        <ul className={`flex justify-start absolute h-fit w-[100vw] left-0 flex-col z-1 pt-14 pb-2 px-1 bg-secondary`}>
+                        <ul className={`flex justify-start absolute h-fit w-[100vw] left-0 flex-col z-1 pt-14 pb-2 px-1 bg-white`}>
                             {
                                 sidenavItems.map((item => (
                                     <NavLink to={`${item.id}`} key={item.id} className='py-2 w-full pl-1 rounded-[3px]'
@@ -49,7 +49,7 @@ const DashboardNav = () => {
                     </div>
                 </div>
             </section>
-            <div id='detail'>
+            <div className='mt-10'>
                 <Outlet />
             </div>
 
