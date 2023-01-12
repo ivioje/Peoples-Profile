@@ -28,7 +28,7 @@ const DashboardNav = () => {
 
                         <NewProfile />
 
-                        <div className='text-primary absolute bottom-[-100px] hidden xs:flex'>
+                        <div className='text-primary absolute bottom-[-80px] hidden xs:flex'>
                             <Link to='/profiles' >
                                 Back to profiles page
                             </Link>
@@ -68,7 +68,7 @@ const DashboardNav = () => {
 
             </section>
 
-            <div className='mt-10 border w-auto '>
+            <div className='mt-10 w-auto '>
                 <Outlet />
             </div>
 

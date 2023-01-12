@@ -10,6 +10,7 @@ import ChooseTemplates from './ChooseTemplates';
 import DbSearch from './DbSearch';
 import User from './User';
 import { BsCaretDown } from 'react-icons/bs';
+import Account from './Account';
 
 const DashboardNav = () => {
     const [toggle, setToggle] = useState(false);
@@ -45,8 +46,9 @@ const DashboardNav = () => {
                     <DbSearch />
                     <User />
                 </div>
-
             </section>
+
+            {/* <Account /> */}
 
             <Sidenav />
         </>
