@@ -2,6 +2,7 @@ import React from 'react'
 import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import { quickLinks } from '../../constants'
 import logo from '../../assets/logo.svg'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => (
     <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-lightGray 
@@ -25,14 +26,14 @@ const Footer = () => (
                 <div className='flex justify-between flex-wrap my-4 '>
                     <div className='flex flex-col mr-20 pt-2'>
                         {quickLinks.slice(0, 5).map((link) => (
-                            <a href={`/${link.title.toLowerCase()}`} key={link.id} className='p-1'>{link.title}</a>
+                            <NavLink to={`/${link.id}`} key={link.id} className='p-1'>{link.title}</NavLink>
                         ))}
                     </div>
                     <div className='flex flex-col pt-2'>
                         {quickLinks.slice(5, 8).map((link) => (
-                            <a href={`/${link.title.toLowerCase()}`} key={link.id} className='p-1'>
+                            <NavLink to={`/${link.id}`} key={link.id} className='p-1'>
                                 {link.title}
-                            </a>
+                            </NavLink>
                         ))}
                     </div>
                 </div>

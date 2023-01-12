@@ -10,6 +10,10 @@ import Footer from '../footer/Footer';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    let activeStyle = {
+        fontWeight: '900'
+    }
+
     return (
         <>
             <section className={`bg-primary h-[80px] ex:h-[71px] w-[100%] ${styles.flexBtw} flex-wrap`}>
@@ -22,7 +26,8 @@ const Navbar = () => {
                     <ul className='list-none ex:flex hidden justify-end items-center flex-1'>
                         {navLinks.map((navlink) => (
                             <div key={navlink.id} className='ex:text-dimWhite px-3 cursor-pointer' >
-                                <NavLink to={`/${navlink.id}`} className={navlink.item ? 'font-bold navLinks' : 'font-normal navLinks'} >
+                                <NavLink to={`/${navlink.id}`} className={navlink.item ? 'font-bold navLinks' : 'font-normal navLinks'}
+                                    style={({ isActive }) => isActive ? activeStyle : undefined} >
                                     {navlink.title}
                                 </NavLink>
                             </div>
@@ -41,8 +46,8 @@ const Navbar = () => {
                         <ul className='list-none flex flex-col justify-end items-center flex-1'>
                             {navLinks.map((nav, index) => (
                                 <div key={nav.id} className={'font-poppins font-normal cursor-pointer text-[16px] my-2 text-dimWhite'}>
-                                    <NavLink to={`/${nav.id}`} className='navLinks' 
-                                    onClick={() => setToggle(false)}>
+                                    <NavLink to={`/${nav.id}`} className='navLinks'
+                                        onClick={() => setToggle(false)}>
                                         {nav.title}
                                     </NavLink>
                                 </div>

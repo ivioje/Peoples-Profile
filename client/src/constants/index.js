@@ -5,7 +5,7 @@ import person3 from '../assets/person3.png';
 
 export const navLinks = [
     {
-        id: 'home',
+        id: '',
         title: 'Home',
     },
     {
@@ -70,7 +70,7 @@ export const testimonials = [
 
 export const quickLinks = [
     {
-        id: 'home',
+        id: '',
         title: 'Home',
     },
     {
@@ -90,11 +90,11 @@ export const quickLinks = [
         title: 'About',
     },
     {
-        id: 'upload',
+        id: 'dashboard',
         title: 'Upload Profile',
     },
     {
-        id: 'view',
+        id: 'profiles',
         title: 'View Profile',
     },
     {

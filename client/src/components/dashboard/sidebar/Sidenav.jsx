@@ -9,7 +9,7 @@ const DashboardNav = () => {
     const [toggle, setToggle] = useState(false);
 
     let activeStyle = {
-        color: 'text-primary',
+        color: '#334257',
         background: 'rgba(51, 66, 87, 0.26)'
     }
     return (
