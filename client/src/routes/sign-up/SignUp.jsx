@@ -15,11 +15,11 @@ const SignUp = () => {
 
                 <form className={`${styles.flexBtw} flex-col mt-12 w-full sm:w-[90%] px-1`}>
                     <input name='email' type='text' placeholder='Username'
-                        className='h-9 p-2 mb-8 placeholder: placeholder:font-[100] bg-slate-50 rounded w-full border border-gray-100' />
+                        className='h-9 p-2 mb-8 placeholder: placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100' />
                     <input name='email' type='text' placeholder='Email address'
-                        className='h-9 p-2 mb-8 placeholder: placeholder:font-[100] bg-slate-50 rounded w-full border border-gray-100' />
+                        className='h-9 p-2 mb-8 placeholder: placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100' />
                     <input name='password' type='password' placeholder='Password'
-                        className='h-9 p-2 mb-6 placeholder: placeholder:font-[100] bg-slate-50 rounded w-full border border-gray-100' />
+                        className='h-9 p-2 mb-6 placeholder: placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100' />
                     <div className={`${styles.flexBtw} flex-wrap w-full text-[15px]`}>
                         <p>Passwords must be at least 8 characters long</p>
                     </div>

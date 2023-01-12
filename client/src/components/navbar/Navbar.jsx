@@ -41,13 +41,14 @@ const Navbar = () => {
                         <ul className='list-none flex flex-col justify-end items-center flex-1'>
                             {navLinks.map((nav, index) => (
                                 <div key={nav.id} className={'font-poppins font-normal cursor-pointer text-[16px] my-2 text-dimWhite'}>
-                                    <NavLink to={`/${nav.id}`} className='navLinks'>
+                                    <NavLink to={`/${nav.id}`} className='navLinks' 
+                                    onClick={() => setToggle(false)}>
                                         {nav.title}
                                     </NavLink>
                                 </div>
                             ))}
                             <div className='mt-2'>
-                                <GetStarted />
+                                <GetStarted setToggle={setToggle} />
                             </div>
                         </ul>
                     </div>
