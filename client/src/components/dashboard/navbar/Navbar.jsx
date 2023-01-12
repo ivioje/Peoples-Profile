@@ -34,9 +34,8 @@ const DashboardNav = () => {
                         More <BsCaretDown className='m-1' />
                     </h5>
 
-                    <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-secondary absolute top-20 mx-4 my-2 
-                 rounded-xl sidebar mt-7 z-50`}>
-                        <div className='flex flex-col-reverse h-[80px] w-[150px] justify-between items-center'>
+                    <div className={`${toggle ? 'flex' : 'hidden'} left p-6 bg-secondary absolute top-20 mx-4 my-2 rounded-xl sidebar mt-7 z-50`}>
+                        <div className='flex flex-col-reverse h-[80px] w-[140px] justify-between items-center'>
                             <CreateProfile setToggle={setToggle} />
                             <ChooseTemplates setToggle={setToggle} />
                         </div>

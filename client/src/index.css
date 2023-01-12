@@ -389,3 +389,8 @@ width: 90%;
     display: none;
   }
 }
+@media screen and (max-width: 420px) {
+  .left {
+    left: 50px;
+  }
+}
