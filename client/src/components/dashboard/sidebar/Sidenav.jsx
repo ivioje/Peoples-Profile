@@ -39,8 +39,7 @@ const DashboardNav = () => {
                 <div className='sm:hidden flex flex-col left-0 absolute  '>
                     <span onClick={() => setToggle((prev) => !prev)}
                         className='p-1 h-[35px] w-[35px] bg-primary text-secondary rounded-full fixed flex items-center justify-center text-[20px] z-50 cursor-pointer'>
-                        {toggle ? <BsX className='' /> :
-                            <BsChevronRight className='' />}
+                        {toggle ? <BsX /> : <BsChevronRight />}
                     </span>
 
                     <div className={`${toggle ? 'flex' : 'hidden'} h-full flex-col items-center justify-between `}>
