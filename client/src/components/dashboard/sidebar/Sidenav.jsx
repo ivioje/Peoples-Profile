@@ -68,7 +68,7 @@ const DashboardNav = () => {
 
             </section>
 
-            <div className='mt-10 w-auto '>
+            <div className='mt-10 sm:mt-2 w-auto '>
                 <Outlet />
             </div>
 
