@@ -4,6 +4,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import { sidenavItems } from '../../../constants';
 import styles from '../../../style'
 import NewProfile from '../NewProfile';
+import menu from '../../../assets/menu-icon.svg'
 
 const DashboardNav = () => {
     const [toggle, setToggle] = useState(false);
@@ -37,13 +38,13 @@ const DashboardNav = () => {
                 </div>
 
                 <div className='sm:hidden flex flex-col left-0 absolute  '>
-                    <span onClick={() => setToggle((prev) => !prev)}
-                        className='p-1 h-[35px] w-[35px] bg-primary text-secondary rounded-full fixed flex items-center justify-center text-[20px] z-50 cursor-pointer'>
-                        {toggle ? <BsX /> : <BsChevronRight />}
-                    </span>
+                    <div onClick={() => setToggle((prev) => !prev)}
+                        className='p-1 absolute top-[-51px] cursor-pointer h-[27px] w-[27px]'>
+                        <img src={menu} alt='menu' className='w-full h-full' />
+                    </div>
 
                     <div className={`${toggle ? 'flex' : 'hidden'} h-full flex-col items-center justify-between `}>
-                        <ul className={`flex justify-start absolute dashBSidebar h-fit w-[100vw] left-0 flex-col z-40 pt-14 pb-2 px-1 bg-white`}>
+                        <ul className={`flex justify-start absolute dashBSidebar h-fit w-[100vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white`}>
                             {
                                 sidenavItems.map((item => (
                                     <NavLink to={`${item.id}`} key={item.id} className='py-2 w-full px-1 rounded-[3px]'

@@ -5,7 +5,7 @@ import styles from '../../../style'
 
 const RecentProfiles = () => (
     <section className='font-poppins w-full sm:w-[70vw] text-[18px] px-4 sm:px-1 z-[-1]'>
-        <div className='my-5 text-[14px] xs:text-[18px]'>
+        <div className='my-5 text-[16px] xs:text-[18px] text-center'>
             <p>Hello Taylor, welcome to your dashboard. Create something awesome 😎</p>
         </div>
         <div className={`${styles.flexBtw} mb-8`}>
@@ -18,13 +18,13 @@ const RecentProfiles = () => (
 
         <div className={`${styles.flexBtw} overflow-x-scroll overflow-y-hidden relative font-[400]`}>
             {cardItems.map(item => (
-                <div key={item.id} className='m-1 h-[110px] sm:h-[120px] flex flex-col bg-center bg-cover bg-no-repeat text-secondary rounded-[15px] cursor-pointer'
+                <div key={item.id} className='m-1 h-[120px] flex flex-col bg-center bg-cover bg-no-repeat text-secondary rounded-[15px] cursor-pointer'
                     style={{ 'backgroundImage': `url(${item.photo})` }}>
                     <div className='profilesOverlay w-[200px] rounded-[15px]'>
-                        <h1 className='h-fit p-2 uppercase font-firaSans '>
+                        <h1 className='h-fit p-1 uppercase font-firaSans '>
                             {item.name}
                         </h1>
-                        <h4 className='h-fit p-2 text-[16px]'>
+                        <h4 className='h-fit px-1 text-[16px]'>
                             {item.work}
                         </h4>
                         <div className={`${styles.flexBtw} absolute bottom-0 w-[200px] p-2`}>

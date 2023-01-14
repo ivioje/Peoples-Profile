@@ -413,7 +413,7 @@ img {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 350px) {
   .left {
     left: 70px;
   }
