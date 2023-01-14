@@ -4,8 +4,8 @@ import { cardItems } from '../../../constants'
 import styles from '../../../style'
 
 const RecentProfiles = () => (
-    <section className='font-poppins w-full sm:w-[70vw] text-[16px] xs:text-[18px] px-4 sm:px-1'>
-        <div className='my-5'>
+    <section className='font-poppins w-full sm:w-[70vw] text-[18px] px-4 sm:px-1'>
+        <div className='my-5 text-[14px] xs:text-[18px]'>
             <p>Hello Taylor, welcome to your dashboard. Create something awesome 😎</p>
         </div>
         <div className={`${styles.flexBtw} mb-8`}>
