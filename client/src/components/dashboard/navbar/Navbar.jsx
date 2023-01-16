@@ -16,9 +16,9 @@ const DashboardNav = () => {
     const [toggle, setToggle] = useState(false);
     return (
         <>
-            <section className={`bg-secondary h-[80px] ex:h-[71px] w-[100%] flex sm:${styles.flexBtw} items-center justify-center  flex-wrap font-firaSans`}>
+            <section className={`bg-secondary h-[80px] ex:h-[71px] w-[100%] flex sm:${styles.flexBtw} items-center justify-center font-firaSans`}>
                 <div className='flex items-center xs:justify-start justify-between'>
-                    <div className=' ml-6 sm:ml-1 mx-1 ex:w-[165px] xs:w-[100px] h-[28px]'>
+                    <div className='ml-6 sm:ml-1 mx-1 ex:w-[165px] xs:w-[100px] h-[28px]'>
                         <Link to='/dashboard/overview'>
                             <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[120px]' />
                         </Link>
@@ -30,7 +30,7 @@ const DashboardNav = () => {
                 </div>
 
 
-                <div className={`${styles.flexBtw} sm:w-[250px] px-3 w-[160px] ss:w-[200px] flex justify-between`}>
+                <div className={`${styles.flexBtw} sm:w-[250px] px-3 w-[140px] ss:w-[190px] flex justify-between flex-wrap`}>
                     <div className='sm:hidden flex'>
                         <h5 className={`${styles.flexCenter} cursor-pointer text-primary bg-slate-300 p-1 xs:p-2 mr-[]`} onClick={() => setToggle((prev) => !prev)}>
                             More <BsCaretDown className='m-1' />
@@ -40,11 +40,12 @@ const DashboardNav = () => {
                             <div className='flex flex-col-reverse h-[80px] w-[170px] justify-between items-center'>
                                 <CreateProfile setToggle={setToggle} />
                                 <ChooseTemplates setToggle={setToggle} />
+                                <div className=''>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <DbSearch />
+                        <DbSearch />
                     <User />
                 </div>
             </section>

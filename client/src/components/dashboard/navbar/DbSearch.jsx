@@ -5,9 +5,17 @@ import searchIcon from '../../../assets/db-search.svg'
 const DbSearch = () => {
   return (
     <div className='cursor-pointer '>
-        {/*on click it should open the search component*/}
-        <img src={searchIcon} alt='' className='sm:flex hidden'/>
-        <BsSearch className='sm:hidden text-primary text-[20px] mt-1' />
+      {/*on click it should open the search component*/}
+      {/* <img src={searchIcon} alt='' className='sm:flex hidden' /> */}
+      <div className='sm:flex items-center hidden bg-slate-300 p-1 w-[170px]'>
+        <span className='mx-1'>
+          <BsSearch />
+        </span>
+        <input type='search' name='search' placeholder='Search' className='bg-slate-300 w-[130px] mx-1 placeholder:text-primary outline-none' />
+      </div>
+      <span className='sm:hidden flex text-primary text-[18px] mt-1'>
+        <BsSearch />
+      </span>
     </div>
 
   )
