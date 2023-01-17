@@ -43,11 +43,11 @@ const DashboardNav = () => {
                         <img src={menu} alt='menu' className='w-full h-full' />
                     </div>
 
-                    <div className={`${toggle ? 'flex' : 'hidden'} h-full flex-col items-center justify-between`}>
-                        <ul className={`flex justify-start absolute dashBSidebar h-fit w-[100vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b shadow-md`}>
+                    <div className={`${toggle ? 'flex' : 'hidden'} h-[100vh] flex-col items-center justify-between`}>
+                        <ul className={`flex justify-start absolute dashBSidebar h-fit w-[100vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b shadow-sm`}>
                             {
                                 sidenavItems.map((item => (
-                                    <NavLink to={`${item.id}`} key={item.id} className='py-2 w-full px-1 rounded-[3px]'
+                                    <NavLink to={`${item.id}`} key={item.id} className='py-3 w-full px-1 rounded-[3px]'
                                         style={({ isActive }) => isActive ? activeStyle : undefined}
                                         onClick={() => setToggle(false)}>
                                         {item.title}
