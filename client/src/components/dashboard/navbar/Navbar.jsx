@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../../../assets/dashboardLogo.svg';
-import close from '../../../assets/close.svg';
-import menu from '../../../assets/menu.svg';
 import styles from '../../../style'
-import { Outlet, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sidenav from '../sidebar/Sidenav';
 import CreateProfile from './CreateProfile';
 import ChooseTemplates from './ChooseTemplates';
