@@ -16,7 +16,7 @@ const DashboardNav = () => {
         <>
             <section className={`bg-secondary h-[80px] ex:h-[71px] w-[100vw] sm:${styles.flexBtw} border flex font-firaSans`}>
                 <div className='flex items-center xs:justify-between justify-between'>
-                    <div className='ml-6 sm:ml-1 mx-1 sm:w-[165px] xs:w-full h-[28px]'>
+                    <div className='ml-8 sm:ml-1 mx-1 sm:w-[165px] xs:w-full h-[28px]'>
                         <Link to='/dashboard/overview'>
                             <img src={logo} alt='peoples profiles' className='w-[100%] h-[100%] min-w-[120px]' />
                         </Link>
