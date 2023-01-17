@@ -5,7 +5,7 @@ import styles from '../../../style'
 
 const RecentProfiles = () => (
     <section className='font-poppins w-full sm:w-[70vw] text-[18px] px-4 sm:px-1 z-[-1]'>
-        <div className='mt-3 mb-10 text-[16px] xs:text-[18px] text-center'>
+        <div className='mt-3 mb-10 text-[16px] ex:text-[18px] text-center'>
             <p>Hello Taylor, welcome to your dashboard. Create something awesome 😎</p>
         </div>
         <div className={`${styles.flexBtw} mb-8`}>
