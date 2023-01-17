@@ -224,7 +224,7 @@ export const tempItems = [
     {
         id: 1,
         type: 'Developer',
-        color: 'rgba(0, 0, 0, 0.85)',
+        color: '#8271B2',
     },
 
     {

@@ -4,11 +4,8 @@ import { cardItems } from '../../../constants'
 import styles from '../../../style'
 
 const RecentProfiles = () => (
-    <section className='font-poppins w-full sm:w-[70vw] text-[18px] px-4 sm:px-1 z-[-1]'>
-        <div className='mt-3 mb-10 text-[16px] ex:text-[18px] text-center'>
-            <p>Hello Taylor, welcome to your dashboard. Create something awesome 😎</p>
-        </div>
-        <div className={`${styles.flexBtw} mb-8`}>
+    <div className='text-[18px] px-4 sm:px-1 z-[-1]'>
+        <div className={`${styles.flexBtw} mb-6`}>
             <div className='text-[16px] flex items-center'>
                 <span className='mx-1'><BsClockHistory /></span>
                 <h4 className='mx-1'> Recent profiles</h4>
@@ -35,7 +32,7 @@ const RecentProfiles = () => (
                 </div>
             ))}
         </div>
-    </section>
+    </div>
 )
 
 export default RecentProfiles
