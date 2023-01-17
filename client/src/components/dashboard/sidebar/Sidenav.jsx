@@ -15,7 +15,7 @@ const DashboardNav = () => {
     }
     return (
         <div className='sm:flex '>
-            <section className={` h-full w-full ss:w-[250px] md:w-[350px] ${styles.flexBtw} flex-col flex-wrap relative font-poppins `}>
+            <section className={`h-full w-full ss:w-[250px] md:w-[350px] ${styles.flexBtw} flex-col flex-wrap relative font-poppins `}>
                 <div className={` font-poppins ${styles.flexCol} `}>
                     <ul className='list-none flex hide flex-col justify-center items-start flex-1 pt-20 pl-0 md:pl-20 pr-2 pb-2'>
                         {
@@ -43,8 +43,8 @@ const DashboardNav = () => {
                         <img src={menu} alt='menu' className='w-full h-full' />
                     </div>
 
-                    <div className={`${toggle ? 'flex' : 'hidden'} h-full flex-col items-center justify-between `}>
-                        <ul className={`flex justify-start absolute dashBSidebar h-fit w-[100vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white`}>
+                    <div className={`${toggle ? 'flex' : 'hidden'} h-full flex-col items-center justify-between`}>
+                        <ul className={`flex justify-start absolute dashBSidebar h-fit w-[100vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b`}>
                             {
                                 sidenavItems.map((item => (
                                     <NavLink to={`${item.id}`} key={item.id} className='py-2 w-full px-1 rounded-[3px]'
@@ -56,7 +56,7 @@ const DashboardNav = () => {
                             }
                             <NewProfile />
 
-                            <div className='text-primary mt-10'>
+                            <div className='text-primary mt-10 pb-24'>
                                 <Link to='/profiles' >
                                     Back to profiles page
                                 </Link>

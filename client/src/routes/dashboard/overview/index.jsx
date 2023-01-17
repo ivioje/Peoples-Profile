@@ -11,7 +11,7 @@ const Overview = () => (
         <RecentProfiles />
         <RecentTemplates />
 
-        <div className='absolute flex items-center mx-3 sm:mx-1 mt-14'>
+        <div className='absolute flex items-center mx-3 mt-14'>
             <p className='font-[500]'>Total profile views:</p>
             <span className='font-[800] text-[20px] mx-3'>30</span>
         </div>
