@@ -15,12 +15,12 @@ const DashboardNav = () => {
     }
     return (
         <div className='sm:flex '>
-            <section className={`h-full w-full ss:w-[250px] md:w-[350px] ${styles.flexBtw} flex-col flex-wrap relative font-poppins `}>
+            <section className={`h-full w-full ss:w-[250px] sm:w-[370px] ${styles.flexBtw} flex-col flex-wrap relative font-poppins `}>
                 <div className={` font-poppins ${styles.flexCol} `}>
                     <ul className='list-none flex hide flex-col justify-center items-start flex-1 pt-20 pl-0 md:pl-20 pr-2 pb-2'>
                         {
                             sidenavItems.map((item => (
-                                <NavLink to={`${item.id}`} key={item.id} className='py-2 w-full px-1 rounded-[3px]'
+                                <NavLink to={`${item.id}`} key={item.id} className='py-2 w-full px-1 m-1 rounded-[3px]'
                                     style={({ isActive }) => isActive ? activeStyle : undefined}>
                                     {item.title}
                                 </NavLink>

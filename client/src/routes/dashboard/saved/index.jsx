@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SavedProfiles = () => {
-  return (
-    <div>SavedProfiles</div>
-  )
-}
+const SavedProfiles = () => (
+  <section>
+    
+  </section>
+)
 
 export default SavedProfiles

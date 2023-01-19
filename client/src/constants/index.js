@@ -143,21 +143,21 @@ export const cardItems = [
     },
     {
         id: 2,
-        name: 'Taylor Lee',
+        name: 'Christopher Stone',
         work: 'Developer',
         photo: person2,
         fill: false
     },
     {
         id: 3,
-        name: 'Taylor Lee',
+        name: 'John Doe',
         work: 'Data Scientist',
         photo: person1,
         fill: false
     },
     {
         id: 4,
-        name: 'Taylor Lee',
+        name: 'Clarie Thompson',
         work: 'Developer',
         photo: person1,
         fill: false
