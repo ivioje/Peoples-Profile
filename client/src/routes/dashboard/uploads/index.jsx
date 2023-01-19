@@ -13,7 +13,7 @@ const UploadedProfiles = () => {
         </p>
         </div>
         <hr />
-        <p className='my-2'>
+        <p className='my-2 opacity-70'>
           Here, you'll find all the profiles you've created
         </p>
       </div>

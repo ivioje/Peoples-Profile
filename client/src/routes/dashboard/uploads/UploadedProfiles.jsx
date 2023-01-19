@@ -10,7 +10,7 @@ const ProfileUploads = () => {
             {cardItems.slice(0, 5).map(item => (
                 <div className='xs:w-[200px] w-full m-4' key={item.id}>
                     <div className={`h-[114px] bg-cover bg-no-repeat bg-center text-secondary rounded-sm`}
-                        style={{ 'backgroundImage': `url(${person})` }}>
+                        style={{ 'backgroundImage': `url(${item.photo})` }}>
                         <div className='profilesOverlay p-1 flex flex-col justify-between flex-wrap rounded-sm'>
                             <div className='text-[15px]'>
                                 <div className={`flex justify-start items-center uppercase tracking-[1px] font-bold`}>
