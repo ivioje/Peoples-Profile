@@ -4,7 +4,7 @@ import RecentTemplates from './RecentTemplates'
 
 const Overview = () => (
     <section className='font-poppins w-full sm:w-[70vw] '>
-        <div className='mt-3 mb-10 text-[16px] ex:text-[18px] text-center'>
+        <div className='mt-3 mb-10 text-[20px] text-center font-garamond font-[500]'>
             <p>Hello Taylor, welcome to your dashboard. Create something awesome 😎</p>
         </div>
 

@@ -5,10 +5,10 @@ import uploadIcon from '../../../assets/cloud-upload.svg'
 const UploadedProfiles = () => {
   return (
     <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center'>
-      <div className='sm:mt-10 mt-1 xs:p-3  '>
-        <div className='flex items-center'>
+      <div className='sm:mt-10 mt-1 xs:p-3 w-full '>
+        <div className='flex items-center font-garamond'>
           <img src={uploadIcon} alt="icon" />
-        <p className='w-full mx-1'>
+        <p className='text-[18px] font-[500] mx-1'>
           Your uploaded profiles
         </p>
         </div>
