@@ -13,7 +13,7 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         firaSans: ['Fira Sans Condensed', 'sans-serif'],
-        garamond: ['Cormorant Garamond', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif']
       },
       shadow: {
         'mid': '0px 6px 2px #548CA8',

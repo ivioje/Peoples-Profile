@@ -18,7 +18,7 @@ const ProfileUploads = () => {
                                 </div>
                                 <h3 className='capitalize font-medium'>{item.work}</h3>
                             </div>
-                            <h6 className='uppercase text-[12px] tracking-[2px]'>september 10, 2022</h6>
+                            <h6 className='uppercase text-[12px] tracking-[2px]'>sept 10, 2022</h6>
                         </div>
                     </div>
 

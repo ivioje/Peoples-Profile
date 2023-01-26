@@ -6,7 +6,7 @@ import styles from '../../../style'
 const RecentProfiles = () => (
     <div className='text-[18px] px-4 sm:px-1 z-[-1]'>
         <div className={`${styles.flexBtw} mb-6`}>
-            <div className='text-[18px] flex items-center font-garamond font-[500]'>
+            <div className='text-[16px] flex items-center font-montserrat'>
                 <span className='mx-1'><BsClockHistory /></span>
                 <h4 className='mx-1'> Recent profiles</h4>
             </div>
