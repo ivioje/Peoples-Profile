@@ -14,7 +14,7 @@ const RecentTemplates = () => {
                 <span className='cursor-pointer'><BsArrowRight /></span>
             </div>
 
-            <div className={`${styles.flexBtw} overflow-x-scroll overflow-y-hidden relative font-[400]`}>
+            <div className={`${styles.flexBtw} overflow-x-scroll overflow-y-hidden relative font-[400] overviewScroll`}>
                 {tempItems.map(item => (
                     <div key={item.id} className={`m-1 h-[120px] flex flex-col bg-center bg-cover bg-no-repeat text-secondary rounded-[15px] cursor-pointer p-4`}
                         style={{ 'background': `linear-gradient(180deg, ${item.color} 0%, rgba(0, 0, 0, 0.85) 100%) ` }}>

@@ -3,7 +3,7 @@ import RecentProfiles from './RecentProfiles'
 import RecentTemplates from './RecentTemplates'
 
 const Overview = () => (
-    <section className='font-poppins w-full sm:w-[70vw] '>
+    <section className='font-poppins pl-2 pr-2 pb-2'>
         <div className='mt-3 mb-10 text-[17px] font-normal text-center font-montserrat'>
             <p>Hello Taylor, welcome to your dashboard. Create something awesome 😎</p>
         </div>

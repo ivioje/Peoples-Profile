@@ -14,7 +14,7 @@ const DashboardNav = () => {
     const [toggle, setToggle] = useState(false);
     return (
         <>
-            <section className={`bg-secondary h-[80px] ex:h-[71px] w-[100vw] sm:${styles.flexBtw} border flex font-firaSans`}>
+            <section className={`bg-secondary h-[80px] ex:h-[71px] w-[100vw] sm:${styles.flexBtw} border flex font-firaSans sm:fixed sm:z-50`}>
                 <div className='flex items-center xs:justify-between justify-between'>
                     <div className='ml-8 sm:ml-1 mx-1 sm:w-[165px] xs:w-full h-[28px]'>
                         <Link to='/dashboard/overview'>

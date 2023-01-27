@@ -15,8 +15,8 @@ const DashboardNav = () => {
     }
     return (
         <div className='sm:flex '>
-            <section className={`h-full w-full ss:w-[250px] sm:w-[370px] ${styles.flexBtw} flex-col flex-wrap relative font-poppins `}>
-                <div className={` font-poppins ${styles.flexCol} `}>
+            <section className={`h-full w-full ss:w-[250px] sm:w-[25vw] ${styles.flexBtw} flex-col flex-wrap relative sm:fixed font-poppins`}>
+                <div className={` font-poppins ${styles.flexCol} sm:h-[550px] overflow-y-scroll sm:barOverflow sm:mt-[60px] `}>
                     <ul className='list-none flex hide flex-col justify-center items-start flex-1 pt-20 pl-0 md:pl-20 pr-2 pb-2'>
                         {
                             sidenavItems.map((item => (
@@ -29,7 +29,7 @@ const DashboardNav = () => {
 
                         <NewProfile />
 
-                        <div className='text-primary absolute bottom-[-80px] hidden xs:flex'>
+                        <div className='text-primary hidden xs:flex'>
                             <Link to='/profiles' >
                                 Back to profiles page
                             </Link>
@@ -68,7 +68,7 @@ const DashboardNav = () => {
 
             </section>
 
-            <div className='w-auto '>
+            <div className='sm:w-[75vw] w-full sm:absolute sm:right-0 sm:top-[65px]'>
                 <Outlet />
             </div>
 
