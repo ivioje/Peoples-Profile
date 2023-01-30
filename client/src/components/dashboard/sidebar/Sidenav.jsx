@@ -37,7 +37,7 @@ const DashboardNav = () => {
                     </ul>
                 </div>
 
-                <div className='sm:hidden flex flex-col left-0 absolute  '>
+                <div className='sm:hidden flex flex-col left-0 absolute h-[100vh] '>
                     <div onClick={() => setToggle((prev) => !prev)}
                         className='p-1 absolute top-[-55px] cursor-pointer h-[32px] w-[32px]'>
                         <img src={menu} alt='menu' className='w-full h-full' />

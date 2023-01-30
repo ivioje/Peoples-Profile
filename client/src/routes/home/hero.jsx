@@ -33,16 +33,11 @@ const Hero = () => (
 
 
 const GetStarted = () => (
-    <Link to='/signup'>
-        <div className={`block text-center border-[3px] w-1/2 sm:w-[240px] border-dotted border-t-primary
-    border-b-[#548CA8] border-l-[#548CA8] border-r-[#548CA8] font-[900] relative bg-lightGray p-2 text-[20px]`}>
-            <button className='text-gradient mx-2'>
-                GET STARTED {' '}
-            </button>
-            <span className='xs:inline-block hidden mx-2 absolute rotate-[-45deg] text-primary p-1'>
-                <BsArrowRight />
-            </span>
-        </div>
+    <Link to='/signup' className={`block text-center border-[3px] w-1/2 ss:w-[260px] border-dotted border-t-primary
+    border-b-[#548CA8] border-l-[#548CA8] border-r-[#548CA8] font-[900] bg-lightGray p-2 text-[20px] cursor-pointer rounded-lg`}>
+        <button className='text-gradient mx-2'>
+            GET STARTED {' '}
+        </button>
     </Link>
 )
 

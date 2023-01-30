@@ -239,7 +239,7 @@ img {
 }
 
 .black__gradient {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(146, 9, 173, 0.6);
   filter: blur(800px);
   opacity: .8;
 }
@@ -262,9 +262,9 @@ img {
   .barOverflow {
     overflow-y: hidden; 
   }
-  .overviewScroll::-webkit-scrollbar-thumb{
-    height: 0px;
-  }
+  /* .overviewScroll::-moz-progress-bar{
+    display: none;
+  } */
 }
 
 @supports (-moz-appearance:none) {
