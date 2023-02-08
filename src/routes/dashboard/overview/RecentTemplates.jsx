@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsArrowRight, BsClockHistory } from 'react-icons/bs'
-import { cardItems, tempItems } from '../../../constants'
+import { tempItems } from '../../../constants'
 import styles from '../../../style'
 
 const RecentTemplates = () => {
