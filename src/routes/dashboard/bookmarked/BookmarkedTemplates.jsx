@@ -14,7 +14,7 @@ const BookmarkedTemplates = () => {
                             <h4 className=' rounded-sm bg-lightGray py-[1px] px-2'>
                                 Template
                             </h4>
-                            <h4 className=' rounded-2xl bg-lightGray py-[1px] px-2'>
+                            <h4 className=' rounded-2xl bg-lightGray py-[5px] px-2'>
                                 open
                             </h4>
                         </div>

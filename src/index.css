@@ -303,11 +303,13 @@ img {
   background: rgba(0, 0, 0, 0.77);
   height: 100%;
   opacity: 1;
-  transition: .5s ease;
+  transition: .6s ease;
+  transform: scale(1.0);
 }
 
 .profilesOverlay:hover {
   opacity: .9;
+  transform: scale(1.05);
 }
 
 .overlay:hover {
