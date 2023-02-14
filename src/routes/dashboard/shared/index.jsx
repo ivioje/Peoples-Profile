@@ -2,6 +2,7 @@ import React from 'react';
 import shareIcon from '../../../assets/shareIcon.svg'
 import styles from '../../../style';
 import SharedProfilesList from '../../../components/dashboard/SharedProfilesList';
+import DashboardHeaders from '../../../components/dashboard/DashboardHeaders';
 
 const Sharedprofiles = () => {
   return (
