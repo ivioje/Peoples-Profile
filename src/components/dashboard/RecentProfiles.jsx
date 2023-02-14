@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsArrowRight, BsClockHistory, BsHeart, BsShareFill } from 'react-icons/bs'
-import { cardItems } from '../../../constants'
-import styles from '../../../style'
+import { cardItems } from '../../constants'
+import styles from '../../style'
 
 const RecentProfiles = () => (
     <div className='text-[18px] px-4 sm:px-1 z-[-1] '>

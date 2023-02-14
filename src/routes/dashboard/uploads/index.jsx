@@ -1,6 +1,6 @@
 import React from 'react';
-import ProfileUploads from './UploadedProfiles';
-import uploadIcon from '../../../assets/cloud-upload.svg'
+import uploadIcon from '../../../assets/cloud-upload.svg';
+import ProfileUploads from '../../../components/dashboard/UploadedProfiles';
 
 const UploadedProfiles = () => {
   return (
@@ -8,9 +8,9 @@ const UploadedProfiles = () => {
       <div className='sm:mt-10 mt-1 xs:p-3 w-full font-montserrat'>
         <div className='flex items-center '>
           <img src={uploadIcon} alt="icon" />
-        <p className='mx-1'>
-          Your uploaded profiles
-        </p>
+          <p className='mx-1'>
+            Your uploaded profiles
+          </p>
         </div>
         <hr />
         <p className='my-2 opacity-70'>
@@ -18,8 +18,8 @@ const UploadedProfiles = () => {
         </p>
       </div>
 
-        <ProfileUploads />
-       
+      <ProfileUploads />
+
     </section>
   )
 }

@@ -238,27 +238,28 @@ img {
   }
 }
 
-.black__gradient {
-  background: rgba(146, 9, 173, 0.6);
+/* .black__gradient {
+  background: rgba(75, 213, 255, 0.6);
   filter: blur(800px);
-  opacity: .8;
+  opacity: .5;
 }
 
 .red__gradient {
-  background: rgba(156, 7, 7, 0.6);
+  background: rgba(7, 146, 156, 0.6);
   filter: blur(750px);
-}
+  opacity: .1;
+} */
 
 /*applies to firefox only */
 
 @-moz-document url-prefix() {
-  .black__gradient {
+  /* .black__gradient {
     opacity: .1;
   }
 
   .red__gradient {
     opacity: .1;
-  }
+  } */
   .barOverflow {
     overflow-y: hidden; 
   }
@@ -309,7 +310,7 @@ img {
 
 .profilesOverlay:hover {
   opacity: .9;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .overlay:hover {

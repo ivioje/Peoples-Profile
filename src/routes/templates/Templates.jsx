@@ -1,8 +1,8 @@
 import React from 'react'
 import Search from '../../components/Search'
-import Header from './header'
-import RequestTemplate from './requestTemplate'
-import TemplatesList from './templatesList'
+import Header from '../../components/templates/header'
+import RequestTemplate from '../../components/templates/requestTemplate'
+import TemplatesList from '../../components/templates/templatesList'
 
 const Templates = () => (
     <section>

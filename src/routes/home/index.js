@@ -1,9 +1,9 @@
-import Hero from './hero'
-import Stats from './stats'
-import Testimonials from './testimonial'
-import Upload from './upload'
-import UseTemplates from './useTemplates'
-import ViewProfiles from './viewProfiles'
+import Hero from '../../components/home/hero'
+import Stats from '../../components/home/stats'
+import Testimonials from '../../components/home/testimonial'
+import Upload from '../../components/home/upload'
+import UseTemplates from '../../components/home/useTemplates'
+import ViewProfiles from '../../components/home/viewProfiles'
 
 export {
 

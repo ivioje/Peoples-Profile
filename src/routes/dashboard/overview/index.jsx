@@ -1,6 +1,6 @@
 import React from 'react'
-import RecentProfiles from './RecentProfiles'
-import RecentTemplates from './RecentTemplates'
+import RecentProfiles from '../../../components/dashboard/RecentProfiles'
+import RecentTemplates from '../../../components/dashboard/RecentTemplates'
 
 const Overview = () => (
     <section className='font-poppins pl-2 pr-2 pb-4'>

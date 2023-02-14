@@ -1,6 +1,6 @@
 import React from 'react';
 import heartIcon from '../../../assets/heartIcon.svg'
-import Favorites from './Favorites';
+import Favorites from '../../../components/dashboard/Favorites';
 
 const SavedProfiles = () => (
   <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center'>

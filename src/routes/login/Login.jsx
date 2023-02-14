@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Auth from '../../components/auth/Auth'
+import InputBox from '../../components/auth/inputBox'
+import { loginInputs } from '../../constants'
 import styles from '../../style'
 
 const Login = () => {
@@ -10,10 +13,11 @@ const Login = () => {
                 <p>Log in to continue</p>
 
                 <form className={`${styles.flexBtw} flex-col mt-12 w-full sm:w-[90%] px-1`}>
-                    <input name='email' type='text' placeholder='Email address or username'
-                        className='h-9 p-2 mb-8 placeholder: placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100' />
-                    <input name='password' type='password' placeholder='Password'
-                        className='h-9 p-2 mb-6 placeholder: placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100' />
+                    {
+                        loginInputs.map(input => (
+                            <InputBox key={input.placeholder} name={input.name} type={input.type} placeholder={input.placeholder} />
+                        ))
+                    }
                     <div className={`${styles.flexBtw} flex-wrap w-full text-[15px]`}>
                         <label className='cursor-pointer'>
                             <input name='rememberMe' type='checkbox' />
@@ -21,21 +25,7 @@ const Login = () => {
                         </label>
                         <p className='text-gradient cursor-pointer'>Forgot password?</p>
                     </div>
-                    <Link to='/dashboard/overview' className='w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center '>
-                        Log in
-                    </Link>
-                    <p>Or</p>
-                    <div className={`${styles.flexBtw} flex-wrap border p-1 my-6`}>
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png'
-                            alt='' className='w-[25px] h-[25px] mx-3 ' />
-                        <button className=' p-1  rounded-[4px]'>Continue with Google</button>
-                    </div>
-                    <p className='text-center'>Don't have an account?
-                        <Link to='/signup' className='text-gradient'>
-                            {' '} Sign up
-                        </Link>
-                    </p>
-
+                    <Auth title={'Sign Up'} btnText={'Log In'} question={'Don\'t have an account?'} linkTo={'dashboard/overview'} linkBack={'signup'} />
                 </form>
             </div>
         </section>

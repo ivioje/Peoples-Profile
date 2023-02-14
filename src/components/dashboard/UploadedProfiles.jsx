@@ -1,9 +1,7 @@
 import React from 'react';
-import styles from '../../../style';
-import person from '../../../assets/person1.jpg'
+import styles from '../../style';
 import { BsTrash } from 'react-icons/bs';
-import { cardItems } from '../../../constants';
-
+import { cardItems } from '../../constants';
 const ProfileUploads = () => {
     return (
         <div className={`flex justify-center items-center flex-wrap `}>

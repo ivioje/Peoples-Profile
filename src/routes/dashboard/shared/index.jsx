@@ -1,7 +1,7 @@
 import React from 'react';
 import shareIcon from '../../../assets/shareIcon.svg'
 import styles from '../../../style';
-import SharedProfilesList from './SharedProfilesList';
+import SharedProfilesList from '../../../components/dashboard/SharedProfilesList';
 
 const Sharedprofiles = () => {
   return (
@@ -10,7 +10,7 @@ const Sharedprofiles = () => {
         <div className='flex items-center '>
           <img src={shareIcon} alt="icon" />
           <p className='mx-1'>
-            Your saved profiles
+            Your shared profiles
           </p>
         </div>
         <hr />

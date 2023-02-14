@@ -26,6 +26,39 @@ export const navLinks = [
     },
 ]
 
+export const signupInputs = [
+    {
+        name: 'name',
+        type: 'text',
+        placeholder: 'Username'
+    },
+    {
+        name: 'email',
+        type: 'email',
+        placeholder: 'Email address'
+    },
+    {
+        name: 'password',
+        type: 'password',
+        placeholder: 'Create a password'
+    },
+
+]
+
+export const loginInputs = [
+    {
+        name: 'name',
+        type: 'email',
+        placeholder: 'Email address'
+    },
+    {
+        name: 'password',
+        type: 'password',
+        placeholder: 'password'
+    },
+
+]
+
 export const stats = [
     {
         id: 1,

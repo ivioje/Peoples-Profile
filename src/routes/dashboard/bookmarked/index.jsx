@@ -1,6 +1,6 @@
 import React from 'react';
 import bookmarkIcon from '../../../assets/bookmark.svg'
-import BookmarkedTemplates from './BookmarkedTemplates';
+import BookmarkedTemplates from '../../../components/dashboard/BookmarkedTemplates';
 
 const Bookmarks = () => {
   return (

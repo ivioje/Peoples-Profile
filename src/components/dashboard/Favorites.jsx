@@ -1,13 +1,12 @@
 import React from 'react'
-import { BsArrow90DegRight, BsArrowRight } from 'react-icons/bs'
-import { cardItems } from '../../../constants'
-import styles from '../../../style'
+import { cardItems } from '../../constants'
+import styles from '../../style'
 
-const SharedProfilesList = () => {
+const Favorites = () => {
     return (
         <div className={`flex justify-center items-center flex-wrap `}>
             {cardItems.map(item => (
-                <div title='click to view' className='xs:w-[200px] w-full m-4 cursor-pointer' key={item.id}>
+                <div className='xs:w-[200px] w-full m-4' key={item.id}>
                     <div className={`h-[114px] bg-cover bg-no-repeat bg-center text-secondary rounded-sm`}
                         style={{ 'backgroundImage': `url(${item.photo})` }}>
                         <div className='profilesOverlay p-1 flex flex-col justify-between flex-wrap rounded-sm'>
@@ -17,7 +16,12 @@ const SharedProfilesList = () => {
                                 </div>
                                 <h3 className='capitalize'>{item.work}</h3>
                             </div>
+                            <h6 className='uppercase text-[12px] tracking-[2px]'>sept 10, 2022</h6>
                         </div>
+                    </div>
+
+                    <div className={`${styles.flexCenter} px-1 py-3 mt-1 text-slate-600 font-[600] `}>
+                        <button>Remove</button>
                     </div>
                 </div>
             ))}
@@ -25,4 +29,4 @@ const SharedProfilesList = () => {
     )
 }
 
-export default SharedProfilesList
+export default Favorites
