@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useRouteError } from "react-router-dom";
-import styles from './style';
+import styles from '../style';
 
 
 export default function ErrorPage() {

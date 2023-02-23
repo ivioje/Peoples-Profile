@@ -5,6 +5,7 @@ import { sidenavItems } from '../../../constants';
 import styles from '../../../style'
 import NewProfile from '../NewProfile';
 import menu from '../../../assets/nav-menu.svg'
+import Footer from '../Footer';
 
 const DashboardNav = () => {
     const [toggle, setToggle] = useState(false);
@@ -70,6 +71,7 @@ const DashboardNav = () => {
 
             <div className='sm:w-[75vw] w-full sm:absolute sm:right-0 sm:top-[65px]'>
                 <Outlet />
+                <Footer />
             </div>
 
         </div>

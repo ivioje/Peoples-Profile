@@ -5,7 +5,7 @@ import styles from '../../style'
 const Favorites = () => {
     return (
         <div className={`flex justify-center items-center flex-wrap `}>
-            {cardItems.map(item => (
+            {cardItems.slice(0, 5).map(item => (
                 <div className='xs:w-[200px] w-full m-4' key={item.id}>
                     <div className={`h-[114px] bg-cover bg-no-repeat bg-center text-secondary rounded-sm`}
                         style={{ 'backgroundImage': `url(${item.photo})` }}>

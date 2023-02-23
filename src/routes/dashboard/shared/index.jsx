@@ -6,7 +6,7 @@ import DashboardHeaders from '../../../components/dashboard/DashboardHeaders';
 
 const Sharedprofiles = () => {
   return (
-    <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center'>
+    <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center min-h-[80vh]'>
       <div className=' sm:mt-10 mt-1 xs:p-3 w-full font-montserrat'>
         <div className='flex items-center '>
           <img src={shareIcon} alt="icon" />

@@ -2,11 +2,12 @@ import React from 'react'
 import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import { quickLinks } from '../../constants'
 import logo from '../../assets/logo.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import footerBg from '../../assets/vanishing-stripes.svg'
 
 const Footer = () => (
-    <section className='flex flex-col pt-10 md:px-[53px] bg-primary text-lightGray 
-    font-poppins text-[15px] sm:text-[16px]'>
+    <section className='flex flex-col pt-10 md:px-[53px] text-lightGray 
+    font-poppins text-[15px] sm:text-[16px] bg-cover bg-no-repeat' style={{ 'backgroundImage': `url(${footerBg})` }}>
         <div className='flex flex-col md:flex-row justify-between pb-10 relative'>
             <div className='p-4'>
                 <div className=''>
@@ -56,8 +57,8 @@ const Footer = () => (
             </div>
         </div>
         <hr className='opacity-10' />
-        <div className='text-center py-6'>
-            <p>&#169;2022 Peoples profile. All rights reserved.</p>
+        <div className='text-center py-6 font-[300]'>
+            <p>&#169;{new Date().getFullYear()} Peoples profile. All rights reserved.</p>
             <small className='font-firaSans font-extralight opacity-90'>
                 Built by <a href='#' className='underline'>Rhoda I.E.</a>
             </small>

@@ -4,9 +4,9 @@ import DashboardHeaders from '../../../components/dashboard/DashboardHeaders';
 import Favorites from '../../../components/dashboard/Favorites';
 
 const SavedProfiles = () => (
-  <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center'>
+  <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center min-h-[80vh]'>
     <DashboardHeaders
-      title={'Your saved profiles'}
+      title={'Saved profiles'}
       title={'See and manage your saved profiles'}
       icon={heartIcon}
     />

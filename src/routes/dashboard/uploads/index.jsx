@@ -5,7 +5,7 @@ import ProfileUploads from '../../../components/dashboard/UploadedProfiles';
 
 const UploadedProfiles = () => {
   return (
-    <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center'>
+    <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center min-h-[80vh]'>
       <DashboardHeaders
         title={'Your uploaded profiles'}
         subtitle={'Here, you\'ll find all the profiles you\'ve created'}
