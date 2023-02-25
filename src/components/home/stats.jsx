@@ -1,26 +1,25 @@
-import { motion } from 'framer-motion';
-import React, { useRef } from 'react';
+import React from 'react';
 import CountUp from 'react-countup';
 import shield from '../../assets/shield.svg'
 import { stats } from '../../constants';
+import { motion } from 'framer-motion';
 
-const Stats = () => {
-    const scrollRef = useRef(null);
+const Stats = ({ scrollref }) => {
     return (
-        <section className='bg-secondary text-center py-10 px-2'>
-            
-            <div className='font-poppins' ref={scrollRef} style={{ overflow: "scroll" }}>
-            <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ root: scrollRef }}
-                    transition= {{ delay: 0.5 }}>
-                <div className='w-full flex justify-center py-3'>
+        <section className='bg-secondary text-center py-10 px-2' >
+            <motion.div viewport={{ root: false }}>
+                <div className='font-poppins' >
+                <motion.div className='w-full flex justify-center py-3' initial={{y: '20vh', opacity: 0}} transition={{duration: 0.5}}
+                        whileInView={{ y: 0, opacity: 1 }}>
                     <img src={shield} alt='shield' />
-                </div>
-                <h2 className='text-gradient text-[25px] md:text-[30px] font-[800]'>Safe and Trusted</h2>
-                <p className=''>Peoples profiles is trusted by hundreds of people, worldwide.</p>
                 </motion.div>
+                <motion.h2 className='text-gradient text-[25px] md:text-[30px] font-[800]'
+                        initial={{ y: '20vh', opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 1 }} >
+                    Safe and Trusted
+                </motion.h2>
+                <motion.p initial={{ y: '20vh'}} whileInView={{ y: 0}} transition={{ duration: 1.01 }} >
+                    Peoples profiles is trusted by hundreds of people, worldwide.
+                </motion.p>
             </div>
 
             <div className='flex justify-between py-[88px]'>
@@ -33,6 +32,7 @@ const Stats = () => {
                     </div>
                 ))}
             </div>
+            </motion.div>
         </section>
     )
 }

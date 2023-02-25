@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
   Hero, Stats, Testimonials, Upload, UseTemplates, ViewProfiles
-} from '.'
+} from '.';
+
 
 const Home = () => {
+  const scrollRef = useRef(null)
+
+
   return (
     <div>
       <Hero />
-      <Stats />
+      <Stats scrollref={scrollRef} />
       <Upload />
       <ViewProfiles />
       <UseTemplates />
