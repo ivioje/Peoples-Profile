@@ -4,7 +4,7 @@ import shield from '../../assets/shield.svg'
 import { stats } from '../../constants';
 import { motion } from 'framer-motion';
 
-const Stats = ({ scrollref }) => {
+const Stats = () => {
     return (
         <section className='bg-secondary text-center py-10 px-2' >
             <motion.div viewport={{ root: false }}>
