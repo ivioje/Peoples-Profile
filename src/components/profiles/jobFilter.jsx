@@ -3,7 +3,7 @@ import { BsX } from 'react-icons/bs'
 import { organizations } from '../../constants'
 import styles from '../../style'
 
-const JobFilter = () => {
+const JobFilter = ({ toggleWorkView }) => {
 
     const getRandomId = (min, max) => {
         let id = Math.random() * (max - min) + min;
@@ -11,16 +11,11 @@ const JobFilter = () => {
     }
 
     return (
-        <section className='font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] z-40 '>
+        <section className={`font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] z-40 ${toggleWorkView? 'block': 'hidden'}`}>
             <div className='border-t absolute left-0 p-3 rounded-[26px] shadow-xl bg-white ss:mx-0 mx-2'>
-                <div className={`${styles.flexBtw} flex-wrap-reverse`}>
                     <p className='m-2 text-[16px] '>
                         Filter profiles by job title.
                     </p>
-                    <span className='text-[30px] cursor-pointer'>
-                        <BsX />
-                    </span>
-                </div>
                 <hr className='m-2' />
                 <div className={`${styles.flexBtw} flex-wrap overflow-y-scroll h-[250px] `}>
                     {organizations.slice(0, 10).map((org) => (

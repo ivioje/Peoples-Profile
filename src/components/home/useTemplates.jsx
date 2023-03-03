@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+import { motion } from 'framer-motion';
 import templateImg from '../../assets/templateImg.svg'
 
 const UseTemplates = () => {
     return (
         <motion.section className='flex justify-between items-center md:flex-row flex-col 
         my-[45px] md:my-[54px] md:px-[100px] px-4 w-full' viewport={{ root: false }}>
-            <motion.div className='w-full md:w-[40%] px-3 pt-5 md:pt-10' initial={{ x: '20vw', opacity: 0 }} transition={{ duration: 0.1 }}
-                whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', bounce: 0.3 }}>
+            <motion.div className='w-full md:w-[40%] px-3 pt-5 md:pt-10' initial={{ x: '20vw', opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', duration: 1, bounce: 0.3 }}>
                 <h1 className='text-[30px] md:text-[40px] font-[700]  font-firaSans'>
                     Use Templates
                 </h1>
@@ -21,7 +21,8 @@ const UseTemplates = () => {
                     <span>Use Templates</span>
                 </button>
             </motion.div>
-            <motion.div className='w-full flex justify-center md:w-[500px] md:my-0 my-10' initial={{ x: '-20vw', opacity: 0 }} transition={{ duration: 0.8 }} whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', bounce: 0.3 }}>
+            <motion.div className='w-full flex justify-center md:w-[500px] md:my-0 my-10' initial={{ x: '-20vw', opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', duration: 1, bounce: 0.3 }}>
                 <img src={templateImg} alt='upload' />
             </motion.div>
         </motion.section>

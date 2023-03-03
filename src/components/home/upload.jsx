@@ -4,9 +4,10 @@ import uploadImg from '../../assets/uploadImg.svg'
 
 const Upload = () => {
   return (
-    <motion.div viewport={{ root: false }} className='flex justify-between items-center flex-col md:flex-row my-[45px] md:my-[54px] md:px-[100px] px-4 w-full' >
-      <motion.div className='w-full md:w-[40%] px-3 pt-5 md:pt-10' initial={{ x: '20vw', opacity: 0 }} transition={{ duration: 0.1 }}
-        whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', bounce: 0.3 }}>
+    <motion.div viewport={{ root: false }} className='flex justify-between items-center flex-col md:flex-row my-[45px] 
+    md:my-[54px] md:px-[100px] px-4 w-full' >
+      <motion.div className='w-full md:w-[40%] px-3 pt-5 md:pt-10' initial={{ x: '20vw', opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', duration: 1, bounce: 0.3 }}>
         <h1 className='text-[30px] md:text-[40px] font-[700]  font-firaSans'>
           Upload Profiles with Ease
         </h1>
@@ -20,7 +21,7 @@ const Upload = () => {
         </button>
       </motion.div>
       <motion.div className='w-full flex justify-center md:w-[500px] md:my-0 my-6'
-        initial={{ x: '-20vw', opacity: 0 }} transition={{ duration: 0.1 }} whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', bounce: 0.3 }}>
+        initial={{ x: '-20vw', opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ type: 'spring', duration: 1, bounce: 0.3 }}>
         <img src={uploadImg} alt='upload' />
       </motion.div>
     </motion.div>

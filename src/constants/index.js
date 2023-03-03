@@ -59,26 +59,6 @@ export const loginInputs = [
 
 ]
 
-export const stats = [
-    {
-        id: 1,
-        value: 1500,
-        title: 'Profiles',
-        duration: 2
-    },
-    {
-        id: 2,
-        value: 300,
-        title: 'Users',
-        duration: 2
-    },
-    {
-        id: 3,
-        value: 12,
-        title: 'Countries',
-        duration: 2
-    },
-]
 
 export const testimonials = [
     {
@@ -250,6 +230,34 @@ export const cardItems = [
         work: 'Developer',
         photo: person1,
         fill: false
+    },
+    {
+        id: 13,
+        name: 'Taylor Lee',
+        work: 'Developer',
+        photo: person2,
+        fill: false
+    },
+]
+
+export const stats = [
+    {
+        id: 1,
+        value: cardItems.length,
+        title: 'Profiles',
+        duration: 2
+    },
+    {
+        id: 2,
+        value: 300,
+        title: 'Users',
+        duration: 2
+    },
+    {
+        id: 3,
+        value: 12,
+        title: 'Countries',
+        duration: 2
     },
 ]
 

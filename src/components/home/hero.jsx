@@ -7,9 +7,9 @@ import heroBg from '../../assets/vanishing-stripes.svg'
 const Hero = () => (
     <section
         className={` md:h-[90vh] flex-col flex justify-center items-center md:flex-row hero bg-cover bg-no-repeat`}
-        style={{ 'backgroundImage': `url(${heroBg})`}}>
-        <motion.div className='w-full mt-10 md:mt-0 md:w-[50%] px-4 ex:px-0 ex:ml-[74px] font-poppins 
-        text-dimWhite pr-2 md:mb-0 mb-5' initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{type: 'spring', duration: 1, bounce: 0.3}} >
+        style={{ 'backgroundImage': `url(${heroBg})` }}>
+        <motion.div className='w-full mt-10 md:mt-0 md:w-[50%] px-4 ex:px-0 ex:ml-[74px] font-poppins text-dimWhite pr-2 md:mb-0 mb-5'
+            initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{ type: 'spring', duration: 1, bounce: 0.3 }} >
             <h1 className='text-[35px] ex:text-[45px] font-[500]'>
                 Upload and view profiles all in {' '}
                 <span className='font-bold hero-border'>one place</span>
@@ -22,7 +22,7 @@ const Hero = () => (
             </p>
             <GetStarted />
         </motion.div>
-      
+
 
         <motion.div className='min-w-[330px] sm:w-full sm:h-full 
         px-5 md:px-0 md:w-[702px] md:h-[492px] md:mr-[74px] md:my-0 my-5 md:pl-2 md:block flex justify-center

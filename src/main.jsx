@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/home/Home'
@@ -18,7 +17,7 @@ import UploadedProfiles from './routes/dashboard/uploads'
 import SavedProfiles from './routes/dashboard/saved'
 import Bookmarks from './routes/dashboard/bookmarked'
 import Sharedprofiles from './routes/dashboard/shared'
-import Trash from './routes/dashboard/trash'
+import Trash from './routes/dashboard/trash';
 
 const router = createBrowserRouter([
   {

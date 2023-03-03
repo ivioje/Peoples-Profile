@@ -3,7 +3,7 @@ import { BsX } from 'react-icons/bs'
 import { organizations } from '../../constants'
 import styles from '../../style'
 
-const EducationFilter = () => {
+const EducationFilter = ({ toggleEducationView }) => {
 
     const getRandomId = (min, max) => {
         let id = Math.random() * (max - min) + min;
@@ -11,16 +11,11 @@ const EducationFilter = () => {
     }
 
     return (
-        <section className='font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] xs:left-[100px] z-40 '>
+        <section className={`font-poppins text-[14px]  relative  w-[100vw] ss:w-[330px] xs:left-[100px] z-40 ${toggleEducationView? 'block': 'hidden'}`}>
             <div className='border-t absolute left-0 p-3 rounded-[26px] shadow-xl bg-white ss:mx-0 mx-2'>
-                <div className={`${styles.flexBtw} `}>
                     <p className='m-2 text-[16px] '>
                         Filter profiles by education/degree.
                     </p>
-                    <span className='text-[30px] cursor-pointer'>
-                        <BsX />
-                    </span>
-                </div>
                 <hr className='m-2' />
                 <div className={`${styles.flexBtw} flex-wrap overflow-y-scroll h-[250px] `}>
                     {organizations.slice(0, 8).map((org) => (
