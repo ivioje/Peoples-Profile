@@ -16,17 +16,21 @@ const Header = ({
     handleToggleWorkView,
     handleToggleEduView,
     handleToggleGenderView,
-    handleToggleOrgView }) => {
+    handleToggleOrgView,
+    query, setQuery }) => {
 
     return (
         <section className={`${styles.flexBtw} flex-col p-4 xs:p-8 font-firaSans`}>
             <h2 className='text-primary text-[25px] uppercase font-[600]'>
                 search for profiles
             </h2>
-            <Search />
+            <Search query={query} setQuery={setQuery} />
             <div className={`${styles.flexCenter} flex-wrap sm:p-3 font-[500] mb-2`}>
+                <button className={`${styles.flexBtw} border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]`} >
+                    All
+                </button>
                 <button className={`${styles.flexBtw} border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]`}
-                    onClick={handleToggleOrgView}>
+                    onClick={handleToggleOrgView} >
                     Organization <BsArrowDown />
                 </button>
                 <button className={`${styles.flexBtw} border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]`}

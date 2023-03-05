@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsX } from 'react-icons/bs'
 import { organizations } from '../../constants'
 import styles from '../../style'
 

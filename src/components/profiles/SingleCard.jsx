@@ -8,11 +8,11 @@ const SingleCard = ({ items, favorites, setFavorites }) => {
     const [open, setOpen] = useState(false);
 
     const addToFavorites = () => {
-        // Check if the food item is already in the favorites list
+        // Check if the profile is already in the favorites list
         if (favorites.find((favorite) => favorite.id === items.id)) {
             return;
         }
-        // Otherwise, add the food item to the favorites list
+        // Otherwise, add the profile to the favorites list
         setFavorites([...favorites, items]);
     }
 

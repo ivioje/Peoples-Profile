@@ -9,7 +9,10 @@ const Profiles = () => {
   const [toggleEducationView, setToggleEducationView] = useState(false);
   const [toggleGenderView, setToggleGenderView] = useState(false);
   const [data, setData] = useState([]);
+  const [query, setQuery] = useState('')
   const [favorites, setFavorites] = useState([]);
+  const [searchParam] = useState(['name', 'work']);
+  const [filterParam, setFilterParam] = useState(["All"]);
 
   useEffect(() => {
     setData(cardItems)
@@ -28,6 +31,20 @@ const Profiles = () => {
     setToggleGenderView(click => !click)
   }
 
+  const filteredItems = (items) => {
+    return items.filter((item) => {
+      return searchParam.some((newItem) => {
+        return (
+          item[newItem]
+            .toString()
+            .toLowerCase()
+            .indexOf(query.toLowerCase()) > -1
+        );
+      });
+    }
+    )
+  }
+
   return (
     <>
       <Header
@@ -39,12 +56,16 @@ const Profiles = () => {
         handleToggleEduView={handleToggleEduView}
         toggleGenderView={toggleGenderView}
         handleToggleGenderView={handleToggleGenderView}
+        query={query}
+        setQuery={setQuery}
+        setFilterParam={setFilterParam}
 
       />
       <Cards
         data={data}
         favorites={favorites}
         setFavorites={setFavorites}
+        filteredItems={filteredItems}
       />
     </>
   )

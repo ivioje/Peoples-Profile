@@ -11,11 +11,11 @@ const JobFilter = ({ toggleWorkView }) => {
     }
 
     return (
-        <section className={`font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] z-40 ${toggleWorkView? 'block': 'hidden'}`}>
+        <section className={`font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] z-40 ${toggleWorkView ? 'block' : 'hidden'}`}>
             <div className='border-t absolute left-0 p-3 rounded-[26px] shadow-xl bg-white ss:mx-0 mx-2'>
-                    <p className='m-2 text-[16px] '>
-                        Filter profiles by job title.
-                    </p>
+                <p className='m-2 text-[16px] '>
+                    Filter profiles by job title.
+                </p>
                 <hr className='m-2' />
                 <div className={`${styles.flexBtw} flex-wrap overflow-y-scroll h-[250px] `}>
                     {organizations.slice(0, 10).map((org) => (
