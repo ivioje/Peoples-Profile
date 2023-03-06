@@ -19,24 +19,21 @@ const SingleCard = ({ items, favorites, setFavorites }) => {
     const isInFavorite = favorites.some((favorite) => favorite.id === items.id);
 
     return (
-        <div key={items.id} className='w-[160px] xs:w-[215px] border 
-                    border-gray-100 flex flex-col items-center justify-between pt-3
-                    my-6 mx-2 top-[-10px] min-w-[40px] rounded-t-[26px] relative '>
-
+        <div key={items.id} className='w-[160px] xs:w-[215px] border border-gray-100 flex flex-col items-center justify-between pt-3 my-6 mx-2 top-[-10px] min-w-[40px] rounded-[20px] relative '>
             <div className='w-[80px] h-[80px] xs:w-[100px] xs:h-[100px] mb-4 border border-white 
                             rounded-[50%] shadow bg-cover bg-center'
                 style={{ 'backgroundImage': `url(${items.photo})` }}
             />
             <AddToFavoritesButton addToFavorites={addToFavorites} isInFavorite={isInFavorite} />
 
-            <div className='flex flex-col w-full p-2 bg-primary text-lightGray text-center'>
+            <div className='flex flex-col w-full p-2 bg-slate-600 text-lightGray text-center rounded-b-[20px]'>
                 <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px] font-firaSans'>
                     {items.name}
                 </h4>
                 <p className='px-1 pb-3 text-[14px]'>
                     {items.work}
                 </p>
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between items-center px-2'>
                     <Link to={`/user/${items.name}`} className='p-[2px] text-[14px] border border-gray-400'>
                         View Profile
                     </Link>
