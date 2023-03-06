@@ -34,7 +34,7 @@ const SingleCard = ({ items, favorites, setFavorites }) => {
                     {items.work}
                 </p>
                 <div className='flex justify-between items-center px-2'>
-                    <Link to={`/user/${items.name}`} className='p-[2px] text-[14px] border border-gray-400 rounded-lg'>
+                    <Link to={`/user/${items.name}`} className='p-[3px] text-[14px] border border-gray-400 rounded-lg'>
                         View Profile
                     </Link>
 
