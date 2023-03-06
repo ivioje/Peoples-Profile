@@ -3,7 +3,7 @@ import { BsX } from 'react-icons/bs'
 import { organizations } from '../../constants'
 import styles from '../../style'
 
-const JobFilter = ({ toggleWorkView }) => {
+const JobFilter = ({ toggleWorkView, data }) => {
 
     const getRandomId = (min, max) => {
         let id = Math.random() * (max - min) + min;
@@ -18,7 +18,7 @@ const JobFilter = ({ toggleWorkView }) => {
                 </p>
                 <hr className='m-2' />
                 <div className={`${styles.flexBtw} flex-wrap overflow-y-scroll h-[250px] `}>
-                    {organizations.slice(0, 10).map((org) => (
+                    {data.slice(0, 10).map((org) => (
                         <div key={getRandomId(0, 1000)} className={`${styles.flexBtw} w-full p-1 m-1 shadow-md cursor-pointer hover:bg-gray-300  `}>
                             <p className='' >{org.job}</p>
                             <small className='bg-gray-300 p-1 h-[20px] flex items-center rounded-full'>

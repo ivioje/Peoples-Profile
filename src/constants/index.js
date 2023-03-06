@@ -139,106 +139,347 @@ export const filterButtons = [
     }
 ]
 
-export const cardItems = [
-    {
+export const cardItems = {
+   profile: [
+        {
         id: 0,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person1,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 1,
         name: 'Esther Smith',
         work: 'Backend Developer',
         photo: person1,
-        fill: false
+        fill: false,
+        org: 'Microsoft Corporation',
+        job: 'Product designer',
+        edu: 'B.Sc Mathematics',
     },
     {
         id: 2,
         name: 'Christopher Stone',
         work: 'Developer',
         photo: person2,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Fullstack developer',
+        edu: 'PhD Robotics engineering',
     },
     {
         id: 3,
         name: 'John Doe',
         work: 'Data Scientist',
         photo: person1,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Senior analyst',
+        edu: 'HND Civil engineering',
     },
     {
         id: 4,
         name: 'Clarie Thompson',
         work: 'Developer',
         photo: person1,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Senior analyst',
+        edu: 'HND Civil engineering',
     },
     {
         id: 5,
         name: 'Taylor Lee',
         work: 'Senior Frontend Developer',
         photo: person3,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'ML engineer',
+        edu: 'PhD Biology',
     },
     {
         id: 6,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person3,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 7,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person1,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 8,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person2,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 9,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person3,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 10,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person1,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 11,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person2,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 12,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person1,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
     },
     {
         id: 13,
         name: 'Taylor Lee',
         work: 'Developer',
         photo: person2,
-        fill: false
+        fill: false,
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
+    },
+],
+    organizations: [
+    {
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
+    },
+    {
+        org: 'Microsoft Corporation',
+        job: 'Product designer',
+        edu: 'B.Sc Mathematics',
+    },
+    {
+        org: 'Google',
+        job: 'Fullstack developer',
+        edu: 'PhD Robotics engineering',
+    },
+    {
+        org: 'Google',
+        job: 'Senior analyst',
+        edu: 'HND Civil engineering',
+    },
+    {
+        org: 'Google',
+        job: 'ML engineer',
+        edu: 'PhD Biology',
+    },
+    {
+        org: 'Google',
+        job: 'Data Analyst',
+        edu: 'PhD Economics',
+    },
+    {
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
+    },
+    {
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
+    },
+    {
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
+    },
+    {
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
+    },
+    {
+        org: 'Google',
+        job: 'Software engineer',
+        edu: 'B.Sc Computer science',
+    },
+    {
+        org: 'Google',
+        job: 'Software engineer',
+    },
+    {
+        org: 'Google',
+        job: 'Software engineer',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+
+    {
+        org: 'Google',
+    },
+
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
+    },
+    {
+        org: 'Google',
     },
 ]
+
+}
 
 export const stats = [
     {

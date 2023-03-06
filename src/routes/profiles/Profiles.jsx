@@ -9,13 +9,12 @@ const Profiles = () => {
   const [toggleEducationView, setToggleEducationView] = useState(false);
   const [toggleGenderView, setToggleGenderView] = useState(false);
   const [data, setData] = useState([]);
-  const [query, setQuery] = useState('')
   const [favorites, setFavorites] = useState([]);
-  const [searchParam] = useState(['name', 'work']);
-  const [filterParam, setFilterParam] = useState(["All"]);
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState(null);
 
   useEffect(() => {
-    setData(cardItems)
+    setData(cardItems.profile)
   }, [data]);
 
   const handleToggleOrgView = () => {
@@ -31,23 +30,33 @@ const Profiles = () => {
     setToggleGenderView(click => !click)
   }
 
-  const filteredItems = (items) => {
-    return items.filter((item) => {
-      return searchParam.some((newItem) => {
-        return (
-          item[newItem]
-            .toString()
-            .toLowerCase()
-            .indexOf(query.toLowerCase()) > -1
-        );
-      });
-    }
-    )
+  const handleFilterClick = (filterValue) => {
+    setFilter(filterValue)
   }
+
+  const filterData = () => {
+    return data.filter((item) => {
+      //filter by organisation
+      if(filter && item.org !== filter) {
+        return false
+      }
+
+      //filter by search query
+      if(query && (!item.name.toLowerCase().includes(query.toLowerCase()) &&
+       !item.work.toLowerCase().includes(query.toLowerCase()))) {
+        return false
+      }
+
+      return true;
+    })
+  }
+
+
 
   return (
     <>
       <Header
+       data={data}
         handleToggleOrgView={handleToggleOrgView}
         toggleOrganisationView={toggleOrganisationView}
         toggleWorkView={toggleWorkView}
@@ -58,14 +67,15 @@ const Profiles = () => {
         handleToggleGenderView={handleToggleGenderView}
         query={query}
         setQuery={setQuery}
-        setFilterParam={setFilterParam}
+        handleFilterClick={handleFilterClick}
+        setToggleOrganisationView={setToggleOrganisationView}
 
       />
       <Cards
         data={data}
         favorites={favorites}
         setFavorites={setFavorites}
-        filteredItems={filteredItems}
+        filterData={filterData}
       />
     </>
   )

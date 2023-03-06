@@ -1,16 +1,18 @@
 import React from 'react'
-import SingleCard from './SingleCard'
+import { cardItems } from '../../constants';
+import SingleCard from './SingleCard';
 
 const Cards = ({
     data,
     favorites,
     setFavorites,
-    filteredItems }) => {
+    filterData
+     }) => {
 
     return (
         <section className='pb-20'>
             <div className='flex justify-center flex-wrap font-poppins pb-6'>
-                {filteredItems(data).map(items => (
+                {filterData().map(items => (
                     <div key={items.id}>
                         <SingleCard
                             items={items}

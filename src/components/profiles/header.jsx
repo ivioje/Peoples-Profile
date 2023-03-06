@@ -17,7 +17,9 @@ const Header = ({
     handleToggleEduView,
     handleToggleGenderView,
     handleToggleOrgView,
-    query, setQuery }) => {
+    query, setQuery, data,
+    handleFilterClick,
+    setToggleOrganisationView }) => {
 
     return (
         <section className={`${styles.flexBtw} flex-col p-4 xs:p-8 font-firaSans`}>
@@ -26,9 +28,6 @@ const Header = ({
             </h2>
             <Search query={query} setQuery={setQuery} />
             <div className={`${styles.flexCenter} flex-wrap sm:p-3 font-[500] mb-2`}>
-                <button className={`${styles.flexBtw} border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]`} >
-                    All
-                </button>
                 <button className={`${styles.flexBtw} border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]`}
                     onClick={handleToggleOrgView} >
                     Organization <BsArrowDown />
@@ -46,9 +45,16 @@ const Header = ({
                     Gender <BsArrowDown />
                 </button>
             </div>
-            <OrganizationFilter toggleOrganisationView={toggleOrganisationView} />
-            <JobFilter toggleWorkView={toggleWorkView} />
-            <EducationFilter toggleEducationView={toggleEducationView} />
+         
+            
+            <OrganizationFilter 
+                data={data} 
+                toggleOrganisationView={toggleOrganisationView} 
+                handleFilterClick={handleFilterClick}
+                setToggleOrganisationView={setToggleOrganisationView}
+             />
+            <JobFilter data={data} toggleWorkView={toggleWorkView} />
+            <EducationFilter data={data} toggleEducationView={toggleEducationView} />
             <GenderFilter toggleGenderView={toggleGenderView} />
 
             <p className='font-normal font-poppins'>
