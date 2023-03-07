@@ -28,16 +28,14 @@ const SingleCard = ({ items, favorites, setFavorites }) => {
 
             <div className='flex flex-col w-full p-2 bg-slate-600 text-lightGray text-center rounded-b-[20px]'>
                 <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px] font-firaSans'>
+                <Link to={`/user/${items.name}`}>
                     {items.name}
+                    </Link>
                 </h4>
                 <p className='px-1 pb-3 text-[14px]'>
                     {items.work}
                 </p>
-                <div className='flex justify-between items-center px-2'>
-                    <Link to={`/user/${items.name}`} className='p-[3px] text-[14px] border border-gray-400 rounded-lg'>
-                        View Profile
-                    </Link>
-
+                <div className='flex justify-center items-center px-2'>
                     <button className='bg-dimWhite w-[30px] xs:w-[40px] h-[30px] xs:h-[40px]
                                     flex items-center justify-center text-[14px] xs:text-[19px] rounded-full shadow-lg
                                     outline-none xs:shadow text-primary' onClick={() => setOpen(!open)} >

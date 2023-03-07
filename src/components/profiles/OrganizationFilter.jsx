@@ -29,10 +29,6 @@ const OrganizationFilter = ({ getSimilarItemsCount, toggleOrganisationView, data
                 </button>
                     {uniqueList.map((item, index) => (
                         <div key={item} className={`${styles.flexBtw} p-1 m-3 border-b cursor-pointer hover:bg-gray-300`}>
-                            <div className='w-[20px] h-[20px] '>
-                                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png'
-                                    className='mx-1' />
-                            </div>
                             <p onClick={() => {
                                 handleFilterClick(`${item}`);
                                 setToggleOrganisationView(false)
