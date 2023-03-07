@@ -36,8 +36,8 @@ const Profiles = () => {
 
   const filterData = () => {
     return data.filter((item) => {
-      //filter by organisation
-      if(filter && item.org !== filter) {
+      //filter
+      if(filter && (item.org !== filter && item.work !== filter && item.edu !== filter)) {
         return false
       }
 
@@ -51,9 +51,11 @@ const Profiles = () => {
     })
   }
 
-  const getSimilarItemsCount = (itemType) => {
-    const similarItems = data.filter((item) => item.org === itemType);
-    return similarItems.length;
+  function getSimilarItemsCount(items, itemType, value) {
+    if(!Array.isArray(items)) {
+      return 0;
+    }
+    return items.filter(item => item[itemType] === value).length;
   }
 
 
@@ -74,6 +76,8 @@ const Profiles = () => {
         setQuery={setQuery}
         handleFilterClick={handleFilterClick}
         setToggleOrganisationView={setToggleOrganisationView}
+        setToggleWorkView={setToggleWorkView}
+        setToggleEducationView={setToggleEducationView}
         getSimilarItemsCount={getSimilarItemsCount}
 
       />

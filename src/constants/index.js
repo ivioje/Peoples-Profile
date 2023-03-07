@@ -150,7 +150,6 @@ export const cardItems = {
         org: 'Kuda',
         job: 'Software engineer',
         edu: 'B.Sc Computer science',
-        logo: 'https://images.prismic.io/monito/f1aa6af4-cc37-4d13-8c0a-3bd1c497cbd3_Kudabank_Logo-10.png?auto=compress,format&rect=0,0,1500,1500&w=2400&h=2400'
     },
     {
         id: 1,
@@ -161,7 +160,6 @@ export const cardItems = {
         org: 'Microsoft Corporation',
         job: 'Product designer',
         edu: 'B.Sc Mathematics',
-        logo: 'https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/getty_1132277430_mm9kd0.jpg'
     },
     {
         id: 2,
@@ -182,7 +180,6 @@ export const cardItems = {
         org: 'Google',
         job: 'Senior analyst',
         edu: 'HND Civil engineering',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png'
     },
     {
         id: 4,
@@ -273,6 +270,7 @@ export const cardItems = {
         org: 'Google',
         job: 'Software engineer',
         edu: 'B.Sc Computer science',
+
     },
     {
         id: 13,
@@ -283,202 +281,6 @@ export const cardItems = {
         org: 'Google',
         job: 'Software engineer',
         edu: 'B.Sc Computer science',
-    },
-],
-    organizations: [
-    {
-        org: 'Google',
-        job: 'Software engineer',
-        edu: 'B.Sc Computer science',
-    },
-    {
-        org: 'Microsoft Corporation',
-        job: 'Product designer',
-        edu: 'B.Sc Mathematics',
-    },
-    {
-        org: 'Google',
-        job: 'Fullstack developer',
-        edu: 'PhD Robotics engineering',
-    },
-    {
-        org: 'Google',
-        job: 'Senior analyst',
-        edu: 'HND Civil engineering',
-    },
-    {
-        org: 'Google',
-        job: 'ML engineer',
-        edu: 'PhD Biology',
-    },
-    {
-        org: 'Google',
-        job: 'Data Analyst',
-        edu: 'PhD Economics',
-    },
-    {
-        org: 'Google',
-        job: 'Software engineer',
-        edu: 'B.Sc Computer science',
-    },
-    {
-        org: 'Google',
-        job: 'Software engineer',
-        edu: 'B.Sc Computer science',
-    },
-    {
-        org: 'Google',
-        job: 'Software engineer',
-        edu: 'B.Sc Computer science',
-    },
-    {
-        org: 'Google',
-        job: 'Software engineer',
-        edu: 'B.Sc Computer science',
-    },
-    {
-        org: 'Google',
-        job: 'Software engineer',
-        edu: 'B.Sc Computer science',
-    },
-    {
-        org: 'Google',
-        job: 'Software engineer',
-    },
-    {
-        org: 'Google',
-        job: 'Software engineer',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-
-    {
-        org: 'Google',
-    },
-
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
-    },
-    {
-        org: 'Google',
     },
 ]
 

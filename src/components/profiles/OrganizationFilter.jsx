@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from '../../style';
 
-const OrganizationFilter = ({ getSimilarItemsCount, toggleOrganisationView, data, handleFilterClick, setToggleOrganisationView }) => {
-
-    const getRandomId = (min, max) => {
-        let id = Math.random() * (max - min) + min;
-        return id;
-    }
+const OrganizationFilter = ({ 
+    getSimilarItemsCount, 
+    toggleOrganisationView, 
+    data, handleFilterClick, 
+    setToggleOrganisationView }) => {
 
     const mappedItems = data.map((item) => item.org)
 
@@ -27,7 +26,7 @@ const OrganizationFilter = ({ getSimilarItemsCount, toggleOrganisationView, data
                 className='bg-slate-400 px-5 py-1 text-primary tracking-wider font-[600] '>
                     ALL
                 </button>
-                    {uniqueList.map((item, index) => (
+                    {uniqueList.map((item) => (
                         <div key={item} className={`${styles.flexBtw} p-1 m-3 border-b cursor-pointer hover:bg-gray-300`}>
                             <p onClick={() => {
                                 handleFilterClick(`${item}`);
@@ -35,7 +34,7 @@ const OrganizationFilter = ({ getSimilarItemsCount, toggleOrganisationView, data
                             }}
                              className='mx-3'>{item}</p>
                             <small className='bg-gray-300 p-1 h-[20px] font-medium flex items-center rounded-full'>
-                                {getSimilarItemsCount(item)}
+                                {getSimilarItemsCount(data, 'org', item)}
                             </small>
                         </div>
                     ))}

@@ -20,6 +20,8 @@ const Header = ({
     query, setQuery, data,
     handleFilterClick,
     setToggleOrganisationView,
+    setToggleWorkView,
+    setToggleEducationView,
     getSimilarItemsCount }) => {
 
     return (
@@ -46,7 +48,6 @@ const Header = ({
                     Gender <BsArrowDown />
                 </button>
             </div>
-         
             
             <OrganizationFilter 
                 data={data} 
@@ -55,8 +56,20 @@ const Header = ({
                 setToggleOrganisationView={setToggleOrganisationView}
                 getSimilarItemsCount={getSimilarItemsCount}
              />
-            <JobFilter data={data} toggleWorkView={toggleWorkView} />
-            <EducationFilter data={data} toggleEducationView={toggleEducationView} />
+            <JobFilter 
+                data={data} 
+                toggleWorkView={toggleWorkView}
+                handleFilterClick={handleFilterClick}
+                setToggleWorkView={setToggleWorkView}
+                getSimilarItemsCount={getSimilarItemsCount}
+             />
+            <EducationFilter 
+                data={data} 
+                toggleEducationView={toggleEducationView} 
+                handleFilterClick={handleFilterClick}
+                setToggleEducationView={setToggleEducationView}
+                getSimilarItemsCount={getSimilarItemsCount}
+            />
             <GenderFilter toggleGenderView={toggleGenderView} />
 
             <p className='font-normal font-poppins'>
