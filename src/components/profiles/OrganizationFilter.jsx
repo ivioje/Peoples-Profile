@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../style';
 
-const OrganizationFilter = ({ toggleOrganisationView, data, handleFilterClick, setToggleOrganisationView }) => {
+const OrganizationFilter = ({ getSimilarItemsCount, toggleOrganisationView, data, handleFilterClick, setToggleOrganisationView }) => {
 
     const getRandomId = (min, max) => {
         let id = Math.random() * (max - min) + min;
@@ -27,7 +27,7 @@ const OrganizationFilter = ({ toggleOrganisationView, data, handleFilterClick, s
                 className='bg-slate-400 px-5 py-1 text-primary tracking-wider font-[600] '>
                     ALL
                 </button>
-                    {uniqueList.map((item) => (
+                    {uniqueList.map((item, index) => (
                         <div key={item} className={`${styles.flexBtw} p-1 m-3 border-b cursor-pointer hover:bg-gray-300`}>
                             <div className='w-[20px] h-[20px] '>
                                 <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png'
@@ -38,8 +38,8 @@ const OrganizationFilter = ({ toggleOrganisationView, data, handleFilterClick, s
                                 setToggleOrganisationView(false)
                             }}
                              className='mx-3'>{item}</p>
-                            <small className='bg-gray-300 p-1 h-[20px] flex items-center rounded-full'>
-                                5
+                            <small className='bg-gray-300 p-1 h-[20px] font-medium flex items-center rounded-full'>
+                                {getSimilarItemsCount(item)}
                             </small>
                         </div>
                     ))}

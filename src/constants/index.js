@@ -147,7 +147,7 @@ export const cardItems = {
         work: 'Developer',
         photo: person1,
         fill: false,
-        org: 'Google',
+        org: 'Kuda',
         job: 'Software engineer',
         edu: 'B.Sc Computer science',
     },

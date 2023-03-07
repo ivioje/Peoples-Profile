@@ -26,7 +26,7 @@ const SingleCard = ({ items, favorites, setFavorites }) => {
             />
             <AddToFavoritesButton addToFavorites={addToFavorites} isInFavorite={isInFavorite} />
 
-            <div className='flex flex-col w-full p-2 bg-slate-700 text-lightGray text-center rounded-b-[20px]'>
+            <div className='flex flex-col w-full p-2 bg-slate-600 text-lightGray text-center rounded-b-[20px]'>
                 <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px] font-firaSans'>
                     {items.name}
                 </h4>

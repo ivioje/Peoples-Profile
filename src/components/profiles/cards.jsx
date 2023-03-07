@@ -1,9 +1,9 @@
+import { data } from 'autoprefixer';
 import React from 'react'
 import { cardItems } from '../../constants';
 import SingleCard from './SingleCard';
 
 const Cards = ({
-    data,
     favorites,
     setFavorites,
     filterData
@@ -12,7 +12,8 @@ const Cards = ({
     return (
         <section className='pb-20'>
             <div className='flex justify-center flex-wrap font-poppins pb-6'>
-                {filterData().map(items => (
+
+                {filterData().length < 1 ? <div>Not found</div> : filterData().map(items => (
                     <div key={items.id}>
                         <SingleCard
                             items={items}

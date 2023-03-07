@@ -51,6 +51,11 @@ const Profiles = () => {
     })
   }
 
+  const getSimilarItemsCount = (itemType) => {
+    const similarItems = data.filter((item) => item.org === itemType);
+    return similarItems.length;
+  }
+
 
 
   return (
@@ -69,6 +74,7 @@ const Profiles = () => {
         setQuery={setQuery}
         handleFilterClick={handleFilterClick}
         setToggleOrganisationView={setToggleOrganisationView}
+        getSimilarItemsCount={getSimilarItemsCount}
 
       />
       <Cards

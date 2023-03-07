@@ -19,7 +19,8 @@ const Header = ({
     handleToggleOrgView,
     query, setQuery, data,
     handleFilterClick,
-    setToggleOrganisationView }) => {
+    setToggleOrganisationView,
+    getSimilarItemsCount }) => {
 
     return (
         <section className={`${styles.flexBtw} flex-col p-4 xs:p-8 font-firaSans`}>
@@ -52,6 +53,7 @@ const Header = ({
                 toggleOrganisationView={toggleOrganisationView} 
                 handleFilterClick={handleFilterClick}
                 setToggleOrganisationView={setToggleOrganisationView}
+                getSimilarItemsCount={getSimilarItemsCount}
              />
             <JobFilter data={data} toggleWorkView={toggleWorkView} />
             <EducationFilter data={data} toggleEducationView={toggleEducationView} />
