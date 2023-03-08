@@ -19,13 +19,6 @@ const OrganizationFilter = ({
                 </p>
                 <hr className='m-2' />
                 <div className={`${styles.flexCenter} flex-wrap overflow-y-scroll h-auto `}>
-                <button onClick={() => {
-                    handleFilterClick(null);
-                    setToggleOrganisationView(false)
-                }}
-                className='bg-slate-400 px-5 py-1 text-primary tracking-wider font-[600] '>
-                    ALL
-                </button>
                     {uniqueList.map((item) => (
                         <div key={item} className={`${styles.flexBtw} p-1 m-3 border-b cursor-pointer hover:bg-gray-300`}>
                             <p onClick={() => {

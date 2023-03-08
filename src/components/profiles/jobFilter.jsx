@@ -21,20 +21,13 @@ const JobFilter = ({
                 </p>
                 <hr className='m-2' />
                 <div className={`${styles.flexBtw} flex-wrap overflow-y-scroll h-[250px] `}>
-                <button onClick={() => {
-                    handleFilterClick(null);
-                    setToggleWorkView(false)
-                }}
-                className='bg-slate-400 px-5 py-1 text-primary tracking-wider font-[600] '>
-                    ALL
-                </button>
                     {uniqueList.map((job) => (
                         <div key={job} className={`${styles.flexBtw} w-full p-1 m-1 shadow-md cursor-pointer hover:bg-gray-300  `}
                         onClick={() => {
                             handleFilterClick(job);
                             setToggleWorkView(false)
                            }}>
-                    <p className=''>{job}</p>
+                    <p>{job}</p>
                             <small className='bg-gray-300 p-1 h-[20px] flex items-center rounded-full'>
                                 {getSimilarItemsCount(data, 'work', job)}
                             </small>

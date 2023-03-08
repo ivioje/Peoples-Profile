@@ -22,6 +22,7 @@ const Header = ({
     setToggleOrganisationView,
     setToggleWorkView,
     setToggleEducationView,
+    setToggleGenderView,
     getSimilarItemsCount }) => {
 
     return (
@@ -31,6 +32,9 @@ const Header = ({
             </h2>
             <Search query={query} setQuery={setQuery} />
             <div className={`${styles.flexCenter} flex-wrap sm:p-3 font-[500] mb-2`}>
+            <button onClick={() => handleFilterClick(null)} className='border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]'>
+                    All
+                </button>
                 <button className={`${styles.flexBtw} border p-2 m-1 sm:m-4  sm:text-[16px] text-[14px]`}
                     onClick={handleToggleOrgView} >
                     Organization <BsArrowDown />
@@ -70,7 +74,11 @@ const Header = ({
                 setToggleEducationView={setToggleEducationView}
                 getSimilarItemsCount={getSimilarItemsCount}
             />
-            <GenderFilter toggleGenderView={toggleGenderView} />
+            <GenderFilter 
+                toggleGenderView={toggleGenderView}
+                handleFilterClick={handleFilterClick}
+                setToggleGenderView={setToggleGenderView}
+            />
 
             <p className='font-normal font-poppins'>
                 <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>

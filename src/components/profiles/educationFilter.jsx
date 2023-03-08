@@ -19,13 +19,6 @@ const EducationFilter = ({
                     </p>
                 <hr className='m-2' />
                 <div className={`${styles.flexBtw} flex-wrap overflow-y-scroll h-[250px] `}>
-                <button onClick={() => {
-                    handleFilterClick(null);
-                    setToggleEducationView(false)
-                }}
-                className='bg-slate-400 px-5 py-1 text-primary tracking-wider font-[600] '>
-                    ALL
-                </button>
                     {uniqueList.map((item) => (
                         <div key={item} className={`${styles.flexBtw} w-full p-1 m-1 shadow-md cursor-pointer hover:bg-gray-300  `}
                         onClick={() => {

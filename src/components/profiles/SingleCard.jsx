@@ -22,7 +22,8 @@ const SingleCard = ({ items, favorites, setFavorites }) => {
         <div key={items.id} className='w-[160px] xs:w-[215px] border border-gray-100 flex flex-col items-center justify-between pt-3 my-6 mx-2 top-[-10px] min-w-[40px] rounded-[20px] relative '>
             <div className='w-[80px] h-[80px] xs:w-[100px] xs:h-[100px] mb-4 border border-white 
                             rounded-[50%] shadow bg-cover bg-center'
-                style={{ 'backgroundImage': `url(${items.photo})` }}
+                style={items.photo? { 'backgroundImage': `url(${items.photo})` } : 
+            {'backgroundImage': `url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png')`}}
             />
             <AddToFavoritesButton addToFavorites={addToFavorites} isInFavorite={isInFavorite} />
 

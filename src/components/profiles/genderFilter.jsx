@@ -2,7 +2,10 @@ import React from 'react'
 import { BsX } from 'react-icons/bs'
 import styles from '../../style'
 
-const GenderFilter = ({ toggleGenderView }) => {
+const GenderFilter = ({ 
+    toggleGenderView, 
+    setToggleGenderView, 
+    handleFilterClick }) => {
 
     return (
         <section className={`font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] sm:right-[-250px] z-40 ${toggleGenderView? 'block': 'hidden'}`}>
@@ -13,12 +16,18 @@ const GenderFilter = ({ toggleGenderView }) => {
                 <hr className='m-2' />
 
                 <div className={`${styles.flexBtw} flex-wrap h-[50px] checkContent `}>
-                    <label className='border'>
+                    <label className='border' onClick={() => {
+                            handleFilterClick('male');
+                            setToggleGenderView(false)
+                        }}>
                         <input type='checkbox' className=' ' />{' '}
                         <span className="checkmark"></span>
                         <h6>Male</h6>
                     </label>
-                    <label className='border'>
+                    <label className='border' onClick={() => {
+                            handleFilterClick('female');
+                            setToggleGenderView(false)
+                        }}>
                         <input type='checkbox' />{' '}
                         <span className="checkmark"></span>
                         <h6>Female</h6>
