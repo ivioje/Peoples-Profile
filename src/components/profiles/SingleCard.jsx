@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import AddToFavoritesButton from './AddToFavorites'
 import Share from './Share';
 
-const SingleCard = ({ items, favorites, setFavorites }) => {
+const SingleCard = ({ 
+    items, 
+    favorites, 
+    setFavorites,
+    data }) => {
     const [open, setOpen] = useState(false);
 
     const addToFavorites = () => {
@@ -44,7 +48,7 @@ const SingleCard = ({ items, favorites, setFavorites }) => {
                     </button>
                 </div>
             </div>
-            <Share setOpen={setOpen} open={open} />
+            <Share setOpen={setOpen} open={open} item={items} />
         </div>
     )
 }

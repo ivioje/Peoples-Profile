@@ -1,36 +1,15 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, createContext } from 'react';
 
-const Context = createContext("toggle");
+// create a new context object
+export const CurrentItemContext = createContext();
 
-const ContextProvider = ({ children }) => {
-
-  const [toggleOrganisationsView, setToggleOrganisationsView] = useState(false)
-  const [toggleWorkView, setToggleWorkView] = useState(false);
-  const [toggleEducationView, setToggleEducationView] = useState(false);
-  const [toggleGenderView, setToggleGenderView] = useState(false);
-
-  // function handleToggleOrgView() {
-  //   setToggleOrganisationsView(click => !click)
-  // }
-  // function handleToggleEducationView() {
-  //   setToggleEducationView(click => !click)
-  // }
-  // function handleToggleWorkView() {
-  //   setToggleWorkView(click => !click)
-  // }
-  // function handleToggleGenderView() {
-  //   setToggleGenderView(click => !click)
-  // }
+// define a provider component that wraps the components that need access to the shared state
+export const CurrentItemProvider = ({ children }) => {
+  const [currentItemId, setCurrentItemId] = useState(null);
 
   return (
-    <Context.Provider value={{
-      toggleEducationView, toggleGenderView, toggleWorkView, toggleOrganisationsView, setToggleOrganisationsView
-
-    }}>
+    <CurrentItemContext.Provider value={{ currentItemId, setCurrentItemId }}>
       {children}
-    </Context.Provider>
-  )
-}
-
-export { ContextProvider, Context }
-
+    </CurrentItemContext.Provider>
+  );
+};

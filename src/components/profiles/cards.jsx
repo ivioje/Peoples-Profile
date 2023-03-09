@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { cardItems } from '../../constants';
@@ -12,7 +11,8 @@ const Cards = ({
     filterData,
     handlePageNumber,
     currentPage,
-    containerRef
+    containerRef,
+    data
      }) => {
 
     return (
@@ -25,6 +25,7 @@ const Cards = ({
                             items={items}
                             favorites={favorites}
                             setFavorites={setFavorites}
+                            data={data}
                         />
                     </div>
                 ))}
