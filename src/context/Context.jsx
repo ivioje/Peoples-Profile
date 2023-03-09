@@ -51,6 +51,10 @@ const [toggleOrganisationView, setToggleOrganisationView] = useState(false)
     setFilter(filterValue)
   }
 
+  const removeFromFavorites = (id) => {
+    setFavorites(favorites.filter((favorite) => favorite.id !== id));
+  }
+
   const filterData = () => {
     return data.filter((item) => {
       //filter
@@ -99,7 +103,7 @@ const [toggleOrganisationView, setToggleOrganisationView] = useState(false)
         handleFilterClick, handlePageNumber, handleToggleEduView, handleToggleGenderView, handleToggleOrgView, handleToggleWorkView,
         toggleEducationView, toggleGenderView, toggleOrganisationView, toggleWorkView, setToggleEducationView, setToggleGenderView,
         setToggleOrganisationView, setToggleWorkView, query, setQuery, getSimilarItemsCount, paginatedItems, filterData,
-        currentPage, containerRef, data, favorites, setFavorites
+        currentPage, containerRef, data, favorites, setFavorites, removeFromFavorites
      }}>
       {children}
     </Context.Provider>
