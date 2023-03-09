@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsCheck, BsHeart } from 'react-icons/bs'
 
-const AddToFavoritesButton = ({ addToFavorites, isInFavorite }) => {
+const AddToFavoritesButton = ({ isInFavorite, addToFavorites }) => {
 
     return (
         <div onClick={addToFavorites}>

@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { cardItems } from '../../constants'
+import { Context } from '../../context/Context'
 import styles from '../../style'
 
 const Favorites = () => {
+
+    const {  favorites } = useContext(Context);
+
     return (
         <div className={`flex justify-center items-center flex-wrap `}>
-            {cardItems.slice(0, 5).map(item => (
+            {favorites.map(item => (
                 <div className='xs:w-[200px] w-full m-4' key={item.id}>
                     <div className={`h-[114px] bg-cover bg-no-repeat bg-center text-secondary rounded-sm`}
-                        style={{ 'backgroundImage': `url(${item.photo})` }}>
+                        style={item.photo? { 'backgroundImage': `url(${item.photo})` } : 
+                        {'backgroundImage': `url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png')`}}>
                         <div className='profilesOverlay p-1 flex flex-col justify-between flex-wrap rounded-sm'>
                             <div className='text-[15px]'>
                                 <div className={`flex justify-start items-center uppercase tracking-[1px]`}>

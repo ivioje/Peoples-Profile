@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsArrowRight, BsClockHistory, BsHeart, BsShareFill } from 'react-icons/bs'
 import { cardItems } from '../../constants'
+import { Context } from '../../context/Context'
 import styles from '../../style'
 
-const RecentProfiles = () => (
+const RecentProfiles = () => {
+
+    const { data } = useContext(Context);
+
+    return(
     <div className='text-[18px] px-4 sm:px-1 z-[-1] '>
         <div className={`${styles.flexBtw} mb-6`}>
             <div className='text-[16px] flex items-center font-montserrat'>
@@ -14,7 +19,7 @@ const RecentProfiles = () => (
         </div>
 
         <div className={`${styles.flexBtw} overflow-x-scroll overflow-y-hidden relative font-[400] overviewScroll`}>
-            {cardItems.map(item => (
+            {data.map(item => (
                 <div key={item.id} className='m-1 h-[120px] flex flex-col bg-center bg-cover bg-no-repeat text-secondary rounded-[15px] cursor-pointer'
                     style={{ 'backgroundImage': `url(${item.photo})` }}>
                     <div className='profilesOverlay w-[200px] rounded-[15px] p-1'>
@@ -33,6 +38,7 @@ const RecentProfiles = () => (
             ))}
         </div>
     </div>
-)
+    )
+}
 
 export default RecentProfiles

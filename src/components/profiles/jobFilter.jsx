@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsX } from 'react-icons/bs'
 import { organizations } from '../../constants'
 import styles from '../../style'
+import { Context } from '../../context/Context'
 
-const JobFilter = ({ 
-    toggleWorkView, 
-    data, handleFilterClick, 
-    setToggleWorkView,
-    getSimilarItemsCount }) => {
+const JobFilter = () => {
+
+    const { toggleWorkView, data, handleFilterClick, setToggleWorkView,
+    getSimilarItemsCount } = useContext(Context)
 
     const mappedItems = data.map((item) => item.work)
 

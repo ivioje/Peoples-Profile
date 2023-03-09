@@ -1,26 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { BsShareFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import { Context } from '../../context/Context';
 import AddToFavoritesButton from './AddToFavorites'
 import Share from './Share';
 
-const SingleCard = ({ 
-    items, 
-    favorites, 
-    setFavorites,
-    data }) => {
+const SingleCard = ({ items}) => {
     const [open, setOpen] = useState(false);
 
-    const addToFavorites = () => {
-        // Check if the profile is already in the favorites list
-        if (favorites.find((favorite) => favorite.id === items.id)) {
-            return;
-        }
-        // Otherwise, add the profile to the favorites list
-        setFavorites([...favorites, items]);
-    }
+    const { favorites, setFavorites } = useContext(Context)
 
-    const isInFavorite = favorites.some((favorite) => favorite.id === items.id);
+    
+  const addToFavorites = () => {
+    // Check if the profile is already in the favorites list
+    if (favorites.find((favorite) => favorite.id === items.id)) {
+        return;
+    }
+    // Otherwise, add the profile to the favorites list
+    setFavorites([...favorites, items]);
+  }
+
+  const isInFavorite = favorites.some((favorite) => favorite.id === items.id);
 
     return (
         <div key={items.id} className='w-[160px] xs:w-[215px] border border-gray-100 flex flex-col items-center justify-between pt-3 my-6 mx-2 top-[-10px] min-w-[40px] rounded-[20px] relative '>
@@ -33,7 +33,7 @@ const SingleCard = ({
 
             <div className='flex flex-col w-full p-2 bg-slate-600 text-lightGray text-center rounded-b-[20px]'>
                 <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px] font-firaSans'>
-                <Link to={`/user/${items.name}`}>
+                <Link to={`user/${items.id}`}>
                     {items.name}
                     </Link>
                 </h4>
@@ -48,7 +48,7 @@ const SingleCard = ({
                     </button>
                 </div>
             </div>
-            <Share setOpen={setOpen} open={open} item={items} />
+            <Share open={open} setOpen={setOpen} item={items} />
         </div>
     )
 }

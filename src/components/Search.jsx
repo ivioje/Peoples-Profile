@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { Context } from '../context/Context';
 
-const Search = ({ query, setQuery }) => {
+const Search = () => {
+    const { query, setQuery } = useContext(Context)
     return (
         <div className='flex justify-center' >
             <div className='sm:w-[480px] w-[90vw] xs:w-[70vw] sm:px-2 px-[10px] my-5'>

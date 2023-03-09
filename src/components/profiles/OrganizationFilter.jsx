@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from '../../style';
+import { Context } from '../../context/Context';
 
-const OrganizationFilter = ({ 
-    getSimilarItemsCount, 
-    toggleOrganisationView, 
-    data, handleFilterClick, 
-    setToggleOrganisationView }) => {
+const OrganizationFilter = () => {
+
+    const { getSimilarItemsCount, toggleOrganisationView, data, handleFilterClick,
+    setToggleOrganisationView } = useContext(Context)
 
     const mappedItems = data.map((item) => item.org)
 

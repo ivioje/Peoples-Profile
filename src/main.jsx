@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App';
 import Home from './routes/home/Home'
 import Profiles from './routes/profiles/Profiles'
-import Navbar from './components/navbar/Navbar'
 import Templates from './routes/templates/Templates'
 import Guide from './routes/guide/Guide'
 import ErrorPage from './components/ErrorPage'
@@ -18,11 +18,13 @@ import SavedProfiles from './routes/dashboard/saved'
 import Bookmarks from './routes/dashboard/bookmarked'
 import Sharedprofiles from './routes/dashboard/shared'
 import Trash from './routes/dashboard/trash';
+import ProfileDetails from './components/profiles/profileDetails';
+import { ContextProvider } from './context/Context';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navbar />,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -57,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: '/success',
         element: <SuccessPage />
+      },
+      {
+        path: '/profiles/user/:id',
+        element: <ProfileDetails />
       },
     ],
   },
@@ -95,6 +101,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ContextProvider>
     <RouterProvider router={router} />
+    </ContextProvider>
   </React.StrictMode>
 )
