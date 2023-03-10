@@ -5,20 +5,27 @@ import { Context } from '../../context/Context';
 
 const Cards = () => {
 
-    const { paginatedItems, filterData, handlePageNumber, currentPage, containerRef } = useContext(Context)
+    const { paginatedItems, filterData, handlePageNumber, currentPage, containerRef, query } = useContext(Context)
 
 
     return (
         <section className='pb-20' >
-            <div className='flex justify-center flex-wrap font-poppins pb-6' ref={containerRef}>
-
-                {paginatedItems.length < 1 ? <div>Not found</div> : paginatedItems.map(items => (
-                    <div key={items.id}>
-                        <SingleCard
-                            items={items}
-                        />
+            <h1 className='text-center text-primary uppercase text-[14px] font-semibold'>
+                {query}
+            </h1>
+            <div className='flex justify-center flex-wrap font-poppins pt-8 pb-6' ref={containerRef}>
+                {paginatedItems.length < 1 ?
+                    <div className='text-[13px] text-center'>
+                        The search term you entered <b>"{query}"</b> did not match any profile. Please try a different search term.
                     </div>
-                ))}
+                    :
+                    paginatedItems.map(items => (
+                        <div key={items.id}>
+                            <SingleCard
+                                items={items}
+                            />
+                        </div>
+                    ))}
             </div>
             <div className='flex justify-center'>
                 {filterData().length > 20 &&
@@ -31,16 +38,6 @@ const Cards = () => {
                         </button>
                     ))}
             </div>
-            {/* <h1 className='text-center'>Favorites List</h1>
-            <div>
-                {favorites.map(item => (
-                    <div key={item.id}>
-                        <p>{item.name}</p>
-                    </div>
-                ))}
-            </div> */}
-
-
         </section>
     )
 }

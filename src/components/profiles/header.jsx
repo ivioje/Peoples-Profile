@@ -12,7 +12,7 @@ import { Context } from '../../context/Context';
 const Header = () => {
 
     const { handleFilterClick, handleToggleEduView, handleToggleGenderView, handleToggleOrgView,
-        handleToggleWorkView } = useContext(Context)
+        handleToggleWorkView } = useContext(Context);
 
     return (
         <section className={`${styles.flexBtw} flex-col p-4 xs:p-8 font-firaSans`}>
@@ -47,7 +47,7 @@ const Header = () => {
             <EducationFilter />
             <GenderFilter />
 
-            <p className='font-normal font-poppins'>
+            <p className='font-normal font-poppins mt-3'>
                 <Link to='/login' className=' border-b-2 border-dotted border-gray-500 text-gradient'>
                     Log in</Link> to save favourites.
             </p>

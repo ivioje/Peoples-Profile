@@ -25,6 +25,7 @@ export const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [templateData, setTemplateData] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [bookmark, setBookmark] = useState([]);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState(null);
 
@@ -59,19 +60,33 @@ export const ContextProvider = ({ children }) => {
     setFavorites(favorites.filter((favorite) => favorite.id !== id));
   }
 
+  const removeFromBookmarks = (id) => {
+    setBookmark(bookmark.filter((marked) => marked.id !== id));
+  }
+
   const filterData = () => {
-    return pageItems.profile.filter((item) => {
-      //filter
+    return data.filter((item) => {
+      //filter profiles with buttons
       if (filter && (item.org !== filter && item.work !== filter && item.edu !== filter
         && item.edu !== filter && item.gender !== filter)) {
         return false
       }
 
-      //filter by search query
+      //filter profiles by search query
       if (query && (!item.name.toLowerCase().includes(query.toLowerCase()) &&
         !item.work.toLowerCase().includes(query.toLowerCase()))) {
         return false
       }
+
+      return true;
+    })
+  }
+
+  const filterTemplateData = () => {
+    return templateData.filter((item) => {
+      if (query && !item.type.toLowerCase().includes(query.toLowerCase())) {
+        return false
+      };
 
       return true;
     })
@@ -105,8 +120,9 @@ export const ContextProvider = ({ children }) => {
     <Context.Provider value={{
       handleFilterClick, handlePageNumber, handleToggleEduView, handleToggleGenderView, handleToggleOrgView, handleToggleWorkView,
       toggleEducationView, toggleGenderView, toggleOrganisationView, toggleWorkView, setToggleEducationView, setToggleGenderView,
-      setToggleOrganisationView, setToggleWorkView, query, setQuery, getSimilarItemsCount, paginatedItems, filterData,
-      currentPage, containerRef, data, favorites, setFavorites, removeFromFavorites, nodeRef, templateData
+      setToggleOrganisationView, setToggleWorkView, query, setQuery, getSimilarItemsCount, paginatedItems, filterData, bookmark,
+      currentPage, containerRef, data, favorites, setFavorites, removeFromFavorites, templateData, filterTemplateData, setBookmark,
+      removeFromBookmarks
     }}>
       {children}
     </Context.Provider>

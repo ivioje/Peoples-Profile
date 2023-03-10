@@ -18,7 +18,7 @@ const RecentProfiles = () => {
             </div>
 
             <div className={`${styles.flexBtw} overflow-x-scroll overflow-y-hidden relative font-[400] overviewScroll`}>
-                {data.profile.map(item => (
+                {data.map(item => (
                     <div key={item.id} className='m-1 h-[120px] flex flex-col bg-center bg-cover bg-no-repeat text-secondary rounded-[15px] cursor-pointer'
                         style={{ 'backgroundImage': `url(${item.photo})` }}>
                         <div className='profilesOverlay w-[200px] rounded-[15px] p-1'>

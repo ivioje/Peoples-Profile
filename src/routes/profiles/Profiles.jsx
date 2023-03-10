@@ -4,8 +4,6 @@ import Header from '../../components/profiles/header';
 
 const Profiles = () => {
 
-
-
   return (
     <>
       <Header />
