@@ -441,3 +441,10 @@ img {
     left: 70px;
   }
 }
+.hoverClass {
+  transition: .5s ease-in-out;
+}
+.hoverClass:hover {
+  /* transform: scale(1.03); */
+  margin-top: .5px;
+}

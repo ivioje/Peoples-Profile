@@ -5,11 +5,11 @@ import { Context } from '../../context/Context';
 const OrganizationFilter = () => {
 
     const { getSimilarItemsCount, toggleOrganisationView, data, handleFilterClick,
-    setToggleOrganisationView } = useContext(Context)
+        setToggleOrganisationView } = useContext(Context)
 
     const mappedItems = data.map((item) => item.org)
 
-   const uniqueList = [...new Set(mappedItems)]
+    const uniqueList = [...new Set(mappedItems)]
 
     return (
         <section className={`font-poppins text-[14px]  relative  md:w-[350px] w-[80vw] xs:w-[90%] z-40 ${toggleOrganisationView ? 'block' : 'hidden'}`}>
@@ -20,12 +20,11 @@ const OrganizationFilter = () => {
                 <hr className='m-2' />
                 <div className={`${styles.flexCenter} flex-wrap overflow-y-scroll h-auto `}>
                     {uniqueList.map((item) => (
-                        <div key={item} className={`${styles.flexBtw} p-1 m-3 border-b cursor-pointer hover:bg-gray-300`}>
-                            <p onClick={() => {
-                                handleFilterClick(`${item}`);
-                                setToggleOrganisationView(false)
-                            }}
-                             className='mx-3'>{item}</p>
+                        <div key={item} className={`${styles.flexBtw} p-1 m-3 border-b cursor-pointer hover:bg-gray-300`} onClick={() => {
+                            handleFilterClick(`${item}`);
+                            setToggleOrganisationView(false)
+                        }}>
+                            <p className='mx-3'>{item}</p>
                             <small className='bg-gray-300 p-1 h-[20px] font-medium flex items-center rounded-full'>
                                 {getSimilarItemsCount(data, 'org', item)}
                             </small>

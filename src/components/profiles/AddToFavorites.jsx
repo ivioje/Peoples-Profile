@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { BsCheck, BsHeart } from 'react-icons/bs'
 
 const AddToFavoritesButton = ({ isInFavorite, addToFavorites }) => {

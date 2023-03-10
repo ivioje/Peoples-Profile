@@ -6,12 +6,11 @@ import { Context } from '../../context/Context'
 
 const JobFilter = () => {
 
-    const { toggleWorkView, data, handleFilterClick, setToggleWorkView,
-    getSimilarItemsCount } = useContext(Context)
+    const { toggleWorkView, data, handleFilterClick, setToggleWorkView, getSimilarItemsCount } = useContext(Context);
 
     const mappedItems = data.map((item) => item.work)
 
-   const uniqueList = [...new Set(mappedItems)]
+    const uniqueList = [...new Set(mappedItems)]
 
     return (
         <section className={`font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] z-40 ${toggleWorkView ? 'block' : 'hidden'}`}>
@@ -23,11 +22,11 @@ const JobFilter = () => {
                 <div className={`${styles.flexBtw} flex-wrap overflow-y-scroll h-[250px] `}>
                     {uniqueList.map((job) => (
                         <div key={job} className={`${styles.flexBtw} w-full p-1 m-1 shadow-md cursor-pointer hover:bg-gray-300  `}
-                        onClick={() => {
-                            handleFilterClick(job);
-                            setToggleWorkView(false)
-                           }}>
-                    <p>{job}</p>
+                            onClick={() => {
+                                handleFilterClick(job);
+                                setToggleWorkView(false)
+                            }}>
+                            <p>{job}</p>
                             <small className='bg-gray-300 p-1 h-[20px] flex items-center rounded-full'>
                                 {getSimilarItemsCount(data, 'work', job)}
                             </small>

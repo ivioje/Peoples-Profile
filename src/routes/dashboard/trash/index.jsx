@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import DashboardHeaders from '../../../components/dashboard/DashboardHeaders';
 import trashIcon from '../../../assets/trash.svg'
-import { cardItems } from '../../../constants';
 import styles from '../../../style';
+import { Context } from '../../../context/Context';
 
 const Trash = () => {
+
+  const { data } = useContext(Context);
   return (
     <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center min-h-[80vh]'>
       <DashboardHeaders
@@ -14,7 +16,7 @@ const Trash = () => {
       />
 
       <div className={`flex justify-center items-center flex-wrap `}>
-        {cardItems.slice(0, 3).map(item => (
+        {data.profile.slice(0, 3).map(item => (
           <div className='xs:w-[200px] w-full m-4' key={item.id}>
             <div className={`h-[114px] bg-cover bg-no-repeat bg-center text-secondary rounded-sm`}
               style={{ 'backgroundImage': `url(${item.photo})` }}>

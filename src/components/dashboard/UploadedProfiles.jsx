@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from '../../style';
 import { BsTrash } from 'react-icons/bs';
-import { cardItems } from '../../constants';
+import { Context } from '../../context/Context';
 const ProfileUploads = () => {
+
+    const { data } = useContext(Context);
+
     return (
         <div className={`flex justify-center items-center flex-wrap `}>
-            {cardItems.slice(0, 5).map(item => (
+            {data.profile.slice(0, 5).map(item => (
                 <div className='xs:w-[200px] w-full m-4' key={item.id}>
                     <div className={`h-[114px] bg-cover bg-no-repeat bg-center text-secondary rounded-sm`}
                         style={{ 'backgroundImage': `url(${item.photo})` }}>

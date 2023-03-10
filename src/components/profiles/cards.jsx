@@ -1,6 +1,4 @@
 import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom';
-import { cardItems } from '../../constants';
 import styles from '../../style';
 import SingleCard from './SingleCard';
 import { Context } from '../../context/Context';
@@ -23,15 +21,15 @@ const Cards = () => {
                 ))}
             </div>
             <div className='flex justify-center'>
-            {filterData().length > 20 &&
-                Array.from({ length: Math.ceil(filterData().length / 20) }, (_, i) => i + 1).map((pageNumber) => (
-                <button key={pageNumber} onClick={() => handlePageNumber(pageNumber)} 
-                className={currentPage === pageNumber ? `bg-slate-500 text-dimWhite ${styles.flexCenter} border p-2 m-2 w-[30px] h-[30px] rounded-full font-semibold`
-                 : 
-                `${styles.flexCenter} border p-2 m-2 w-[30px] h-[30px] rounded-full font-semibold`}>
-                {pageNumber}
-                </button>
-            ))}
+                {filterData().length > 20 &&
+                    Array.from({ length: Math.ceil(filterData().length / 20) }, (_, i) => i + 1).map((pageNumber) => (
+                        <button key={pageNumber} onClick={() => handlePageNumber(pageNumber)}
+                            className={currentPage === pageNumber ? `bg-slate-500 text-dimWhite ${styles.flexCenter} border p-2 m-2 w-[30px] h-[30px] rounded-full font-semibold`
+                                :
+                                `${styles.flexCenter} border p-2 m-2 w-[30px] h-[30px] rounded-full font-semibold`}>
+                            {pageNumber}
+                        </button>
+                    ))}
             </div>
             {/* <h1 className='text-center'>Favorites List</h1>
             <div>

@@ -9,7 +9,7 @@ const Share = ({ item, open, setOpen }) => {
   const shareLink = `${window.location.href}/${item.id}`
 
   return (
-    <section className={`${open? 'block': 'hidden'} absolute border-4 border-gray-100 pt-6 px-2 xs:p-4 w-auto h-auto bottom-[-20px] right-0 bg-white shadow`}>
+    <section className={`${open ? 'block' : 'hidden'} absolute border-4 border-gray-100 pt-6 px-2 xs:p-4 w-auto h-auto bottom-[-20px] right-0 bg-white shadow`}>
       <button className='absolute top-0 right-0 text-[26px]' onClick={() => setOpen(!open)}>
         <BsX />
       </button>

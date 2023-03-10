@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { cardItems } from '../../constants';
+import React from 'react';
 import Cards from '../../components/profiles/cards';
 import Header from '../../components/profiles/header';
 

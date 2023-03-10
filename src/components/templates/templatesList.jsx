@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsBookmark } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import { tempItems } from '../../constants'
+import { Context } from '../../context/Context'
 import styles from '../../style'
 
 const TemplatesList = () => {
+
+    const { templateData } = useContext(Context);
+
     return (
         <section className={`font-firaSans ${styles.flexBtw} flex-wrap flex-col xs:flex-row md:py-16 py-8 px-3 md:px-28`}>
-            {tempItems.map((item) => (
+            {templateData.map((item) => (
                 <div key={item.id} className='xs:w-[49%] p-2 md:p-0 md:w-[30%] w-full md:mx-2 my-6 border-b'>
                     <h1 style={{ 'background': `${item.color}` }} className='text-lightGray text-[20px] font-[600] p-1 '>
                         {item.type} {' '} Template
