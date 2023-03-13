@@ -9,7 +9,9 @@ import '../../index.css'
 const SingleCard = ({ items }) => {
     const [open, setOpen] = useState(false);
 
-    const { favorites, setFavorites } = useContext(Context)
+    const { favorites, setFavorites, scrollToTop } = useContext(Context)
+
+
 
 
     const addToFavorites = () => {
@@ -33,9 +35,9 @@ const SingleCard = ({ items }) => {
             <AddToFavoritesButton addToFavorites={addToFavorites} isInFavorite={isInFavorite} />
 
             <div className='flex flex-col w-full p-2 bg-slate-600 text-lightGray text-center rounded-b-[20px]'>
-                <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px] font-firaSans'>
+                <h4 className='card_text_gradient px-1 pt-1 font-[500] uppercase text-[13px] font-firaSans' id='userLink' onClick={() => scrollToTop()}>
                     <Link to={`user/${items.id}`}>
-                        {items.name}
+                                {items.name}
                     </Link>
                 </h4>
                 <p className='px-1 pb-3 text-[14px]'>

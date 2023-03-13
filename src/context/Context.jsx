@@ -31,7 +31,8 @@ export const ContextProvider = ({ children }) => {
 
   const itemsPerPage = 20;
   const containerRef = useRef(null);
-  const nodeRef = useRef();
+  const nodeRef = useRef(null);
+  const formRef = useRef();
 
   useEffect(() => {
     setData(pageItems.profile);
@@ -116,13 +117,24 @@ export const ContextProvider = ({ children }) => {
 
   const paginatedItems = paginate(filterData(), currentPage, itemsPerPage);
 
+  const scrollToTop = () => {
+    let linkElement = document.getElementById('userLink');
+
+    linkElement.addEventListener('click', () => {
+      const container = nodeRef.current;
+     if(container) {
+       container.scrollIntoView({ behavior: 'smooth', block: 'start' })
+     }
+    })
+  }
+
   return (
     <Context.Provider value={{
       handleFilterClick, handlePageNumber, handleToggleEduView, handleToggleGenderView, handleToggleOrgView, handleToggleWorkView,
       toggleEducationView, toggleGenderView, toggleOrganisationView, toggleWorkView, setToggleEducationView, setToggleGenderView,
       setToggleOrganisationView, setToggleWorkView, query, setQuery, getSimilarItemsCount, paginatedItems, filterData, bookmark,
       currentPage, containerRef, data, favorites, setFavorites, removeFromFavorites, templateData, filterTemplateData, setBookmark,
-      removeFromBookmarks
+      removeFromBookmarks, nodeRef, scrollToTop
     }}>
       {children}
     </Context.Provider>

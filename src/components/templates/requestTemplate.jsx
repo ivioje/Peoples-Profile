@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import wave from '../../assets/wave.svg'
 import styles from '../../style';
+import RequestTemplateForm from './RequestTemplateForm';
 
 const RequestTemplate = () => {
     return (
@@ -19,14 +20,7 @@ const RequestTemplate = () => {
                     or request for a template by filling in the form below. We will review your submission and be in touch with you!
                 </p>
 
-                <form className={`${styles.flexCol} pt-8 pb-[40px] requestForm w-full sm:w-[600px]`}>
-                    <input name='name' type='text' placeholder='Template name' />
-                    <textarea name='description' rows='3' cols='21' type='text' placeholder='Template description' />
-                    <input name='email' type='email' placeholder='Email address' />
-                    <button type='submit' className='request-btn text-dimWhite text-[18px] primary-gradient w-[200px] font-[500] '>
-                        Request Template
-                    </button>
-                </form>
+                <RequestTemplateForm />
             </div>
         </section>
     )
