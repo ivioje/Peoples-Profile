@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { BsShareFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Context } from '../../context/Context';
 import AddToFavoritesButton from './AddToFavorites'
 import Share from './Share';

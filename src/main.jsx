@@ -20,6 +20,7 @@ import Sharedprofiles from './routes/dashboard/shared'
 import Trash from './routes/dashboard/trash';
 import ProfileDetails from './components/profiles/profileDetails';
 import { ContextProvider } from './context/Context';
+import Templatedetails from './components/templates/Templatedetails';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: '/profiles/user/:id',
         element: <ProfileDetails />
+      },
+      {
+        path: '/templates/:id',
+        element: <Templatedetails />
       },
     ],
   },

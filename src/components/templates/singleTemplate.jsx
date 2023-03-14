@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import styles from '../../style';
 import BookmarkTemplate from './BookmarkTemplate';
 
 const SingleTemplate = ({ item }) => {
 
-    const { bookmark, setBookmark } = useContext(Context);
+    const { bookmark, setBookmark, generateId } = useContext(Context);
 
     const addToBookmarks = () => {
         // Check if the template is already in the bookmarked list
@@ -19,6 +19,7 @@ const SingleTemplate = ({ item }) => {
 
     const isInBookmarks = bookmark.some((mark) => mark.id === item.id);
 
+    //const id = generateId(10000);
 
 
     return (
@@ -30,10 +31,12 @@ const SingleTemplate = ({ item }) => {
                 Nunc ultricies eu justo, in egestas id auctor proin dui.
             </p>
             <div className={`${styles.flexBtw} p-1`}>
-                <button style={{ 'color': `${item.color}`, 'borderColor': `${item.color}` }} className='font-[500] p-1 border opacity-80
-                    hover:opacity-100 hover:transition-opacity'>
-                    <Link to={`/${item.type.toLowerCase()}`}>Use Template</Link>
-                </button>
+                <Link to={`${item.id}`}>
+                    <button style={{ 'color': `${item.color}`, 'borderColor': `${item.color}` }} className='font-[500] p-1 border opacity-80
+                        hover:opacity-100 hover:transition-opacity'>
+                                    Use Template
+                    </button>
+                    </Link>
                 <BookmarkTemplate addToBookmarks={addToBookmarks} isInBookmarks={isInBookmarks} />
             </div>
             <hr className='opacity-5' />

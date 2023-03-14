@@ -17,7 +17,7 @@ const DashboardNav = () => {
     return (
         <div className='sm:flex '>
             <section className={`h-full w-full ss:w-[250px] sm:w-[25vw] ${styles.flexBtw} flex-col flex-wrap relative sm:fixed font-poppins`}>
-                <div className={` font-poppins ${styles.flexCol} sm:h-[550px] overflow-y-scroll sm:barOverflow sm:mt-[60px] `}>
+                <div className={`sideBar font-poppins ${styles.flexCol} sm:h-[550px] overflow-y-scroll sm:barOverflow sm:mt-[60px] `}>
                     <ul className='list-none flex hide flex-col justify-center items-start flex-1 pt-20 pl-0 md:pl-20 pr-2 pb-2'>
                         {
                             sidenavItems.map((item => (

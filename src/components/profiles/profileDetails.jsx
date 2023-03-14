@@ -18,11 +18,11 @@ const ProfileDetails = () => {
 
   return (
     <div ref={nodeRef}>
-     <h1>{userDetails.name}</h1>
-     <div className='w-[100px] h-[100px] rounded-full'>
-     <img src={userDetails.photo} alt={userDetails.name} />
-     </div>
-     <h1>{userDetails.work}</h1>
+      <h1>{userDetails.name}</h1>
+      <div className='w-[100px] h-[100px] rounded-full'>
+      <img src={userDetails.photo} alt={userDetails.name} />
+      </div>
+      <h1>{userDetails.work}</h1>
     </div>
   )
 }

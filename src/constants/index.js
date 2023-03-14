@@ -349,57 +349,82 @@ export const pageItems = {
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-116b7531c2acb7425e72f389f4d43d94.jpg',
             gender: 'female',
-            org: 'Google',
+            org: 'PiggyVest',
             job: 'Software engineer',
             edu: 'B.Sc Computer science',
         },
     ],
     templates: [
         {
+            id: 0,
+            type: 'Basic',
+            color: '#3D80AD',
+            slug: 'basic',
+            thumbnail: 'https://images.unsplash.com/photo-1465634836201-1d5651b9b6d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+        },
+        {
             id: 1,
             type: 'Developer',
             color: '#8271B2',
+            slug: 'developer',
+            thumbnail: 'https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80'
         },
 
         {
             id: 2,
             type: 'Project Manager',
             color: '#548CA8',
+            slug: 'project-manager',
+            thumbnail: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'
         },
         {
             id: 3,
             type: 'UI/UX Designer',
             color: '#8197A8',
+            slug: 'ui-ux-designer',
+            thumbnail: 'https://images.unsplash.com/photo-1576153192396-180ecef2a715?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
         },
         {
             id: 4,
             type: 'ML Engineer',
             color: '#0A66C2D1',
+            slug: 'ml-engineer',
+            thumbnail: 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
         },
         {
             id: 5,
             type: 'Cloud Engineer',
             color: '#334257',
+            slug: 'cloud-engineer',
+            thumbnail: 'https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1009&q=80'
         },
         {
             id: 6,
             type: 'Data Scientist',
             color: 'rgba(61, 147, 153, 0.85)',
+            slug: 'data-scientist',
+            thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
         },
         {
             id: 7,
             type: 'Sales Manager',
             color: 'rgba(21, 147, 124, 0.82)',
+            slug: 'sales-manager',
+            thumbnail: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'
         },
         {
             id: 8,
             type: 'Data Analyst',
             color: 'rgba(181, 78, 139, 0.82)',
+            slug: 'data-analyst',
+            thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=815&q=80'
         },
         {
             id: 9,
             type: 'Social Media Manager',
             color: 'rgba(191, 53, 103, 0.82)',
+            slug: 'social-media-manager',
+            thumbnail: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
         },
     ]
 

@@ -240,7 +240,9 @@ img {
     background-position: top right;
   }
 }
-
+.sideBar {
+  
+}
 /* .black__gradient {
   background: rgba(75, 213, 255, 0.6);
   filter: blur(800px);

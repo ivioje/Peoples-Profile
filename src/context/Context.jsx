@@ -28,6 +28,8 @@ export const ContextProvider = ({ children }) => {
   const [bookmark, setBookmark] = useState([]);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState(null);
+  const [toggle, setToggle] = useState(false);
+  const [openTemplatesList, setOpenTemplatesList] = useState(false);
 
   const itemsPerPage = 20;
   const containerRef = useRef(null);
@@ -128,13 +130,18 @@ export const ContextProvider = ({ children }) => {
     })
   }
 
+  const generateId = (upperLimit) => {
+      return Math.floor(Math.random() * upperLimit);
+    }
+  
+
   return (
     <Context.Provider value={{
       handleFilterClick, handlePageNumber, handleToggleEduView, handleToggleGenderView, handleToggleOrgView, handleToggleWorkView,
       toggleEducationView, toggleGenderView, toggleOrganisationView, toggleWorkView, setToggleEducationView, setToggleGenderView,
       setToggleOrganisationView, setToggleWorkView, query, setQuery, getSimilarItemsCount, paginatedItems, filterData, bookmark,
       currentPage, containerRef, data, favorites, setFavorites, removeFromFavorites, templateData, filterTemplateData, setBookmark,
-      removeFromBookmarks, nodeRef, scrollToTop
+      removeFromBookmarks, nodeRef, scrollToTop, generateId, openTemplatesList, setOpenTemplatesList,toggle, setToggle
     }}>
       {children}
     </Context.Provider>
