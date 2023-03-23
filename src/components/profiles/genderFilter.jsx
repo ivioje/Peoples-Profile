@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
-import { BsX } from 'react-icons/bs'
-import { Context } from '../../context/Context'
+import { ProfileContext } from '../../context/ProfileContext'
 import styles from '../../style'
 
 const GenderFilter = () => {
 
-    const { toggleGenderView, setToggleGenderView, handleFilterClick } = useContext(Context)
+    const { toggleGenderView, setToggleGenderView, handleFilterClick } = useContext(ProfileContext)
 
     return (
         <section className={`font-poppins text-[14px]  relative  w-[100vw] ss:w-[300px] sm:right-[-250px] z-40 ${toggleGenderView ? 'block' : 'hidden'}`}>

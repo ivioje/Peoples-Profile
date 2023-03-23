@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import styles from '../../style';
 import { BsTrash } from 'react-icons/bs';
-import { Context } from '../../context/Context';
+import { ProfileContext } from '../../context/ProfileContext';
 const ProfileUploads = () => {
 
-    const { data } = useContext(Context);
+    const { data } = useContext(ProfileContext);
 
     return (
         <div className={`flex justify-center items-center flex-wrap `}>

@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import DashboardHeaders from '../../../components/dashboard/DashboardHeaders';
 import trashIcon from '../../../assets/trash.svg'
 import styles from '../../../style';
-import { Context } from '../../../context/Context';
+import { ProfileContext } from '../../../context/ProfileContext';
 
 const Trash = () => {
 
-  const { data } = useContext(Context);
+  const { data } = useContext(ProfileContext);
   return (
     <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center min-h-[80vh]'>
       <DashboardHeaders

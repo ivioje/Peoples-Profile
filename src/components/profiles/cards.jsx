@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import styles from '../../style';
 import SingleCard from './SingleCard';
-import { Context } from '../../context/Context';
+import { ProfileContext } from '../../context/ProfileContext';
 
 const Cards = () => {
 
-    const { paginatedItems, filterData, handlePageNumber, currentPage, containerRef, query } = useContext(Context)
+    const { paginatedItems, filterData, handlePageNumber, currentPage, containerRef, query } = useContext(ProfileContext);
 
 
     return (

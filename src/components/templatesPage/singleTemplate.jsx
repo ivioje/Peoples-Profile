@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Context } from '../../context/Context';
+import { TemplateContext } from '../../context/TemplateContext';
 import styles from '../../style';
 import BookmarkTemplate from './BookmarkTemplate';
 
 const SingleTemplate = ({ item }) => {
 
-    const { bookmark, setBookmark, generateId } = useContext(Context);
+    const { bookmark, setBookmark } = useContext(TemplateContext);
 
     const addToBookmarks = () => {
         // Check if the template is already in the bookmarked list
@@ -19,24 +19,21 @@ const SingleTemplate = ({ item }) => {
 
     const isInBookmarks = bookmark.some((mark) => mark.id === item.id);
 
-    //const id = generateId(10000);
-
-
     return (
         <div key={item.id} className='xs:w-[49%] p-2 md:p-0 md:w-[30%] w-full md:mx-2 my-6 border-b'>
-            <h1 style={{ 'background': `${item.color}` }} className='text-lightGray text-[20px] font-[600] p-1 '>
+            <h1 style={{ 'background': `linear-gradient(90deg, ${item.color} 0%, rgba(0, 0, 0, 0.70) 100%)` }} className='text-lightGray text-[20px] font-[600] p-1 '>
                 {item.type} {' '} Template
             </h1>
-            <p className='font-poppins  px-1 py-4'>Sit faucibus molestie diam quis ultricies.
-                Nunc ultricies eu justo, in egestas id auctor proin dui.
+            <p className='font-poppins  px-1 py-4'>
+                {item.description}.
             </p>
             <div className={`${styles.flexBtw} p-1`}>
-                <Link to={`${item.id}`}>
+                <Link to={`${item.slug}-template`}>
                     <button style={{ 'color': `${item.color}`, 'borderColor': `${item.color}` }} className='font-[500] p-1 border opacity-80
                         hover:opacity-100 hover:transition-opacity'>
-                                    Use Template
+                        Use Template
                     </button>
-                    </Link>
+                </Link>
                 <BookmarkTemplate addToBookmarks={addToBookmarks} isInBookmarks={isInBookmarks} />
             </div>
             <hr className='opacity-5' />

@@ -7,7 +7,7 @@ import footerBg from '../../assets/vanishing-stripes.svg'
 
 const Footer = () => (
     <section className='flex flex-col pt-10 md:px-[53px] text-lightGray 
-    font-poppins text-[15px] sm:text-[16px] bg-cover bg-no-repeat' style={{ 'backgroundImage': `url(${footerBg})` }}>
+    font-poppins bg-primary text-[15px] sm:text-[16px] bg-cover bg-no-repeat' style={{ 'backgroundImage': `url(${footerBg})` }}>
         <div className='flex flex-col md:flex-row justify-between pb-10 relative'>
             <div className='p-4'>
                 <div className=''>

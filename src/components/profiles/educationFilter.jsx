@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
+import { ProfileContext } from '../../context/ProfileContext'
 import styles from '../../style'
 
 const EducationFilter = () => {
 
     const { toggleEducationView, data, getSimilarItemsCount, setToggleEducationView,
-        handleFilterClick } = useContext(Context)
+        handleFilterClick } = useContext(ProfileContext)
 
     const mappedItems = data.map((item) => item.edu)
 

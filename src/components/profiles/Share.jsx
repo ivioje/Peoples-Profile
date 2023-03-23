@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { BsFacebook, BsLinkedin, BsTwitter, BsWhatsapp, BsX } from 'react-icons/bs';
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';
-import { Context } from '../../context/Context';
+import { Context } from '../../context/GlobalContext';
 import styles from '../../style'
 
 const Share = ({ item, open, setOpen }) => {

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { BsArrowRight, BsClockHistory, BsHeart, BsShareFill } from 'react-icons/bs'
-import { Context } from '../../context/Context'
+import { ProfileContext } from '../../context/ProfileContext'
 import styles from '../../style'
 
 const RecentProfiles = () => {
 
-    const { data } = useContext(Context);
+    const { data } = useContext(ProfileContext);
 
     return (
         <div className='text-[18px] px-4 sm:px-1 z-[-1] '>

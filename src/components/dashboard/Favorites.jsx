@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { Context } from '../../context/Context';
 import image from '../../assets/saveProfile.svg'
 import styles from '../../style'
+import { ProfileContext } from '../../context/ProfileContext';
 
 const Favorites = () => {
 
-    const { favorites, removeFromFavorites } = useContext(Context);
+    const { favorites, removeFromFavorites } = useContext(ProfileContext);
 
     return (
         <div className={`flex justify-center items-center flex-wrap `}>

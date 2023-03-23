@@ -360,70 +360,104 @@ export const pageItems = {
             type: 'Basic',
             color: '#3D80AD',
             slug: 'basic',
+            description: 'A basic template for any purpose',
             thumbnail: 'https://images.unsplash.com/photo-1465634836201-1d5651b9b6d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
         },
         {
             id: 1,
-            type: 'Developer',
-            color: '#8271B2',
-            slug: 'developer',
+            type: 'Professional Portfolio',
+            color: 'rgba(0, 51, 204, 0.80)',
+            slug: 'professional-portfolio',
+            description: 'A sleek and modern design for you to create a professional profile',
             thumbnail: 'https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80'
         },
 
         {
             id: 2,
-            type: 'Project Manager',
-            color: '#548CA8',
+            type: 'Creative Portfolio',
+            color: 'rgba(145, 245, 100, 0.85)',
             slug: 'project-manager',
+            description: 'A colorful and creative design for you to showcase your creative work',
             thumbnail: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'
         },
         {
             id: 3,
-            type: 'UI/UX Designer',
-            color: '#8197A8',
+            type: 'Minimalist Resume',
+            color: 'rgba(255, 102, 102, 0.82)',
             slug: 'ui-ux-designer',
+            description: ' A simple and minimalist design for you to create a concise and effective resume',
             thumbnail: 'https://images.unsplash.com/photo-1576153192396-180ecef2a715?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
         },
         {
             id: 4,
-            type: 'ML Engineer',
+            type: 'Social Media Profile',
             color: '#0A66C2D1',
             slug: 'ml-engineer',
+            description: 'A bold and vibrant design for you to create a social media profile',
             thumbnail: 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
         },
         {
             id: 5,
-            type: 'Cloud Engineer',
-            color: '#334257',
+            type: 'Academic Profile',
+            color: 'rgba(0, 0, 255, 0.80)',
             slug: 'cloud-engineer',
+            description: ' A scholarly and professional design for you to create an academic profile',
             thumbnail: 'https://images.unsplash.com/photo-1584169417032-d34e8d805e8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1009&q=80'
         },
         {
             id: 6,
-            type: 'Data Scientist',
+            type: 'Personal Branding',
             color: 'rgba(61, 147, 153, 0.85)',
             slug: 'data-scientist',
+            description: 'A colorful and engaging design for you to create a personal brand profile',
             thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
         },
         {
             id: 7,
-            type: 'Sales Manager',
-            color: 'rgba(21, 147, 124, 0.82)',
+            type: 'Executive Profile',
+            color: 'rgba(107, 107, 107, 0.82)',
             slug: 'sales-manager',
+            description: 'A sophisticated and refined design for you to create an executive profile',
             thumbnail: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'
         },
         {
             id: 8,
-            type: 'Data Analyst',
-            color: 'rgba(181, 78, 139, 0.82)',
+            type: 'Career Changer',
+            color: 'rgba(255, 0, 102, 0.82)',
             slug: 'data-analyst',
+            description: 'A template with a dynamic and flexible design for you to create a career change profile',
             thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=815&q=80'
         },
         {
             id: 9,
-            type: 'Social Media Manager',
+            type: 'ShopSpace',
             color: 'rgba(191, 53, 103, 0.82)',
             slug: 'social-media-manager',
+            description: 'A customizable e-commerce template for small business owners',
+            thumbnail: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+        },
+        {
+            id: 10,
+            type: 'EventExpress',
+            color: 'rgba(255, 153, 255, 0.82)',
+            slug: 'social-media-manager',
+            description: 'A dynamic and customizable template for event planners',
+            thumbnail: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+        },
+        {
+            id: 11,
+            type: 'TravelTribe',
+            color: 'rgba(0, 153, 0, 0.85)',
+            slug: 'social-media-manager',
+            description: 'A customizable template for travel bloggers',
+            thumbnail: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+        },
+        {
+            id: 12,
+            type: 'RecipeRealm',
+            color: 'rgba(221, 165, 44, 0.82)',
+            slug: 'social-media-manager',
+            description: 'A customizable template for food bloggers',
             thumbnail: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
         },
     ]

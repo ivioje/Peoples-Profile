@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
+import { ProfileContext } from '../../context/ProfileContext';
 
 const SharedProfilesList = () => {
 
-    const { data } = useContext(Context);
+    const { data } = useContext(ProfileContext);
     return (
         <div className={`flex justify-center items-center flex-wrap `}>
             {data.map(item => (

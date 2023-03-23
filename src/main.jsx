@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Home from './routes/home/Home'
 import Profiles from './routes/profiles/Profiles'
-import Templates from './routes/templates/Templates'
+import Templates from './routes/templatesPage/Templates'
 import Guide from './routes/guide/Guide'
 import ErrorPage from './components/ErrorPage'
 import Login from './routes/login/Login'
@@ -19,8 +19,9 @@ import Bookmarks from './routes/dashboard/bookmarked'
 import Sharedprofiles from './routes/dashboard/shared'
 import Trash from './routes/dashboard/trash';
 import ProfileDetails from './components/profiles/profileDetails';
-import { ContextProvider } from './context/Context';
-import Templatedetails from './components/templates/Templatedetails';
+import { ContextProvider } from './context/GlobalContext';
+import Templatedetails from './components/templatesPage/Templatedetails';
+import WorkExperience from './components/templatesPage/templates/professionalTemplate/WorkExperience';
 
 const router = createBrowserRouter([
   {
@@ -66,8 +67,8 @@ const router = createBrowserRouter([
         element: <ProfileDetails />
       },
       {
-        path: '/templates/:id',
-        element: <Templatedetails />
+        path: '/templates/professional-portfolio-template',
+        element: <WorkExperience />
       },
     ],
   },

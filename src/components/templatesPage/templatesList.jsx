@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
+import { TemplateContext } from '../../context/TemplateContext'
 import styles from '../../style'
 import SingleTemplate from './singleTemplate'
 
 const TemplatesList = () => {
 
-    const { filterTemplateData, query } = useContext(Context);
+    const { filterTemplateData, query } = useContext(TemplateContext);
     //
     return (
         <section className={`font-firaSans `}>
