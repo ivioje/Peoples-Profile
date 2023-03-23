@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsX } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { TemplateContext } from '../../../context/TemplateContext';
 import styles from '../../../style';
 
 const CreateProfile = ({ setOpenTemplatesList }) => {
+    const [close, setClose] = useState(null);
+
 
     const { templateData } = useContext(TemplateContext);
     return (
@@ -12,12 +14,12 @@ const CreateProfile = ({ setOpenTemplatesList }) => {
             <div className='text-center mb-4'>
                 <div className={`${styles.flexBtw}`}>
                     <h1 className='p-1 font-firaSans text-[16px]'>Choose a Template</h1>
-                    <BsX className='text-[20px]' onClick={() => setOpenTemplatesList(false)} />
+                    <BsX className={`text-[20px] sm:hidden cursor-pointer `} />
                 </div>
                 <hr />
                 <p className='text-[13px]'>Choose a template below in order to create a profile.</p>
             </div>
-            <div className='h-[300px]'>
+            <div className={`h-[300px]`}>
                 {templateData.map((data) => (
                     <Link to={`/templates/${data.id}`} key={data.id} className={`${styles.flexCenter} border-b-[1px] hover:bg-slate-300 p-1`}>
                         <div className={`w-[40px] h-[40px] ${styles.flexCenter}`}>

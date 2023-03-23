@@ -20,8 +20,7 @@ import Sharedprofiles from './routes/dashboard/shared'
 import Trash from './routes/dashboard/trash';
 import ProfileDetails from './components/profiles/profileDetails';
 import { ContextProvider } from './context/GlobalContext';
-import Templatedetails from './components/templatesPage/Templatedetails';
-import WorkExperience from './components/templatesPage/templates/professionalTemplate/WorkExperience';
+import ProfessionalProfile from './components/templatesPage/templates/professionalTemplate/ProfessionalProfile';
 
 const router = createBrowserRouter([
   {
@@ -68,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/templates/professional-portfolio-template',
-        element: <WorkExperience />
+        element: <ProfessionalProfile />
       },
     ],
   },

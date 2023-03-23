@@ -21,7 +21,7 @@ const SingleTemplate = ({ item }) => {
 
     return (
         <div key={item.id} className='xs:w-[49%] p-2 md:p-0 md:w-[30%] w-full md:mx-2 my-6 border-b'>
-            <h1 style={{ 'background': `linear-gradient(90deg, ${item.color} 0%, rgba(0, 0, 0, 0.70) 100%)` }} className='text-lightGray text-[20px] font-[600] p-1 '>
+            <h1 style={{ 'background': `${item.color}` }} className='text-lightGray text-[20px] font-[600] p-1 '>
                 {item.type} {' '} Template
             </h1>
             <p className='font-poppins  px-1 py-4'>

@@ -1,7 +1,9 @@
-import React, { useContext } from 'react'
-import { BsTrash } from 'react-icons/bs'
-import { TemplateContext } from '../../context/TemplateContext'
-import styles from '../../style'
+import React, { useContext } from 'react';
+import { BsTrash } from 'react-icons/bs';
+import { TemplateContext } from '../../context/TemplateContext';
+import image from '../../assets/emptyBookmarksPage.svg';
+import styles from '../../style';
+import { Link } from 'react-router-dom';
 
 const BookmarkedTemplates = () => {
 
@@ -32,8 +34,13 @@ const BookmarkedTemplates = () => {
                         </button>
                     </div>
                 )) :
-                    <div>
-                        No templates
+                    <div className={`${styles.flexCenter} flex-col sm:w-[70vw] w-full mt-6`}>
+                        <h2 className='font-semibold'>You do not have any bookmarks.
+                            {' '}<Link to='/templates' className='text-slate-500'>Bookmark</Link> {' '}
+                            some templates and check back!</h2>
+                        <div className='mb-5 mt-10'>
+                            <img src={image} alt='bookmark a template' />
+                        </div>
                     </div>
                 }
             </div>

@@ -37,7 +37,7 @@ const Favorites = () => {
                     <h2 className='font-semibold'>You do not have any saved profile.
                         {' '}<Link to='/profiles' className='text-slate-500'>Like</Link> {' '}
                         some profiles and check back!</h2>
-                    <div className='my-5'>
+                    <div className='mb-5 mt-10'>
                         <img src={image} alt='like a profile' />
                     </div>
                 </div>

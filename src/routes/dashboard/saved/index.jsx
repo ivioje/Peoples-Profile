@@ -7,7 +7,7 @@ const SavedProfiles = () => (
   <section className='font-poppins m-2 xs:p-2 flex flex-col xs:items-start items-center min-h-[80vh]'>
     <DashboardHeaders
       title={'Saved profiles'}
-      title={'See and manage your saved profiles'}
+      subtitle={'See and manage your saved profiles'}
       icon={heartIcon}
     />
 
