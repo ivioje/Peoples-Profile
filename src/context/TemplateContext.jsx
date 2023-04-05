@@ -16,6 +16,9 @@ export const TemplateContextProvider = ({ children }) => {
     const [awards, setAwards] = useState([{ name: "", issuingOrganization: "", issueDate: "" }]);
     const [contact, setContact] = useState({ email: "", phone: "", address: "", country: "" });
     const [languages, setLanguages] = useState([{ name: "", proficiency: "" }]);
+    const [activeStep, setActiveStep] = useState(0);
+    const [selectedFile, setSelectedFile] = useState(null);
+
 
     useEffect(() => {
         setTemplateData(pageItems.templates);
@@ -130,11 +133,25 @@ export const TemplateContextProvider = ({ children }) => {
         }
     };
 
+    const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleFileChange = e => {
+        setSelectedFile(e.target.files[0])
+    };
+
+
     return (
         <TemplateContext.Provider value={{
             query, setQuery, bookmark, templateData, filterTemplateData, setBookmark, removeFromBookmarks, openTemplatesList, setOpenTemplatesList, toggle,
             setToggle, workExperience, setWorkExperience, education, setEducation, awards, setAwards, contact, setContact, certifications, setCertifications,
-            skills, setSkills, languages, setLanguages, handleAddField, handleInputChange, handleRemoveField
+            skills, setSkills, languages, setLanguages, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
+            selectedFile, setSelectedFile, handleFileChange
         }}>
             {children}
         </TemplateContext.Provider>

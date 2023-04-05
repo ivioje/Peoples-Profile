@@ -14,7 +14,8 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         firaSans: ['Fira Sans Condensed', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
-        garamond: ['EB Garamond', 'serif']
+        garamond: ['EB Garamond', 'serif'],
+        domine: ['Domine', 'serif'],
       },
       shadow: {
         'mid': '0px 6px 2px #548CA8',

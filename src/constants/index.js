@@ -143,7 +143,7 @@ export const filterButtons = [
 export const pageItems = {
     profile: [
         {
-            id: 0,
+            id: 1,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: person1,
@@ -153,7 +153,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 1,
+            id: 2,
             name: 'Esther Smith',
             work: 'Backend Developer',
             photo: '',
@@ -163,7 +163,7 @@ export const pageItems = {
             edu: 'B.Sc Mathematics',
         },
         {
-            id: 2,
+            id: 3,
             name: 'Christopher Stone',
             work: 'Developer',
             photo: person2,
@@ -173,7 +173,7 @@ export const pageItems = {
             edu: 'PhD Robotics engineering',
         },
         {
-            id: 3,
+            id: 4,
             name: 'John Doe',
             work: 'Data Scientist',
             photo: person1,
@@ -183,7 +183,7 @@ export const pageItems = {
             edu: 'HND Civil engineering',
         },
         {
-            id: 4,
+            id: 5,
             name: 'Clarie Thompson',
             work: 'Developer',
             photo: '',
@@ -193,7 +193,7 @@ export const pageItems = {
             edu: 'HND Civil engineering',
         },
         {
-            id: 5,
+            id: 6,
             name: 'Taylor Lee',
             work: 'Senior Frontend Developer',
             photo: person3,
@@ -203,21 +203,11 @@ export const pageItems = {
             edu: 'PhD Biology',
         },
         {
-            id: 6,
+            id: 7,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: person3,
             gender: 'male',
-            org: 'Google',
-            job: 'Software engineer',
-            edu: 'B.Sc Computer science',
-        },
-        {
-            id: 7,
-            name: 'Taylor Lee',
-            work: 'Developer',
-            photo: '',
-            gender: 'female',
             org: 'Google',
             job: 'Software engineer',
             edu: 'B.Sc Computer science',
@@ -236,6 +226,16 @@ export const pageItems = {
             id: 9,
             name: 'Taylor Lee',
             work: 'Developer',
+            photo: '',
+            gender: 'female',
+            org: 'Google',
+            job: 'Software engineer',
+            edu: 'B.Sc Computer science',
+        },
+        {
+            id: 10,
+            name: 'Taylor Lee',
+            work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-11b8a47631165955edc2a83fa4f9ed8d.jpg',
             gender: 'male',
             org: 'Google',
@@ -243,7 +243,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 10,
+            id: 11,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: person1,
@@ -253,7 +253,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 11,
+            id: 12,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-1139dcbbb1b97fc177e6bf8e7949d443.jpg',
@@ -263,7 +263,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 12,
+            id: 13,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-114312d7e9a06a78a385c26ab0571566.jpg',
@@ -274,7 +274,7 @@ export const pageItems = {
 
         },
         {
-            id: 13,
+            id: 14,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-1178f9de9d3fa62aa3ad5f858d71ca20.jpg',
@@ -284,7 +284,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 14,
+            id: 15,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-11178d033ef0fb4f2f19479545cdf5cf.jpg',
@@ -294,7 +294,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 15,
+            id: 16,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-1123308c0acd7458671039b832d09a3e.jpg',
@@ -304,7 +304,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 16,
+            id: 17,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-110e92386c7486f714018fe28fc4748b.jpg',
@@ -314,7 +314,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 17,
+            id: 18,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-11123ea0e2056b6b95bb23550f1ab143.jpg',
@@ -324,7 +324,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 18,
+            id: 19,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-115a512504bd8c37edfebf778a026652.jpg',
@@ -334,7 +334,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 19,
+            id: 20,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-11b8fdb4692c80dfac10eb50a2947aa0.jpg',
@@ -344,7 +344,7 @@ export const pageItems = {
             edu: 'B.Sc Computer science',
         },
         {
-            id: 20,
+            id: 21,
             name: 'Taylor Lee',
             work: 'Developer',
             photo: 'https://this-person-does-not-exist.com/gen/avatar-116b7531c2acb7425e72f389f4d43d94.jpg',
@@ -366,7 +366,7 @@ export const pageItems = {
         {
             id: 1,
             type: 'Professional Portfolio',
-            color: 'rgba(0, 51, 204, 0.80)',
+            color: 'rgba(0, 51, 204, 0.75)',
             slug: 'professional-portfolio',
             description: 'A sleek and modern design for you to create a professional profile',
             thumbnail: 'https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80'
@@ -375,7 +375,7 @@ export const pageItems = {
         {
             id: 2,
             type: 'Creative Portfolio',
-            color: 'rgba(145, 245, 100, 0.85)',
+            color: 'rgba(51, 153, 255, 0.85)',
             slug: 'project-manager',
             description: 'A colorful and creative design for you to showcase your creative work',
             thumbnail: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'
@@ -383,7 +383,7 @@ export const pageItems = {
         {
             id: 3,
             type: 'Minimalist Resume',
-            color: 'rgba(255, 102, 102, 0.82)',
+            color: 'rgba(107, 107, 107, 0.82)',
             slug: 'ui-ux-designer',
             description: ' A simple and minimalist design for you to create a concise and effective resume',
             thumbnail: 'https://images.unsplash.com/photo-1576153192396-180ecef2a715?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
@@ -391,7 +391,7 @@ export const pageItems = {
         {
             id: 4,
             type: 'Social Media Profile',
-            color: '#0A66C2D1',
+            color: 'rgba(204, 51, 255, 0.85)',
             slug: 'ml-engineer',
             description: 'A bold and vibrant design for you to create a social media profile',
             thumbnail: 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
@@ -415,7 +415,7 @@ export const pageItems = {
         {
             id: 7,
             type: 'Executive Profile',
-            color: 'rgba(107, 107, 107, 0.82)',
+            color: 'rgba(255, 102, 102, 0.82)',
             slug: 'sales-manager',
             description: 'A sophisticated and refined design for you to create an executive profile',
             thumbnail: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'
@@ -439,7 +439,7 @@ export const pageItems = {
         {
             id: 10,
             type: 'EventExpress',
-            color: 'rgba(255, 153, 255, 0.82)',
+            color: 'rgba(255, 26, 26, 0.82)',
             slug: 'social-media-manager',
             description: 'A dynamic and customizable template for event planners',
             thumbnail: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'

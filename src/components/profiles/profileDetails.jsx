@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { useParams } from 'react-router'
-import { Context } from '../../context/GlobalContext';
+import { ProfileContext } from '../../context/ProfileContext';
 
 const ProfileDetails = () => {
 
   const { id } = useParams();
-  const { data, nodeRef } = useContext(Context);
+  const { data } = useContext(ProfileContext);
 
   const items = data.map((item) => item);
 
@@ -18,6 +18,10 @@ const ProfileDetails = () => {
 
   return (
     <>
+      <div>
+        {userDetails.name}
+        {id}
+      </div>
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
           <div className="flex justify-center">

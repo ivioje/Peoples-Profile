@@ -19,7 +19,7 @@ const Cards = () => {
                         The search term you entered <b>"{query}"</b> did not match any profile. Please try a different search term.
                     </div>
                     :
-                    paginatedItems.map(items => (
+                    paginatedItems.map((items) => (
                         <div key={items.id}>
                             <SingleCard
                                 items={items}
