@@ -14,17 +14,15 @@ import Languages from './Languages';
 
 const ProfessionalProfile = () => {
 
-  const { activeStep, handleBack, handleNext } = useContext(TemplateContext);
-
+  const { activeStep, handleBack, handleNext, personalDetails, handleInputChange } = useContext(TemplateContext);
   const steps = ["Personal Details", "Work history", "Skills", "Education", "Certifications", "Professional summary", "Languages"];
-
   const getStepContent = (stepIndex) => {
     switch (stepIndex) {
       case 0:
         return (
           <div className='bg-white p-3'>
             <h1 className='uppercase font-bold'>personal details</h1>
-            <PersonalDetails />
+            <PersonalDetails formData={personalDetails} onFormChange={handleInputChange} />
           </div>
         );
       case 1:
@@ -158,11 +156,18 @@ const ProfessionalProfile = () => {
 
               <div className='flex items-center justify-center'>
                 <div className='flex justify-between sm:w-[80%] w-[90%]'>
-                  <Button disabled={activeStep === 0} onClick={handleBack}>
+                  <Button
+                    disabled={activeStep === 0}
+                    style={{ 'textTransform': 'capitalize', 'fontWeight': 'bold' }}
+                    onClick={handleBack}>
                     Back
                   </Button>
-                  <Button variant="contained" color="primary" onClick={handleNext}>
-                    {activeStep === steps.length - 1 ? "Save" : "Next"}
+                  <Button
+                    variant="contained"
+                    style={{ 'textTransform': 'capitalize', 'background': '#171F3A', 'color': 'whitesmoke', 'fontWeight': 'bold' }}
+                    onClick={handleNext}
+                  >
+                    {activeStep === steps.length - 1 ? "Finish" : "Save & Next"}
                   </Button>
                 </div>
               </div>

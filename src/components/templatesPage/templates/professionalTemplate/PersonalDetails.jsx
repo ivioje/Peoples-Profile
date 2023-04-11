@@ -1,71 +1,160 @@
 import React, { useContext } from 'react';
+import { BsInfoCircleFill } from 'react-icons/bs';
 import { TemplateContext } from '../../../../context/TemplateContext';
 import styles from '../../../../style';
+import LinkButtons from './Linkbuttons';
+import './styles.css';
 
-const PersonalDetails = () => {
-  const { selectedFile, handleFileChange } = useContext(TemplateContext)
+const PersonalDetails = ({ formData }) => {
+  const { selectedFile, handleFileChange, handleInputChange } = useContext(TemplateContext)
+  console.log(formData);
   return (
-    <section className={`sm:${styles.flexBtw} py-4`}>
-      <div className='w-[126px] h-[134px]'>
-        {selectedFile ? (
-          <img src={URL.createObjectURL(selectedFile)} alt="Uploaded Food Item" />
-        ) : (
-          <img src="https://st4.depositphotos.com/4329009/19956/v/450/depositphotos_199564354-stock-illustration-creative-vector-illustration-default-avatar.jpg" alt="Placeholder Food Item" />
-        )}
-        <label htmlFor="Upload photo" className='text-[12px]'>
-          Upload photo
-          <input
-            type="file"
-            onChange={handleFileChange}
-            accept=".jpg, .jpeg, .png"
-            className='text-[12px] text-blue-900'
-          />
-        </label>
+    <section className={`flex justify-between sm:flex-row flex-col p-4`}>
+      <div className='sm:w-[20%] mt-[20px] w-full h-full flex justify-center py-3'>
+        <div className='w-[134px] h-[134px]'>
+          {selectedFile ? (
+            <img
+              src={URL.createObjectURL(selectedFile)}
+              alt="Uploaded photo"
+              className='w-full h-full rounded-sm'
+            />
+          ) : (
+            <img src="https://st4.depositphotos.com/4329009/19956/v/450/depositphotos_199564354-stock-illustration-creative-vector-illustration-default-avatar.jpg" alt="Placeholder image" className='border' />
+          )}
+          <label htmlFor="Upload photo" className='text-[12px]'>
+            Upload photo
+            <input
+              type="file"
+              onChange={handleFileChange}
+              accept=".jpg, .jpeg, .png"
+              className='text-[12px] text-blue-900 w-full'
+            />
+          </label>
+        </div>
       </div>
 
-      <div className='mt-10'>
-        <form className={`flex flex-col`}>
-          <div className={`${styles.flexBtw} p-2`}>
-            <label htmlFor='firstname'>
-              FIRST NAME
-              <input name='firstname' placeholder='e.g Jon' type='text' />
-            </label>
-            <label htmlFor='lastname'>
-              LAST NAME
-              <input name='lastname' placeholder='e.g Doe' type='text' />
-            </label>
-          </div>
-          <label htmlFor='address'>
-            STREET ADDRESS
-            <input name='address' placeholder='e.g 200 Richard .K. Jonah crescent' type='text' />
-          </label>
-          <div>
-            <label htmlFor='city'>
-              CITY/TOWN
-              <input name='city' placeholder='e.g Abuja' type='text' />
-            </label>
-            <div>
-              <label htmlFor='country'>
-                COUNTRY
-                <input name='country' placeholder='e.g Nigeria' type='text' />
-              </label>
-              <label htmlFor='zipcode'>
-                ZIP CODE
-                <input name='zipcode' placeholder='e.g 900001' type='text' />
-              </label>
+      <div className='sm:w-[75%] h-full w-full p-4'>
+        {formData.map((data, index) => (
+          <form key={index} className={`flex flex-col justify-between`}>
+            <div className={`${styles.flexBtw} sm:flex-row flex-col`}>
+              <div className='w-1/2'>
+                <label htmlFor='firstname'> FIRST NAME </label>
+                <input
+                  name='firstname'
+                  placeholder='e.g Jon'
+                  type='text'
+                  value={data.firstname}
+                  onChange={(event) => handleInputChange("personalDetails", index, event)}
+                />
+              </div>
+              <div className='w-1/2'>
+                <label htmlFor='lastname'>
+                  LAST NAME
+                </label>
+                <input
+                  name='lastname'
+                  placeholder='e.g Doe'
+                  type='text'
+                  value={data.lastname}
+                  onChange={(event) => handleInputChange("personalDetails", index, event)}
+                />
+              </div>
             </div>
+            <div className='flex flex-col'>
+              <label htmlFor='address'>
+                STREET ADDRESS
+              </label>
+              <input
+                name='address'
+                placeholder='e.g 200 Richard .K. Jonah crescent'
+                type='text'
+                value={data.address}
+                onChange={(event) => handleInputChange("personalDetails", index, event)}
+              />
+            </div>
+            <div className={`${styles.flexBtw} sm:flex-row flex-col`}>
+              <div className='w-[40%]'>
+                <label htmlFor='city'>
+                  CITY/TOWN
+                </label>
+                <input
+                  name='city'
+                  placeholder='e.g Abuja'
+                  type='text'
+                  value={data.city}
+                  onChange={(event) => handleInputChange("personalDetails", index, event)}
+                />
+              </div>
+              <div className='flex sm:flex-row flex-col w-[60%]'>
+                <div className='w-1/2'>
+                  <label htmlFor='country'>
+                    COUNTRY
+                  </label>
+                  <input
+                    name='country'
+                    placeholder='e.g Nigeria'
+                    type='text'
+                    value={data.counntry}
+                    onChange={(event) => handleInputChange("personalDetails", index, event)}
+                  />
+                </div>
+                <div className='w-1/2'>
+                  <label htmlFor='zipcode'>
+                    ZIP CODE
+                  </label>
+                  <input
+                    name='zipcode'
+                    placeholder='e.g 900001'
+                    type='text'
+                    value={data.zipcode}
+                    onChange={(event) => handleInputChange("personalDetails", index, event)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={`${styles.flexBtw} sm:flex-row flex-col`}>
+              <div className='w-1/2'>
+                <label htmlFor='phone'>
+                  PHONE
+                </label>
+                <input
+                  name='phone'
+                  placeholder='phone number'
+                  type='number'
+                  value={data.phone}
+                  onChange={(event) => handleInputChange("personalDetails", index, event)}
+                />
+              </div>
+              <div className='w-1/2'>
+                <label htmlFor='email'>
+                  EMAIL ADDRESS
+                </label>
+                <input
+                  name='email'
+                  placeholder='email address'
+                  type='email'
+                  value={data.email}
+                  onChange={(event) => handleInputChange("personalDetails", index, event)}
+                />
+              </div>
+            </div>
+          </form>
+        ))}
+        <div className='w-[80%] my-2'>
+          <div className='flex items-center cursor-pointer'>
+            <h3 className='text-blue-900 text-[14px] font-extrabold'>
+              Additional information to your professional profile
+              <span className='font-normal'>
+                {' '}(optional)
+              </span>
+            </h3>
+            <span className='ml-2 hoverable text-blue-900 relative'><BsInfoCircleFill /></span>
+            <span className='hover-content absolute h-[20px] w-[100px] text-[13px]'>
+              Add links to your website or social media handles.
+            </span>
           </div>
-          <div>
-            <label htmlFor='phone'>
-              PHONE
-              <input name='phone' placeholder='phone number' type='number' />
-            </label>
-            <label htmlFor='email'>
-              EMAIL ADDRESS
-              <input name='email' placeholder='email address' type='email' />
-            </label>
-          </div>
-        </form>
+          <LinkButtons />
+        </div>
       </div>
     </section>
   )

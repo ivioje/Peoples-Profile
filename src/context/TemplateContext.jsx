@@ -9,6 +9,7 @@ export const TemplateContextProvider = ({ children }) => {
     const [query, setQuery] = useState('');
     const [toggle, setToggle] = useState(false);
     const [openTemplatesList, setOpenTemplatesList] = useState(false);
+    const [personalDetails, setPersonalDetails] = useState([{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }])
     const [workExperience, setWorkExperience] = useState([{ company: "", position: "", startDate: "", endDate: "", description: "" }]);
     const [education, setEducation] = useState([{ institution: "", degree: "", startDate: "", endDate: "", description: "" }]);
     const [skills, setSkills] = useState([{ skill: "", proficiency: "" }]);
@@ -18,6 +19,7 @@ export const TemplateContextProvider = ({ children }) => {
     const [languages, setLanguages] = useState([{ name: "", proficiency: "" }]);
     const [activeStep, setActiveStep] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
+    const [activeButton, setActiveButton] = useState(1);
 
 
     useEffect(() => {
@@ -93,6 +95,11 @@ export const TemplateContextProvider = ({ children }) => {
         const { name, value } = event.target;
 
         switch (fieldType) {
+            case "personalDetails":
+                const updatedPersonalDetails = [...personalDetails];
+                updatedPersonalDetails[index][name] = value;
+                setPersonalDetails(updatedPersonalDetails);
+                break;
             case "workExperience":
                 const updatedWorkExperience = [...workExperience];
                 updatedWorkExperience[index][name] = value;
@@ -145,13 +152,16 @@ export const TemplateContextProvider = ({ children }) => {
         setSelectedFile(e.target.files[0])
     };
 
+    const showButtonContent = (buttonindex) => {
+        setActiveButton(buttonindex)
+    }
 
     return (
         <TemplateContext.Provider value={{
             query, setQuery, bookmark, templateData, filterTemplateData, setBookmark, removeFromBookmarks, openTemplatesList, setOpenTemplatesList, toggle,
             setToggle, workExperience, setWorkExperience, education, setEducation, awards, setAwards, contact, setContact, certifications, setCertifications,
             skills, setSkills, languages, setLanguages, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
-            selectedFile, setSelectedFile, handleFileChange
+            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton
         }}>
             {children}
         </TemplateContext.Provider>
