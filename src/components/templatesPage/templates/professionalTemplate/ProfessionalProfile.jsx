@@ -111,7 +111,7 @@ const ProfessionalProfile = () => {
         <div className=' bg-slate-50 sm:m-4'>
           {activeStep !== steps.length ? (
             <div>
-              <div className={`flex items-center justify-between relative inset-0`}>
+              <div className={`xs:flex hidden items-center justify-between relative inset-0`}>
                 <div className=''>
                   <Button
                     className='absolute top-[150px] h-[50px] w-[50px] p-2 m-2 left-0 rounded-[100%]'
@@ -144,7 +144,7 @@ const ProfessionalProfile = () => {
 
               {/*Carousel content */}
               <div className='flex items-center justify-center flex-col'>
-                <div className='w-[80%] h-auto p-3 sm:my-3'>
+                <div className='sm:w-[80%] w-full h-auto p-3 sm:my-3'>
                   {getStepContent(activeStep)}
                 </div>
               </div>
