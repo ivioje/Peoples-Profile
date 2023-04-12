@@ -131,6 +131,7 @@ const WorkExperience = ({ formData }) => {
                                 <label htmlFor='check' className='text-[14px] text-blue-900 mx-1 flex' >
                                     I currently work here
                                     <input
+                                        id={`item${index}`}
                                         type='checkbox'
                                         className='mx-1 border h-[20px] w-[20px]'
                                         name='check'

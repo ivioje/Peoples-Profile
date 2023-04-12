@@ -12,7 +12,7 @@ export const TemplateContextProvider = ({ children }) => {
     const [personalDetails, setPersonalDetails] = useState([{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }])
     const [workExperience, setWorkExperience] = useState([{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }]);
     const [education, setEducation] = useState([{ institution: "", degree: "", startDate: "", endDate: "", description: "" }]);
-    const [skills, setSkills] = useState([{ skill: "", proficiency: "" }]);
+    const [skills, setSkills] = useState([{ skill: "" }]);
     const [certifications, setCertifications] = useState([{ name: "", issuingOrganization: "", issueDate: "" }]);
     const [awards, setAwards] = useState([{ name: "", issuingOrganization: "", issueDate: "" }]);
     const [contact, setContact] = useState({ email: "", phone: "", address: "", country: "" });
@@ -50,7 +50,7 @@ export const TemplateContextProvider = ({ children }) => {
                 setEducation([...education, { institution: "", degree: "", fieldOfStudy: "", start: "", end: "" }]);
                 break;
             case "skills":
-                setSkills([...skills, { skill: "", proficiency: "" }]);
+                setSkills([...skills, { skill: "" }]);
                 break;
             case "certifications":
                 setCertifications([...certifications, { certification: "", issuingOrganization: "", date: "" }]);
@@ -112,7 +112,7 @@ export const TemplateContextProvider = ({ children }) => {
                 break;
             case "skills":
                 const updatedSkills = [...skills];
-                updatedSkills[index][name] = value;
+                updatedSkills[index] = value;
                 setSkills(updatedSkills);
                 break;
             case "certifications":

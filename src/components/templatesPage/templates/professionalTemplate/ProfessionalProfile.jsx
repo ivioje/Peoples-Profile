@@ -14,7 +14,7 @@ import Languages from './Languages';
 
 const ProfessionalProfile = () => {
 
-  const { activeStep, handleBack, handleNext, personalDetails, workExperience, handleInputChange } = useContext(TemplateContext);
+  const { activeStep, handleBack, handleNext, personalDetails, workExperience, skills } = useContext(TemplateContext);
   const steps = ["Personal Details", "Work history", "Skills", "Education", "Certifications", "Professional summary", "Languages"];
   const getStepContent = (stepIndex) => {
     switch (stepIndex) {
@@ -34,9 +34,10 @@ const ProfessionalProfile = () => {
         );
       case 2:
         return (
-          <div className='bg-white p-3'>
+          <div className={`bg-white p-5`}>
             <h1 className='uppercase'>skills</h1>
-            <Skills />
+            <h4 className='py-1 text-[14px]'>List out your skills below to stand out</h4>
+            <Skills data={skills} />
           </div>
         );
       case 3:
