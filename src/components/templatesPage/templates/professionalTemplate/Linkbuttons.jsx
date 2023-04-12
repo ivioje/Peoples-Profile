@@ -31,24 +31,24 @@ const LinkButtons = () => {
 
             </div>
 
-            <div className='shadow p-3 w-full'>
-                {activeButton === 1 &&
-                    <div>
-                        <form className='flex flex-col items-start justify-start'>
-                            <label>LinkedIn URL</label>
-                            <input
-                                type='text'
-                                placeholder='enter LinkedIn URL'
-                                className='h-[41px] w-full'
-                            />
-                            <button type='submit' className='bg-[#171F3A] opacity-90 text-dimWhite px-2 py-1 rounded-lg'>Save</button>
-                        </form>
+            <div className='shadow-xl p-3 w-full'>
+                {items.map((item) => (
+                    <div key={item.id}>
+                        {activeButton === item.id &&
+                            <div>
+                                <form className='flex flex-col items-start justify-start'>
+                                    <label>{item.title} URL</label>
+                                    <input
+                                        type='text'
+                                        placeholder={`Enter ${item.title} URL`}
+                                        className='h-[41px] w-full'
+                                    />
+                                    <button type='submit' className='bg-[#171F3A] opacity-90 text-dimWhite px-2 py-1 rounded-lg'>Save</button>
+                                </form>
+                            </div>
+                        }
                     </div>
-                }
-                {activeButton === 2 && <div>button 2</div>}
-                {activeButton === 3 && <div>button 3</div>}
-                {activeButton === 4 && <div>button 4</div>}
-                {activeButton === 5 && <div>button 5</div>}
+                ))}
             </div>
         </>
     )

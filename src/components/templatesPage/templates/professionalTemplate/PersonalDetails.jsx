@@ -10,8 +10,8 @@ const PersonalDetails = ({ formData }) => {
   console.log(formData);
   return (
     <section className={`flex justify-between sm:flex-row flex-col p-4`}>
-      <div className='sm:w-[20%] mt-[20px] w-full h-full flex justify-center py-3'>
-        <div className='w-[134px] h-[134px]'>
+      <div className='sm:w-[20%] mt-[20px] sm:mb-0 mb-6 w-full h-full flex justify-center py-3'>
+        <div className='sm:w-[134px] sm:h-[134px] w-[80%] h-[80%]'>
           {selectedFile ? (
             <img
               src={URL.createObjectURL(selectedFile)}
@@ -37,7 +37,7 @@ const PersonalDetails = ({ formData }) => {
         {formData.map((data, index) => (
           <form key={index} className={`flex flex-col justify-between`}>
             <div className={`${styles.flexBtw} sm:flex-row flex-col`}>
-              <div className='w-1/2'>
+              <div className='sm:w-1/2 w-full'>
                 <label htmlFor='firstname'> FIRST NAME </label>
                 <input
                   name='firstname'
@@ -47,7 +47,7 @@ const PersonalDetails = ({ formData }) => {
                   onChange={(event) => handleInputChange("personalDetails", index, event)}
                 />
               </div>
-              <div className='w-1/2'>
+              <div className='sm:w-1/2 w-full'>
                 <label htmlFor='lastname'>
                   LAST NAME
                 </label>
@@ -60,7 +60,7 @@ const PersonalDetails = ({ formData }) => {
                 />
               </div>
             </div>
-            <div className='flex flex-col'>
+            <div className='flex flex-col w-full'>
               <label htmlFor='address'>
                 STREET ADDRESS
               </label>
@@ -73,7 +73,7 @@ const PersonalDetails = ({ formData }) => {
               />
             </div>
             <div className={`${styles.flexBtw} sm:flex-row flex-col`}>
-              <div className='w-[40%]'>
+              <div className='sm:w-[40%] w-full'>
                 <label htmlFor='city'>
                   CITY/TOWN
                 </label>
@@ -85,8 +85,8 @@ const PersonalDetails = ({ formData }) => {
                   onChange={(event) => handleInputChange("personalDetails", index, event)}
                 />
               </div>
-              <div className='flex sm:flex-row flex-col w-[60%]'>
-                <div className='w-1/2'>
+              <div className='flex xs:flex-row flex-col sm:w-[60%] w-full'>
+                <div className='xs:w-1/2 w-full'>
                   <label htmlFor='country'>
                     COUNTRY
                   </label>
@@ -94,11 +94,11 @@ const PersonalDetails = ({ formData }) => {
                     name='country'
                     placeholder='e.g Nigeria'
                     type='text'
-                    value={data.counntry}
+                    value={data.country}
                     onChange={(event) => handleInputChange("personalDetails", index, event)}
                   />
                 </div>
-                <div className='w-1/2'>
+                <div className='xs:w-1/2 w-full'>
                   <label htmlFor='zipcode'>
                     ZIP CODE
                   </label>
@@ -112,8 +112,8 @@ const PersonalDetails = ({ formData }) => {
                 </div>
               </div>
             </div>
-            <div className={`${styles.flexBtw} sm:flex-row flex-col`}>
-              <div className='w-1/2'>
+            <div className={`${styles.flexBtw} xs:flex-row flex-col`}>
+              <div className='xs:w-1/2 w-full'>
                 <label htmlFor='phone'>
                   PHONE
                 </label>
@@ -125,7 +125,7 @@ const PersonalDetails = ({ formData }) => {
                   onChange={(event) => handleInputChange("personalDetails", index, event)}
                 />
               </div>
-              <div className='w-1/2'>
+              <div className='xs:w-1/2 w-full'>
                 <label htmlFor='email'>
                   EMAIL ADDRESS
                 </label>
@@ -140,16 +140,16 @@ const PersonalDetails = ({ formData }) => {
             </div>
           </form>
         ))}
-        <div className='w-[80%] my-2'>
-          <div className='flex items-center cursor-pointer'>
+        <div className='sm:w-[80%] w-full my-2'>
+          <div className='flex items-center cursor-pointer relative'>
             <h3 className='text-blue-900 text-[14px] font-extrabold'>
               Additional information to your professional profile
               <span className='font-normal'>
                 {' '}(optional)
               </span>
             </h3>
-            <span className='ml-2 hoverable text-blue-900 relative'><BsInfoCircleFill /></span>
-            <span className='hover-content absolute h-[20px] w-[100px] text-[13px]'>
+            <span className='ml-2 hoverable text-blue-900'><BsInfoCircleFill /></span>
+            <span className='hover-content absolute h-auto rounded-xl w-auto bg-dimWhite p-3 right-0 top-[-50px] shadow-lg transition-all font-semibold text-[13px]'>
               Add links to your website or social media handles.
             </span>
           </div>

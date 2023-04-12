@@ -86,7 +86,7 @@ const ProfessionalProfile = () => {
       </div>
 
       {/*Stepper and Carousel*/}
-      <div className="container">
+      <div className="sm:w-[80%] w-full m-3 ">
         <div className='my-10 hidden sm:block'>
           <Stepper activeStep={activeStep} alternativeLabel>
             {steps.map((label) => (
@@ -114,11 +114,11 @@ const ProfessionalProfile = () => {
               <div className={` flex items-center justify-between relative inset-0`}>
                 <div className=''>
                   <Button
-                    className='absolute top-[150px] p-2 m-2 left-0 h-[50px] w-[50px] rounded-[100%]'
+                    className='absolute top-[150px] h-[50px] w-[50px] p-2 m-2 left-0 rounded-[100%]'
                     disabled={activeStep === 0}
                     onClick={handleBack}
                   >
-                    <BsChevronLeft className='text-[25px]' />
+                    <BsChevronLeft className='sm:text-[25px] text-[20px]' />
                   </Button>
                 </div>
                 <div>
@@ -129,13 +129,13 @@ const ProfessionalProfile = () => {
                       onClick={handleNext}
                       className='absolute top-[150px] p-2 m-2 right-0 border h-[50px] w-[50px] rounded-[100%]'
                     >
-                      <BsChevronRight className='text-[25px]' />
+                      <BsChevronRight className='sm:text-[25px] text-[20px]' />
                     </Button>
                     :
                     <Button
                       className='absolute top-[150px] p-2 m-2 right-0 border h-[50px] w-[50px] rounded-[100%]'
                       onClick={handleNext}>
-                      <BsChevronRight className='text-[25px]' />
+                      <BsChevronRight className='sm:text-[25px] text-[20px]' />
                     </Button>
                   }
                 </div>
@@ -143,7 +143,7 @@ const ProfessionalProfile = () => {
 
               {/*Carousel content */}
               <div className='flex items-center justify-center flex-col'>
-                <div className='sm:w-[80%] w-[90%] h-auto p-3 my-3'>
+                <div className='w-[80%] h-auto p-3 my-3'>
                   {getStepContent(activeStep)}
                 </div>
               </div>
