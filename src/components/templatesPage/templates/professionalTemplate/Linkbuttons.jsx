@@ -23,7 +23,7 @@ const LinkButtons = () => {
                         onClick={() => showButtonContent(item.id)}
                     >
                         <span className='text-[20px]'><BsPlusCircle /></span>
-                        <button className='p-1'>
+                        <button className='p-[2px]'>
                             {item.title}
                         </button>
                     </div>

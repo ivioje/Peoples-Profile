@@ -14,7 +14,7 @@ import Languages from './Languages';
 
 const ProfessionalProfile = () => {
 
-  const { activeStep, handleBack, handleNext, personalDetails, handleInputChange } = useContext(TemplateContext);
+  const { activeStep, handleBack, handleNext, personalDetails, workExperience, handleInputChange } = useContext(TemplateContext);
   const steps = ["Personal Details", "Work history", "Skills", "Education", "Certifications", "Professional summary", "Languages"];
   const getStepContent = (stepIndex) => {
     switch (stepIndex) {
@@ -22,14 +22,14 @@ const ProfessionalProfile = () => {
         return (
           <div className='bg-white p-3'>
             <h1 className='uppercase font-bold'>personal details</h1>
-            <PersonalDetails formData={personalDetails} onFormChange={handleInputChange} />
+            <PersonalDetails formData={personalDetails} />
           </div>
         );
       case 1:
         return (
           <div className='bg-white p-3'>
             <h1 className='uppercase'>Work history</h1>
-            <WorkExperience />
+            <WorkExperience formData={workExperience} />
           </div>
         );
       case 2:
@@ -80,7 +80,7 @@ const ProfessionalProfile = () => {
         <h1 className='font-firaSans sm:text-[36px] text-[23px] font-bold'>
           Professional Portfolio
         </h1>
-        <p className='font-poppins text-[14px] sm:w-[500px] w-[95%] text-center my-2'>
+        <p className='font-poppins text-[14px] sm:w-[500px] w-full text-center my-2'>
           A template with a sleek and modern design for you to create a professional profile, with input fields for work experience, education, skills, personal details and contact information.
         </p>
       </div>
@@ -90,7 +90,7 @@ const ProfessionalProfile = () => {
         <div className='my-10 hidden sm:block'>
           <Stepper activeStep={activeStep} alternativeLabel>
             {steps.map((label) => (
-              <Step key={label}>
+              <Step key={label} >
                 <StepLabel>{label}</StepLabel>
               </Step>
             ))}
@@ -132,7 +132,7 @@ const ProfessionalProfile = () => {
           />
         </div>
 
-        <div className=' bg-slate-50 sm:m-4'>
+        <div className=' bg-slate-50 sm:m-4 pb-5'>
           {activeStep !== steps.length ? (
             <div>
               <div className={`sm:flex hidden items-center justify-between relative inset-0`}>

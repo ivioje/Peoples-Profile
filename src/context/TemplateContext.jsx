@@ -10,7 +10,7 @@ export const TemplateContextProvider = ({ children }) => {
     const [toggle, setToggle] = useState(false);
     const [openTemplatesList, setOpenTemplatesList] = useState(false);
     const [personalDetails, setPersonalDetails] = useState([{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }])
-    const [workExperience, setWorkExperience] = useState([{ company: "", position: "", startDate: "", endDate: "", description: "" }]);
+    const [workExperience, setWorkExperience] = useState([{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }]);
     const [education, setEducation] = useState([{ institution: "", degree: "", startDate: "", endDate: "", description: "" }]);
     const [skills, setSkills] = useState([{ skill: "", proficiency: "" }]);
     const [certifications, setCertifications] = useState([{ name: "", issuingOrganization: "", issueDate: "" }]);
@@ -44,7 +44,7 @@ export const TemplateContextProvider = ({ children }) => {
     const handleAddField = (fieldType) => {
         switch (fieldType) {
             case "workExperience":
-                setWorkExperience([...workExperience, { company: "", position: "", start: "", end: "" }]);
+                setWorkExperience([...workExperience, { jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }]);
                 break;
             case "education":
                 setEducation([...education, { institution: "", degree: "", fieldOfStudy: "", start: "", end: "" }]);

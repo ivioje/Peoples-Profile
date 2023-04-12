@@ -7,7 +7,7 @@ import './styles.css';
 
 const PersonalDetails = ({ formData }) => {
   const { selectedFile, handleFileChange, handleInputChange } = useContext(TemplateContext)
-  console.log(formData);
+
   return (
     <section className={`flex justify-between sm:flex-row flex-col sm:p-4 p-0`}>
       <div className='sm:w-[20%] mt-[20px] sm:mb-0 mb-6 w-full h-full flex justify-center py-3'>

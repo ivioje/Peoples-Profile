@@ -1,178 +1,158 @@
-import React, { useContext } from 'react';
-import { BsCloudMinus, BsFileMinus, BsNodeMinus, BsPlus, BsPlusCircle, BsX, BsXCircle } from 'react-icons/bs';
+import React, { useContext, useState } from 'react';
+import { Button } from '@mui/material';
+import { BsPlus } from 'react-icons/bs';
+import { FaMinus } from 'react-icons/fa'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import { TemplateContext } from '../../../../context/TemplateContext';
+import styles from '../../../../style';
+
+const WorkExperience = ({ formData }) => {
+    const { handleAddField, handleInputChange, handleRemoveField } = useContext(TemplateContext)
+
+    console.log(formData);
+
+    const [isPresent, setIsPresent] = useState(false);
 
 
-const WorkExperience = () => {
-    const { workExperience, handleAddField, handleInputChange, handleRemoveField } = useContext(TemplateContext)
     return (
-        <div className=''>
-            <div className="">
-                <header className="py-6 px-8">
-                    <h1 className="text-2xl font-bold text-gray-700">Professional Profile</h1>
-                </header>
-                <main className="px-8 py-4">
-                    <section>
-                        <h2 className="text-lg font-semibold text-gray-700 mb-4">Work Experience</h2>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold mb-2" htmlFor="company">
-                                Company
-                            </label>
-                            <input className="w-full py-2 px-4 border rounded-md" type="text" id="company" name="company" />
+        <>
+            <section className={` h-full w-full sm:p-4 p-0`}>
+                {formData.map((data, index) => (
+                    <div key={index} className='shadow-md p-3 mt-3 border'>
+                        <div className="flex items-center justify-between mb-2">
+                            <h2 className="text-sm">Work Experience #{index + 1}</h2>
+                            <div className='flex items-center justify-center p-1'>
+                                {formData.length <= 3 && (
+                                    <Button
+                                        type="button"
+                                        variant=''
+                                        onClick={() => handleAddField("workExperience")}
+                                        style={{ 'background': 'rgb(230, 230, 230)', 'fontSize': '14px', 'textTransform': 'capitalize', 'margin': '4px' }}
+                                    >
+                                        Add {' '} <BsPlus />
+                                    </Button>
+                                )}
+                                {formData.length !== 1 && (
+                                    <Button
+                                        type="button"
+                                        variant=''
+                                        className={`${styles.flexCenter} p-1 rounded-lg m-1`}
+                                        onClick={() => handleRemoveField("workExperience", index)}
+                                        style={{ 'background': 'rgb(230, 230, 230)', 'margin': '4px' }}
+                                    >
+                                        <FaMinus />
+                                    </Button>
+                                )}
+                            </div>
                         </div>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold mb-2" htmlFor="position">
-                                Position
-                            </label>
-                            <input className="w-full py-2 px-4 border rounded-md" type="text" id="position" name="position" />
-                        </div>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold mb-2" htmlFor="description">
-                                Description
-                            </label>
-                            <textarea className="w-full py-2 px-4 border rounded-md" id="description" name="description"></textarea>
-                        </div>
-                    </section>
-                    <section>
-                        <h2 className="text-lg font-semibold text-gray-700 mb-4">Education</h2>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold mb-2" htmlFor="institution">
-                                Institution
-                            </label>
-                            <input className="w-full py-2 px-4 border rounded-md" type="text" id="institution" name="institution" />
-                        </div>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold mb-2" htmlFor="degree">
-                                Degree
-                            </label>
-                            <input className="w-full py-2 px-4 border rounded-md" type="text" id="degree" name="degree" />
-                        </div>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold mb-2" htmlFor="fieldOfStudy">
-                                Field of Study
-                            </label>
-                            <input className="w-full py-2 px-4 border rounded-md" type="text" id="fieldOfStudy" name="fieldOfStudy" />
-                        </div>
-                    </section>
-                    <section>
-                        <h2 className="text-lg font-semibold text-gray-700 mb-4">Skills</h2>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-semibold mb-2" htmlFor="skill">
-                                Skill
-                            </label>
-                            <input className="w-full py-2 px-4 border rounded-md" type="text" id="skill" name="skill" />
-                        </div>
-                    </section>
-                    <section>
-                        <h2 className="text-lg font-semibold text-gray-700 mb-4">Certifications</h2>
-                    </section>
-                </main>
-            </div>
+                        <form className={` ${styles.flexCenter} flex-col p-2`}>
 
-            {workExperience.map((work, index) => (
-                <div key={index} className="m-6 bg-slate-50 p-6 rounded-xl">
-                    <div className="flex items-center justify-between mb-2">
-                        <h2 className="text-lg font-medium">Work Experience #{index + 1}</h2>
-                        <div className='flex items-center justify-center p-1'>
-                            {workExperience.length !== 1 && (
-                                <button
-                                    type="button"
-                                    className="text-[20px] m-1 text-red-500 focus:outline-none"
-                                    onClick={() => handleRemoveField("workExperience", index)}
-                                >
-                                    <BsX />
-                                </button>
-                            )}
-                            {workExperience.length <= 9 && (
-                                <button
-                                    type="button"
-                                    className="text-[20px] m-1 focus:outline-none"
-                                    onClick={() => handleAddField("workExperience")}
-                                >
-                                    <BsPlus />
-                                </button>
-                            )}
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-3 gap-4">
-                        <div>
-                            <label htmlFor={`company${index}`} className="block text-sm font-medium text-gray-700">
-                                Company
-                            </label>
-                            <input
-                                type="text"
-                                name="company"
-                                id={`company${index}`}
-                                value={work.company}
-                                onChange={(event) => handleInputChange("workExperience", index, event)}
-                                className="mt-1 p-3 focus:outline-dashed block w-full sm:text-sm border-gray-300 rounded-md"
+                            <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
+                                <div className='xs:w-1/2 w-full'>
+                                    <label htmlFor='jobTitle'> JOB TITLE </label>
+                                    <input
+                                        name='jobTitle'
+                                        id={`jobTitle${index}`}
+                                        placeholder='e.g Developer'
+                                        type='text'
+                                        value={data.jobTitle}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </div>
+                                <div className='xs:w-1/2 w-full'>
+                                    <label htmlFor='organization'>ORGANIZATION</label>
+                                    <input
+                                        name='organization'
+                                        id={`organization${index}`}
+                                        placeholder='e.g Google'
+                                        type='text'
+                                        value={data.organization}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
+                                <div className='xs:w-1/2 w-full'>
+                                    <label htmlFor='city'>CITY</label>
+                                    <input
+                                        name='city'
+                                        id={`city${index}`}
+                                        placeholder='e.g Abuja'
+                                        type='text'
+                                        value={data.city}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </div>
+                                <div className='xs:w-1/2 w-full'>
+                                    <label htmlFor='country'>COUNTRY</label>
+                                    <input
+                                        name='country'
+                                        id={`country${index}`}
+                                        placeholder='e.g Nigeria'
+                                        type='text'
+                                        value={data.country}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
+                                <div className='xs:w-1/2 w-full'>
+                                    <label htmlFor='startDate'>START DATE</label>
+                                    <input
+                                        name='startDate'
+                                        id={`startDate${index}`}
+                                        placeholder='start date'
+                                        type='date'
+                                        value={data.startDate}
+                                        className=''
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </div>
+                                <div className={`xs:w-1/2 w-full ${isPresent ? 'hidden' : 'flex '}`}>
+                                    <label htmlFor='endDate'>END DATE</label>
+                                    <input
+                                        name='endDate'
+                                        id={`endDate${index}`}
+                                        placeholder='end date'
+                                        type={isPresent ? 'text' : 'date'}
+                                        value={isPresent ? data.endDate = 'Present' : data.endDate}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </div>
+                                <div className={`xs:w-1/2 w-full mt-6 ${isPresent ? 'flex' : 'hidden'}`}>
+                                    <h1 className='p-2 bg-lightGray w-[80px] rounded-md'>Present</h1>
+                                </div>
+                            </div>
+
+                            <div className={`flex items-end justify-end w-full`}>
+                                <label htmlFor='check' className='text-[14px] text-blue-900 mx-1 flex' >
+                                    I currently work here
+                                    <input
+                                        type='checkbox'
+                                        className='mx-1 border h-[20px] w-[20px]'
+                                        name='check'
+                                        value={data.check}
+                                        onClick={(e) => setIsPresent(e.target.checked)}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </label>
+                            </div>
+                        </form>
+                        <div className='md:w-1/2 sm:w-[80%] w-full'>
+                            <label className='text-[14px] text-blue-900 mb-3'>DESCRIPTION</label>
+                            <ReactQuill
+                                id={`desc${index}`}
+                                theme='snow'
                             />
                         </div>
-                        <div>
-                            <label htmlFor={`position${index}`} className="block text-sm font-medium text-gray-700">
-                                Position
-                            </label>
-                            <input
-                                type="text"
-                                name="position"
-                                id={`position${index}`}
-                                value={work.position}
-                                onChange={(event) => handleInputChange("workExperience", index, event)}
-                                className="mt-1 p-3 focus:outline-dashed block w-full sm:text-sm border-gray-300 rounded-md"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor={`description${index}`} className="block text-sm font-medium text-gray-700">
-                                Description
-                            </label>
-                            <input
-                                type="text"
-                                name="description"
-                                id={`description${index}`}
-                                value={work.description}
-                                onChange={(event) => handleInputChange("workExperience", index, event)}
-                                className="mt-1 p-3 focus:outline-dashed block w-full sm:text-sm border-gray-300 rounded-md"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor={`start${index}`} className="block text-sm font-medium text-gray-700">
-                                Start Date
-                            </label>
-                            <input
-                                type="date"
-                                name="start"
-                                id={`start${index}`}
-                                value={work.startDate}
-                                onChange={(event) => handleInputChange("workExperience", index, event)}
-                                className="mt-1 p-1 outline-none block w-full sm:text-sm border-gray-300 rounded-md"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor={`end${index}`} className="block text-sm font-medium text-gray-700">
-                                End Date
-                            </label>
-                            <input
-                                type="date"
-                                name="end"
-                                id={`end${index}`}
-                                value={work.endDate}
-                                onChange={(event) => handleInputChange("workExperience", index, event)}
-                                className="mt-1 p-1 outline-none"
-                            />
-                        </div>
-                    </div>
-                </div>
-            ))}
-            <div>
-                {workExperience.map((work, index) => (
-                    <div key={index + 1}>
-                        <h1>Company</h1>
-                        <p>{work.company}</p>
+
                     </div>
                 ))}
-
-            </div>
-        </div>
+            </section>
+        </>
     )
 }
 
