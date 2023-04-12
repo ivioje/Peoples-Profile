@@ -69,10 +69,6 @@ const WorkExperience = () => {
                 </main>
             </div>
 
-
-
-
-
             {workExperience.map((work, index) => (
                 <div key={index} className="m-6 bg-slate-50 p-6 rounded-xl">
                     <div className="flex items-center justify-between mb-2">

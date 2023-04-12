@@ -9,9 +9,9 @@ const PersonalDetails = ({ formData }) => {
   const { selectedFile, handleFileChange, handleInputChange } = useContext(TemplateContext)
   console.log(formData);
   return (
-    <section className={`flex justify-between sm:flex-row flex-col p-4`}>
+    <section className={`flex justify-between sm:flex-row flex-col sm:p-4 p-0`}>
       <div className='sm:w-[20%] mt-[20px] sm:mb-0 mb-6 w-full h-full flex justify-center py-3'>
-        <div className='sm:w-[134px] sm:h-[134px] w-[80%] h-[80%]'>
+        <div className='sm:w-[134px] sm:h-[134px] w-[60%] h-[80%]'>
           {selectedFile ? (
             <img
               src={URL.createObjectURL(selectedFile)}
@@ -33,7 +33,7 @@ const PersonalDetails = ({ formData }) => {
         </div>
       </div>
 
-      <div className='sm:w-[75%] h-full w-full p-4'>
+      <div className='sm:w-[75%] h-full w-full sm:p-2'>
         {formData.map((data, index) => (
           <form key={index} className={`flex flex-col justify-between`}>
             <div className={`${styles.flexBtw} sm:flex-row flex-col`}>

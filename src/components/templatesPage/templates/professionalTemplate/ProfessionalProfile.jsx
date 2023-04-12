@@ -86,7 +86,7 @@ const ProfessionalProfile = () => {
       </div>
 
       {/*Stepper and Carousel*/}
-      <div className="sm:w-[80%] w-full m-3 ">
+      <div className="sm:w-[80%] w-full sm:m-3 m-1 ">
         <div className='my-10 hidden sm:block'>
           <Stepper activeStep={activeStep} alternativeLabel>
             {steps.map((label) => (
@@ -108,20 +108,21 @@ const ProfessionalProfile = () => {
           />
         </div>
 
-        <div className=' bg-slate-50 m-4'>
+        <div className=' bg-slate-50 sm:m-4'>
           {activeStep !== steps.length ? (
             <div>
-              <div className={` flex items-center justify-between relative inset-0`}>
+              <div className={`flex items-center justify-between relative inset-0`}>
                 <div className=''>
                   <Button
                     className='absolute top-[150px] h-[50px] w-[50px] p-2 m-2 left-0 rounded-[100%]'
                     disabled={activeStep === 0}
                     onClick={handleBack}
+                    variant=''
                   >
                     <BsChevronLeft className='sm:text-[25px] text-[20px]' />
                   </Button>
                 </div>
-                <div>
+                <div className=''>
                   {activeStep === steps.length - 1 ?
                     <Button
                       disabled
@@ -143,7 +144,7 @@ const ProfessionalProfile = () => {
 
               {/*Carousel content */}
               <div className='flex items-center justify-center flex-col'>
-                <div className='w-[80%] h-auto p-3 my-3'>
+                <div className='w-[80%] h-auto p-3 sm:my-3'>
                   {getStepContent(activeStep)}
                 </div>
               </div>
@@ -175,7 +176,6 @@ const ProfessionalProfile = () => {
           </div>
         </div>
       </div>
-
     </section>
   )
 }
