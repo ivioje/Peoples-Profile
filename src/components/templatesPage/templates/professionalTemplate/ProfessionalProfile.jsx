@@ -80,13 +80,13 @@ const ProfessionalProfile = () => {
         <h1 className='font-firaSans sm:text-[36px] text-[23px] font-bold'>
           Professional Portfolio
         </h1>
-        <p className='font-poppins text-[14px] sm:w-[500px] w-4/5 text-center my-2'>
+        <p className='font-poppins text-[14px] sm:w-[500px] w-[95%] text-center my-2'>
           A template with a sleek and modern design for you to create a professional profile, with input fields for work experience, education, skills, personal details and contact information.
         </p>
       </div>
 
       {/*Stepper and Carousel*/}
-      <div className="sm:w-[80%] w-full sm:m-3 m-1 ">
+      <div className="sm:w-[90%] w-full sm:m-3 m-1 ">
         <div className='my-10 hidden sm:block'>
           <Stepper activeStep={activeStep} alternativeLabel>
             {steps.map((label) => (
@@ -99,19 +99,43 @@ const ProfessionalProfile = () => {
 
         <div className='sm:hidden my-5 flex items-center justify-center mx-auto'>
           <MobileStepper
-            variant="progress"
+            variant="dots"
             steps={7}
             position="static"
             activeStep={activeStep}
-            sx={{ maxWidth: 765, flexGrow: 1 }}
+            sx={{ maxWidth: 400, flexGrow: 1 }}
             style={{ 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center' }}
+            nextButton={
+              activeStep === steps.length - 1 ?
+                <Button
+                  disabled
+                  variant=''
+                  onClick={handleNext}
+                >
+                  <BsChevronRight className='sm:text-[25px] text-[20px]' />
+                </Button>
+                :
+                <Button
+                  onClick={handleNext} variant=''>
+                  <BsChevronRight className='sm:text-[25px] text-[20px]' />
+                </Button>
+            }
+            backButton={
+              <Button
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                variant=''
+              >
+                <BsChevronLeft className='sm:text-[25px] text-[20px]' />
+              </Button>
+            }
           />
         </div>
 
         <div className=' bg-slate-50 sm:m-4'>
           {activeStep !== steps.length ? (
             <div>
-              <div className={`xs:flex hidden items-center justify-between relative inset-0`}>
+              <div className={`sm:flex hidden items-center justify-between relative inset-0`}>
                 <div className=''>
                   <Button
                     className='absolute top-[150px] h-[50px] w-[50px] p-2 m-2 left-0 rounded-[100%]'
@@ -126,7 +150,7 @@ const ProfessionalProfile = () => {
                   {activeStep === steps.length - 1 ?
                     <Button
                       disabled
-                      color='info'
+                      variant=''
                       onClick={handleNext}
                       className='absolute top-[150px] p-2 m-2 right-0 border h-[50px] w-[50px] rounded-[100%]'
                     >
@@ -135,7 +159,7 @@ const ProfessionalProfile = () => {
                     :
                     <Button
                       className='absolute top-[150px] p-2 m-2 right-0 border h-[50px] w-[50px] rounded-[100%]'
-                      onClick={handleNext}>
+                      onClick={handleNext} variant=''>
                       <BsChevronRight className='sm:text-[25px] text-[20px]' />
                     </Button>
                   }
@@ -144,7 +168,7 @@ const ProfessionalProfile = () => {
 
               {/*Carousel content */}
               <div className='flex items-center justify-center flex-col'>
-                <div className='sm:w-[80%] w-full h-auto p-3 sm:my-3'>
+                <div className='sm:w-[90%] w-full h-auto p-3 sm:my-3'>
                   {getStepContent(activeStep)}
                 </div>
               </div>

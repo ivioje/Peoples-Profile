@@ -39,7 +39,7 @@ const LinkButtons = () => {
                                 <form className='flex flex-col items-start justify-start'>
                                     <label>{item.title} URL</label>
                                     <input
-                                        type='text'
+                                        type='url'
                                         placeholder={`Enter ${item.title} URL`}
                                         className='h-[41px] w-full'
                                     />

@@ -11,7 +11,7 @@ const PersonalDetails = ({ formData }) => {
   return (
     <section className={`flex justify-between sm:flex-row flex-col sm:p-4 p-0`}>
       <div className='sm:w-[20%] mt-[20px] sm:mb-0 mb-6 w-full h-full flex justify-center py-3'>
-        <div className='sm:w-[134px] sm:h-[134px] w-[60%] h-[80%]'>
+        <div className='w-[134px] h-[134px]'>
           {selectedFile ? (
             <img
               src={URL.createObjectURL(selectedFile)}
@@ -36,8 +36,8 @@ const PersonalDetails = ({ formData }) => {
       <div className='sm:w-[75%] h-full w-full sm:p-2'>
         {formData.map((data, index) => (
           <form key={index} className={`flex flex-col justify-between`}>
-            <div className={`${styles.flexBtw} sm:flex-row flex-col`}>
-              <div className='sm:w-1/2 w-full'>
+            <div className={`${styles.flexBtw} xs:flex-row flex-col mt-6`}>
+              <div className='xs:w-1/2 w-full'>
                 <label htmlFor='firstname'> FIRST NAME </label>
                 <input
                   name='firstname'
@@ -47,7 +47,7 @@ const PersonalDetails = ({ formData }) => {
                   onChange={(event) => handleInputChange("personalDetails", index, event)}
                 />
               </div>
-              <div className='sm:w-1/2 w-full'>
+              <div className='xs:w-1/2 w-full'>
                 <label htmlFor='lastname'>
                   LAST NAME
                 </label>
