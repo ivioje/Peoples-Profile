@@ -127,7 +127,7 @@ const WorkExperience = ({ formData }) => {
                                 </div>
                             </div>
 
-                            <div className={`flex items-end justify-end w-full`}>
+                            <div className={`flex xs:items-end xs:justify-end items-start justify-start w-full`}>
                                 <label htmlFor='check' className='text-[14px] text-blue-900 mx-1 flex' >
                                     I currently work here
                                     <input
