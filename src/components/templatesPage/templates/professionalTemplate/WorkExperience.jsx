@@ -7,13 +7,13 @@ import 'react-quill/dist/quill.snow.css';
 import { TemplateContext } from '../../../../context/TemplateContext';
 import styles from '../../../../style';
 
-const WorkExperience = ({ formData }) => {
-    const { handleAddField, handleInputChange, handleRemoveField } = useContext(TemplateContext)
+const WorkExperience = ({
+    formData,
+    handleAddField,
+    handleInputChange,
+    handleRemoveField }) => {
 
-    console.log(formData);
-
-    const [isPresent, setIsPresent] = useState(false);
-
+    const { isPresent, setIsPresent, workDescription, handleQuillChange } = useContext(TemplateContext)
 
     return (
         <>
@@ -118,7 +118,7 @@ const WorkExperience = ({ formData }) => {
                                         id={`endDate${index}`}
                                         placeholder='end date'
                                         type={isPresent ? 'text' : 'date'}
-                                        value={isPresent ? data.endDate = 'Present' : data.endDate}
+                                        value={isPresent ? data.endDate = 'Present' : data.endDate = data.endDate}
                                         onChange={(event) => handleInputChange("workExperience", index, event)}
                                     />
                                 </div>
@@ -146,7 +146,9 @@ const WorkExperience = ({ formData }) => {
                             <label className='text-[14px] text-blue-900 mb-3'>DESCRIPTION</label>
                             <ReactQuill
                                 id={`desc${index}`}
-                                theme='snow'
+                                theme="snow"
+                            // value={workDescription.description}
+                            // onChange={(value) => handleQuillChange(index, value)}
                             />
                         </div>
 

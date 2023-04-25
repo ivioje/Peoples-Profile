@@ -30,3 +30,20 @@ form div {
 .hoverable:hover + .hover-content {
     display: block;
 }
+.contact_items div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.contact_items div >* {
+    padding:0 5px 0 0;
+}
+.contact_items span {
+    font-size: 12px;
+    opacity: .8;
+}
+.tmp_content h1 {
+    text-transform: uppercase;
+    margin: 3px 0px;
+    font-weight: bolder;
+}

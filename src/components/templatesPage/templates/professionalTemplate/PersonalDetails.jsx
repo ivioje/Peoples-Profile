@@ -5,8 +5,9 @@ import styles from '../../../../style';
 import LinkButtons from './Linkbuttons';
 import './styles.css';
 
-const PersonalDetails = ({ formData }) => {
-  const { selectedFile, handleFileChange, handleInputChange } = useContext(TemplateContext)
+const PersonalDetails = ({ formData, handleInputChange }) => {
+  const { selectedFile, handleFileChange } = useContext(TemplateContext)
+
 
   return (
     <section className={`flex justify-between sm:flex-row flex-col sm:p-4 p-0`}>

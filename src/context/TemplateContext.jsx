@@ -1,4 +1,4 @@
-import React, { Children, createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { pageItems } from '../constants';
 
 export const TemplateContext = createContext();
@@ -9,23 +9,32 @@ export const TemplateContextProvider = ({ children }) => {
     const [query, setQuery] = useState('');
     const [toggle, setToggle] = useState(false);
     const [openTemplatesList, setOpenTemplatesList] = useState(false);
-    const [personalDetails, setPersonalDetails] = useState([{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }])
-    const [workExperience, setWorkExperience] = useState([{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }]);
-    const [education, setEducation] = useState([{ institution: "", degree: "", startDate: "", endDate: "", description: "" }]);
-    const [skills, setSkills] = useState([{ skill: "" }]);
-    const [certifications, setCertifications] = useState([{ name: "", issuingOrganization: "", issueDate: "" }]);
-    const [awards, setAwards] = useState([{ name: "", issuingOrganization: "", issueDate: "" }]);
-    const [contact, setContact] = useState({ email: "", phone: "", address: "", country: "" });
-    const [languages, setLanguages] = useState([{ name: "", proficiency: "" }]);
     const [activeStep, setActiveStep] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
     const [activeButton, setActiveButton] = useState(1);
+    const [isPresent, setIsPresent] = useState(false);
+    const [selectedColor, setSelectedColor] = useState('#171F3A');
+    const bioDetails = [{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }];
+    const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }];
+    const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", check: "" }];
+    const workDescriptionData = { description: "" }
 
+    const [skillContent, setSkillContent] = useState(localStorage.getItem('skillsContent') || '');
+    const [summaryContent, setSummaryContent] = useState(localStorage.getItem('summaryContent') || '');
+    const [workDescription, setWorkDescription] = useState([{ description: '' }]);
+    const [personalDetails, setPersonalDetails] = useState(JSON.parse(localStorage.getItem('userDetails')) || bioDetails);
+    const [workExperience, setWorkExperience] = useState(JSON.parse(localStorage.getItem('workExperienceDetails')) || workExperienceDetails);
+    const [education, setEducation] = useState(JSON.parse(localStorage.getItem('storedEducationDetails')) || educationDetails);
 
     useEffect(() => {
         setTemplateData(pageItems.templates);
     }, [templateData]);
 
+    useEffect(() => {
+        localStorage.setItem('skillsContent', skillContent);
+        localStorage.setItem('summaryContent', summaryContent);
+    }, [skillContent, summaryContent]);
+    console.log(workDescription);
 
     const filterTemplateData = () => {
         return templateData.filter((item) => {
@@ -47,19 +56,7 @@ export const TemplateContextProvider = ({ children }) => {
                 setWorkExperience([...workExperience, { jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }]);
                 break;
             case "education":
-                setEducation([...education, { institution: "", degree: "", fieldOfStudy: "", start: "", end: "" }]);
-                break;
-            case "skills":
-                setSkills([...skills, { skill: "" }]);
-                break;
-            case "certifications":
-                setCertifications([...certifications, { certification: "", issuingOrganization: "", date: "" }]);
-                break;
-            case "awards":
-                setAwards([...awards, { award: "", issuingOrganization: "", date: "" }]);
-                break;
-            case "languages":
-                setLanguages([...languages, ""]);
+                setEducation([...education, { institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", check: "" }]);
                 break;
             default:
                 break;
@@ -74,18 +71,6 @@ export const TemplateContextProvider = ({ children }) => {
             case "education":
                 setEducation([...education.slice(0, index), ...education.slice(index + 1)]);
                 break;
-            case "skills":
-                setSkills([...skills.slice(0, index), ...skills.slice(index + 1)]);
-                break;
-            case "certifications":
-                setCertifications([...certifications.slice(0, index), ...certifications.slice(index + 1)]);
-                break;
-            case "awards":
-                setAwards([...awards.slice(0, index), ...awards.slice(index + 1)]);
-                break;
-            case "languages":
-                setLanguages([...languages.slice(0, index), ...languages.slice(index + 1)]);
-                break;
             default:
                 break;
         }
@@ -99,45 +84,30 @@ export const TemplateContextProvider = ({ children }) => {
                 const updatedPersonalDetails = [...personalDetails];
                 updatedPersonalDetails[index][name] = value;
                 setPersonalDetails(updatedPersonalDetails);
+                localStorage.setItem('userDetails', JSON.stringify(updatedPersonalDetails));
                 break;
             case "workExperience":
                 const updatedWorkExperience = [...workExperience];
                 updatedWorkExperience[index][name] = value;
                 setWorkExperience(updatedWorkExperience);
+                localStorage.setItem('workExperienceDetails', JSON.stringify(updatedWorkExperience));
                 break;
             case "education":
                 const updatedEducation = [...education];
                 updatedEducation[index][name] = value;
                 setEducation(updatedEducation);
-                break;
-            case "skills":
-                const updatedSkills = [...skills];
-                updatedSkills[index] = value;
-                setSkills(updatedSkills);
-                break;
-            case "certifications":
-                const updatedCertifications = [...certifications];
-                updatedCertifications[index][name] = value;
-                setCertifications(updatedCertifications);
-                break;
-            case "awards":
-                const updatedAwards = [...awards];
-                updatedAwards[index][name] = value;
-                setAwards(updatedAwards);
-                break;
-            case "contact":
-                const updatedContact = { ...contact };
-                updatedContact[name] = value;
-                setContact(updatedContact);
-                break;
-            case "languages":
-                const updatedLanguages = [...languages];
-                updatedLanguages[index] = value;
-                setLanguages(updatedLanguages);
+                localStorage.setItem('storedEducationDetails', JSON.stringify(updatedEducation));
                 break;
             default:
                 break;
         }
+    };
+
+    const handleQuillChange = (index, value) => {
+        const updatedWorkDescription = [...workDescription];
+        updatedWorkDescription[index].description = value;
+        setWorkDescription(updatedWorkDescription);
+        localStorage.setItem('workDescription', JSON.stringify(updatedWorkDescription));
     };
 
     const handleNext = () => {
@@ -159,9 +129,9 @@ export const TemplateContextProvider = ({ children }) => {
     return (
         <TemplateContext.Provider value={{
             query, setQuery, bookmark, templateData, filterTemplateData, setBookmark, removeFromBookmarks, openTemplatesList, setOpenTemplatesList, toggle,
-            setToggle, workExperience, setWorkExperience, education, setEducation, awards, setAwards, contact, setContact, certifications, setCertifications,
-            skills, setSkills, languages, setLanguages, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
-            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton
+            setToggle, workExperience, setWorkExperience, education, setEducation, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
+            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, isPresent, setIsPresent,
+            skillContent, setSkillContent, summaryContent, setSummaryContent, workDescription, setWorkDescription, selectedColor, setSelectedColor, handleQuillChange
         }}>
             {children}
         </TemplateContext.Provider>

@@ -21,6 +21,7 @@ import Trash from './routes/dashboard/trash';
 import ProfileDetails from './components/profiles/profileDetails';
 import { ContextProvider } from './context/GlobalContext';
 import ProfessionalProfile from './components/templatesPage/templates/professionalTemplate/ProfessionalProfile';
+import FinishedTemplate from './components/templatesPage/templates/professionalTemplate/FinishedTemplate';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: '/templates/professional-portfolio-template',
         element: <ProfessionalProfile />
+      },
+      {
+        path: '/templates/professional-portfolio-template/finished-template',
+        element: <FinishedTemplate />
       },
     ],
   },

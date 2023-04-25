@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import styles from '../../../../style';
 
-
-const Skills = ({ data }) => {
-    const [content, setContent] = useState();
-
-    data.skill = content
-
-    const editorChange = (newValue) => {
-        setContent(newValue)
-    }
+const Skills = ({ skillContent, setSkillContent }) => {
 
     return (
         <section className={`${styles.flexCenter}`}>
@@ -19,8 +11,8 @@ const Skills = ({ data }) => {
                 <ReactQuill
                     theme='snow'
                     className='h-[200px] xs:my-14 my-8 mb-24'
-                    value={content}
-                    onChange={editorChange}
+                    value={skillContent}
+                    onChange={(e) => setSkillContent(e)}
                 />
             </div>
         </section>
