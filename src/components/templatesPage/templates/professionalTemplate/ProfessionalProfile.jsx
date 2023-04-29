@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const ProfessionalProfile = () => {
 
-  const { activeStep, handleBack, handleNext, personalDetails, workExperience, education, skillContent,
+  const { activeStep, handleBack, handleNext, personalDetails, workExperience, education, skillContent, setIsPresent,
     setSkillContent, summaryContent, setSummaryContent, handleAddField, handleInputChange, handleRemoveField,
   } = useContext(TemplateContext);
 
@@ -40,6 +40,7 @@ const ProfessionalProfile = () => {
               handleAddField={handleAddField}
               handleInputChange={handleInputChange}
               handleRemoveField={handleRemoveField}
+              setIsPresent={setIsPresent}
             />
           </div>
         );

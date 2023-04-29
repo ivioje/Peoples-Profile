@@ -67,7 +67,7 @@ const FinishedTemplate = () => {
                         </div>
                     </div>
 
-                    <div className={`sm:w-[70%] w-full sm:h-full flex justify-start items-start flex-col tmp_content px-3 bg-white`}>
+                    <div className={`sm:w-[70%] w-full sm:h-full flex justify-start items-start flex-col tmp_content px-3 bg-white `}>
                         <div className={`xs:text-[30px] hidden sm:flex text-[25px] w-full font-[700] mb-1 py-4 border border-t-0 border-l-0 border-r-0 border-b-2 border-[#3f3f3f]`}
                             style={{ 'color': selectedColor }}>
                             {personalDetails.map((data, index) => (
@@ -83,17 +83,25 @@ const FinishedTemplate = () => {
                             {workExperience.map((data, index) => (
                                 <div key={index}>
                                     <div className={`${styles.flexBtw} mt-3 py-1`}>
-                                        <h3 className='font-bold'>{data.jobTitle}</h3>
+                                        <h3 className='font-bold'>{data.organization}</h3>
                                         <p className='text-[13px] text-gray-500'>{`${data.startDate} - ${data.endDate}`}</p>
                                     </div>
-                                    <h3 className='font-bold'>{data.organization} - <span className='font-normal'>{`${data.city}, ${data.country}`}</span></h3>
+                                    <h3 className='font-bold text-[15px]'>{data.jobTitle} - <span className='font-normal'>{`${data.city}, ${data.country}`}</span></h3>
                                     <div className='my-4' dangerouslySetInnerHTML={{ __html: workDescription }} />
                                 </div>
                             ))}
                         </div>
-                        <div className={`my-4 border border-b-0 border-l-0 border-r-0 border-t-2 w-full`}>
+                        <div className={`my-4 border border-b-0 border-l-0 border-r-0 border-t-2 w-full h-full`}>
                             <h1>EDUCATION</h1>
-                            <div>content</div>
+                            {education.map((data, index) => (
+                                <div key={index}>
+                                    <div className={`${styles.flexBtw} mt-3 py-1`}>
+                                        <h3 className='font-bold'>{data.institution}</h3>
+                                        <p className='text-[13px] text-gray-500'>{`${data.startDate} - ${data.endDate}`}</p>
+                                    </div>
+                                    <h3 className='text-[15px]'>{data.course} <span className='font-normal'>{`- ${data.honours} ${data.qualification}`}</span></h3>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>

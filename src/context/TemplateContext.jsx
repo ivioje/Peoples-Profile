@@ -15,13 +15,13 @@ export const TemplateContextProvider = ({ children }) => {
     const [isPresent, setIsPresent] = useState(false);
     const [selectedColor, setSelectedColor] = useState('#171F3A');
     const bioDetails = [{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }];
-    const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }];
+    const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "", isPresent: false }];
     const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", check: "" }];
-    const workDescriptionData = { description: "" }
+    const workDescriptionData = [{ description: "" }]
 
     const [skillContent, setSkillContent] = useState(localStorage.getItem('skillsContent') || '');
     const [summaryContent, setSummaryContent] = useState(localStorage.getItem('summaryContent') || '');
-    const [workDescription, setWorkDescription] = useState([{ description: '' }]);
+    const [workDescription, setWorkDescription] = useState(JSON.parse(localStorage.getItem('storedWorkDescription')) || workDescriptionData);
     const [personalDetails, setPersonalDetails] = useState(JSON.parse(localStorage.getItem('userDetails')) || bioDetails);
     const [workExperience, setWorkExperience] = useState(JSON.parse(localStorage.getItem('workExperienceDetails')) || workExperienceDetails);
     const [education, setEducation] = useState(JSON.parse(localStorage.getItem('storedEducationDetails')) || educationDetails);
@@ -34,7 +34,6 @@ export const TemplateContextProvider = ({ children }) => {
         localStorage.setItem('skillsContent', skillContent);
         localStorage.setItem('summaryContent', summaryContent);
     }, [skillContent, summaryContent]);
-    console.log(workDescription);
 
     const filterTemplateData = () => {
         return templateData.filter((item) => {
@@ -53,7 +52,7 @@ export const TemplateContextProvider = ({ children }) => {
     const handleAddField = (fieldType) => {
         switch (fieldType) {
             case "workExperience":
-                setWorkExperience([...workExperience, { jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "" }]);
+                setWorkExperience([...workExperience, { jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "", isPresent: false }]);
                 break;
             case "education":
                 setEducation([...education, { institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", check: "" }]);
@@ -66,10 +65,14 @@ export const TemplateContextProvider = ({ children }) => {
     const handleRemoveField = (fieldType, index) => {
         switch (fieldType) {
             case "workExperience":
-                setWorkExperience([...workExperience.slice(0, index), ...workExperience.slice(index + 1)]);
+                const newWorkExperience = [...workExperience.slice(0, index), ...workExperience.slice(index + 1)];
+                setWorkExperience(newWorkExperience);
+                localStorage.setItem("workExperienceDetails", JSON.stringify(newWorkExperience));
                 break;
             case "education":
-                setEducation([...education.slice(0, index), ...education.slice(index + 1)]);
+                const newEducation = [...education.slice(0, index), ...education.slice(index + 1)];
+                setEducation(newEducation);
+                localStorage.setItem("storedEducationDetails", JSON.stringify(newEducation));
                 break;
             default:
                 break;
@@ -103,11 +106,25 @@ export const TemplateContextProvider = ({ children }) => {
         }
     };
 
-    const handleQuillChange = (index, value) => {
+    const handleCheckboxChange = (index) => {
+        const newData = [...workExperience];
+        newData[index] = {
+            ...newData[index],
+            isPresent: !newData[index].isPresent
+        };
+        if (newData[index].isPresent) {
+            newData[index].endDate = '';
+        }
+        setWorkExperience(newData);
+    };
+
+
+    const handleQuillChange = (index, event) => {
+        const { value } = event
         const updatedWorkDescription = [...workDescription];
-        updatedWorkDescription[index].description = value;
+        updatedWorkDescription[index] = value;
         setWorkDescription(updatedWorkDescription);
-        localStorage.setItem('workDescription', JSON.stringify(updatedWorkDescription));
+        localStorage.setItem('storedWorkDescription', JSON.stringify(updatedWorkDescription));
     };
 
     const handleNext = () => {
@@ -130,7 +147,7 @@ export const TemplateContextProvider = ({ children }) => {
         <TemplateContext.Provider value={{
             query, setQuery, bookmark, templateData, filterTemplateData, setBookmark, removeFromBookmarks, openTemplatesList, setOpenTemplatesList, toggle,
             setToggle, workExperience, setWorkExperience, education, setEducation, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
-            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, isPresent, setIsPresent,
+            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, handleCheckboxChange, isPresent, setIsPresent,
             skillContent, setSkillContent, summaryContent, setSummaryContent, workDescription, setWorkDescription, selectedColor, setSelectedColor, handleQuillChange
         }}>
             {children}
