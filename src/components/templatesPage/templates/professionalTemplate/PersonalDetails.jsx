@@ -6,8 +6,9 @@ import LinkButtons from './Linkbuttons';
 import './styles.css';
 
 const PersonalDetails = ({ formData, handleInputChange }) => {
-  const { selectedFile, handleFileChange } = useContext(TemplateContext)
+  const { selectedFile, handleFileChange } = useContext(TemplateContext);
 
+  console.log(selectedFile);
 
   return (
     <section className={`flex justify-between sm:flex-row flex-col sm:p-4 p-0`}>

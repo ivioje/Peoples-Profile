@@ -16,6 +16,7 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif'],
         garamond: ['EB Garamond', 'serif'],
         domine: ['Domine', 'serif'],
+        ysabeau: ['Ysabeau', 'sans-serif'],
       },
       shadow: {
         'mid': '0px 6px 2px #548CA8',

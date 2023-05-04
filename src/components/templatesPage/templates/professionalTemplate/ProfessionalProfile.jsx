@@ -81,7 +81,7 @@ const ProfessionalProfile = () => {
 
 
   return (
-    <section className={`${styles.flexCenter} px-2 py-8 flex-col font-domine text-text_color`}>
+    <section className={`${styles.flexCenter} px-2 py-8 flex-col font-ysabeau text-text_color`}>
       {/*header*/}
       <div className={`${styles.flexCenter} flex-col`}>
         <h1 className='font-firaSans sm:text-[36px] text-[23px] font-bold'>

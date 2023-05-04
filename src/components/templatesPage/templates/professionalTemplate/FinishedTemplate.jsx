@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { TemplateContext } from '../../../../context/TemplateContext';
 import { FaLocationArrow, FaMailBulk, FaPhone } from 'react-icons/fa'
-import { BsMailbox } from 'react-icons/bs';
 import styles from '../../../../style';
 import './styles.css';
 import ColorPicker from './ColorPalete';
+import HtmlToListItems from '../../../utils/htmlToList';
 
 const FinishedTemplate = () => {
     const { selectedColor, setSelectedColor, summaryContent, personalDetails, workDescription, workExperience, skillContent, education } = useContext(TemplateContext);
@@ -87,7 +87,10 @@ const FinishedTemplate = () => {
                                         <p className='text-[13px] text-gray-500'>{`${data.startDate} - ${data.endDate}`}</p>
                                     </div>
                                     <h3 className='font-bold text-[15px]'>{data.jobTitle} - <span className='font-normal'>{`${data.city}, ${data.country}`}</span></h3>
-                                    <div className='my-4' dangerouslySetInnerHTML={{ __html: workDescription }} />
+                                    {/* <div className='my-4' dangerouslySetInnerHTML={{ __html: workDescription }} /> */}
+                                    <div>
+                                        {HtmlToListItems(workDescription)}
+                                    </div>
                                 </div>
                             ))}
                         </div>

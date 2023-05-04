@@ -17,11 +17,10 @@ export const TemplateContextProvider = ({ children }) => {
     const bioDetails = [{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }];
     const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "", isPresent: false }];
     const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", check: "" }];
-    const workDescriptionData = [{ description: "" }]
 
     const [skillContent, setSkillContent] = useState(localStorage.getItem('skillsContent') || '');
     const [summaryContent, setSummaryContent] = useState(localStorage.getItem('summaryContent') || '');
-    const [workDescription, setWorkDescription] = useState(JSON.parse(localStorage.getItem('storedWorkDescription')) || workDescriptionData);
+    const [workDescription, setWorkDescription] = useState(localStorage.getItem('storedWorkDescription') || '');
     const [personalDetails, setPersonalDetails] = useState(JSON.parse(localStorage.getItem('userDetails')) || bioDetails);
     const [workExperience, setWorkExperience] = useState(JSON.parse(localStorage.getItem('workExperienceDetails')) || workExperienceDetails);
     const [education, setEducation] = useState(JSON.parse(localStorage.getItem('storedEducationDetails')) || educationDetails);
@@ -33,7 +32,8 @@ export const TemplateContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('skillsContent', skillContent);
         localStorage.setItem('summaryContent', summaryContent);
-    }, [skillContent, summaryContent]);
+        localStorage.setItem('storedWorkDescription', workDescription);
+    }, [skillContent, summaryContent, workDescription]);
 
     const filterTemplateData = () => {
         return templateData.filter((item) => {
@@ -124,7 +124,6 @@ export const TemplateContextProvider = ({ children }) => {
         const updatedWorkDescription = [...workDescription];
         updatedWorkDescription[index] = value;
         setWorkDescription(updatedWorkDescription);
-        localStorage.setItem('storedWorkDescription', JSON.stringify(updatedWorkDescription));
     };
 
     const handleNext = () => {

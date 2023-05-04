@@ -13,7 +13,7 @@ const WorkExperience = ({
     handleInputChange,
     handleRemoveField }) => {
 
-    const { handleCheckboxChange, isPresent, setIsPresent } = useContext(TemplateContext);
+    const { handleCheckboxChange, workDescription, setWorkDescription } = useContext(TemplateContext);
 
     return (
         <>
@@ -145,6 +145,8 @@ const WorkExperience = ({
                             <ReactQuill
                                 id={`desc${index}`}
                                 theme="snow"
+                                value={workDescription}
+                                onChange={(e) => setWorkDescription(e)}
                             //     value={data.description}
                             //     onChange={(event) => handleQuillChange(index, event)}
                             />
