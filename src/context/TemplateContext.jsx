@@ -14,9 +14,10 @@ export const TemplateContextProvider = ({ children }) => {
     const [activeButton, setActiveButton] = useState(1);
     const [isPresent, setIsPresent] = useState(false);
     const [selectedColor, setSelectedColor] = useState('#171F3A');
+    const [inputValues, setInputValues] = useState({});
     const bioDetails = [{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }];
     const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "", isPresent: false }];
-    const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", check: "" }];
+    const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", description: "", check: "", isPresent: false }];
 
     const [skillContent, setSkillContent] = useState(localStorage.getItem('skillsContent') || '');
     const [summaryContent, setSummaryContent] = useState(localStorage.getItem('summaryContent') || '');
@@ -33,6 +34,12 @@ export const TemplateContextProvider = ({ children }) => {
         localStorage.setItem('skillsContent', skillContent);
         localStorage.setItem('summaryContent', summaryContent);
         localStorage.setItem('storedWorkDescription', workDescription);
+
+        //links
+        const savedInputValues = JSON.parse(localStorage.getItem('inputValues'));
+        if (savedInputValues) {
+            setInputValues(savedInputValues);
+        }
     }, [skillContent, summaryContent, workDescription]);
 
     const filterTemplateData = () => {
@@ -55,7 +62,7 @@ export const TemplateContextProvider = ({ children }) => {
                 setWorkExperience([...workExperience, { jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "", isPresent: false }]);
                 break;
             case "education":
-                setEducation([...education, { institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", check: "" }]);
+                setEducation([...education, { institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", description: "", check: "", isPresent: false }]);
                 break;
             default:
                 break;
@@ -107,23 +114,25 @@ export const TemplateContextProvider = ({ children }) => {
     };
 
     const handleCheckboxChange = (index) => {
-        const newData = [...workExperience];
-        newData[index] = {
-            ...newData[index],
-            isPresent: !newData[index].isPresent
+        const workData = [...workExperience];
+        workData[index] = {
+            ...workData[index],
+            isPresent: !workData[index].isPresent
         };
-        if (newData[index].isPresent) {
-            newData[index].endDate = '';
+        if (workData[index].isPresent) {
+            workData[index].endDate = '';
         }
-        setWorkExperience(newData);
-    };
+        setWorkExperience(workData);
 
-
-    const handleQuillChange = (index, event) => {
-        const { value } = event
-        const updatedWorkDescription = [...workDescription];
-        updatedWorkDescription[index] = value;
-        setWorkDescription(updatedWorkDescription);
+        const educationData = [...education];
+        educationData[index] = {
+            ...educationData[index],
+            isPresent: !educationData[index].isPresent
+        };
+        if (educationData[index].isPresent) {
+            educationData[index].endDate = '';
+        }
+        setEducation(educationData);
     };
 
     const handleNext = () => {
@@ -147,7 +156,7 @@ export const TemplateContextProvider = ({ children }) => {
             query, setQuery, bookmark, templateData, filterTemplateData, setBookmark, removeFromBookmarks, openTemplatesList, setOpenTemplatesList, toggle,
             setToggle, workExperience, setWorkExperience, education, setEducation, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
             selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, handleCheckboxChange, isPresent, setIsPresent,
-            skillContent, setSkillContent, summaryContent, setSummaryContent, workDescription, setWorkDescription, selectedColor, setSelectedColor, handleQuillChange
+            skillContent, setSkillContent, summaryContent, setSummaryContent, workDescription, setWorkDescription, selectedColor, setSelectedColor, inputValues, setInputValues
         }}>
             {children}
         </TemplateContext.Provider>

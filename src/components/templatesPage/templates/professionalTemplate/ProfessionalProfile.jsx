@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 const ProfessionalProfile = () => {
 
   const { activeStep, handleBack, handleNext, personalDetails, workExperience, education, skillContent, setIsPresent,
-    setSkillContent, summaryContent, setSummaryContent, handleAddField, handleInputChange, handleRemoveField,
+    setSkillContent, summaryContent, setSummaryContent, handleAddField, handleInputChange, handleRemoveField, setEducation
   } = useContext(TemplateContext);
 
   const steps = ["Personal Details", "Work history", "Skills", "Education", "Professional summary"];
@@ -61,6 +61,7 @@ const ProfessionalProfile = () => {
               handleAddField={handleAddField}
               handleRemoveField={handleRemoveField}
               handleInputChange={handleInputChange}
+              setEducation={setEducation}
             />
           </div>
         );
@@ -218,6 +219,7 @@ const ProfessionalProfile = () => {
                           variant="contained"
                           style={{ 'textTransform': 'capitalize', 'background': '#171F3A', 'color': 'whitesmoke', 'fontWeight': 'bold' }}
                           onClick={handleNext}
+                          type='submit'
                         >
                           Finish
                         </Button>
@@ -229,6 +231,7 @@ const ProfessionalProfile = () => {
                         variant="contained"
                         style={{ 'textTransform': 'capitalize', 'background': '#171F3A', 'color': 'whitesmoke', 'fontWeight': 'bold' }}
                         onClick={handleNext}
+                        type='submit'
                       >
                         Save & Next
                       </Button>

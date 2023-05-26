@@ -1,9 +1,13 @@
+import React, { useContext } from 'react';
+import { Formik, Form, useField } from 'formik';
+import * as Yup from 'yup'
 import { Button } from '@mui/material'
-import React, { useContext } from 'react'
 import { BsPlus } from 'react-icons/bs'
 import { FaMinus } from 'react-icons/fa'
 import { TemplateContext } from '../../../../context/TemplateContext'
 import styles from '../../../../style'
+import TextEditor from './TextEditor';
+import { MyTextInput, MyCheckbox } from './FormikComponents'
 
 const Education = ({
     formData,
@@ -11,7 +15,7 @@ const Education = ({
     handleInputChange,
     handleRemoveField }) => {
 
-    const { isPresent, setIsPresent } = useContext(TemplateContext);
+    const { handleCheckboxChange } = useContext(TemplateContext);
 
     return (
         <>
@@ -45,101 +49,148 @@ const Education = ({
                             </div>
                         </div>
 
-                        <form className={` ${styles.flexCenter} flex-col p-2`}>
-                            <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
-                                <div className='xs:w-1/2 w-full'>
-                                    <label htmlFor='jobTitle'>INSTITUTION NAME</label>
-                                    <input
-                                        name='institution'
-                                        id={`institution${index}`}
-                                        placeholder='e.g Benson Idahosa University'
-                                        type='text'
-                                        value={data.institution}
-                                        onChange={(event) => handleInputChange("education", index, event)}
-                                    />
+                        <Formik
+                            initialValues={{
+                                institution: data.institution === '' ? '' : data.institution,
+                                course: data.course,
+                                qualification: data.qualification,
+                                honours: data.honours,
+                                startDate: data.startDate,
+                                endDate: data.endDate,
+                                isPresent: data.isPresent, // added for the checkbox
+                            }}
+                            validationSchema={Yup.object({
+                                institution: Yup.string()
+                                    .required('Required'),
+                                course: Yup.string()
+                                    .max(20, 'Must be 20 characters or less')
+                                    .required('Required'),
+                                qualification: Yup.string()
+                                    .max(15, 'Must be 15 characters or less')
+                                    .required('Required'),
+                                startDate: Yup.string()
+                                    .max(15, 'Must be 15 characters or less')
+                                    .required('Required'),
+                                endDate: Yup.string()
+                                    .max(15, 'Must be 15 characters or less')
+                                    .required('Required'),
+                                check: Yup.boolean()
+                                    .required('Required')
+                                    .oneOf([true], 'You must accept the terms and conditions.'),
+                            })}
+                        //   onSubmit={(values, { setSubmitting }) => {
+                        //     setTimeout(() => {
+                        //       alert(JSON.stringify(values, null, 2));
+                        //       setSubmitting(false);
+                        //     }, 400);
+                        //   }}
+                        >
+                            <Form className={` ${styles.flexCenter} flex-col p-2`}>
+                                <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
+                                    <div className='xs:w-1/2 w-full'>
+                                        <MyTextInput
+                                            label='INSTITUTION NAME'
+                                            name='institution'
+                                            type='text'
+                                            placeholder='e.g Benson Idahosa University'
+                                            id={`institution${index}`}
+                                            value={data.institution}
+                                            onChange={(event) => handleInputChange("education", index, event)}
+                                        />
+                                    </div>
+                                    <div className='xs:w-1/2 w-full'>
+                                        <MyTextInput
+                                            label='FIELD OF STUDY'
+                                            name='course'
+                                            type='text'
+                                            placeholder='e.g computer science'
+                                            id={`course${index}`}
+                                            value={data.course}
+                                            onChange={(event) => handleInputChange("education", index, event)}
+                                        />
+                                    </div>
                                 </div>
-                                <div className='xs:w-1/2 w-full'>
-                                    <label htmlFor='course'>FIELD OF STUDY</label>
-                                    <input
-                                        name='course'
-                                        id={`course${index}`}
-                                        placeholder='e.g computer science'
-                                        type='text'
-                                        value={data.course}
-                                        onChange={(event) => handleInputChange("education", index, event)}
-                                    />
-                                </div>
-                            </div>
 
-                            <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
-                                <div className='xs:w-1/2 w-full'>
-                                    <label htmlFor='qualification'>QUALIFICATION</label>
-                                    <input
-                                        name='qualification'
-                                        id={`qualification${index}`}
-                                        placeholder='e.g B.Sc'
-                                        type='text'
-                                        value={data.qualification}
-                                        onChange={(event) => handleInputChange("education", index, event)}
-                                    />
+                                <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
+                                    <div className='xs:w-1/2 w-full'>
+                                        <MyTextInput
+                                            label='QUALIFICATION'
+                                            name='qualification'
+                                            type='text'
+                                            placeholder='e.g B.Sc'
+                                            id={`qualification${index}`}
+                                            value={data.qualification}
+                                            onChange={(event) => handleInputChange("education", index, event)}
+                                        />
+                                    </div>
+                                    <div className='xs:w-1/2 w-full'>
+                                        <MyTextInput
+                                            label='HONOURS (Optional)'
+                                            name='honours'
+                                            type='text'
+                                            placeholder='e.g first class'
+                                            id={`honours${index}`}
+                                            value={data.honours}
+                                            onChange={(event) => handleInputChange("education", index, event)}
+                                        />
+                                    </div>
                                 </div>
-                                <div className='xs:w-1/2 w-full'>
-                                    <label htmlFor='honours'>HONOURS</label>
-                                    <input
-                                        name='honours'
-                                        id={`honours${index}`}
-                                        placeholder='e.g first class'
-                                        type='text'
-                                        value={data.honours}
-                                        onChange={(event) => handleInputChange("education", index, event)}
-                                    />
-                                </div>
-                            </div>
 
-                            <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
-                                <div className='xs:w-1/2 w-full'>
-                                    <label htmlFor='startDate'>START DATE</label>
+                                <div className={`${styles.flexBtw} xs:flex-row flex-col w-full`}>
+                                    <div className='xs:w-1/2 w-full'>
+                                        <MyTextInput
+                                            label='START DATE'
+                                            name='startDate'
+                                            type='date'
+                                            id={`startDate${index}`}
+                                            value={data.startDate}
+                                            onChange={(event) => handleInputChange("education", index, event)}
+                                        />
+                                    </div>
 
-                                    <input
-                                        name='startDate'
-                                        id={`startDate${index}`}
-                                        placeholder='Year'
-                                        type='date'
-                                        value={data.startDate}
-                                        onChange={(event) => handleInputChange("education", index, event)}
-                                    />
+                                    <div className={`xs:w-1/2 w-full flex ${data.isPresent ? 'hidden' : 'block '}`}>
+                                        <MyTextInput
+                                            label='END DATE'
+                                            name='endDate'
+                                            placeholder='end date'
+                                            type={data.isPresent ? 'text' : 'date'}
+                                            value={data.isPresent ? data.endDate = 'Present' : data.endDate}
+                                            onChange={(event) => handleInputChange("education", index, event)}
+                                        />
+                                        {/* <label htmlFor='endDate'>END DATE</label>
+                                        <input
+                                            name='endDate'
+                                            placeholder='end date'
+                                            type={data.isPresent ? 'text' : 'date'}
+                                            value={data.isPresent ? data.endDate = 'Present' : data.endDate}
+                                            onChange={(event) => handleInputChange("workExperience", index, event)}
+                                        /> */}
+                                    </div>
                                 </div>
-                                <div className={`xs:w-1/2 w-full ${isPresent ? 'hidden' : 'flex '}`}>
-                                    <label htmlFor='endDate'>END DATE</label>
-                                    <input
-                                        name='endDate'
-                                        id={`endDate${index}`}
-                                        placeholder='Year'
-                                        type={isPresent ? 'text' : 'date'}
-                                        value={isPresent ? data.endDate = 'Present' : data.endDate}
-                                        onChange={(event) => handleInputChange("education", index, event)}
-                                    />
-                                </div>
-                                <div className={`xs:w-1/2 w-full mt-6 ${isPresent ? 'flex' : 'hidden'}`}>
-                                    <h1 className='p-2 bg-lightGray w-[80px] text-sm rounded-md'>Present</h1>
-                                </div>
-                            </div>
 
-                            <div className={`flex xs:items-end xs:justify-end items-start justify-start w-full`}>
-                                <label htmlFor='check' className='text-[14px] text-blue-900 mx-1 flex' >
-                                    I currently study here
-                                    <input
-                                        id={`item${index}`}
-                                        type='checkbox'
-                                        className='mx-1 border h-[20px] w-[20px]'
-                                        name='check'
-                                        value={data.check}
-                                        onClick={(e) => setIsPresent(e.target.checked)}
-                                        onChange={(event) => handleInputChange("education", index, event)}
-                                    />
-                                </label>
-                            </div>
-                        </form>
+                                <div className={`w-full flex xs:items-end xs:justify-end`}>
+                                    <label htmlFor={`item${index}`} className='text-[14px] text-blue-900 mx-1 flex'>
+                                        I currently work here
+                                        <MyCheckbox
+                                            id={`item${index}`}
+                                            type='checkbox'
+                                            className='mx-1 border h-[20px] w-[20px]'
+                                            name='isPresent'
+                                            checked={data.isPresent}
+                                            onChange={() => handleCheckboxChange(index)}
+                                        />
+                                        {/* <input
+                                            id={`item${index}`}
+                                            type='checkbox'
+                                            className='mx-1 border h-[20px] w-[20px]'
+                                            name='check'
+                                            checked={data.isPresent}
+                                            onChange={() => handleCheckboxChange(index)}
+                                        /> */}
+                                    </label>
+                                </div>
+                            </Form>
+                        </Formik>
                     </div>
                 ))}
             </section>

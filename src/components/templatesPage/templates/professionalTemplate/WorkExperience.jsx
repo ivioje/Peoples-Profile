@@ -2,10 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Button } from '@mui/material';
 import { BsPlus } from 'react-icons/bs';
 import { FaMinus } from 'react-icons/fa'
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import { TemplateContext } from '../../../../context/TemplateContext';
 import styles from '../../../../style';
+import TextEditor from './TextEditor';
 
 const WorkExperience = ({
     formData,
@@ -142,15 +141,12 @@ const WorkExperience = ({
                         </form>
                         <div className='md:w-1/2 sm:w-[80%] w-full'>
                             <label className='text-[14px] text-blue-900 mb-3'>DESCRIPTION</label>
-                            <ReactQuill
+                            <TextEditor
                                 id={`desc${index}`}
-                                theme="snow"
                                 value={workDescription}
-                                onChange={(e) => setWorkDescription(e)}
-                            //     value={data.description}
-                            //     onChange={(event) => handleQuillChange(index, event)}
+                                setValue={(e) => setWorkDescription(e)}
+                                className=''
                             />
-
                         </div>
 
                     </div>

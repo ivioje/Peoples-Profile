@@ -1,6 +1,8 @@
-import React, { createContext, useEffect, useRef, useState } from 'react';
+import React, { createContext } from 'react';
 import { ProfileContextProvider } from './ProfileContext';
 import { TemplateContextProvider } from './TemplateContext';
+import { Formik } from './FormikContext';
+import { FormikContext } from 'formik';
 
 export const Context = preserveRef('c', createContext());
 
@@ -25,12 +27,14 @@ export const ContextProvider = ({ children }) => {
 
 
   return (
-    <TemplateContextProvider>
-      <ProfileContextProvider>
-        <Context.Provider value={generateId}>
-          {children}
-        </Context.Provider>
-      </ProfileContextProvider>
-    </TemplateContextProvider>
+    <Formik>
+      <TemplateContextProvider>
+        <ProfileContextProvider>
+          <Context.Provider value={generateId}>
+            {children}
+          </Context.Provider>
+        </ProfileContextProvider>
+      </TemplateContextProvider>
+    </Formik>
   );
 };

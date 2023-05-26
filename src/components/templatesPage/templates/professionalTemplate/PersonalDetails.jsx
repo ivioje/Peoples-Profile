@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsInfoCircleFill } from 'react-icons/bs';
 import { TemplateContext } from '../../../../context/TemplateContext';
 import styles from '../../../../style';
@@ -8,7 +8,6 @@ import './styles.css';
 const PersonalDetails = ({ formData, handleInputChange }) => {
   const { selectedFile, handleFileChange } = useContext(TemplateContext);
 
-  console.log(selectedFile);
 
   return (
     <section className={`flex justify-between sm:flex-row flex-col sm:p-4 p-0`}>
@@ -47,6 +46,7 @@ const PersonalDetails = ({ formData, handleInputChange }) => {
                   type='text'
                   value={data.firstname}
                   onChange={(event) => handleInputChange("personalDetails", index, event)}
+                  required
                 />
               </div>
               <div className='xs:w-1/2 w-full'>

@@ -47,3 +47,10 @@ form div {
     margin: 3px 0px;
     font-weight: bolder;
 }
+.links a{
+ width: 100%;
+ padding: 3px;
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+}

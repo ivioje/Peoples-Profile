@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { TemplateContext } from '../../../../context/TemplateContext';
-import { FaLocationArrow, FaMailBulk, FaPhone } from 'react-icons/fa'
 import styles from '../../../../style';
 import './styles.css';
 import ColorPicker from './ColorPalete';
 import HtmlToListItems from '../../../utils/htmlToList';
+import { BsLink } from 'react-icons/bs';
 
 const FinishedTemplate = () => {
-    const { selectedColor, setSelectedColor, summaryContent, personalDetails, workDescription, workExperience, skillContent, education } = useContext(TemplateContext);
+    const { selectedColor, setSelectedColor, summaryContent, personalDetails, workDescription, workExperience, skillContent, education, inputValues } = useContext(TemplateContext);
 
     const handleColorSelect = (color) => {
         setSelectedColor(color);
@@ -15,15 +15,22 @@ const FinishedTemplate = () => {
 
     return (
         <div className={``}>
+            <div className='text-center my-5 py-3'>
+                <h1 className='py-3 text-[25px] font-semibold'>PREVIEW YOUR PROFILE</h1>
+            </div>
             <div className={`xs:m-6 m-1 bg-stone-200 shadow`}>
-                <div className={`${styles.flexCenter} mt-5`}>
-                    <h4 className='text-[12px]'>Change background color:</h4>
-                    <ColorPicker
-                        selectedColor={selectedColor}
-                        setSelectedColor={setSelectedColor}
-                        handleColorSelect={handleColorSelect}
-                    />
+                <div className={`${styles.flexAround} mt-5 w-full`}>
+                    <div>
+                        <h4 className='text-[12px]'>Change background color:</h4>
+                        <ColorPicker
+                            selectedColor={selectedColor}
+                            setSelectedColor={setSelectedColor}
+                            handleColorSelect={handleColorSelect}
+                        />
+                    </div>
+                    <h1>Hide Image</h1>
                 </div>
+
                 <section className={`${styles.flexAround} sm:flex-row flex-col p-3 w-full xs:h-full aspect-square font-domine text-text_color`}>
                     <div className={`p-5 sm:w-[30%] text-[14px] w-full sm:h-full ${styles.flexStart} flex-col flex-wrap text-dimWhite text-opacity-90`}
                         style={{ 'backgroundColor': selectedColor }}>
@@ -31,39 +38,47 @@ const FinishedTemplate = () => {
                             <img src='http://' className='h-full w-full' />
                         </div>
                         {personalDetails.map((data, index) => (
-                            <React.Fragment key={index}>
+                            <div key={index}>
                                 <div className={`xs:text-[27px] flex sm:hidden text-[25px] uppercase w-full font-[700] mb-1 py-4 border border-t-0 border-l-0 border-r-0 border-b-2 border-gray-400`}>
                                     <h1>{`${data.firstname} ${data.lastname}`}</h1>
                                 </div>
                                 <div className={`mt-6 w-full flex flex-col contact_items`}>
-                                    <h1 className='border border-t-0 border-l-0 border-r-0 mt-6 font-bold'>
+                                    <h1 className='border border-t-0 border-l-0 border-r-0 mt-6 font-bold' key={`contact-${index}`}>
                                         CONTACT
                                     </h1>
-                                    <div className={`flex items-start justify-start h-auto my-2`}>
-                                        <span className='h-full'><FaLocationArrow /></span>
-                                        <h2 className='h-full'>{`${data.address}, ${data.city}, ${data.country}`}</h2>
+                                    <div className={`flex flex-col h-auto my-2`} key={`location-${index}`}>
+                                        <span className='w-full text-[9px]'>Location</span>
+                                        <h2 className='w-full'>{`${data.address}, ${data.city}, ${data.country}`}</h2>
                                     </div>
-                                    <div className='my-2'>
-                                        <span><FaPhone /></span>
-                                        <h2>{data.phone}</h2>
+                                    <div className={`flex flex-col h-auto my-2`} key={`phone-${index}`}>
+                                        <span className='w-full text-[9px]'>Phone</span>
+                                        <h2 className='w-full'>{data.phone}</h2>
                                     </div>
-                                    <div className='my-2 h-auto flex flex-wrap w-inherit'>
-                                        <span><FaMailBulk /></span>
-                                        <h2>{data.email}</h2>
+                                    <div className={`flex flex-col h-auto my-2`} key={`mail-${index}`}>
+                                        <span className='w-full text-[9px]'>Mail</span>
+                                        <h2 className='w-full'>{data.email}</h2>
                                     </div>
                                 </div>
-                            </React.Fragment>
+                            </div>
                         ))}
+
                         <div className={`w-full `}>
                             <h1 className={`border border-t-0 border-l-0 border-r-0 mt-6 font-bold`}>
                                 SKILLS
                             </h1>
-                            <div dangerouslySetInnerHTML={{ __html: skillContent }} />
+                            <div>{HtmlToListItems(skillContent)}</div>
                         </div>
                         <div className={`w-full`}>
                             <h2 className={`border border-t-0 border-l-0 border-r-0 mt-6 font-bold`}>
                                 LINKS
                             </h2>
+                            <div className={`${styles.flexStart} w-full links my-3`}>
+                                <a href={inputValues['LinkedIn'] || ''} target='_blank'><BsLink /> LinkedIn</a>
+                                <a href={inputValues['Website'] || ''} target='_blank'><BsLink /> Website</a>
+                                <a href={inputValues['Twitter'] || ''} target='_blank'><BsLink /> Twitter</a>
+                                <a href={inputValues['Facebook'] || ''} target='_blank'><BsLink /> Facebook</a>
+                                <a href={inputValues['GitHub'] || ''} target='_blank'><BsLink /> GitHub</a>
+                            </div>
                         </div>
                     </div>
 
@@ -76,7 +91,7 @@ const FinishedTemplate = () => {
                         </div>
                         <div className={`my-8 w-full`}>
                             <h1>Professionl summary</h1>
-                            <p dangerouslySetInnerHTML={{ __html: summaryContent }} />
+                            <div>{HtmlToListItems(summaryContent)}</div>
                         </div>
                         <div className={`my-4 border border-b-0 border-l-0 border-r-0 border-t-2 w-full`}>
                             <h1>WORK HISTORY</h1>
@@ -87,10 +102,7 @@ const FinishedTemplate = () => {
                                         <p className='text-[13px] text-gray-500'>{`${data.startDate} - ${data.endDate}`}</p>
                                     </div>
                                     <h3 className='font-bold text-[15px]'>{data.jobTitle} - <span className='font-normal'>{`${data.city}, ${data.country}`}</span></h3>
-                                    {/* <div className='my-4' dangerouslySetInnerHTML={{ __html: workDescription }} /> */}
-                                    <div>
-                                        {HtmlToListItems(workDescription)}
-                                    </div>
+                                    <div key={index}>{HtmlToListItems(workDescription)}</div>
                                 </div>
                             ))}
                         </div>
