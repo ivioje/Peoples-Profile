@@ -5,6 +5,7 @@ import './styles.css';
 import ColorPicker from './ColorPalete';
 import HtmlToListItems from '../../../utils/htmlToList';
 import { BsLink } from 'react-icons/bs';
+import PageButtons from './PageButtons';
 
 const FinishedTemplate = () => {
     const { selectedColor, setSelectedColor, summaryContent, personalDetails, workDescription, workExperience, skillContent, education, inputValues } = useContext(TemplateContext);
@@ -18,6 +19,7 @@ const FinishedTemplate = () => {
             <div className='text-center my-5 py-3'>
                 <h1 className='py-3 text-[25px] font-semibold'>PREVIEW YOUR PROFILE</h1>
             </div>
+            <PageButtons />
             <div className={`xs:m-6 m-1 bg-stone-200 shadow`}>
                 <div className={`${styles.flexAround} mt-5 w-full`}>
                     <div>

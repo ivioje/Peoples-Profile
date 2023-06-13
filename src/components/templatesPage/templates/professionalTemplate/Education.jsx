@@ -161,7 +161,7 @@ const Education = ({
                                 </div>
 
                                 <div className={`w-full flex xs:items-end xs:justify-end`}>
-                                    <label htmlFor={`item${index}`} className='text-[14px] text-blue-900 mx-1 flex'>
+                                    <label htmlFor={`item${index}`} id={`item${index}`} className='text-[14px] text-blue-900 mx-1 flex'>
                                         I currently work here
                                         <input
                                             id={`item${index}`}
