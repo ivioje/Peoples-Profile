@@ -15,7 +15,7 @@ const Education = ({
     handleInputChange,
     handleRemoveField }) => {
 
-    const { handleCheckboxChange } = useContext(TemplateContext);
+    //const { handleCheckboxChange } = useContext(TemplateContext);
 
     return (
         <>
@@ -160,7 +160,7 @@ const Education = ({
                                     </div>
                                 </div>
 
-                                <div className={`w-full flex xs:items-end xs:justify-end`}>
+                                {/* <div className={`w-full flex xs:items-end xs:justify-end`}>
                                     <label htmlFor={`item${index}`} id={`item${index}`} className='text-[14px] text-blue-900 mx-1 flex'>
                                         I currently work here
                                         <input
@@ -172,7 +172,7 @@ const Education = ({
                                             onChange={() => handleCheckboxChange(index)}
                                         />
                                     </label>
-                                </div>
+                                </div> */}
                             </form>
                         </Formik>
                     </div>

@@ -5,6 +5,7 @@ import { FaMinus } from 'react-icons/fa'
 import { TemplateContext } from '../../../../context/TemplateContext';
 import styles from '../../../../style';
 import TextEditor from './TextEditor';
+import TextEditorField from './TextEditorField';
 
 const WorkExperience = ({
     formData,
@@ -12,7 +13,7 @@ const WorkExperience = ({
     handleInputChange,
     handleRemoveField }) => {
 
-    const { handleCheckboxChange, workDescription, setWorkDescription } = useContext(TemplateContext);
+    const { workDescription, setWorkDescription } = useContext(TemplateContext);
 
     return (
         <>
@@ -111,20 +112,18 @@ const WorkExperience = ({
                                     />
                                 </div>
 
-                                <div className={`flex xs:items-end xs:justify-end items-start justify-start w-full`}>
+                                <div className={`xs:w-1/2 w-full ${data.isPresent ? 'hidden' : 'flex '}`}>
+                                    <label htmlFor='endDate'>END DATE</label>
+                                    <input
+                                        name='endDate'
+                                        placeholder='end date'
+                                        type={data.isPresent ? 'text' : 'date'}
+                                        value={data.isPresent ? data.endDate = 'Present' : data.endDate}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
+                                    />
+                                </div>
 
-                                    <div className={`xs:w-1/2 w-full ${data.isPresent ? 'hidden' : 'flex '}`}>
-                                        <label htmlFor='endDate'>END DATE</label>
-                                        <input
-                                            name='endDate'
-                                            placeholder='end date'
-                                            type={data.isPresent ? 'text' : 'date'}
-                                            value={data.isPresent ? data.endDate = 'Present' : data.endDate}
-                                            onChange={(event) => handleInputChange("workExperience", index, event)}
-                                        />
-                                    </div>
-
-                                    <label htmlFor={`item${index}`} className='text-[14px] text-blue-900 mx-1 flex'>
+                                {/* <label htmlFor={`item${index}`} className='text-[14px] text-blue-900 mx-1 flex'>
                                         I currently work here
                                         <input
                                             id={`item${index}`}
@@ -134,18 +133,17 @@ const WorkExperience = ({
                                             checked={data.isPresent}
                                             onChange={() => handleCheckboxChange(index)}
                                         />
-                                    </label>
-                                </div>
+                                    </label> */}
                             </div>
 
                         </form>
                         <div className='md:w-1/2 sm:w-[80%] w-full'>
                             <label className='text-[14px] text-blue-900 mb-3'>DESCRIPTION</label>
-                            <TextEditor
+
+                            <TextEditorField
                                 id={`desc${index}`}
-                                value={workDescription}
-                                setValue={(e) => setWorkDescription(e)}
-                                className=''
+                                value={data.workDescription}
+                                onChange={(value) => handleInputChange("workExperience", index, "workDescription", value)}
                             />
                         </div>
 

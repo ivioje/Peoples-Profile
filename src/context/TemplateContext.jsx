@@ -16,8 +16,8 @@ export const TemplateContextProvider = ({ children }) => {
     const [selectedColor, setSelectedColor] = useState('#171F3A');
     const [inputValues, setInputValues] = useState({});
     const bioDetails = [{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }];
-    const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "", isPresent: false }];
-    const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", description: "", check: "", isPresent: false }];
+    const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", isPresent: false }];
+    const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", isPresent: false }];
 
     const [skillContent, setSkillContent] = useState(localStorage.getItem('skillsContent') || '');
     const [summaryContent, setSummaryContent] = useState(localStorage.getItem('summaryContent') || '');
@@ -59,10 +59,10 @@ export const TemplateContextProvider = ({ children }) => {
     const handleAddField = (fieldType) => {
         switch (fieldType) {
             case "workExperience":
-                setWorkExperience([...workExperience, { jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", check: "", isPresent: false }]);
+                setWorkExperience([...workExperience, { jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", isPresent: false }]);
                 break;
             case "education":
-                setEducation([...education, { institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", description: "", check: "", isPresent: false }]);
+                setEducation([...education, { institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", isPresent: false }]);
                 break;
             default:
                 break;
@@ -113,27 +113,6 @@ export const TemplateContextProvider = ({ children }) => {
         }
     };
 
-    const handleCheckboxChange = (index) => {
-        const workData = [...workExperience];
-        workData[index] = {
-            ...workData[index],
-            isPresent: !workData[index].isPresent
-        };
-        if (workData[index].isPresent) {
-            workData[index].endDate = '';
-        }
-        setWorkExperience(workData);
-
-        const educationData = [...education];
-        educationData[index] = {
-            ...educationData[index],
-            isPresent: !educationData[index].isPresent
-        };
-        if (educationData[index].isPresent) {
-            educationData[index].endDate = '';
-        }
-        setEducation(educationData);
-    };
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -155,7 +134,7 @@ export const TemplateContextProvider = ({ children }) => {
         <TemplateContext.Provider value={{
             query, setQuery, bookmark, templateData, filterTemplateData, setBookmark, removeFromBookmarks, openTemplatesList, setOpenTemplatesList, toggle,
             setToggle, workExperience, setWorkExperience, education, setEducation, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
-            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, handleCheckboxChange, isPresent, setIsPresent,
+            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, isPresent, setIsPresent,
             skillContent, setSkillContent, summaryContent, setSummaryContent, workDescription, setWorkDescription, selectedColor, setSelectedColor, inputValues, setInputValues
         }}>
             {children}

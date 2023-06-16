@@ -25,23 +25,23 @@ const LinkButtons = () => {
         }));
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
 
-        // Save the input values to local storage
-        localStorage.setItem('inputValues', JSON.stringify(inputValues));
-    };
+    //     // Save the input values to local storage
+    //     localStorage.setItem('inputValues', JSON.stringify(inputValues));
+    // };
 
-    const handleSave = (name) => {
-        setSaved((prevSaved) => ({
-            ...prevSaved,
-            [name]: !prevSaved[name],
-        }));
-        setEdited((prevEdited) => ({
-            ...prevEdited,
-            [name]: false,
-        }));
-    }
+    // const handleSave = (name) => {
+    //     setSaved((prevSaved) => ({
+    //         ...prevSaved,
+    //         [name]: !prevSaved[name],
+    //     }));
+    //     setEdited((prevEdited) => ({
+    //         ...prevEdited,
+    //         [name]: false,
+    //     }));
+    // }
 
     //links array
     const items = [
@@ -75,7 +75,7 @@ const LinkButtons = () => {
                     <div key={item.id}>
                         {activeButton === item.id && (
                             <div>
-                                <form className='flex flex-col items-start justify-start' onSubmit={handleSubmit}>
+                                <form className='flex flex-col items-start justify-start'>
                                     <label>{item.title} URL</label>
                                     <input
                                         type='url'
@@ -87,15 +87,15 @@ const LinkButtons = () => {
                                     // disabled={saved[item.id]}
                                     />
 
-                                    <button
+                                    {/* <button
                                         type='submit'
                                         className='bg-[#171F3A] opacity-90 text-dimWhite px-2 py-1 rounded-lg'
                                         onClick={() => handleSave(item.id)}
-                                    // disabled={saved[item.id]}
-                                    >
-                                        {/* {edited[item.title] || saved[item.title] ? 'Saved' : 'Save'} */}
-                                        {edited[item.title] ? 'Save' : 'Saved' && saved[item.id] ? 'Saved' : 'Save'}
-                                    </button>
+                                     disabled={saved[item.id]}
+                                    > */}
+                                    {/* {edited[item.title] || saved[item.title] ? 'Saved' : 'Save'} */}
+                                    {/* {edited[item.title] ? 'Save' : 'Saved' && saved[item.id] ? 'Saved' : 'Save'}
+                                    </button> */}
                                 </form>
                             </div>
                         )}

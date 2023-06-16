@@ -109,6 +109,7 @@ const ProfessionalProfile = () => {
           </div>
         ) : (
           <div>
+            {/*to be separated into a component*/}
             <div className='my-10 hidden sm:block'>
               <Stepper activeStep={activeStep} alternativeLabel>
                 {steps.map((label) => (
@@ -119,6 +120,7 @@ const ProfessionalProfile = () => {
               </Stepper>
             </div>
 
+            {/*stepper for mobile devices*/}
             <div className='sm:hidden my-5 flex items-center justify-center mx-auto'>
               <MobileStepper
                 variant="dots"
