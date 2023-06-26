@@ -86,9 +86,34 @@ export const TemplateContextProvider = ({ children }) => {
         }
     };
 
-    const handleInputChange = (fieldType, index, event) => {
-        const { name, value } = event.target;
+    // const handleInputChange = (fieldType, index, event) => {
+    //     const { name, value } = event.target;
 
+    //     switch (fieldType) {
+    //         case "personalDetails":
+    //             const updatedPersonalDetails = [...personalDetails];
+    //             updatedPersonalDetails[index][name] = value;
+    //             setPersonalDetails(updatedPersonalDetails);
+    //             localStorage.setItem('userDetails', JSON.stringify(updatedPersonalDetails));
+    //             break;
+    //         case "workExperience":
+    //             const updatedWorkExperience = [...workExperience];
+    //             updatedWorkExperience[index][name] = value;
+    //             setWorkExperience(updatedWorkExperience);
+    //             localStorage.setItem('workExperienceDetails', JSON.stringify(updatedWorkExperience));
+    //             break;
+    //         case "education":
+    //             const updatedEducation = [...education];
+    //             updatedEducation[index][name] = value;
+    //             setEducation(updatedEducation);
+    //             localStorage.setItem('storedEducationDetails', JSON.stringify(updatedEducation));
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    // };
+
+    const handleInputChange = (fieldType, index, name, value) => {
         switch (fieldType) {
             case "personalDetails":
                 const updatedPersonalDetails = [...personalDetails];
@@ -108,10 +133,17 @@ export const TemplateContextProvider = ({ children }) => {
                 setEducation(updatedEducation);
                 localStorage.setItem('storedEducationDetails', JSON.stringify(updatedEducation));
                 break;
+            case "workDescription":
+                const updatedWorkExperienceDesc = [...workExperience];
+                updatedWorkExperienceDesc[index].workDescription = value;
+                setWorkExperience(updatedWorkExperienceDesc);
+                localStorage.setItem('workExperienceDetails', JSON.stringify(updatedWorkExperienceDesc));
+                break;
             default:
                 break;
         }
     };
+
 
 
     const handleNext = () => {

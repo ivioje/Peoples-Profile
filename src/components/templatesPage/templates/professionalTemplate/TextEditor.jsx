@@ -2,7 +2,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const TextEditor = ({ id, className, value, setValue }) => {
+const TextEditor = ({ id, className, value, onChange }) => {
 
     const modules = {
         toolbar: [
@@ -23,7 +23,7 @@ const TextEditor = ({ id, className, value, setValue }) => {
             theme='snow'
             className={className}
             value={value}
-            onChange={setValue}
+            onChange={onChange}
             modules={modules}
             formats={formats}
         />
