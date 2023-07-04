@@ -21,7 +21,7 @@ export const TemplateContextProvider = ({ children }) => {
 
     const [skillContent, setSkillContent] = useState(localStorage.getItem('skillsContent') || '');
     const [summaryContent, setSummaryContent] = useState(localStorage.getItem('summaryContent') || '');
-    const [workDescription, setWorkDescription] = useState(localStorage.getItem('storedWorkDescription') || '');
+    //const [workDescription, setWorkDescription] = useState(JSON.parse(localStorage.getItem('workDescription')) || workDescriptionObj);
     const [personalDetails, setPersonalDetails] = useState(JSON.parse(localStorage.getItem('userDetails')) || bioDetails);
     const [workExperience, setWorkExperience] = useState(JSON.parse(localStorage.getItem('workExperienceDetails')) || workExperienceDetails);
     const [education, setEducation] = useState(JSON.parse(localStorage.getItem('storedEducationDetails')) || educationDetails);
@@ -33,14 +33,14 @@ export const TemplateContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('skillsContent', skillContent);
         localStorage.setItem('summaryContent', summaryContent);
-        localStorage.setItem('storedWorkDescription', workDescription);
+        //localStorage.setItem('workDescription', workDescription);
 
-        //links
+        //additional links
         const savedInputValues = JSON.parse(localStorage.getItem('inputValues'));
         if (savedInputValues) {
             setInputValues(savedInputValues);
         }
-    }, [skillContent, summaryContent, workDescription]);
+    }, [skillContent, summaryContent]);
 
     const filterTemplateData = () => {
         return templateData.filter((item) => {
@@ -86,34 +86,9 @@ export const TemplateContextProvider = ({ children }) => {
         }
     };
 
-    // const handleInputChange = (fieldType, index, event) => {
-    //     const { name, value } = event.target;
+    const handleInputChange = (fieldType, index, event) => {
+        const { name, value } = event.target;
 
-    //     switch (fieldType) {
-    //         case "personalDetails":
-    //             const updatedPersonalDetails = [...personalDetails];
-    //             updatedPersonalDetails[index][name] = value;
-    //             setPersonalDetails(updatedPersonalDetails);
-    //             localStorage.setItem('userDetails', JSON.stringify(updatedPersonalDetails));
-    //             break;
-    //         case "workExperience":
-    //             const updatedWorkExperience = [...workExperience];
-    //             updatedWorkExperience[index][name] = value;
-    //             setWorkExperience(updatedWorkExperience);
-    //             localStorage.setItem('workExperienceDetails', JSON.stringify(updatedWorkExperience));
-    //             break;
-    //         case "education":
-    //             const updatedEducation = [...education];
-    //             updatedEducation[index][name] = value;
-    //             setEducation(updatedEducation);
-    //             localStorage.setItem('storedEducationDetails', JSON.stringify(updatedEducation));
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // };
-
-    const handleInputChange = (fieldType, index, name, value) => {
         switch (fieldType) {
             case "personalDetails":
                 const updatedPersonalDetails = [...personalDetails];
@@ -133,18 +108,25 @@ export const TemplateContextProvider = ({ children }) => {
                 setEducation(updatedEducation);
                 localStorage.setItem('storedEducationDetails', JSON.stringify(updatedEducation));
                 break;
-            case "workDescription":
-                const updatedWorkExperienceDesc = [...workExperience];
-                updatedWorkExperienceDesc[index].workDescription = value;
-                setWorkExperience(updatedWorkExperienceDesc);
-                localStorage.setItem('workExperienceDetails', JSON.stringify(updatedWorkExperienceDesc));
-                break;
+            // case "workDescription":
+            //     const updatedWorkExperienceDesc = [...workExperience];
+            //     updatedWorkExperienceDesc[index].description = value;
+            //     setWorkExperience(updatedWorkExperienceDesc);
+            //     localStorage.setItem('workExperienceDetailsDesc', JSON.stringify(updatedWorkExperienceDesc));
+            //     break;
             default:
                 break;
         }
     };
 
+    const handleDescInputChange = (index, event) => {
+        const { value } = event.target;
 
+        const updatedWorkExperienceDesc = [...workExperience];
+        updatedWorkExperienceDesc[index].description = value;
+        setWorkExperience(updatedWorkExperienceDesc);
+        localStorage.setItem('workExperienceDetailsDesc', JSON.stringify(updatedWorkExperienceDesc));
+    }
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -162,12 +144,13 @@ export const TemplateContextProvider = ({ children }) => {
         setActiveButton(buttonindex)
     }
 
+
     return (
         <TemplateContext.Provider value={{
             query, setQuery, bookmark, templateData, filterTemplateData, setBookmark, removeFromBookmarks, openTemplatesList, setOpenTemplatesList, toggle,
             setToggle, workExperience, setWorkExperience, education, setEducation, handleAddField, handleInputChange, handleRemoveField, activeStep, setActiveStep, handleNext, handleBack,
-            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, isPresent, setIsPresent,
-            skillContent, setSkillContent, summaryContent, setSummaryContent, workDescription, setWorkDescription, selectedColor, setSelectedColor, inputValues, setInputValues
+            selectedFile, setSelectedFile, handleFileChange, personalDetails, setPersonalDetails, showButtonContent, activeButton, isPresent, setIsPresent, handleDescInputChange,
+            skillContent, setSkillContent, summaryContent, setSummaryContent, selectedColor, setSelectedColor, inputValues, setInputValues
         }}>
             {children}
         </TemplateContext.Provider>

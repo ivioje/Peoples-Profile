@@ -11,11 +11,11 @@ const WorkExperience = ({
     formData,
     handleAddField,
     handleInputChange,
-    handleRemoveField }) => {
+    handleRemoveField,
+}) => {
 
-    const { workDescription, setWorkDescription } = useContext(TemplateContext);
 
-    console.log(formData)
+    //console.log(formData)
 
     return (
         <>
@@ -59,7 +59,7 @@ const WorkExperience = ({
                                         placeholder='e.g Developer'
                                         type='text'
                                         value={data.jobTitle}
-                                        onChange={(event) => handleInputChange("workExperience", index, 'jobTitle', event)}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
                                     />
                                 </div>
                                 <div className='xs:w-1/2 w-full'>
@@ -70,7 +70,7 @@ const WorkExperience = ({
                                         placeholder='e.g Google'
                                         type='text'
                                         value={data.organization}
-                                        onChange={(event) => handleInputChange("workExperience", index, 'organization', event)}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
                                     />
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ const WorkExperience = ({
                                         placeholder='e.g Abuja'
                                         type='text'
                                         value={data.city}
-                                        onChange={(event) => handleInputChange("workExperience", index, 'city', event)}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
                                     />
                                 </div>
                                 <div className='xs:w-1/2 w-full'>
@@ -95,7 +95,7 @@ const WorkExperience = ({
                                         placeholder='e.g Nigeria'
                                         type='text'
                                         value={data.country}
-                                        onChange={(event) => handleInputChange("workExperience", index, 'country', event)}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
                                     />
                                 </div>
                             </div>
@@ -110,7 +110,7 @@ const WorkExperience = ({
                                         type='date'
                                         value={data.startDate}
                                         className=''
-                                        onChange={(event) => handleInputChange("workExperience", index, 'startDate', event)}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
                                     />
                                 </div>
 
@@ -121,7 +121,7 @@ const WorkExperience = ({
                                         placeholder='end date'
                                         type={data.isPresent ? 'text' : 'date'}
                                         value={data.isPresent ? data.endDate = 'Present' : data.endDate}
-                                        onChange={(event) => handleInputChange("workExperience", index, 'endDate', event)}
+                                        onChange={(event) => handleInputChange("workExperience", index, event)}
                                     />
                                 </div>
 
@@ -143,10 +143,10 @@ const WorkExperience = ({
                             <label className='text-[14px] text-blue-900 mb-3'>DESCRIPTION</label>
 
                             <TextEditorField
-                                id={`description-${index}`}
+                                id={index}
                                 className={''}
-                                value={data.description}
-                                onChange={(value) => handleInputChange("workExperience", index, 'description', value)}
+                            //value={data.description}
+                            //onChange={(event) => handleDescInputChange(index, event)}
                             />
                         </div>
 

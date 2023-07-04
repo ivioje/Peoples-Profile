@@ -14,8 +14,8 @@ import { Link } from 'react-router-dom';
 const ProfessionalProfile = () => {
 
   const { activeStep, handleBack, handleNext, personalDetails, workExperience, education, skillContent, setIsPresent,
-    setSkillContent, summaryContent, setSummaryContent, handleAddField, handleInputChange, handleRemoveField, setEducation
-  } = useContext(TemplateContext);
+    setSkillContent, summaryContent, setSummaryContent, handleAddField, handleInputChange, handleRemoveField, setEducation,
+    handleDescInputChange } = useContext(TemplateContext);
 
   const steps = ["Personal Details", "Work history", "Skills", "Education", "Professional summary"];
 
@@ -28,6 +28,7 @@ const ProfessionalProfile = () => {
             <PersonalDetails
               formData={personalDetails}
               handleInputChange={handleInputChange}
+              handleDescInputChange={handleDescInputChange}
             />
           </div>
         );

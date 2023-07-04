@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import TextEditor from './TextEditor';
 
-const TextEditorField = ({ id, value, onChange, className }) => {
-    const [editorValue, setEditorValue] = useState(value);
+const TextEditorField = ({ id, className }) => {
+    //const [editorValue, setEditorValue] = useState(value);
 
-    const handleEditorChange = (newValue) => {
-        setEditorValue(newValue);
-        onChange(newValue);
-    };
+    // const handleEditorChange = (newValue) => {
+    //     setEditorValue(newValue);
+    //     onChange(newValue);
+    // };
 
     return (
         <TextEditor
             id={id}
-            value={editorValue}
-            onChange={handleEditorChange}
+            //value={editorValue}
+            //onChange={onChange}
             className={className}
         />
     );
