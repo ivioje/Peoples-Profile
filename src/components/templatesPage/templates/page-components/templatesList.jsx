@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { TemplateContext } from '../../context/TemplateContext'
-import styles from '../../style'
+import { TemplateContext } from '../../../../context/TemplateContext'
+import styles from '../../../../style'
 import SingleTemplate from './singleTemplate'
 
 const TemplatesList = () => {

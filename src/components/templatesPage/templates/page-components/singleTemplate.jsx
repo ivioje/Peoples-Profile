@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { TemplateContext } from '../../context/TemplateContext';
-import styles from '../../style';
+import { TemplateContext } from '../../../../context/TemplateContext';
+import styles from '../../../../style';
 import BookmarkTemplate from './BookmarkTemplate';
 
 const SingleTemplate = ({ item }) => {

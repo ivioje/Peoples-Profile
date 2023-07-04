@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsBookmark, BsBookmarkFill } from 'react-icons/bs'
-import styles from '../../style'
+import styles from '../../../../style'
 
 const BookmarkTemplate = ({ addToBookmarks, isInBookmarks }) => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import bgImg from '../../assets/tempHeaderImg.jpg'
+import bgImg from '../../../../assets/tempHeaderImg.jpg'
 
 const Header = () => (
     <div className='font-poppins '>

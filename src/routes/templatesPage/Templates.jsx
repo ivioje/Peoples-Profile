@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import Search from '../../components/Search'
-import Header from '../../components/templatesPage/header'
-import RequestTemplate from '../../components/templatesPage/requestTemplate'
-import TemplatesList from '../../components/templatesPage/templatesList'
+import RequestTemplate from '../../components/templatesPage/templates/page-components/requestTemplate'
+import Header from '../../components/templatesPage/templates/page-components/header'
+import TemplatesList from '../../components/templatesPage/templates/page-components/templatesList'
 import { TemplateContext } from '../../context/TemplateContext'
 
 const Templates = () => {

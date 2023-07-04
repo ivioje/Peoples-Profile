@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useParams } from 'react-router'
-import { TemplateContext } from '../../context/TemplateContext';
-import styles from '../../style';
-import WorkExperience from './templates/professionalTemplate/WorkExperience';
+import { TemplateContext } from '../../../../context/TemplateContext';
+import styles from '../../../../style';
+import WorkExperience from '../professionalTemplate/WorkExperience';
 
 
 const Templatedetails = () => {

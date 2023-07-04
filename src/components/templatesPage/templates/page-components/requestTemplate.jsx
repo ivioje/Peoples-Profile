@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import wave from '../../assets/wave.svg'
-import styles from '../../style';
-import RequestTemplateForm from './RequestTemplateForm';
+import wave from '../../../../assets/wave.svg'
+import styles from '../../../../style';
+import RequestTemplateForm from '../page-components/RequestTemplateForm';
 
 const RequestTemplate = () => {
     return (
