@@ -63,6 +63,18 @@ const PersonalDetails = ({ formData, handleInputChange }) => {
               </div>
             </div>
             <div className='flex flex-col w-full'>
+              <label htmlFor='occupation'>
+                JOB TITLE
+              </label>
+              <input
+                name='occupation'
+                placeholder='e.g front-end developer'
+                type='text'
+                value={data.occupation}
+                onChange={(event) => handleInputChange("personalDetails", index, event)}
+              />
+            </div>
+            <div className='flex flex-col w-full'>
               <label htmlFor='address'>
                 STREET ADDRESS
               </label>

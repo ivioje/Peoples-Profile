@@ -25,8 +25,10 @@ const FinishedTemplateComponent = ({ hideImage }) => {
                 </div>
                 {personalDetails.map((data, index) => (
                     <div key={index} className='w-full'>
-                        <div className={`xs:text-[27px] flex sm:hidden text-[25px] uppercase w-full font-[700] mb-1 py-4 border border-t-0 border-l-0 border-r-0 border-b-2 border-gray-400`}>
-                            <h1>{`${data.firstname} ${data.lastname}`}</h1>
+                        <div className={` flex flex-col sm:hidden uppercase w-full font-[700] mb-1 py-4 border border-t-0 border-l-0 border-r-0 border-b-2 border-gray-400`}>
+                            <h1 className='xs:text-[27px] text-[25px]'>{`${data.firstname} ${data.lastname}`}</h1>
+                            <h6 className='text-text_color'>{data.occupation}</h6>
+                            {console.log(data)}
                         </div>
                         <div className={`mt-6 w-full flex flex-col contact_items`}>
                             <h1 className='border border-t-0 border-l-0 border-r-0 mt-6 font-bold' key={`contact-${index}`}>

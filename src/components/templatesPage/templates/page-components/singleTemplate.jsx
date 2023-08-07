@@ -20,7 +20,7 @@ const SingleTemplate = ({ item }) => {
     const isInBookmarks = bookmark.some((mark) => mark.id === item.id);
 
     return (
-        <div key={item.id} className='xs:w-[49%] p-2 md:p-0 md:w-[30%] w-full md:mx-2 my-6 border-b'>
+        <div key={item.id} className={`xs:w-[49%] p-2 md:p-0 md:w-[30%] w-full md:mx-2 my-6 border-b relative ${item.state ? '' : ''}`}>
             <h1 style={{ 'background': `${item.color}` }} className='text-lightGray text-[20px] font-[600] p-1 '>
                 {item.type} {' '} Template
             </h1>
@@ -37,6 +37,9 @@ const SingleTemplate = ({ item }) => {
                 <BookmarkTemplate addToBookmarks={addToBookmarks} isInBookmarks={isInBookmarks} />
             </div>
             <hr className='opacity-5' />
+            <div className={`absolute h-full top-0 w-full flex items-center justify-center opacity-80 bg-black ${item.state ? 'hidden' : ''}`}>
+                <h1 className='text-dimWhite text-[25px] font-bold font-ysabeau'>COMING SOON</h1>
+            </div>
         </div>
     )
 }

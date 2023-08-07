@@ -5,16 +5,16 @@ import { TemplateContext } from '../../../context/TemplateContext';
 import styles from '../../../style';
 
 const CreateProfile = ({ setOpenTemplatesList }) => {
-    const [close, setClose] = useState(null);
+    const [close, setClose] = useState(true);
 
 
     const { templateData } = useContext(TemplateContext);
     return (
-        <div className={`flex justify-center flex-col absolute sm:top-[55px] top-[35px] w-[270px] overflow-y-scroll p-1 sm:left-[-350px] xs:left-[-45vw] left-[-250px] bg-white shadow-2xl font-poppins text-[15px]`}>
+        <div className={`flex justify-center flex-col absolute sm:top-[55px] top-[35px] w-[270px] overflow-y-scroll p-1 sm:left-[-350px] xs:left-[-45vw] left-[-250px] bg-white shadow-2xl font-poppins text-[15px] ${close ? '' : 'hidden'}`}>
             <div className='text-center mb-4'>
                 <div className={`${styles.flexBtw}`}>
                     <h1 className='p-1 font-firaSans text-[16px]'>Choose a Template</h1>
-                    <BsX className={`text-[20px] sm:hidden cursor-pointer `} />
+                    <BsX className={`text-[20px] sm:hidden cursor-pointer `} onClick={() => setClose(!close)} />
                 </div>
                 <hr />
                 <p className='text-[13px]'>Choose a template below in order to create a profile.</p>

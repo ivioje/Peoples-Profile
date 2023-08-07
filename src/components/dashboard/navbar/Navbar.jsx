@@ -45,7 +45,6 @@ const DashboardNav = () => {
                                 <button className='py-1 px-4 bg-slate-500 text-secondary' onClick={() => setOpenTemplatesList((prev) => !prev)}>
                                     Create a profile
                                 </button>
-
                             </div>
                         </div>
                     </div>

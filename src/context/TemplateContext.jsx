@@ -16,7 +16,7 @@ export const TemplateContextProvider = ({ children }) => {
     const [selectedColor, setSelectedColor] = useState('#171F3A');
     const [inputValues, setInputValues] = useState({});
     const bioDetails = [{ photo: "", firstname: "", lastname: "", address: "", city: "", country: "", zipcode: "", phone: "", email: "" }];
-    const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", description: "", isPresent: false }];
+    const workExperienceDetails = [{ jobTitle: "", organization: "", startDate: "", city: "", country: "", endDate: "", occupation: "", description: "", isPresent: false }];
     const educationDetails = [{ institution: "", qualification: "", honours: "", course: "", startDate: "", endDate: "", isPresent: false }];
 
     const [skillContent, setSkillContent] = useState(localStorage.getItem('skillsContent') || '');
