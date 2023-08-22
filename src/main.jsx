@@ -8,8 +8,6 @@ import Profiles from './routes/profiles/Profiles'
 import Templates from './routes/templatesPage/Templates'
 import Guide from './routes/guide/Guide'
 import ErrorPage from './components/ErrorPage'
-import Login from './routes/login/Login'
-import SignUp from './routes/sign-up/SignUp'
 import SuccessPage from './routes/SuccessPage'
 import DashboardNav from './components/dashboard/navbar/Navbar'
 import Overview from './routes/dashboard/overview'
@@ -22,6 +20,8 @@ import ProfileDetails from './components/profiles/profileDetails';
 import { ContextProvider } from './context/GlobalContext';
 import ProfessionalProfile from './components/templatesPage/templates/professionalTemplate/ProfessionalProfile';
 import FinishedTemplate from './components/templatesPage/templates/professionalTemplate/FinishedTemplate';
+import SignUp from './components/auth/sign-up/SignUp';
+import Login from './components/auth/login/Login';
 
 const router = createBrowserRouter([
   {

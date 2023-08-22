@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../../style';
 
-const Auth = ({ title, btnText, linkTo, question, linkBack }) => {
+const AuthFooter = ({ title, btnText, linkTo, question, linkBack }) => {
     return (
         <>
             <Link to={`/${linkTo}`} className='w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center '>
@@ -23,4 +23,4 @@ const Auth = ({ title, btnText, linkTo, question, linkBack }) => {
     )
 }
 
-export default Auth
+export default AuthFooter

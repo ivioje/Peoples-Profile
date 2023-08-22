@@ -52,8 +52,8 @@ const Navbar = () => {
                                     </NavLink>
                                 </div>
                             ))}
-                            <div className='mt-2'>
-                                <GetStarted setToggle={setToggle} />
+                            <div className='mt-2' onClick={() => setToggle(false)}>
+                                <GetStarted />
                             </div>
                         </ul>
                     </div>
