@@ -7,7 +7,7 @@ import NewProfile from '../NewProfile';
 import menu from '../../../assets/nav-menu.svg'
 import Footer from '../Footer';
 
-const DashboardNav = () => {
+const SideBar = () => {
     const [toggle, setToggle] = useState(false);
 
     let activeStyle = {
@@ -78,4 +78,4 @@ const DashboardNav = () => {
     )
 }
 
-export default DashboardNav
+export default SideBar

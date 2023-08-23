@@ -22,6 +22,7 @@ import ProfessionalProfile from './components/templatesPage/templates/profession
 import FinishedTemplate from './components/templatesPage/templates/professionalTemplate/FinishedTemplate';
 import SignUp from './components/auth/sign-up/SignUp';
 import Login from './components/auth/login/Login';
+import Dashboard from './components/dashboard';
 
 const router = createBrowserRouter([
   {
@@ -78,8 +79,9 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <DashboardNav />,
+    element: <Dashboard />,
     errorElement: <ErrorPage />,
+
     children: [
       {
         path: 'overview',

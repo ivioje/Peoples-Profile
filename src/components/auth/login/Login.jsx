@@ -3,6 +3,8 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import styles from '../../../style';
 import { auth } from '../../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import { useContext } from 'react';
+import { AuthContext } from '../../../context/AuthenticationContext';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -10,13 +12,17 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const { setIsLoggedIn } = useContext(AuthContext);
+
+
     const onLogin = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+
                 // Signed in
                 const user = userCredential.user;
-                navigate("/dashboard/overview")
+                navigate("/dashboard/overview");
                 console.log(user);
             })
             .catch((error) => {
