@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const SignUp = () => {
     const navigate = useNavigate();
 
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
 
@@ -50,11 +51,27 @@ const SignUp = () => {
     return (
         <section className={`font-poppins div-overlay ${styles.flexCenter} p-2 relative`}>
 
-            <ToastContainer />
+            {/* <ToastContainer /> */}
 
             <div className={`bg-white ${styles.flexBtw} flex-col p-5 sm:p-10 my-10 md:my-16 sm:my-12 md:w-[590px] sm:w-[60%] w-full rounded-[34px]`}>
                 <h2 className='font-[600] p-1 text-[22px]'>Sign Up</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className={`${styles.flexBtw} flex-col mt-12 w-full sm:w-[90%] px-1`}>
+                    <div className='mb-8 flex flex-col w-full'>
+                        <input
+                            {...register("name", { required: true, minLength: 3 })}
+                            value={name}
+                            name="name"
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Enter your name"
+                            className="h-9 p-2 placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100"
+                        />
+                        {errors.name && errors.name.type === "required" && (
+                            <p className="w-full text-[12px] text-red-900 opacity-90">Please provide your name</p>
+                        )}
+                        {errors.name && errors.name.type === "minLength" && (
+                            <p className="w-full text-[12px] text-red-900 opacity-90">Name should be at least 3 characters</p>
+                        )}
+                    </div>
                     <div className='mb-8 flex flex-col w-full'>
                         <input
                             {...register("email", { required: true, pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/ })}

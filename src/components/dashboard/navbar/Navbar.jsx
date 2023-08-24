@@ -65,7 +65,7 @@ const DashboardNav = () => {
 
             </section>
 
-            {/* <Account /> */}
+            <Account />
 
             <Sidenav />
         </>
