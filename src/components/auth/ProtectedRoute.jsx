@@ -1,15 +1,40 @@
-import React from 'react';
-import { Navigate, Route } from 'react-router';
+import React, { useContext, useEffect } from "react";
+import {
+	Route,
+	Routes,
+	Navigate,
+	BrowserRouter as Router,
+} from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { AuthContext } from "../../context/AuthenticationContext";
+import { auth } from "../../firebase";
 
-const ProtectedRoute = ({ component: Component, authenticated: authenticated, ...rest }) => {
-    <Route {...rest} render=
-        {props => authenticated
-            ?
-            (<Component {...props} />)
-            :
-            (<Navigate to={{ pathname: "/login" }} />)
-        }
-    />
-}
+const ProtectedRoute = ({ children, isLoggedIn, ...rest }) => {
+	// const { isLoggedIn } = useContext(AuthContext);
 
-export default ProtectedRoute
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
+			if (user) {
+				console.log(user.displayName);
+				isLoggedIn = true; // User is authenticated
+			} else {
+				isLoggedIn = false; // User is not authenticated
+			}
+		});
+
+		return () => {
+			unsubscribe(); // Unsubscribe from the listener when component unmounts
+		};
+	}, []);
+
+	return (
+		<Routes>
+			<Route
+				{...rest}
+				element={isLoggedIn ? children : <Navigate to="/login" />}
+			/>
+		</Routes>
+	);
+};
+
+export default ProtectedRoute;
