@@ -28,7 +28,7 @@ const Login = () => {
 				.then((userCredential) => {
 					// Signed in
 					const user = userCredential.user;
-					navigate("/dashboard/overview");
+					navigate(`/dashboard/overview/${user.uid}`);
 					console.log(user);
 				})
 				.catch((error) => {

@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+	createBrowserRouter,
+	RouterProvider,
+	Navigate,
+} from "react-router-dom";
 import App from "./App";
 import Home from "./routes/home/Home";
 import Profiles from "./routes/profiles/Profiles";
@@ -71,6 +75,10 @@ const router = createBrowserRouter([
 				path: "/templates/professional-portfolio-template/finished-template",
 				element: <FinishedTemplate />,
 			},
+			{
+				path: "*",
+				element: <Navigate to="/" />,
+			},
 		],
 	},
 	{
@@ -79,28 +87,32 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />,
 		children: [
 			{
-				path: "overview",
+				path: "overview/:id",
 				element: <Overview />,
 			},
 			{
-				path: "uploads",
+				path: "uploads/:id",
 				element: <UploadedProfiles />,
 			},
 			{
-				path: "saved",
+				path: "saved/:id",
 				element: <SavedProfiles />,
 			},
 			{
-				path: "bookmarks",
+				path: "bookmarks/:id",
 				element: <Bookmarks />,
 			},
 			{
-				path: "shared",
+				path: "shared/:id",
 				element: <Sharedprofiles />,
 			},
 			{
-				path: "trash",
+				path: "trash/:id",
 				element: <Trash />,
+			},
+			{
+				path: "*",
+				element: <Navigate to="overview/:id" />,
 			},
 		],
 	},
