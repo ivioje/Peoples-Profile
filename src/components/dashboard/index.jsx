@@ -1,20 +1,14 @@
 import React, { useContext } from "react";
-import { Navigate } from "react-router";
-import { AuthContext } from "../../context/AuthenticationContext";
-import DashboardNav from "./navbar/Navbar";
+import { Navigate, Route, Router, Routes } from "react-router";
+import Bookmarks from "../../routes/dashboard/bookmarked";
+import Overview from "../../routes/dashboard/overview";
+import SavedProfiles from "../../routes/dashboard/saved";
+import Sharedprofiles from "../../routes/dashboard/shared";
+import Trash from "../../routes/dashboard/trash";
+import UploadedProfiles from "../../routes/dashboard/uploads";
 
 const Dashboard = () => {
-	const { isLoggedIn } = useContext(AuthContext);
-
-	if (!isLoggedIn) {
-		return <Navigate to="/login" />;
-	}
-
-	return (
-		<>
-			<DashboardNav />
-		</>
-	);
+	return <div></div>;
 };
 
 export default Dashboard;

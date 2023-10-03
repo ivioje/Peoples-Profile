@@ -1,248 +1,283 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-  /* min-width: 310px !important; */
-  overflow-x: hidden !important;
-  color: rgba(0, 0, 0, 0.85);
-  scroll-behavior: smooth;
-  font-family: 'Poppins', serif;
+	/* min-width: 310px !important; */
+	overflow-x: hidden !important;
+	color: rgba(0, 0, 0, 0.85);
+	scroll-behavior: smooth;
+	font-family: "Poppins", serif;
 }
 
 .primary-gradient {
-  background: linear-gradient(180deg, #548CA8 0%, #334257 100%);
+	background: linear-gradient(180deg, #548ca8 0%, #334257 100%);
 }
 
 .text-gradient {
-  background: linear-gradient(180deg, rgba(84, 140, 168, 0.85) 0%, rgba(51, 66, 87, 0.85) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	background: linear-gradient(
+		180deg,
+		rgba(84, 140, 168, 0.85) 0%,
+		rgba(51, 66, 87, 0.85) 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
 }
 
 .card_text_gradient {
-  background: linear-gradient(180deg, rgba(240, 251, 255, 0.85) 0%, rgba(212, 230, 255, 0.85) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+	background: linear-gradient(
+		180deg,
+		rgba(240, 251, 255, 0.85) 0%,
+		rgba(212, 230, 255, 0.85) 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
 }
 
 .navLinks {
-  position: relative;
+	position: relative;
 }
 
 .navLinks::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #F6F5F5;
-  bottom: 0;
-  left: 0;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .5s ease-in-out;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #f6f5f5;
+	bottom: 0;
+	left: 0;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.5s ease-in-out;
 }
 
 .navLinks:hover::before {
-  transform-origin: left;
-  transform: scaleX(1);
+	transform-origin: left;
+	transform: scaleX(1);
 }
 
 .hero-border {
-  border-bottom: 5px #548CA8 dashed;
+	border-bottom: 5px #548ca8 dashed;
 }
 
 .cta-button {
-  border-top: 2px dashed #0C0E0F8F;
-  border-bottom: 2px dashed #548CA8E0;
-  border-left: 2px dashed #548CA8E0;
-  border-right: 2px dashed #548CA8E0;
+	border-top: 2px dashed #0c0e0f8f;
+	border-bottom: 2px dashed #548ca8e0;
+	border-left: 2px dashed #548ca8e0;
+	border-right: 2px dashed #548ca8e0;
 }
 
 img {
-  width: auto;
-  height: auto;
+	width: auto;
+	height: auto;
 }
 
 .sidebar {
-  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
-  }
+	0% {
+		-webkit-transform: translateY(100px);
+		transform: translateY(100px);
+	}
 
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
 }
 
 @keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
-  }
+	0% {
+		-webkit-transform: translateY(100px);
+		transform: translateY(100px);
+	}
 
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
 }
 
 .dashBSidebar {
-  -webkit-animation: slide-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	-webkit-animation: slide-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-right {
-  0% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
-  }
+	0% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+	}
 
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
 }
 
 @keyframes slide-right {
-  0% {
-    -webkit-transform: translateX(-100px);
-    transform: translateX(-100px);
-  }
+	0% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+	}
 
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
 }
 
 .btn {
-  transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 .btn span {
-  position: relative;
-  display: inline-block;
-  transition: 0.5s;
+	position: relative;
+	display: inline-block;
+	transition: 0.5s;
 }
 
 .btn span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+	content: "\00bb";
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
 }
 
 .btn:hover span {
-  padding-right: 25px;
+	padding-right: 25px;
 }
 
 .btn:hover span:after {
-  opacity: 1;
-  right: 0;
+	opacity: 1;
+	right: 0;
 }
 
 .carousel .control-dots li {
-  background: linear-gradient(180deg, rgba(84, 140, 168, 0.85) 0%, rgba(51, 66, 87, 0.85) 100%) !important;
-  height: 10px !important;
-  width: 10px !important;
+	background: linear-gradient(
+		180deg,
+		rgba(84, 140, 168, 0.85) 0%,
+		rgba(51, 66, 87, 0.85) 100%
+	) !important;
+	height: 10px !important;
+	width: 10px !important;
 }
 
 .carousel.carousel-slider .control-arrow {
-  background: linear-gradient(180deg, rgba(84, 140, 168, 0.85) 0%, rgba(51, 66, 87, 0.85) 100%) !important;
-  height: 50px;
+	background: linear-gradient(
+		180deg,
+		rgba(84, 140, 168, 0.85) 0%,
+		rgba(51, 66, 87, 0.85) 100%
+	) !important;
+	height: 50px;
 }
 
 .text_shine {
-  color: rgba(84, 140, 168, 0.85);
-  background: -webkit-gradient(linear, left top, right top, from(#548CA8), to(#87bbff), color-stop(0.5, #548CA8));
-  background: -moz-gradient(linear, left top, right top, from(#548CA8), to(#87bbff), color-stop(0.5, #548CA8));
-  background: gradient(linear, left top, right top, from(#548CA8), to(#87bbff), color-stop(0.5, #548CA8));
-  -webkit-background-size: 125px 100%;
-  -moz-background-size: 125px 100%;
-  background-size: 125px 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-animation-name: shimmer;
-  -moz-animation-name: shimmer;
-  animation-name: shimmer;
-  -webkit-animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-color: #548CA8;
+	color: rgba(84, 140, 168, 0.85);
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#548ca8),
+		to(#87bbff),
+		color-stop(0.5, #548ca8)
+	);
+	background: -moz-gradient(
+		linear,
+		left top,
+		right top,
+		from(#548ca8),
+		to(#87bbff),
+		color-stop(0.5, #548ca8)
+	);
+	background: gradient(
+		linear,
+		left top,
+		right top,
+		from(#548ca8),
+		to(#87bbff),
+		color-stop(0.5, #548ca8)
+	);
+	-webkit-background-size: 125px 100%;
+	-moz-background-size: 125px 100%;
+	background-size: 125px 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-animation-name: shimmer;
+	-moz-animation-name: shimmer;
+	animation-name: shimmer;
+	-webkit-animation-duration: 3s;
+	-moz-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: #548ca8;
 }
 
 @-moz-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
+	0% {
+		background-position: top left;
+	}
 
-  100% {
-    background-position: top right;
-  }
+	100% {
+		background-position: top right;
+	}
 }
 
 @-webkit-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
+	0% {
+		background-position: top left;
+	}
 
-  100% {
-    background-position: top right;
-  }
+	100% {
+		background-position: top right;
+	}
 }
 
 @-o-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
+	0% {
+		background-position: top left;
+	}
 
-  100% {
-    background-position: top right;
-  }
+	100% {
+		background-position: top right;
+	}
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
+	0% {
+		background-position: top left;
+	}
 
-  100% {
-    background-position: top right;
-  }
+	100% {
+		background-position: top right;
+	}
 }
 .sideBar {
-  
 }
 /* .black__gradient {
   background: rgba(75, 213, 255, 0.6);
@@ -259,195 +294,188 @@ img {
 /*applies to firefox only */
 
 @-moz-document url-prefix() {
-  /* .black__gradient {
+	/* .black__gradient {
     opacity: .1;
   }
 
   .red__gradient {
     opacity: .1;
   } */
-  .barOverflow {
-    overflow-y: hidden; 
-  }
-  /* .overviewScroll::-moz-progress-bar{
+	.barOverflow {
+		overflow-y: hidden;
+	}
+	/* .overviewScroll::-moz-progress-bar{
     display: none;
   } */
 }
 
-@supports (-moz-appearance:none) {
-  .black__gradient {
-    opacity: .1;
-  }
+@supports (-moz-appearance: none) {
+	.black__gradient {
+		opacity: 0.1;
+	}
 
-  .red__gradient {
-    opacity: .1;
-  }
-  .barOverflow{
-    overflow-y: hidden;
-  }
-  
+	.red__gradient {
+		opacity: 0.1;
+	}
+	.barOverflow {
+		overflow-y: hidden;
+	}
 }
 /*end */
 
 .shadow {
-  box-shadow: 4px 0px 15px 0.5px rgba(0, 0, 0, 0.25);
+	box-shadow: 4px 0px 15px 0.5px rgba(0, 0, 0, 0.25);
 }
 
 .overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.2);
-  /* Black see-through */
-  width: 100%;
-  height: 100%;
-  transition: .5s ease;
-  opacity: .9;
-  text-align: center;
+	position: absolute;
+	bottom: 0;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.2);
+	/* Black see-through */
+	width: 100%;
+	height: 100%;
+	transition: 0.5s ease;
+	opacity: 0.9;
+	text-align: center;
 }
 
 .profilesOverlay {
-  background: rgba(0, 0, 0, 0.77);
-  height: 100%;
-  opacity: 1;
-  transition: .6s ease;
-  transform: scale(1.0);
+	background: rgba(0, 0, 0, 0.77);
+	height: 100%;
+	opacity: 1;
+	transition: 0.6s ease;
+	transform: scale(1);
 }
 
 .profilesOverlay:hover {
-  opacity: .9;
-  transform: scale(1.02);
+	opacity: 0.9;
+	transform: scale(1.02);
 }
 
 .overlay:hover {
-  opacity: 1;
+	opacity: 1;
 }
 
 .div-overlay {
-  background: rgba(246, 245, 245, 0.37);
+	background: rgba(246, 245, 245, 0.37);
 }
 
-.requestForm>* {
-  padding: 1rem;
-  margin: .5rem;
-  border: 1px solid rgb(233, 233, 233);
-  opacity: .7;
-  border-radius: 10px;
-  width: 90%;
+.requestForm > * {
+	padding: 1rem;
+	margin: 0.5rem;
+	border: 1px solid rgb(233, 233, 233);
+	opacity: 0.7;
+	border-radius: 10px;
+	width: 90%;
 }
 
 .request-btn {
-  opacity: 1;
-  padding: .3rem;
+	opacity: 1;
+	padding: 0.3rem;
 }
 
-.share>* {
-  margin: 3px;
-  padding: 2px;
+.share > * {
+	margin: 3px;
+	padding: 2px;
 }
 
 /*custom scroll bar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 1px;
+	width: 7px;
+	height: 1px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+	background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(182, 182, 182);
-  border-radius: 10px;
+	background: rgb(182, 182, 182);
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+	background: #555;
 }
 
 .barOverflow::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 /*custom checkbox */
 .checkmark {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #fff;
-  border: 1px solid rgb(172, 169, 169);
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #fff;
+	border: 1px solid rgb(172, 169, 169);
 }
 
 .checkContent label {
-  width: 40%;
-  position: relative;
-  padding: 12px;
-  cursor: pointer;
+	width: 40%;
+	position: relative;
+	padding: 12px;
+	cursor: pointer;
 }
 
 .checkContent label h6 {
-  left: 0;
-  top: 0;
-  margin: 2px 0px 0px 5px;
-  position: absolute;
+	left: 0;
+	top: 0;
+	margin: 2px 0px 0px 5px;
+	position: absolute;
 }
 
-.checkContent input:checked~.checkmark {
-  background-color: #334257;
+.checkContent input:checked ~ .checkmark {
+	background-color: #334257;
 }
 
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+	content: "";
+	position: absolute;
+	display: none;
 }
 
 /* Show the checkmark when checked */
-.checkContent input:checked~.checkmark:after {
-  display: block;
+.checkContent input:checked ~ .checkmark:after {
+	display: block;
 }
 
 /* Style the checkmark/indicator */
 .checkContent .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 /* Hide the browser's default checkbox */
 .checkContent input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .hide {
-    display: none;
-  }
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
 }
 
 @media screen and (max-width: 350px) {
-  .left {
-    left: 70px;
-  }
+	.left {
+		left: 70px;
+	}
 }
 .hoverClass {
-  transition: .5s ease-in-out;
+	transition: 0.5s ease-in-out;
 }
 .hoverClass:hover {
-  /* transform: scale(1.03); */
-  margin-top: .5px;
+	/* transform: scale(1.03); */
+	margin-top: 0.5px;
 }
