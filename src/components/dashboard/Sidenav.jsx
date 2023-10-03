@@ -17,7 +17,7 @@ const SideBar = () => {
 			className={`h-full w-full ss:w-[250px] ${styles.flexBtw} flex-col flex-wrap relative font-poppins`}
 		>
 			{/**desktop */}
-			<div className={`font-poppins ${styles.flexCol} h-[100vh] `}>
+			<div className={`font-poppins sm:${styles.flexCol} hidden h-[100vh] `}>
 				<ul className="list-none flex flex-col justify-center items-start flex-1 pl-0  pr-2 pb-2">
 					{sidenavItems.map((item) => (
 						<NavLink
@@ -44,10 +44,10 @@ const SideBar = () => {
 			</div>
 
 			{/**mobile */}
-			<div className="sm:hidden flex flex-col left-0 absolute h-[100vh] ">
+			<div className="sm:hidden flex flex-col relative h-[100vh] w-full ">
 				<div
 					onClick={() => setToggle((prev) => !prev)}
-					className="p-1 absolute top-0 cursor-pointer h-[32px] w-[32px]"
+					className="absolute top-0 left-0 cursor-pointer h-[32px] w-[32px] z-[100]"
 				>
 					<img
 						src={menu}
@@ -59,10 +59,10 @@ const SideBar = () => {
 				<div
 					className={`${
 						toggle ? "flex" : "hidden"
-					} h-[100vh] flex-col items-center justify-between`}
+					} flex-col items-center justify-between`}
 				>
 					<ul
-						className={`flex justify-start absolute dashBSidebar h-fit w-[100vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b shadow-sm`}
+						className={`flex justify-start absolute dashBSidebar h-fit w-[70vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b shadow-sm`}
 					>
 						{sidenavItems.map((item) => (
 							<NavLink
@@ -76,7 +76,7 @@ const SideBar = () => {
 							</NavLink>
 						))}
 						<button
-							className={`${styles.flexBtw} p-3 text-primary border border-dotted border-primary rounded-full`}
+							className={`${styles.flexBtw} w-[150px] mt-8 p-3 text-primary border border-dotted border-primary rounded-full`}
 						>
 							<BsPlus className="text-[25px]" />
 							New Profile
