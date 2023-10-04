@@ -21,7 +21,6 @@ import ProfessionalProfile from "./components/templatesPage/templates/profession
 import FinishedTemplate from "./components/templatesPage/templates/professionalTemplate/FinishedTemplate";
 import SignUp from "./components/auth/SignUp";
 import Login from "./components/auth/Login";
-import Dashboard from "./components/dashboard";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 // const router = createBrowserRouter([

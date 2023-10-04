@@ -9,6 +9,9 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Footer from "./components/Footer";
 import { Dashboard } from "./routes/Dashboard";
+import ProfileDetails from "./components/profiles/profileDetails";
+import ProfessionalProfile from "./components/templatesPage/templates/professionalTemplate/ProfessionalProfile";
+import FinishedTemplate from "./components/templatesPage/templates/professionalTemplate/FinishedTemplate";
 
 const App = () => {
 	return (
@@ -30,6 +33,18 @@ const App = () => {
 				<Route
 					path="/guide"
 					element={<Guide />}
+				/>
+				<Route
+					path="/profiles/user/:id"
+					element={<ProfileDetails />}
+				/>
+				<Route
+					path="/templates/professional-portfolio-template"
+					element={<ProfessionalProfile />}
+				/>
+				<Route
+					path="/templates/professional-portfolio-template/finished-template"
+					element={<FinishedTemplate />}
 				/>
 				<Route
 					path="/login"

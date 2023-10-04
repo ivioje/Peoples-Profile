@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { Route, Routes, Link, NavLink } from "react-router-dom";
+import { BsPlus } from "react-icons/bs";
+import { AiOutlineMenu } from "react-icons/ai";
+
 import Overview from "./dashboard/overview";
 import SavedProfiles from "./dashboard/saved";
 import Bookmarks from "./dashboard/bookmarked";
 import UploadedProfiles from "./dashboard/uploads";
 import Sharedprofiles from "./dashboard/shared";
 import Trash from "./dashboard/trash";
-import SideBar from "../components/dashboard/Sidenav";
-import Footer from "../components/dashboard/Footer";
 import { sidenavItems } from "../constants/index";
 import styles from "../style";
-import menu from "../assets/nav-menu.svg";
-import { BsMenuDown, BsPlus } from "react-icons/bs";
-import { AiOutlineMenu } from "react-icons/ai";
 
 export const Dashboard = () => {
 	const [toggle, setToggle] = useState(false);
@@ -21,20 +19,16 @@ export const Dashboard = () => {
 		color: "#334257",
 		background: "rgba(51, 66, 87, 0.26)",
 	};
+
 	return (
 		<div>
-			<div className="sm:flex block items-center justify-center">
-				{/* <div className="sm:w-[25vw]">
-					<SideBar />
-				</div> */}
-
-				<section
+			<div className="sm:flex block items-start justify-center">
+				{/**dashboard sidebar */}
+				<div
 					className={`h-full w-full sm:w-[250px] ${styles.flexBtw} flex-col flex-wrap relative font-poppins`}
 				>
 					{/**desktop */}
-					<div
-						className={`font-poppins sm:${styles.flexCol} hidden h-[100vh] `}
-					>
+					<div className={`font-poppins sm:${styles.flexCol} hidden mt-20 `}>
 						<ul className="list-none flex flex-col justify-center items-start flex-1 pl-0  pr-2 pb-2">
 							{sidenavItems.map((item) => (
 								<NavLink
@@ -103,8 +97,9 @@ export const Dashboard = () => {
 							</ul>
 						</div>
 					</div>
-				</section>
+				</div>
 
+				{/**dashboard routes */}
 				<div className="sm:w-[75vw] w-[100vw]">
 					<Routes>
 						<Route
@@ -135,7 +130,12 @@ export const Dashboard = () => {
 					</Routes>
 				</div>
 			</div>
-			<Footer />
+
+			{/**dashboard footer */}
+			<div className=" w-full text-center flex justify-center my-10">
+				<p className="font-[500] ">Total profile views:</p>
+				<span className="font-[800] text-[20px] mx-3">{"30"}</span>
+			</div>
 		</div>
 	);
 };
