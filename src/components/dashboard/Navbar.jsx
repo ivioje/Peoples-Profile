@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import logo from "../../assets/dashboardLogo.svg";
 import styles from "../../style";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CreateProfile from "./CreateProfile";
 import { BsCaretDown, BsSearch } from "react-icons/bs";
 import { TemplateContext } from "../../context/TemplateContext";
@@ -22,10 +22,10 @@ const DashboardNav = () => {
 	return (
 		<>
 			<section
-				className={`bg-secondary h-[80px] ex:h-[71px] w-[100vw] items-center justify-between  border flex font-firaSans  sm:z-50`}
+				className={`bg-secondary h-[80px] ex:h-[71px] w-full items-center justify-between border flex font-firaSans sm:z-50 md:px-10 sm:px-5 px-2`}
 			>
 				{/*desktop nav */}
-				<div className="flex items-center">
+				<div className="flex items-center justify-between">
 					<div className="w-full h-[28px]">
 						<Link to="/dashboard/overview">
 							<img
@@ -35,9 +35,9 @@ const DashboardNav = () => {
 							/>
 						</Link>
 					</div>
-					<div className={`flex item-center justify-between`}>
+					<div className={`sm:flex hidden item-center justify-between ml-14`}>
 						<button
-							className=" bg-slate-500 text-secondary w-full"
+							className=" bg-slate-500 text-secondary py-3 w-[120px]"
 							onClick={toggleTemplateList}
 						>
 							Create a profile
@@ -50,7 +50,7 @@ const DashboardNav = () => {
 
 				<div className="sm:hidden flex w-full justify-end items-end relative">
 					<h5
-						className={`${styles.flexCenter} cursor-pointer text-primary bg-slate-300 p-1`}
+						className={`${styles.flexCenter} cursor-pointer text-primary bg-slate-300 p-1 mx-5`}
 						onClick={() => setToggle((prev) => !prev)}
 					>
 						More <BsCaretDown className="m-1" />
@@ -59,11 +59,14 @@ const DashboardNav = () => {
 					<div
 						className={`${
 							toggle ? "flex" : "hidden"
-						} left py-6 px-2 bg-secondary absolute top-14 my-2 rounded-xl sidebar mt-7 z-50 border shadow-xl`}
+						} max-ss:left-0 py-6 px-2 bg-secondary absolute top-14 my-2 rounded-xl sidebar mt-7 z-50 border shadow-xl`}
 					>
-						<div className="flex flex-col-reverse h-[120px] w-[170px] justify-center items-center">
-							<div className="flex items-center bg-slate-300 p-[10px] rounded-full text-[18px]">
-								<BsSearch />
+						<div className="flex flex-col h-[120px] w-[170px] justify-center items-center">
+							<div className="flex items-center justify-between bg-white rounded-md w-full py-1 px-1">
+								<h3 className="text-slate-500">Search...</h3>
+								<span className="rounded-full p-[10px] text-[16px] bg-slate-300">
+									<BsSearch />
+								</span>
 							</div>
 							<div
 								onClick={() => setToggle(false)}
@@ -76,6 +79,11 @@ const DashboardNav = () => {
 									Create a profile
 								</button>
 							</div>
+							{/**user */}
+
+							<button className="font-bold text-gray-900 text-[18px]">
+								Log out
+							</button>
 						</div>
 					</div>
 
@@ -88,8 +96,16 @@ const DashboardNav = () => {
 					</div>
 				</div>
 
+				<div
+					onClick={toggleAccount}
+					className="rounded-full sm:hidden block bg-gray-900 text-[18px] font-bold text-secondary text-center cursor-pointer px-[13px] py-1"
+				>
+					R
+				</div>
+				{/*end of mobile nav*/}
+
 				{/**search */}
-				<div className="flex items-center justify-around w-[200px]">
+				<div className="sm:flex hidden items-center justify-around w-[200px]">
 					<div className="flex items-center bg-slate-300 p-[10px] rounded-full text-[18px]">
 						<BsSearch />
 					</div>

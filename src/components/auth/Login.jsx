@@ -2,8 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import styles from "../../style";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthenticationContext";
 
 const Login = () => {
+	const { logIn } = useContext(AuthContext);
+
 	return (
 		<section className={`font-poppins div-overlay ${styles.flexCenter}  p-2`}>
 			<div
@@ -43,7 +47,8 @@ const Login = () => {
 					</div>
 
 					<NavLink
-						to="dashboard/overview"
+						onClick={logIn}
+						to="/dashboard/overview"
 						className="w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center "
 					>
 						Log In

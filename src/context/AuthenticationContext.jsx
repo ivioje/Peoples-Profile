@@ -1,85 +1,90 @@
 import React, { createContext, useState } from "react";
 import { useEffect } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase";
+import {
+	createUserWithEmailAndPassword,
+	onAuthStateChanged,
+	signOut,
+} from "firebase/auth";
+import { auth, db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
+import { addDoc, collection } from "firebase/firestore";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
 	const [isLoggedIn, setIsloggedIn] = useState(false);
+	const [name, setName] = useState("");
+
 	//const navigate = useNavigate();
 
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm();
-
-	const hasErrors = Object.keys(errors).length > 0;
-
-	const onLogin = (e) => {
-		if (hasErrors) {
-			console.log(errors);
-		} else {
-			signInWithEmailAndPassword(auth, email, password)
-				.then((userCredential) => {
-					// Signed in
-					// const user = userCredential.user;
-					// navigate(`/dashboard/overview`);
-					console.log("logged in");
-				})
-				.catch((error) => {
-					const errorCode = error.code;
-					const errorMessage = error.message;
-					console.log(errorCode, errorMessage);
-				});
+	const logIn = async (email, password) => {
+		try {
+			const userCredential = await signInWithEmailAndPassword(
+				auth,
+				email,
+				password
+			);
+			const user = userCredential.user;
+			// You can now access user information if login is successful
+			console.log("Logged in user:", user);
+			return user;
+		} catch (error) {
+			console.error("Login error:", error);
+			throw error;
 		}
 	};
 
-	const logOut = () => {
-		signOut(auth)
-			.then(() => {
-				//sign out successful
-				// navigate("/login");
-				console.log("logged out");
-			})
-			.catch((error) => {
-				console.log("an error occured");
+	// Function to create a user and store their name
+	async function createUserWithProfile(userId, name) {
+		try {
+			const docRef = await addDoc(collection(db, "users"), {
+				name: name,
+				uid: userId,
 			});
+			console.log("Document written with ID: ", docRef.id);
+		} catch (e) {
+			console.error("Error adding document: ", e);
+		}
+	}
+
+	const signUp = async (email, password) => {
+		try {
+			const userCredential = await createUserWithEmailAndPassword(
+				auth,
+				email,
+				password
+			);
+			const user = userCredential.user;
+			console.log("Signed up user:", user);
+			createUserWithProfile(user.uid, name);
+			return user;
+		} catch (error) {
+			console.error("Signup error:", error);
+			throw error;
+		}
 	};
 
-	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(auth, (user) => {
-			if (user) {
-				setIsloggedIn(true); // User is authenticated
-			} else {
-				setIsloggedIn(false); // User is not authenticated
-			}
-		});
-
-		return () => {
-			unsubscribe(); // Unsubscribe from the listener when component unmounts
-		};
-	}, []);
+	const logOut = async () => {
+		try {
+			await signOut(auth);
+			// User is now logged out
+			console.log("User logged out");
+		} catch (error) {
+			console.error("Logout error:", error);
+			throw error;
+		}
+	};
 
 	return (
 		<AuthContext.Provider
 			value={{
-				isLoggedIn,
-				setIsloggedIn,
-				register,
-				handleSubmit,
-				setEmail,
-				setPassword,
-				onLogin,
+				signUp,
+				logIn,
 				logOut,
-				errors,
+				name,
+				setName,
 			}}
 		>
 			{children}

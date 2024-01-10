@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../style";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthenticationContext";
 
 const SignUp = () => {
+	const { signUp, name, setName } = useContext(AuthContext);
+
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const handleSignUp = async (e) => {
+		e.preventDefault();
+		try {
+			// Call the signUp function with the provided name, email, and password
+			await signUp(email, password);
+		} catch (error) {
+			console.error("Signup error:", error);
+		}
+	};
+
 	return (
 		<section
 			className={`font-poppins div-overlay ${styles.flexCenter} p-2 relative`}
@@ -13,12 +30,15 @@ const SignUp = () => {
 				<h2 className="font-[600] p-1 text-[22px]">Sign Up</h2>
 				<form
 					className={`${styles.flexBtw} flex-col mt-12 w-full sm:w-[90%] px-1`}
+					onSubmit={handleSignUp}
 				>
 					<div className="mb-8 flex flex-col w-full">
 						<input
 							name="name"
 							placeholder="Enter your name"
 							className="h-9 p-2 placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
 						/>
 					</div>
 					<div className="mb-8 flex flex-col w-full">
@@ -26,6 +46,8 @@ const SignUp = () => {
 							name="email"
 							placeholder="Enter an email address"
 							className="h-9 p-2 placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
 					<div className="mb-8 flex flex-col w-full">
@@ -33,6 +55,8 @@ const SignUp = () => {
 							name="password"
 							placeholder="Enter a password"
 							className="h-9 p-2 placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
 

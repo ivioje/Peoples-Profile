@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import Home from "./routes/Home";
 import Profiles from "./routes/Profiles";
 import Templates from "./routes/Templates";
 import Guide from "./routes/Guide";
@@ -12,11 +12,15 @@ import { Dashboard } from "./routes/Dashboard";
 import ProfileDetails from "./components/profiles/profileDetails";
 import ProfessionalProfile from "./components/templatesPage/templates/professionalTemplate/ProfessionalProfile";
 import FinishedTemplate from "./components/templatesPage/templates/professionalTemplate/FinishedTemplate";
+import DashboardNav from "./components/dashboard/Navbar";
 
 const App = () => {
+	const location = useLocation();
+	const dashboardLocation = location.pathname.includes("/dashboard");
+
 	return (
 		<div>
-			<Navbar />
+			{dashboardLocation ? <DashboardNav /> : <Navbar />}
 			<Routes>
 				<Route
 					path="/"

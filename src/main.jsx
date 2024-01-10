@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
-import Home from "./components/Home";
 import Profiles from "./routes/Profiles";
 import Templates from "./routes/Templates";
 import Guide from "./routes/Guide";
@@ -22,95 +21,6 @@ import FinishedTemplate from "./components/templatesPage/templates/professionalT
 import SignUp from "./components/auth/SignUp";
 import Login from "./components/auth/Login";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-
-// const router = createBrowserRouter([
-// 	{
-// 		path: "/",
-// 		element: <App />,
-// 		errorElement: <ErrorPage />,
-// 		children: [
-// 			{
-// 				path: "/",
-// 				element: <Home />,
-// 			},
-// 			{
-// 				path: "/profiles",
-// 				element: <Profiles />,
-// 			},
-// 			{
-// 				path: "/templates",
-// 				element: <Templates />,
-// 			},
-// 			{
-// 				path: "/guide",
-// 				element: <Guide />,
-// 			},
-// 			{
-// 				path: "/login",
-// 				element: <Login />,
-// 			},
-// 			{
-// 				path: "/signup",
-// 				element: <SignUp />,
-// 			},
-// 			{
-// 				path: "/success",
-// 				element: <SuccessPage />,
-// 			},
-// 			{
-// 				path: "/profiles/user/:id",
-// 				element: <ProfileDetails />,
-// 			},
-// 			{
-// 				path: "/templates/professional-portfolio-template",
-// 				element: <ProfessionalProfile />,
-// 			},
-// 			{
-// 				path: "/templates/professional-portfolio-template/finished-template",
-// 				element: <FinishedTemplate />,
-// 			},
-// {
-// 	path: "*",
-// 	element: <Navigate to="/" />,
-// },
-// 	],
-// },
-// {
-// 	path: "/dashboard",
-// 	element: <Dashboard />,
-// 	errorElement: <ErrorPage />,
-// 	children: [
-// 		{
-// 			path: "overview",
-// 			element: <Overview />,
-// 		},
-// 		{
-// 			path: "uploads/:id",
-// 			element: <UploadedProfiles />,
-// 		},
-// 		{
-// 			path: "saved/:id",
-// 			element: <SavedProfiles />,
-// 		},
-// 		{
-// 			path: "bookmarks/:id",
-// 			element: <Bookmarks />,
-// 		},
-// 		{
-// 			path: "shared/:id",
-// 			element: <Sharedprofiles />,
-// 		},
-// 		{
-// 			path: "trash/:id",
-// 			element: <Trash />,
-// 		},
-// 		{
-// 			path: "*",
-// 			element: <Navigate to="overview/:id" />,
-// 		},
-// 	],
-// },
-//]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>

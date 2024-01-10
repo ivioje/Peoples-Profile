@@ -157,19 +157,23 @@ const Education = ({
                                     />
                                 </div> */}
 
-							{/* <div className={`w-full flex xs:items-end xs:justify-end`}>
-                                    <label htmlFor={`item${index}`} id={`item${index}`} className='text-[14px] text-blue-900 mx-1 flex'>
-                                        I currently work here
-                                        <input
-                                            id={`item${index}`}
-                                            type='checkbox'
-                                            className='mx-1 border h-[20px] w-[20px]'
-                                            name='check'
-                                            checked={data.isPresent}
-                                            onChange={() => handleCheckboxChange(index)}
-                                        />
-                                    </label>
-                                </div> */}
+							<div className={`w-full flex xs:items-end xs:justify-end`}>
+								<label
+									htmlFor={`item${index}`}
+									id={`item${index}`}
+									className="text-[14px] text-blue-900 mx-1 flex"
+								>
+									I currently work here
+									<input
+										id={`item${index}`}
+										type="checkbox"
+										className="mx-1 border h-[20px] w-[20px]"
+										name="check"
+										// checked={data.isPresent}
+										onChange={() => handleCheckboxChange(index)}
+									/>
+								</label>
+							</div>
 						</form>
 					</div>
 				))}

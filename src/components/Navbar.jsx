@@ -30,7 +30,7 @@ const Navbar = () => {
 
 				{/*desktop nav */}
 				<div className={`mx-[74px] font-poppins ${styles.flexCenter}`}>
-					<ul className="list-none ex:flex hidden justify-end items-center flex-1">
+					<ul className="list-none ex:flex hidden justify-end items-center">
 						{navLinks.map((navlink) => (
 							<div
 								key={navlink.id}

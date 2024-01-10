@@ -6,7 +6,7 @@ import {
 	Upload,
 	UseTemplates,
 	ViewProfiles,
-} from "../routes";
+} from ".";
 
 const Home = () => {
 	const scrollRef = useRef(null);

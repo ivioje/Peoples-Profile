@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "@mui/material";
 import styles from "../../../../style";
 import { TemplateContext } from "../../../../context/TemplateContext";
-import GenericPdfDownloader from "../GenericPdfDownloader";
+import GenericPdfDownloader from "../../../utils/GenericPdfDownloader";
 
 const PageButtons = () => {
 	return (
