@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { TemplateContext } from '../../../../context/TemplateContext';
-import styles from '../../../../style';
+import { TemplateContext } from '../../../context/TemplateContext';
+import styles from '../../../style';
 import './styles.css';
 import ColorPicker from './ColorPalete';
 import PageButtons from './PageButtons';

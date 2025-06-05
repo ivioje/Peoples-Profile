@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BsCheck, BsHeart, BsShareFill } from "react-icons/bs";
 
 import Share from "./Share";
-import "../../index.css";
+import "../../index.css"
 import { ProfileContext } from "../../context/ProfileContext";
 
 const SingleCard = ({ items }) => {

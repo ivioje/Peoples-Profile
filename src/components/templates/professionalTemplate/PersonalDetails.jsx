@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { BsInfoCircleFill } from 'react-icons/bs';
-import { TemplateContext } from '../../../../context/TemplateContext';
-import styles from '../../../../style';
+import { TemplateContext } from '../../../context/TemplateContext';
+import styles from '../../../style';
 import LinkButtons from './Linkbuttons';
 import './styles.css';
 

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import styles from '../../../../style';
+import styles from '../../../style';
 import WorkExperience from './WorkExperience';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Stepper, Step, StepLabel, Button, MobileStepper } from "@mui/material";
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import { TemplateContext } from '../../../../context/TemplateContext';
+import { TemplateContext } from '../../../context/TemplateContext';
 import PersonalDetails from './PersonalDetails';
 import Skills from './Skills';
 import Education from './Education';

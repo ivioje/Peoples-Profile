@@ -10,8 +10,8 @@ import SignUp from "./components/auth/SignUp";
 import Footer from "./components/Footer";
 import { Dashboard } from "./routes/Dashboard";
 import ProfileDetails from "./components/profiles/profileDetails";
-import ProfessionalProfile from "./components/templatesPage/templates/professionalTemplate/ProfessionalProfile";
-import FinishedTemplate from "./components/templatesPage/templates/professionalTemplate/FinishedTemplate";
+import ProfessionalProfile from "./components/templates/professionalTemplate/ProfessionalProfile";
+import FinishedTemplate from "./components/templates/professionalTemplate/FinishedTemplate";
 import DashboardNav from "./components/dashboard/Navbar";
 
 const App = () => {

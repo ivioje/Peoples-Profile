@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { BsPlusCircle } from 'react-icons/bs';
-import { TemplateContext } from '../../../../context/TemplateContext';
-import styles from '../../../../style';
+import { TemplateContext } from '../../../context/TemplateContext';
+import styles from '../../../style';
 
 const LinkButtons = () => {
     const { activeButton, showButtonContent, inputValues, setInputValues } = useContext(TemplateContext);
