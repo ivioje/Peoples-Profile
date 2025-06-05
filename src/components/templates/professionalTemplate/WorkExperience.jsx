@@ -2,10 +2,8 @@ import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { BsPlus } from "react-icons/bs";
 import { FaMinus } from "react-icons/fa";
-import { TemplateContext } from "../../../../context/TemplateContext";
-import styles from "../../../../style";
+import styles from "../../../style";
 import TextEditorField from "./TextEditorField";
-import TextEditor from "./TextEditor";
 
 const WorkExperience = ({
 	formData,

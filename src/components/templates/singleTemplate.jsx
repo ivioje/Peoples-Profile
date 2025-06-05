@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { TemplateContext } from "../../../context/TemplateContext";
-import styles from "../../../style";
+import { TemplateContext } from "../../context/TemplateContext";
+import styles from "../../style";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 
 const SingleTemplate = ({ item }) => {

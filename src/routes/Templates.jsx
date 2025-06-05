@@ -5,7 +5,7 @@ import bgImg from "../assets/tempHeaderImg.jpg";
 import wave from "../assets/wave.svg";
 import { Link } from "react-router-dom";
 import styles from "../style";
-import SingleTemplate from "../components/templatesPage/templates/singleTemplate";
+import SingleTemplate from "../components/templates/singleTemplate";
 
 const Templates = () => {
 	const { query, setQuery, filterTemplateData } = useContext(TemplateContext);

@@ -1,5 +1,4 @@
-import React from 'react';
-import styles from '../../../../style';
+import styles from '../../../style';
 import TextEditor from './TextEditor';
 
 const Summary = ({ summaryContent, setSummaryContent }) => {
