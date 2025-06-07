@@ -5,12 +5,18 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [name, setName] = useState("");
+	const [userId, setUserId] = useState("");
 
-	// Placeholder login/logout for context compatibility
-	const logIn = () => {};
+	const logIn = (userData) => {
+		setIsLoggedIn(true);
+		setName(userData.name);
+		setUserId(userData._id);
+	};
+
 	const logout = () => {
 		setIsLoggedIn(false);
 		setName("");
+		setUserId("");
 	};
 
 	return (
