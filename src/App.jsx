@@ -13,6 +13,7 @@ import ProfileDetails from "./components/profiles/profileDetails";
 import ProfessionalProfile from "./components/templates/professionalTemplate/ProfessionalProfile";
 import FinishedTemplate from "./components/templates/professionalTemplate/FinishedTemplate";
 import DashboardNav from "./components/dashboard/Navbar";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
 	const location = useLocation();
@@ -20,6 +21,19 @@ const App = () => {
 
 	return (
 		<div>
+			<ToastContainer
+				position="top-right"
+				autoClose={2000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick={false}
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="light"
+				transition="slide"
+			/>
 			{dashboardLocation ? <DashboardNav /> : <Navbar />}
 			<Routes>
 				<Route

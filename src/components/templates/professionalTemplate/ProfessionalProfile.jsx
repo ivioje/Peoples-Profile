@@ -11,89 +11,120 @@ import Education from './Education';
 import Summary from './Summary';
 import { Link } from 'react-router-dom';
 
-const ProfessionalProfile = () => {
+const StepContent = ({ stepIndex, personalDetails, handleInputChange, handleDescInputChange, workExperience, handleAddField, handleRemoveField, setIsPresent, skillContent, setSkillContent, education, setEducation, summaryContent, setSummaryContent }) => {
+  switch (stepIndex) {
+    case 0:
+      return (
+        <div className='bg-white p-3'>
+          <h1 className='uppercase font-bold'>personal details</h1>
+          <PersonalDetails
+            formData={personalDetails}
+            handleInputChange={handleInputChange}
+            handleDescInputChange={handleDescInputChange}
+          />
+        </div>
+      );
+    case 1:
+      return (
+        <div className='bg-white p-3'>
+          <h1 className='uppercase'>Work history</h1>
+          <WorkExperience
+            formData={workExperience}
+            handleAddField={handleAddField}
+            handleInputChange={handleInputChange}
+            handleRemoveField={handleRemoveField}
+            setIsPresent={setIsPresent}
+          />
+        </div>
+      );
+    case 2:
+      return (
+        <div className={`bg-white p-5`}>
+          <h1 className='uppercase'>skills</h1>
+          <h4 className='py-1 text-[14px]'>List out your skills below to stand out</h4>
+          <Skills skillContent={skillContent} setSkillContent={setSkillContent} />
+        </div>
+      );
+    case 3:
+      return (
+        <div className='bg-white p-3'>
+          <h1 className='uppercase'>education history</h1>
+          <Education
+            formData={education}
+            handleAddField={handleAddField}
+            handleRemoveField={handleRemoveField}
+            handleInputChange={handleInputChange}
+            setEducation={setEducation}
+          />
+        </div>
+      );
+    case 4:
+      return (
+        <div className='bg-white p-3'>
+          <h1 className='uppercase'>professional summary</h1>
+          <Summary
+            summaryContent={summaryContent}
+            setSummaryContent={setSummaryContent}
+          />
+        </div>
+      );
+    default:
+      return "View your profile";
+  }
+};
 
-  const { activeStep, handleBack, handleNext, personalDetails, workExperience, education, skillContent, setIsPresent,
+const StepperNavigation = ({ activeStep, steps, handleBack, handleNext }) => (
+  <>
+    <div className='my-10 hidden sm:block'>
+      <Stepper activeStep={activeStep} alternativeLabel>
+        {steps.map((label) => (
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+    </div>
+    <div className='sm:hidden my-5 flex items-center justify-center mx-auto'>
+      <MobileStepper
+        variant="dots"
+        steps={steps.length}
+        position="static"
+        activeStep={activeStep}
+        sx={{ maxWidth: 400, flexGrow: 1 }}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        nextButton={
+          <Button onClick={handleNext} disabled={activeStep === steps.length - 1} variant=''>
+            <BsChevronRight className='sm:text-[25px] text-[20px]' />
+          </Button>
+        }
+        backButton={
+          <Button onClick={handleBack} disabled={activeStep === 0} variant=''>
+            <BsChevronLeft className='sm:text-[25px] text-[20px]' />
+          </Button>
+        }
+      />
+    </div>
+  </>
+);
+
+const ProfessionalProfile = () => {
+  const {
+    activeStep, handleBack, handleNext, personalDetails, workExperience, education, skillContent, setIsPresent,
     setSkillContent, summaryContent, setSummaryContent, handleAddField, handleInputChange, handleRemoveField, setEducation,
-    handleDescInputChange } = useContext(TemplateContext);
+    handleDescInputChange
+  } = useContext(TemplateContext);
 
   const steps = ["Personal Details", "Work history", "Skills", "Education", "Professional summary"];
-
-  const getStepContent = (stepIndex) => {
-    switch (stepIndex) {
-      case 0:
-        return (
-          <div className='bg-white p-3'>
-            <h1 className='uppercase font-bold'>personal details</h1>
-            <PersonalDetails
-              formData={personalDetails}
-              handleInputChange={handleInputChange}
-              handleDescInputChange={handleDescInputChange}
-            />
-          </div>
-        );
-      case 1:
-        return (
-          <div className='bg-white p-3'>
-            <h1 className='uppercase'>Work history</h1>
-            <WorkExperience
-              formData={workExperience}
-              handleAddField={handleAddField}
-              handleInputChange={handleInputChange}
-              handleRemoveField={handleRemoveField}
-              setIsPresent={setIsPresent}
-            />
-          </div>
-        );
-      case 2:
-        return (
-          <div className={`bg-white p-5`}>
-            <h1 className='uppercase'>skills</h1>
-            <h4 className='py-1 text-[14px]'>List out your skills below to stand out</h4>
-            <Skills skillContent={skillContent} setSkillContent={setSkillContent} />
-          </div>
-        );
-      case 3:
-        return (
-          <div className='bg-white p-3'>
-            <h1 className='uppercase'>education history</h1>
-            <Education
-              formData={education}
-              handleAddField={handleAddField}
-              handleRemoveField={handleRemoveField}
-              handleInputChange={handleInputChange}
-              setEducation={setEducation}
-            />
-          </div>
-        );
-      case 4:
-        return (
-          <div className='bg-white p-3'>
-            <h1 className='uppercase'>professional summary</h1>
-            <Summary
-              summaryContent={summaryContent}
-              setSummaryContent={setSummaryContent}
-            />
-          </div>
-        );
-      default:
-        return "View your profile";
-    }
-  };
-
 
   return (
     <section className={`${styles.flexCenter} px-2 py-8 flex-col font-ysabeau text-text_color`}>
       {/*header*/}
       <div className={`${styles.flexCenter} flex-col`}>
-        <h1 className='font-firaSans sm:text-[36px] text-[23px] font-bold'>
-          Professional Portfolio
-        </h1>
+        <h1 className='font-firaSans sm:text-[36px] text-[23px] font-bold'>Professional Portfolio</h1>
         <p className='font-poppins text-[14px] sm:w-[500px] w-full text-center my-2'>
           A template with a sleek and modern design for you to create a professional profile, with input fields for work experience, education, skills, personal details and contact information.
         </p>
       </div>
-
       {/*Stepper and Carousel*/}
       <div className="sm:w-[90%] w-full sm:m-3 m-1 ">
         {activeStep === steps.length ? (
@@ -110,55 +141,9 @@ const ProfessionalProfile = () => {
           </div>
         ) : (
           <div>
-            {/*to be separated into a component*/}
-            <div className='my-10 hidden sm:block'>
-              <Stepper activeStep={activeStep} alternativeLabel>
-                {steps.map((label) => (
-                  <Step key={label} >
-                    <StepLabel>{label}</StepLabel>
-                  </Step>
-                ))}
-              </Stepper>
-            </div>
-
-            {/*stepper for mobile devices*/}
-            <div className='sm:hidden my-5 flex items-center justify-center mx-auto'>
-              <MobileStepper
-                variant="dots"
-                steps={5}
-                position="static"
-                activeStep={activeStep}
-                sx={{ maxWidth: 400, flexGrow: 1 }}
-                style={{ 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center' }}
-                nextButton={
-                  activeStep === steps.length - 1 ?
-                    <Button
-                      disabled
-                      variant=''
-                      onClick={handleNext}
-                    >
-                      <BsChevronRight className='sm:text-[25px] text-[20px]' />
-                    </Button>
-                    :
-                    <Button
-                      onClick={handleNext} variant=''>
-                      <BsChevronRight className='sm:text-[25px] text-[20px]' />
-                    </Button>
-                }
-                backButton={
-                  <Button
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                    variant=''
-                  >
-                    <BsChevronLeft className='sm:text-[25px] text-[20px]' />
-                  </Button>
-                }
-              />
-            </div>
+            <StepperNavigation activeStep={activeStep} steps={steps} handleBack={handleBack} handleNext={handleNext} />
           </div>
         )}
-
         <div className=' bg-slate-50 sm:m-4 pb-5'>
           {activeStep !== steps.length ? (
             <div>
@@ -174,53 +159,57 @@ const ProfessionalProfile = () => {
                   </Button>
                 </div>
                 <div className=''>
-                  {activeStep === steps.length - 1 ?
-                    <Button
-                      disabled
-                      variant=''
-                      onClick={handleNext}
-                      className='absolute top-[150px] p-2 m-2 right-0 border h-[50px] w-[50px] rounded-[100%]'
-                    >
-                      <BsChevronRight className='sm:text-[25px] text-[20px]' />
-                    </Button>
-                    :
-                    <Button
-                      className='absolute top-[150px] p-2 m-2 right-0 border h-[50px] w-[50px] rounded-[100%]'
-                      onClick={handleNext} variant=''>
-                      <BsChevronRight className='sm:text-[25px] text-[20px]' />
-                    </Button>
-                  }
+                  <Button
+                    className='absolute top-[150px] p-2 m-2 right-0 border h-[50px] w-[50px] rounded-[100%]'
+                    onClick={handleNext}
+                    disabled={activeStep === steps.length - 1}
+                    variant=''
+                  >
+                    <BsChevronRight className='sm:text-[25px] text-[20px]' />
+                  </Button>
                 </div>
               </div>
-
               {/*Carousel content */}
               <div className='flex items-center justify-center flex-col'>
                 <div className='sm:w-[90%] w-full h-auto p-3 sm:my-3'>
-                  {activeStep === activeStep ? getStepContent(activeStep) : 'Finished'}
+                  <StepContent
+                    stepIndex={activeStep}
+                    personalDetails={personalDetails}
+                    handleInputChange={handleInputChange}
+                    handleDescInputChange={handleDescInputChange}
+                    workExperience={workExperience}
+                    handleAddField={handleAddField}
+                    handleRemoveField={handleRemoveField}
+                    setIsPresent={setIsPresent}
+                    skillContent={skillContent}
+                    setSkillContent={setSkillContent}
+                    education={education}
+                    setEducation={setEducation}
+                    summaryContent={summaryContent}
+                    setSummaryContent={setSummaryContent}
+                  />
                 </div>
               </div>
               {/*End of carousel content */}
             </div>
           ) : null}
-
           <div>
             {activeStep !== steps.length ? (
-
               <div className='flex items-center justify-center'>
                 <div className='flex justify-between sm:w-[80%] w-[90%]'>
                   <Button
                     disabled={activeStep === 0}
-                    style={{ 'textTransform': 'capitalize', 'fontWeight': 'bold' }}
-                    onClick={handleBack}>
+                    style={{ textTransform: 'capitalize', fontWeight: 'bold' }}
+                    onClick={handleBack}
+                  >
                     Back
                   </Button>
-
                   {activeStep === steps.length - 1 ? (
                     <div>
                       <Link to='finished-template'>
                         <Button
                           variant="contained"
-                          style={{ 'textTransform': 'capitalize', 'background': '#171F3A', 'color': 'whitesmoke', 'fontWeight': 'bold' }}
+                          style={{ textTransform: 'capitalize', background: '#171F3A', color: 'whitesmoke', fontWeight: 'bold' }}
                           onClick={handleNext}
                           type='submit'
                         >
@@ -232,7 +221,7 @@ const ProfessionalProfile = () => {
                     <div>
                       <Button
                         variant="contained"
-                        style={{ 'textTransform': 'capitalize', 'background': '#171F3A', 'color': 'whitesmoke', 'fontWeight': 'bold' }}
+                        style={{ textTransform: 'capitalize', background: '#171F3A', color: 'whitesmoke', fontWeight: 'bold' }}
                         onClick={handleNext}
                         type='submit'
                       >
@@ -246,8 +235,8 @@ const ProfessionalProfile = () => {
           </div>
         </div>
       </div>
-    </section >
-  )
-}
+    </section>
+  );
+};
 
-export default ProfessionalProfile
+export default ProfessionalProfile;
