@@ -118,12 +118,12 @@ export const Dashboard = () => {
 					<Routes>
 						<Route index element={<Overview />} />
 						<Route element={<Overview />} />
-						<Route path="/overview" element={<Overview />} />
-						<Route path="/uploads" element={<UploadedProfiles />} />
-						<Route path="/saved" element={<SavedProfiles />} />
-						<Route path="/bookmarks" element={<Bookmarks />} />
-						<Route path="/shared" element={<Sharedprofiles />} />
-						<Route path="/trash" element={<Trash />} />
+						<Route path="overview" element={<Overview />} />
+						<Route path="uploads" element={<UploadedProfiles />} />
+						<Route path="saved" element={<SavedProfiles />} />
+						<Route path="bookmarks" element={<Bookmarks />} />
+						<Route path="shared" element={<Sharedprofiles />} />
+						<Route path="trash" element={<Trash />} />
 					</Routes>
 				</div>
 			</div>
