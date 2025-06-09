@@ -21,7 +21,8 @@ const Login = () => {
 		setError("");
 		api.post(`/user/login`, { email, password })
 			.then((response) => {
-				console.log(response.data)
+				console.log(response.data);
+				logIn(response.data);
 				navigate(`/dashboard/${response.data._id}/overview`);
 				toast.success("Login successful");
 			})
