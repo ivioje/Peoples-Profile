@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Routes, Link, NavLink } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Route, Routes, Link, NavLink, useParams } from "react-router-dom";
 import { BsPlus } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -11,9 +11,26 @@ import Sharedprofiles from "./dashboard/shared";
 import Trash from "./dashboard/trash";
 import { sidenavItems } from "../constants/index";
 import styles from "../style";
+import { getUserById } from "../lib/utils";
+import { AuthContext } from "../context/AuthenticationContext";
 
 export const Dashboard = () => {
+	const { userId } = useParams();
 	const [toggle, setToggle] = useState(false);
+	const { setUser } = useContext(AuthContext)
+
+	// Get userId from URL path if not in params
+	const currentPath = window.location.pathname;
+	const pathUserId = userId || currentPath.split('/')[2];
+
+	useEffect(() => {
+		const fetchUserDetails = async () => {
+			const user = await getUserById(pathUserId);
+			setUser(user);
+		};
+
+		fetchUserDetails();
+	}, [pathUserId]);
 
 	let activeStyle = {
 		color: "#334257",
@@ -29,10 +46,9 @@ export const Dashboard = () => {
 				>
 					{/**desktop */}
 					<div className={`font-poppins sm:${styles.flexCol} hidden mt-20 `}>
-						<ul className="list-none flex flex-col justify-center items-start flex-1 pl-0  pr-2 pb-2">
-							{sidenavItems.map((item) => (
+						<ul className="list-none flex flex-col justify-center items-start flex-1 pl-0  pr-2 pb-2">							{sidenavItems.map((item) => (
 								<NavLink
-									to={`${item.id}`}
+									to={`/dashboard/${pathUserId}/${item.id}`}
 									key={item.id}
 									className="py-2 w-full px-1 m-1 rounded-[3px]"
 									style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -68,12 +84,10 @@ export const Dashboard = () => {
 								toggle ? "flex" : "hidden"
 							} flex-col items-center justify-between`}
 						>
-							<ul
-								className={`flex justify-start absolute dashBSidebar h-fit w-[70vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b shadow-sm`}
-							>
+							<ul className={`flex justify-start absolute dashBSidebar h-fit w-[70vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b shadow-sm`}>
 								{sidenavItems.map((item) => (
 									<NavLink
-										to={`${item.id}`}
+										to={`/dashboard/${pathUserId}/${item.id}`}
 										key={item.id}
 										className="py-3 w-full px-1 rounded-[3px]"
 										style={({ isActive }) =>
@@ -97,36 +111,19 @@ export const Dashboard = () => {
 							</ul>
 						</div>
 					</div>
-				</div>
-
+				</div>				
+				
 				{/**dashboard routes */}
 				<div className="sm:w-[75vw] w-[100vw]">
 					<Routes>
-						<Route
-							path="overview"
-							element={<Overview />}
-						/>
-						<Route
-							path="uploads"
-							element={<UploadedProfiles />}
-						/>
-						<Route
-							path="saved"
-							element={<SavedProfiles />}
-						/>
-						<Route
-							path="bookmarks"
-							element={<Bookmarks />}
-						/>
-						<Route
-							path="shared"
-							element={<Sharedprofiles />}
-						/>
-						<Route
-							path="trash"
-							element={<Trash />}
-						/>
-						<Route path="" />
+						<Route index element={<Overview />} />
+						<Route element={<Overview />} />
+						<Route path="/overview" element={<Overview />} />
+						<Route path="/uploads" element={<UploadedProfiles />} />
+						<Route path="/saved" element={<SavedProfiles />} />
+						<Route path="/bookmarks" element={<Bookmarks />} />
+						<Route path="/shared" element={<Sharedprofiles />} />
+						<Route path="/trash" element={<Trash />} />
 					</Routes>
 				</div>
 			</div>

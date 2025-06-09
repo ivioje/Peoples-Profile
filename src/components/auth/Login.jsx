@@ -4,8 +4,8 @@ import styles from "../../style";
 import api from "../../api";
 import Input from "./Input";
 import { BsGoogle } from "react-icons/bs";
-import { toast } from "react-toastify";
 import { FaSpinner } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -22,12 +22,12 @@ const Login = () => {
 		api.post(`/user/login`, { email, password })
 			.then((response) => {
 				console.log(response.data)
-				navigate(`/dashboard/overview/${response.data._id}`);
+				navigate(`/dashboard/${response.data._id}/overview`);
 				toast.success("Login successful");
 			})
 			.catch((err) => {
 				setError(err?.response?.data?.message || "Login failed. Please try again.");
-				toast.error(error)
+				toast.error(err?.response?.data?.message || "Login failed. Please try again.");
 			}).finally (() => {
 				setIsSubmitting(false);
 			});
@@ -80,8 +80,8 @@ const Login = () => {
 
 					<button
 						type="submit"
-						disabled={isSubmitting}
-						className={`w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center ${isSubmitting ? 'bg-opacity-40 hover:bg-opacity-40': ''}`}
+						disabled={isSubmitting || !(email && password)}
+						className={`w-full p-2 mt-10 mb-6 bg-primary rounded text-dimWhite bg-opacity-95  hover:bg-opacity-100 text-center ${isSubmitting || !(email && password) ? 'bg-opacity-40 hover:bg-opacity-40 cursor-not-allowed': ''}`}
 					>
 						Log In {isSubmitting && <FaSpinner className="inline animate-spin ml-2" />}
 					</button>

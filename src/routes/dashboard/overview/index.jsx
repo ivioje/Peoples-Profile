@@ -1,26 +1,24 @@
 import React from "react";
-import {
-	BsArrowRight,
-	BsClockHistory,
-	BsHeart,
-	BsShareFill,
-} from "react-icons/bs";
+import { BsArrowRight, BsClockHistory, BsHeart, BsShareFill } from "react-icons/bs";
 
 import { tempItems } from "../../../constants";
 import styles from "../../../style";
 import { useContext } from "react";
 import { ProfileContext } from "../../../context/ProfileContext";
+import { AuthContext } from "../../../context/AuthenticationContext";
 
 const Overview = () => {
 	const { data } = useContext(ProfileContext);
+	const { user } = useContext(AuthContext)
+
+	console.log("User in Overview:", user);
 
 	return (
 		<section className="font-poppins pl-2 pr-2 min-h-[80vh]">
 			{/**header */}
 			<div className="sm:mt-3 mt-8 mb-10 text-[17px] font-normal text-center font-montserrat">
-				<p>
-					Hello {"Taylor"}, welcome to your dashboard. Create something awesome
-					😎
+				<p className="text-gradient font-semibold">
+					Hello {user?.username || "User"}, welcome to your dashboard. Create something awesome!
 				</p>
 			</div>
 

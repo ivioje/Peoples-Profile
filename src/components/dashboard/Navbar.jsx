@@ -5,11 +5,15 @@ import { Link, NavLink } from "react-router-dom";
 import CreateProfile from "./CreateProfile";
 import { BsCaretDown, BsSearch } from "react-icons/bs";
 import { TemplateContext } from "../../context/TemplateContext";
+import { AuthContext } from "../../context/AuthenticationContext";
 
 const DashboardNav = () => {
 	const { toggle, setToggle } = useContext(TemplateContext);
 	const [isAccountOpen, setIsAccountOpen] = useState(false);
 	const [openTemplatesList, setOpenTemplatesList] = useState(false);
+
+	const { user } = useContext(AuthContext);
+
 
 	const toggleAccount = () => {
 		setIsAccountOpen(() => !isAccountOpen);
@@ -27,7 +31,7 @@ const DashboardNav = () => {
 				{/*desktop nav */}
 				<div className="flex items-center justify-between">
 					<div className="w-full h-[28px]">
-						<Link to="/dashboard/overview">
+						<Link to={`/dashboard/${user?._id}/overview`}>
 							<img
 								src={logo}
 								alt="peoples profiles"
@@ -110,12 +114,13 @@ const DashboardNav = () => {
 						<BsSearch />
 					</div>
 
-					{/**user */}
-					<div
-						onClick={toggleAccount}
-						className="rounded-full bg-gray-900 text-[18px] font-bold text-secondary text-center cursor-pointer px-[13px] py-1"
-					>
-						R
+					{/**user avatar */}
+					<div onClick={toggleAccount} className="cursor-pointer">
+						<img 
+						 src={user?.avatar || "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"}
+						 alt={user?.username || "User"} 
+						 className="w-[40px] h-[40px] rounded-full" 
+						/>
 					</div>
 
 					<button className="font-bold text-gray-900 text-[18px]">
