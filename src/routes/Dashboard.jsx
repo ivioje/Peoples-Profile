@@ -117,7 +117,6 @@ export const Dashboard = () => {
 				<div className="sm:w-[75vw] w-[100vw]">
 					<Routes>
 						<Route index element={<Overview />} />
-						<Route element={<Overview />} />
 						<Route path="overview" element={<Overview />} />
 						<Route path="uploads" element={<UploadedProfiles />} />
 						<Route path="saved" element={<SavedProfiles />} />
