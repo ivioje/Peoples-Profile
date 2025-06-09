@@ -13,6 +13,7 @@ import ProfileDetails from "./components/profiles/profileDetails";
 import ProfessionalProfile from "./components/templates/professionalTemplate/ProfessionalProfile";
 import FinishedTemplate from "./components/templates/professionalTemplate/FinishedTemplate";
 import DashboardNav from "./components/dashboard/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
 	const location = useLocation();
@@ -20,6 +21,7 @@ const App = () => {
 
 	return (
 		<div>
+			<Toaster />
 			{dashboardLocation ? <DashboardNav /> : <Navbar />}
 			<Routes>
 				<Route
@@ -57,9 +59,9 @@ const App = () => {
 				<Route
 					path="/signup"
 					element={<SignUp />}
-				/>
+				/>			
 				<Route
-					path="/dashboard/*"
+					path="/dashboard/:userId/*"
 					element={<Dashboard />}
 				/>
 				<Route
