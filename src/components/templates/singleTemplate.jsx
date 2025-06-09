@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TemplateContext } from "../../context/TemplateContext";
-import styles from "../../style";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
+import styles from "../../styles/style";
 
 const SingleTemplate = ({ item }) => {
 	const { bookmark, setBookmark } = useContext(TemplateContext);

@@ -1,19 +1,10 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
+import DashboardNav from "./components/dashboard/DashboardNav";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import Home from "./routes/Home";
-import Profiles from "./routes/Profiles";
-import Templates from "./routes/Templates";
-import Guide from "./routes/Guide";
-import Login from "./components/auth/Login";
-import SignUp from "./components/auth/SignUp";
-import Footer from "./components/Footer";
-import { Dashboard } from "./routes/Dashboard";
-import ProfileDetails from "./components/profiles/profileDetails";
-import ProfessionalProfile from "./components/templates/professionalTemplate/ProfessionalProfile";
-import FinishedTemplate from "./components/templates/professionalTemplate/FinishedTemplate";
-import DashboardNav from "./components/dashboard/Navbar";
 import { Toaster } from "react-hot-toast";
+import { Home, Profiles, Templates, Guide, Login, SignUp, Dashboard } from './pages/index'
 
 const App = () => {
 	const location = useLocation();
@@ -40,18 +31,10 @@ const App = () => {
 					path="/guide"
 					element={<Guide />}
 				/>
-				<Route
+				{/* <Route
 					path="/profiles/user/:id"
 					element={<ProfileDetails />}
-				/>
-				<Route
-					path="/templates/professional-portfolio-template"
-					element={<ProfessionalProfile />}
-				/>
-				<Route
-					path="/templates/professional-portfolio-template/finished-template"
-					element={<FinishedTemplate />}
-				/>
+				/> */}
 				<Route
 					path="/login"
 					element={<Login />}
