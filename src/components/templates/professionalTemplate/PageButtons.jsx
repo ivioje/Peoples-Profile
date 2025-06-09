@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import styles from "../../../style";
-import GenericPdfDownloader from "../../utils/GenericPdfDownloader";
+import GenericPdfDownloader from "../../GenericPdfDownloader";
 
 const PageButtons = () => {
 	return (

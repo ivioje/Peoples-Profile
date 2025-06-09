@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { TemplateContext } from "../../../context/TemplateContext";
 import styles from "../../../style";
-import HtmlToListItems from "../../utils/htmlToList";
+import HtmlToListItems from "../../htmlToList";
 import { BsLink } from "react-icons/bs";
 
 const FinishedTemplateComponent = ({ hideImage }) => {
