@@ -19,7 +19,11 @@ const Hero = () => (
                 to view. Expand your network of collaborators by browsing through profiles.
                 Choose from several templates to create a stunning profile.
             </p>
-            <GetStarted />
+            <Link to='/signup'>
+            <button className='w-[157px] h-[42px] bg-dimWhite text-primary rounded-lg font-medium font-poppins'>
+                Get Started
+            </button>
+        </Link>
         </motion.div>
 
 
@@ -31,16 +35,6 @@ const Hero = () => (
             <div className='absolute z-[1] w-[80%] h-[80%] rounded-full right-40 bottom-40 black__gradient' />
         </motion.div>
     </section>
-)
-
-
-const GetStarted = () => (
-    <Link to='/signup' className={`block text-center border-[3px] w-1/2 ss:w-[260px] border-dotted border-t-primary
-    border-b-[#548CA8] border-l-[#548CA8] border-r-[#548CA8] font-[900] bg-lightGray p-2 text-[20px] cursor-pointer rounded-lg`}>
-        <button className='text-gradient mx-2'>
-            GET STARTED {' '}
-        </button>
-    </Link>
 )
 
 

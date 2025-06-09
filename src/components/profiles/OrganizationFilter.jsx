@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import styles from '../../style';
-import { Context } from '../../context/GlobalContext';
 import { ProfileContext } from '../../context/ProfileContext';
+import styles from '../../styles/style';
 
 const OrganizationFilter = () => {
 

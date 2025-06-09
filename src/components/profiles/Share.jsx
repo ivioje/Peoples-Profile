@@ -12,8 +12,8 @@ import {
 	TwitterShareButton,
 	WhatsappShareButton,
 } from "react-share";
+import styles from "../../styles/style";
 
-import styles from "../../style";
 
 const Share = ({ item, open, setOpen }) => {
 	const shareLink = `${window.location.href}/${item.id}`;

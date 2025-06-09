@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import styles from "../../style";
 import SingleCard from "./SingleCard";
 import { ProfileContext } from "../../context/ProfileContext";
+import styles from "../../styles/style";
 
 const Cards = () => {
 	const {

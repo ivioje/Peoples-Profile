@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { BsX } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { TemplateContext } from "../../context/TemplateContext";
-import styles from "../../style";
+import styles from "../../styles/style";
 
 const CreateProfile = () => {
 	const { templateData } = useContext(TemplateContext);
