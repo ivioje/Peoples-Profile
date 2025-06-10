@@ -5,6 +5,7 @@ import DashboardNav from "./components/dashboard/DashboardNav";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { Home, Profiles, Templates, Guide, Login, SignUp, Dashboard } from './pages/index'
+import BasicTemplate from "./layouts/basic/BasicTemplate";
 
 const App = () => {
 	const location = useLocation();
@@ -28,13 +29,13 @@ const App = () => {
 					element={<Templates />}
 				/>
 				<Route
+					path="/templates/basic"
+					element={<BasicTemplate />}
+				/>
+				<Route
 					path="/guide"
 					element={<Guide />}
 				/>
-				{/* <Route
-					path="/profiles/user/:id"
-					element={<ProfileDetails />}
-				/> */}
 				<Route
 					path="/login"
 					element={<Login />}

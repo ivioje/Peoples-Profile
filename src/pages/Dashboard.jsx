@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { Route, Routes, Link, NavLink, useParams } from "react-router-dom";
 import { BsPlus } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
-import styles from "../styles/style";
-import { AuthContext } from "../context/AuthenticationContext";
 import { getUserById } from "../utils/api";
+import styles from "../styles/style";
 import { sidenavItems } from "../constants";
+import { Overview, SavedProfiles, Sharedprofiles, Trash, UploadedProfiles, Bookmarks } from './index.js'
+import { AuthContext } from "../context/AuthenticationContext.jsx";
 
- const Dashboard = () => {
+const Dashboard = () => {
 	const { userId } = useParams();
 	const [toggle, setToggle] = useState(false);
 	const { setUser } = useContext(AuthContext)
@@ -105,6 +106,19 @@ import { sidenavItems } from "../constants";
 						</div>
 					</div>
 				</div>				
+				
+				{/**dashboard routes */}
+				<div className="sm:w-[75vw] w-[100vw]">
+					<Routes>
+						<Route index element={<Overview />} />
+						<Route path="overview" element={<Overview />} />
+						<Route path="uploads" element={<UploadedProfiles />} />
+						<Route path="saved" element={<SavedProfiles />} />
+						<Route path="bookmarks" element={<Bookmarks />} />
+						<Route path="shared" element={<Sharedprofiles />} />
+						<Route path="trash" element={<Trash />} />
+					</Routes>
+				</div>
 			</div>
 
 			{/**dashboard footer */}
@@ -115,5 +129,4 @@ import { sidenavItems } from "../constants";
 		</div>
 	);
 };
-
 export default Dashboard;

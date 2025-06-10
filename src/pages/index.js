@@ -8,9 +8,9 @@ export { default as Bookmarks } from './Bookmarks.jsx';
 export { default as Dashboard } from './Dashboard.jsx';
 export { default as Overview } from './Overview.jsx';
 export { default as ProfileView } from './ProfileView.jsx';
-export { default as Saved } from './Saved.jsx';
-export { default as Shared } from './Shared.jsx';
+export { default as SavedProfiles } from './Saved.jsx';
+export { default as Sharedprofiles } from './Shared.jsx';
 export { default as Trash } from './Trash.jsx';
-export { default as UploadProfile } from './Upload.jsx';
+export { default as UploadedProfiles } from './Upload.jsx';
 
 
