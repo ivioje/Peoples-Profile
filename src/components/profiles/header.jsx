@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { BsArrowDown } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import Search from '../../components/Search';
-import styles from '../../style';
 import EducationFilter from './educationFilter';
 import GenderFilter from './genderFilter';
 import JobFilter from './jobFilter';
 import OrganizationFilter from './OrganizationFilter';
 import { ProfileContext } from '../../context/ProfileContext';
+import styles from '../../styles/style';
+import Search from '../common/Search';
 
 const Header = () => {
 

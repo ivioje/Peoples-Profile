@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsCheck, BsHeart, BsShareFill } from "react-icons/bs";
-
 import Share from "./Share";
-import "../../index.css"
+import "../../styles/index.css"
 import { ProfileContext } from "../../context/ProfileContext";
 
 const SingleCard = ({ items }) => {

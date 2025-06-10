@@ -1,17 +1,29 @@
 import React, { useContext } from "react";
-import styles from "../../style";
 import SingleCard from "./SingleCard";
 import { ProfileContext } from "../../context/ProfileContext";
+import styles from "../../styles/style";
 
 const Cards = () => {
 	const {
-		paginatedItems,
 		filterData,
-		handlePageNumber,
 		currentPage,
+		setCurrentPage,
+		itemsPerPage,
 		containerRef,
 		query,
 	} = useContext(ProfileContext);
+
+	const filtered = filterData();
+	const startIdx = (currentPage - 1) * itemsPerPage;
+	const endIdx = startIdx + itemsPerPage;
+	const paginatedItems = filtered.slice(startIdx, endIdx);
+
+	const handlePageNumber = (pageNumber) => {
+		setCurrentPage(pageNumber);
+		if (containerRef?.current) {
+			containerRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	};
 
 	return (
 		<section className="pb-20">
@@ -39,9 +51,9 @@ const Cards = () => {
 				)}
 			</div>
 			<div className="flex justify-center">
-				{filterData().length > 20 &&
+				{filtered.length > itemsPerPage &&
 					Array.from(
-						{ length: Math.ceil(filterData().length / 20) },
+						{ length: Math.ceil(filtered.length / itemsPerPage) },
 						(_, i) => i + 1
 					).map((pageNumber) => (
 						<button

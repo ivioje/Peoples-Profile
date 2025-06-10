@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
-import { BsX } from 'react-icons/bs'
-import { organizations } from '../../constants'
-import styles from '../../style'
-import { ProfileContext } from '../../context/ProfileContext'
+import { ProfileContext } from '../../context/ProfileContext';
+import styles from '../../styles/style';
 
 const JobFilter = () => {
 

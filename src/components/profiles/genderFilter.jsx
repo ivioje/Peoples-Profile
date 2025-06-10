@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { ProfileContext } from '../../context/ProfileContext'
-import styles from '../../style'
+import { ProfileContext } from '../../context/ProfileContext';
+import styles from '../../styles/style';
 
 const GenderFilter = () => {
 
