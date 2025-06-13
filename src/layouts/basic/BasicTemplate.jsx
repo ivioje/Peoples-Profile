@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import BasicForm from "./BasicForm";
+import BasicTemplateForm from "./Form";
 import BasicTemplatePreview from "./Preview";
 
 const SOCIAL_ICONS = {
@@ -65,7 +65,7 @@ const BasicTemplate = () => {
   }, [profile.name, profile.bio]);
 
   // Shareable link (simulate for now)
-  const shareUrl = `${window.location.origin}/profile/${encodeURIComponent(profile.name.replace(/\s+/g, '-').toLowerCase())}`;
+  const shareUrl = `${profile.name ? `${window.location.origin}/profile/${encodeURIComponent(profile.name.replace(/\s+/g, '-').toLowerCase())}` : '[complete-your-profile to get link]'}`;
 
   return (
     <div className="min-h-screen font-poppins" style={{ background: '#f9fafb' }}>
@@ -99,7 +99,7 @@ const BasicTemplate = () => {
         </div>
       </div>
       {editMode ? (
-        <BasicForm 
+        <BasicTemplateForm 
             profile={profile}
             setProfile={setProfile}
             fileInputRef={fileInputRef}

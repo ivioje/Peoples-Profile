@@ -8,20 +8,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { BsCamera } from "react-icons/bs"
 import { Plus, Trash2, GripVertical, LayoutGrid, Columns } from "lucide-react"
 
-const BasicForm = ({ profile, setProfile, fileInputRef, headerInputRef, handleSave, SOCIAL_ICONS, themeColor }) => {
+const BasicTemplateForm = ({ profile, setProfile, fileInputRef, headerInputRef, handleSave, SOCIAL_ICONS, themeColor }) => {
   const [layoutType, setLayoutType] = useState("horizontal")
 
   // Input handlers
   const handleChange = (e) => {
     const { name, value } = e.target
     setProfile((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleNestedChange = (section, field, value) => {
-    setProfile((prev) => ({
-      ...prev,
-      [section]: { ...prev[section], [field]: value },
-    }))
   }
 
   const handleImageChange = (e) => {
@@ -97,7 +90,7 @@ const BasicForm = ({ profile, setProfile, fileInputRef, headerInputRef, handleSa
   return (
     <div className="max-w-4xl mx-auto p-4 space-y-6">
       {/* Layout Toggle */}
-      <Card>
+      <Card className="shadow-md">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <LayoutGrid className="w-5 h-5" />
@@ -810,4 +803,4 @@ const BasicForm = ({ profile, setProfile, fileInputRef, headerInputRef, handleSa
   )
 }
 
-export default BasicForm
+export default BasicTemplateForm
