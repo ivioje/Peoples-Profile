@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { toast } from 'react-hot-toast';
 import BasicTemplateForm from "./Form";
 import BasicTemplatePreview from "./Preview";
 
@@ -39,19 +40,69 @@ const BasicTemplate = () => {
       website: "",
     },
     work: [],
+    resumeUrl: "",
+    testimonials: [],
     templateType: "basic",
   });
   const fileInputRef = useRef();
   const headerInputRef = useRef();
   
-
   // Save feature
   const handleSave = (e) => {
     e.preventDefault();
+    if (!profile.fullName) {
+      toast.error("Full Name is a required field.");
+      return;
+    }
     // For now, just log the profile data
     console.log("Saved profile:", profile);
-    alert("Profile details logged to console. (DB save coming soon)");
+    toast.success("Profile saved successfully!");
   };
+
+  const handlePreview = () => {
+    if (!profile.fullName) {
+      toast.error("Please enter your name before previewing.");
+      return;
+    }
+    
+    const emptyFields = [];
+    if (!profile.bio) emptyFields.push("Bio");
+    if (!profile.about) emptyFields.push("About Me");
+    if (profile.work.length === 0) emptyFields.push("Work section");
+
+    if (emptyFields.length > 0) {
+      toast.custom((t) => (
+        <div
+          className={`${
+            t.visible ? 'animate-enter' : 'animate-leave'
+          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+        >
+          <div className="flex-1 w-0 p-4">
+            <div className="flex items-start">
+              <div className="ml-3 flex-1">
+                <p className="text-sm font-medium text-gray-900">
+                  Empty Fields
+                </p>
+                <p className="mt-1 text-sm text-gray-500">
+                  You have some empty fields: {emptyFields.join(", ")}.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex border-l border-gray-200">
+            <button
+              onClick={() => toast.dismiss(t.id)}
+              className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+    ))
+    }
+
+    setEditMode(false);
+  }
 
   useEffect(() => {
     document.title = profile.name ? `${profile.name} | Peoples Profile` : "Create Your Profile";
@@ -92,7 +143,7 @@ const BasicTemplate = () => {
           </button>
           <button
             className="px-4 py-2 bg-blue-600 text-white rounded shadow"
-            onClick={() => setEditMode((prev) => !prev)}
+            onClick={editMode ? handlePreview : () => setEditMode(true)}
             aria-label={editMode ? "Preview profile" : "Edit profile"}
           >
             {editMode ? "Preview" : "Edit"}

@@ -95,7 +95,11 @@ module.exports = {
   		ex: '1060px',
   		lg: '1200px',
   		xl: '1700px'
-  	}
+  	},
+	animation:{
+		'accordion-up': 'accordion-up 0.2s ease-out',
+		'slide-in-right': 'slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+	}
   },
   plugins: [require("tailwindcss-animate")],
 };

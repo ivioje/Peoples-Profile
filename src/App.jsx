@@ -21,7 +21,7 @@ const App = () => {
 
 	return (
 		<div>
-			<Toaster />
+			<Toaster position="top-right" reverseOrder={false} />
 			{isLoggedIn ? <DashboardNav /> : <Navbar />}
 			<Routes>
 				<Route

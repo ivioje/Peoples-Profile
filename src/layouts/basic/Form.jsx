@@ -30,9 +30,10 @@ import {
   Mail,
   Phone,
   MapPin,
+  FileText,
 } from "lucide-react"
 
-const SortableItem = ({ id, children }) => {
+const SortableItem = ({ id, children, onRemove }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id })
 
   const style = {
@@ -131,6 +132,30 @@ const BasicTemplateForm = ({ profile, setProfile, handleSave }) => {
       }
       reader.readAsDataURL(file)
     }
+  }
+
+  const addTestimonialItem = () => {
+    setProfile((prev) => ({
+      ...prev,
+      testimonials: [
+        ...prev.testimonials,
+        { id: `testimonial-${Date.now()}`, name: "", company: "", testimonial: "", link: "" },
+      ],
+    }))
+  }
+
+  const removeTestimonialItem = (id) => {
+    setProfile((prev) => ({
+      ...prev,
+      testimonials: prev.testimonials.filter((item) => item.id !== id),
+    }))
+  }
+
+  const handleTestimonialChange = (id, field, value) => {
+    setProfile((prev) => ({
+      ...prev,
+      testimonials: prev.testimonials.map((item) => (item.id === id ? { ...item, [field]: value } : item)),
+    }))
   }
 
   const accentColor = "#60A5FA" // Soft Blue
@@ -289,6 +314,10 @@ const BasicTemplateForm = ({ profile, setProfile, handleSave }) => {
                     <Globe className="w-5 h-5 text-gray-400" />
                     <Input name="social.website" value={profile.social?.website || ""} onChange={handleChange} placeholder="Website/Portfolio URL" className="border-gray-200 rounded-lg"/>
                 </div>
+                <div className="flex items-center gap-4">
+                    <FileText className="w-5 h-5 text-gray-400" />
+                    <Input name="resumeUrl" value={profile.resumeUrl || ""} onChange={handleChange} placeholder="Link to your resume (e.g., Google Drive)" className="border-gray-200 rounded-lg"/>
+                </div>
               </div>
             </div>
 
@@ -313,7 +342,7 @@ const BasicTemplateForm = ({ profile, setProfile, handleSave }) => {
                 >
                   <div className="space-y-4">
                     {(profile.work || []).map((item) => (
-                      <SortableItem key={item.id} id={item.id}>
+                      <SortableItem key={item.id} id={item.id} onRemove={removeWorkItem}>
                         <div className="w-full p-4 border border-gray-200 rounded-lg bg-white relative">
                           <Button
                             type="button"
@@ -360,6 +389,59 @@ const BasicTemplateForm = ({ profile, setProfile, handleSave }) => {
                   </div>
                 </SortableContext>
               </DndContext>
+            </div>
+
+            {/* Testimonials Section */}
+            <div className="p-6 border border-gray-200 rounded-lg bg-white">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold">Testimonials</h2>
+                <Button type="button" variant="outline" size="sm" onClick={addTestimonialItem} style={{borderColor: accentColor, color: accentColor}}>
+                  <Plus className="w-4 h-4 mr-1" />
+                  Add Testimonial
+                </Button>
+              </div>
+              <div className="space-y-4">
+                {(profile.testimonials || []).map((item) => (
+                  <div key={item.id} className="w-full p-4 border border-gray-200 rounded-lg bg-white relative">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => removeTestimonialItem(item.id)}
+                      className="absolute top-2 right-2 w-7 h-7"
+                    >
+                      <Trash2 className="w-4 h-4 text-gray-500 hover:text-red-500" />
+                    </Button>
+                    <div className="space-y-2">
+                      <Input
+                        value={item.name}
+                        onChange={(e) => handleTestimonialChange(item.id, "name", e.target.value)}
+                        placeholder="Full Name"
+                        className="border-gray-200 rounded-lg"
+                      />
+                       <Input
+                        value={item.company}
+                        onChange={(e) => handleTestimonialChange(item.id, "company", e.target.value)}
+                        placeholder="Company / Role"
+                        className="border-gray-200 rounded-lg"
+                      />
+                      <Textarea
+                        value={item.testimonial}
+                        onChange={(e) => handleTestimonialChange(item.id, "testimonial", e.target.value)}
+                        placeholder="Testimonial text..."
+                        rows={3}
+                        className="border-gray-200 rounded-lg resize-none"
+                      />
+                      <Input
+                        value={item.link}
+                        onChange={(e) => handleTestimonialChange(item.id, "link", e.target.value)}
+                        placeholder="Link to website or social (optional)"
+                        className="border-gray-200 rounded-lg"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

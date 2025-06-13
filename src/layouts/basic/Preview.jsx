@@ -6,6 +6,8 @@ import {
   Phone,
   MapPin,
   ArrowRight,
+  ExternalLink,
+  Quote,
 } from "lucide-react"
 import { FaLinkedin } from "react-icons/fa"
 
@@ -70,14 +72,25 @@ const BasicTemplatePreview = ({ profile, themeColor }) => {
               <p className="text-xl text-gray-200 max-w-xl">
                 {profile.about || "A brief description about yourself, your passions, and your work."}
               </p>
-              <a href="#contact">
-                <button
-                  className="mt-4 px-6 py-3 rounded-lg font-semibold text-white transition-transform transform hover:scale-105"
-                  style={{ backgroundColor: themeColor }}
-                >
-                  Get In Touch
-                </button>
-              </a>
+              <div className="flex flex-col md:flex-row gap-4">
+                <a href="#contact">
+                  <button
+                    className="mt-4 px-6 py-3 rounded-lg font-semibold text-white transition-transform transform hover:scale-105"
+                    style={{ backgroundColor: themeColor }}
+                  >
+                    Get In Touch
+                  </button>
+                </a>
+                {profile.resumeUrl && (
+                  <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
+                    <button
+                      className="mt-4 ml-4 px-6 py-3 rounded-lg font-semibold bg-white text-gray-800 transition-transform transform hover:scale-105 border border-gray-300"
+                    >
+                      View Resume <ExternalLink className="w-4 h-4 ml-2 inline" />
+                    </button>
+                  </a>
+                )}
+              </div>
             </div>
             {profile.photo && (
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden flex-shrink-0 border-4 border-white shadow-lg">
@@ -151,9 +164,37 @@ const BasicTemplatePreview = ({ profile, themeColor }) => {
             ))}
           </div>
         </section>
+
+        {/* --- Testimonials Section --- */}
+        {profile.testimonials && profile.testimonials.length > 0 && (
+          <section id="testimonials" className="py-20 bg-gray-50 rounded-lg">
+            <div className="max-w-4xl mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center mb-12">What People Are Saying</h2>
+              <div className="space-y-8">
+                {profile.testimonials.map((t) => (
+                  <div key={t.id} className="bg-white p-8 rounded-lg shadow-md">
+                    <Quote className="w-8 h-8 text-gray-300 mb-4" />
+                    <p className="text-lg text-gray-700 italic mb-6">"{t.testimonial}"</p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-lg">{t.name}</p>
+                        <p className="text-gray-500">{t.company}</p>
+                      </div>
+                      {t.link && (
+                        <a href={t.link} target="_blank" rel="noopener noreferrer" className="text-sm font-medium flex items-center gap-1" style={{color: themeColor}}>
+                          Visit <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
         
         {/* --- Footer & Contact --- */}
-        <footer id="contact" className="py-20 bg-gray-50 rounded-lg mt-12">
+        <footer id="contact" className="py-20 bg-gray-100 rounded-lg mt-12">
             <div className="text-center">
                 <h2 className="text-4xl font-bold mb-4">Let's Work Together</h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
