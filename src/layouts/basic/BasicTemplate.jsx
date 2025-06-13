@@ -18,27 +18,28 @@ const THEME_COLORS = [
 const BasicTemplate = () => {
   const [editMode, setEditMode] = useState(true);
   const [themeColor, setThemeColor] = useState(THEME_COLORS[0].value);
+  const [layoutType, setLayoutType] = useState("horizontal")
   const [profile, setProfile] = useState({
-    name: "",
-    title: "",
-    bio: "",
-    summary: "",
-    photo: "",
     header: "",
-    links: [{ label: "", url: "" }],
-    social: { github: "", linkedin: "", twitter: "" },
-    sections: [{ title: "Experience", items: [""] }],
-    email: "",
-    phone: "",
-    location: "",
-    website: "",
-    skills: {}, 
-    experience: [], // [{ jobTitle, company, location, startDate, endDate, current, description: [] }]
-    education: [], // [{ degree, institution, location, startDate, endDate, gpa, honors }]
-    projects: [], // [{ name, url, description, technologies }]
-    certifications: [], // [{ name, issuer, date }]
-    languages: [], // [{ language, proficiency }]
-    interests: "", // comma separated string
+    photo: "",
+    fullName: "",
+    bio: "",
+    about: "",
+    interests: [],
+    contact: {
+      email: "",
+      phone: "",
+      city: "",
+      country: "",
+    },
+    social: {
+      linkedin: "",
+      twitter: "",
+      github: "",
+      website: "",
+    },
+    work: [],
+    templateType: "basic",
   });
   const fileInputRef = useRef();
   const headerInputRef = useRef();
@@ -102,11 +103,7 @@ const BasicTemplate = () => {
         <BasicTemplateForm 
             profile={profile}
             setProfile={setProfile}
-            fileInputRef={fileInputRef}
-            headerInputRef={headerInputRef}
             handleSave={handleSave}
-            SOCIAL_ICONS={SOCIAL_ICONS}
-            themeColor={themeColor}
         />
       ) : (
         <BasicTemplatePreview 
@@ -114,6 +111,8 @@ const BasicTemplate = () => {
             themeColor={themeColor}
             shareUrl={shareUrl}
             SOCIAL_ICONS={SOCIAL_ICONS}
+            layoutType={layoutType}
+            setLayoutType={setLayoutType}
         />
       )}
     </div>
