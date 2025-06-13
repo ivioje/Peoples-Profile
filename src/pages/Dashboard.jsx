@@ -9,22 +9,10 @@ import { Overview, SavedProfiles, Sharedprofiles, Trash, UploadedProfiles, Bookm
 import { AuthContext } from "../context/AuthenticationContext.jsx";
 
 const Dashboard = () => {
-	const { userId } = useParams();
 	const [toggle, setToggle] = useState(false);
-	const { setUser } = useContext(AuthContext)
+	const { userId } = useContext(AuthContext)
 
-	// Get userId from URL path if not in params
-	const currentPath = window.location.pathname;
-	const pathUserId = userId || currentPath.split('/')[2];
-
-	useEffect(() => {
-		const fetchUserDetails = async () => {
-			const user = await getUserById(pathUserId);
-			setUser(user);
-		};
-
-		fetchUserDetails();
-	}, [pathUserId]);
+	console.log("userId", userId);
 
 	let activeStyle = {
 		color: "#334257",
@@ -42,7 +30,7 @@ const Dashboard = () => {
 					<div className={`font-poppins sm:${styles.flexCol} hidden mt-20 `}>
 						<ul className="list-none flex flex-col justify-center items-start flex-1 pl-0  pr-2 pb-2">							{sidenavItems.map((item) => (
 								<NavLink
-									to={`/dashboard/${pathUserId}/${item.id}`}
+									to={`/dashboard/${userId}/${item.id}`}
 									key={item.id}
 									className="py-2 w-full px-1 m-1 rounded-[3px]"
 									style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -81,7 +69,7 @@ const Dashboard = () => {
 							<ul className={`flex justify-start absolute dashBSidebar h-fit w-[70vw] left-0 flex-col z-40 pt-2 pb-2 px-1 bg-white border-b shadow-sm`}>
 								{sidenavItems.map((item) => (
 									<NavLink
-										to={`/dashboard/${pathUserId}/${item.id}`}
+										to={`/dashboard/${userId}/${item.id}`}
 										key={item.id}
 										className="py-3 w-full px-1 rounded-[3px]"
 										style={({ isActive }) =>

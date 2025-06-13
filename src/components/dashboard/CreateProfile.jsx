@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react";
-import { BsX } from "react-icons/bs";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TemplateContext } from "../../context/TemplateContext";
 import styles from "../../styles/style";
+import { AuthContext } from "@/context/AuthenticationContext";
 
 const CreateProfile = () => {
 	const { templateData } = useContext(TemplateContext);
+	const { userId } = useContext(AuthContext);
 
 	return (
 		<div className="flex justify-center flex-col absolute sm:top-[55px] top-[35px] w-[270px] overflow-y-scroll p-1 bg-white shadow-2xl font-poppins text-[15px] z-[10]">
@@ -18,7 +19,7 @@ const CreateProfile = () => {
 			<div className={`h-[300px]`}>
 				{templateData.map((data) => (
 					<Link
-						to={`/templates/${data.id}`}
+						to={`/template/${data.slug}/${userId}`}
 						key={data.id}
 						className={`${styles.flexCenter} border-b-[1px] hover:bg-slate-300 p-1`}
 					>

@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import DashboardNav from "./components/dashboard/DashboardNav";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { Home, Profiles, Templates, Guide, Login, SignUp, Dashboard } from './pages/index'
-import BasicTemplate from "./layouts/basic/BasicTemplate";
+import IndexLayout from "./layouts/IndexLayout";
+import { AuthContext } from "./context/AuthenticationContext";
+import { Loader } from "lucide-react";
 
 const App = () => {
-	const location = useLocation();
-	const dashboardLocation = location.pathname.includes("/dashboard");
+	const { isLoggedIn } = useContext(AuthContext);
+	console.log("isLoggedIn", isLoggedIn);
+
+	if (isLoggedIn === undefined) {
+		return <div className="min-h-screen flex justify-center items-center">
+					<Loader size={25} className="animate-spin" />
+				</div>;
+	}
 
 	return (
 		<div>
 			<Toaster />
-			{dashboardLocation ? <DashboardNav /> : <Navbar />}
+			{isLoggedIn ? <DashboardNav /> : <Navbar />}
 			<Routes>
 				<Route
 					path="/"
@@ -29,8 +37,8 @@ const App = () => {
 					element={<Templates />}
 				/>
 				<Route
-					path="/templates/basic"
-					element={<BasicTemplate />}
+					path="/template/*"
+					element={<IndexLayout title="Templates" footer="Footer Content" />}
 				/>
 				<Route
 					path="/guide"

@@ -22,12 +22,23 @@ const BasicTemplate = () => {
     name: "",
     title: "",
     bio: "",
+    summary: "",
     photo: "",
     header: "",
     links: [{ label: "", url: "" }],
     social: { github: "", linkedin: "", twitter: "" },
     sections: [{ title: "Experience", items: [""] }],
     email: "",
+    phone: "",
+    location: "",
+    website: "",
+    skills: {}, 
+    experience: [], // [{ jobTitle, company, location, startDate, endDate, current, description: [] }]
+    education: [], // [{ degree, institution, location, startDate, endDate, gpa, honors }]
+    projects: [], // [{ name, url, description, technologies }]
+    certifications: [], // [{ name, issuer, date }]
+    languages: [], // [{ language, proficiency }]
+    interests: "", // comma separated string
   });
   const fileInputRef = useRef();
   const headerInputRef = useRef();
