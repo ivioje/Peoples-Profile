@@ -2,6 +2,13 @@ import { BsBag, BsBuilding, BsPerson } from "react-icons/bs";
 import person1 from "../assets/person1.jpg";
 import person2 from "../assets/person2.png";
 import person3 from "../assets/person3.png";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+export const SOCIAL_ICONS = {
+	github: FaGithub,
+	linkedin: FaLinkedin,
+	twitter: FaTwitter,
+  };
 
 export const navLinks = [
 	{

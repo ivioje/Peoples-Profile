@@ -1,39 +1,16 @@
-import { useState } from "react"
-import {
-  DndContext,
-  closestCenter,
-  PointerSensor,
-  useSensor,
-  useSensors,
-} from "@dnd-kit/core"
-import {
-  arrayMove,
-  SortableContext,
-  useSortable,
-  verticalListSortingStrategy,
-} from "@dnd-kit/sortable"
+import {DndContext, closestCenter, PointerSensor, useSensor, useSensors} from "@dnd-kit/core"
+import {arrayMove, SortableContext, useSortable, verticalListSortingStrategy} from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import { restrictToVerticalAxis, restrictToWindowEdges } from "@dnd-kit/modifiers"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import {
-  Camera,
-  Plus,
-  Trash2,
-  GripVertical,
-  Linkedin,
-  Twitter,
-  Github,
-  Globe,
-  Mail,
-  Phone,
-  MapPin,
-  FileText,
-} from "lucide-react"
+import { Camera, Plus, Trash2, GripVertical, Linkedin, Twitter, Github, Globe, Mail, Phone, MapPin, FileText } from "lucide-react"
+import TestimonialSection from "./sections/Testimonial.section"
+import WorkSection from "./sections/Work.section"
 
-const SortableItem = ({ id, children, onRemove }) => {
+
+const SortableItem = ({ id, children }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id })
 
   const style = {
@@ -49,7 +26,7 @@ const SortableItem = ({ id, children, onRemove }) => {
   )
 }
 
-const BasicTemplateForm = ({ profile, setProfile, handleSave }) => {
+const BasicTemplateForm = ({ profile, setProfile, handleSave, themeColor, setThemeColor, THEME_COLORS }) => {
   const sensors = useSensors(useSensor(PointerSensor))
 
   const handleDragEnd = (event) => {
@@ -162,6 +139,17 @@ const BasicTemplateForm = ({ profile, setProfile, handleSave }) => {
 
   return (
     <div className="bg-[#FAFAFA] min-h-screen font-sans">
+        <div className="flex justify-center gap-2">
+          {THEME_COLORS.map((c) => (
+            <button
+              key={c.value}
+              aria-label={`Switch to ${c.name} theme`}
+              className={`w-6 h-6 rounded-full border-2 ${themeColor === c.value ? 'border-black' : 'border-gray-300'}`}
+              style={{ background: c.value }}
+              onClick={() => setThemeColor(c.value)}
+            />
+          ))}
+        </div>
       <form
         onSubmit={handleSave}
         className="max-w-5xl mx-auto p-4 md:p-8 space-y-8"
@@ -322,127 +310,23 @@ const BasicTemplateForm = ({ profile, setProfile, handleSave }) => {
             </div>
 
             {/* My Work */}
-            <div className="p-6 border border-gray-200 rounded-lg bg-white">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold">My Work</h2>
-                <Button type="button" variant="outline" size="sm" onClick={addWorkItem} style={{borderColor: accentColor, color: accentColor}}>
-                  <Plus className="w-4 h-4 mr-1" />
-                  Add Work
-                </Button>
-              </div>
-              <DndContext
-                sensors={sensors}
-                collisionDetection={closestCenter}
-                onDragEnd={handleDragEnd}
-                modifiers={[restrictToVerticalAxis, restrictToWindowEdges]}
-              >
-                <SortableContext
-                  items={profile.work.map(w => w.id)}
-                  strategy={verticalListSortingStrategy}
-                >
-                  <div className="space-y-4">
-                    {(profile.work || []).map((item) => (
-                      <SortableItem key={item.id} id={item.id} onRemove={removeWorkItem}>
-                        <div className="w-full p-4 border border-gray-200 rounded-lg bg-white relative">
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => removeWorkItem(item.id)}
-                            className="absolute top-2 right-2 w-7 h-7"
-                          >
-                            <Trash2 className="w-4 h-4 text-gray-500 hover:text-red-500" />
-                          </Button>
-                          <div className="flex gap-4">
-                            <label className="w-24 h-24 flex-shrink-0">
-                                <div className="w-full h-full border border-gray-200 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-50 cursor-pointer">
-                                    {item.image ? <img src={item.image} alt="Work thumbnail" className="w-full h-full object-cover rounded-md" /> : <Plus />}
-                                </div>
-                                <input type="file" accept="image/*" className="hidden" onChange={(e) => handleWorkImageChange(e, item.id)} />
-                            </label>
-
-                            <div className="flex-grow space-y-2">
-                              <Input
-                                value={item.title}
-                                onChange={(e) => handleWorkChange(item.id, "title", e.target.value)}
-                                placeholder="Work Title"
-                                className="border-gray-200 rounded-lg"
-                              />
-                              <Textarea
-                                value={item.description}
-                                onChange={(e) => handleWorkChange(item.id, "description", e.target.value)}
-                                placeholder="Short description..."
-                                rows={2}
-                                className="border-gray-200 rounded-lg resize-none"
-                              />
-                              <Input
-                                value={item.link}
-                                onChange={(e) => handleWorkChange(item.id, "link", e.target.value)}
-                                placeholder="https://example.com"
-                                className="border-gray-200 rounded-lg"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </SortableItem>
-                    ))}
-                  </div>
-                </SortableContext>
-              </DndContext>
-            </div>
+            <WorkSection
+              profile={profile}
+              addWorkItem={addWorkItem}
+              removeWorkItem={removeWorkItem}
+              handleWorkChange={handleWorkChange}
+              handleWorkImageChange={handleWorkImageChange}
+              accentColor={accentColor}
+            />
 
             {/* Testimonials Section */}
-            <div className="p-6 border border-gray-200 rounded-lg bg-white">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold">Testimonials</h2>
-                <Button type="button" variant="outline" size="sm" onClick={addTestimonialItem} style={{borderColor: accentColor, color: accentColor}}>
-                  <Plus className="w-4 h-4 mr-1" />
-                  Add Testimonial
-                </Button>
-              </div>
-              <div className="space-y-4">
-                {(profile.testimonials || []).map((item) => (
-                  <div key={item.id} className="w-full p-4 border border-gray-200 rounded-lg bg-white relative">
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => removeTestimonialItem(item.id)}
-                      className="absolute top-2 right-2 w-7 h-7"
-                    >
-                      <Trash2 className="w-4 h-4 text-gray-500 hover:text-red-500" />
-                    </Button>
-                    <div className="space-y-2">
-                      <Input
-                        value={item.name}
-                        onChange={(e) => handleTestimonialChange(item.id, "name", e.target.value)}
-                        placeholder="Full Name"
-                        className="border-gray-200 rounded-lg"
-                      />
-                       <Input
-                        value={item.company}
-                        onChange={(e) => handleTestimonialChange(item.id, "company", e.target.value)}
-                        placeholder="Company / Role"
-                        className="border-gray-200 rounded-lg"
-                      />
-                      <Textarea
-                        value={item.testimonial}
-                        onChange={(e) => handleTestimonialChange(item.id, "testimonial", e.target.value)}
-                        placeholder="Testimonial text..."
-                        rows={3}
-                        className="border-gray-200 rounded-lg resize-none"
-                      />
-                      <Input
-                        value={item.link}
-                        onChange={(e) => handleTestimonialChange(item.id, "link", e.target.value)}
-                        placeholder="Link to website or social (optional)"
-                        className="border-gray-200 rounded-lg"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <TestimonialSection
+              profile={profile}
+              addTestimonialItem={addTestimonialItem}
+              removeTestimonialItem={removeTestimonialItem}
+              handleTestimonialChange={handleTestimonialChange}
+              accentColor={accentColor}
+            />
           </div>
         </div>
 

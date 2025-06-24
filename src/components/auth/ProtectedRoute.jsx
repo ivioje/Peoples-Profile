@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { AuthContext } from "../../context/AuthenticationContext";
-import { auth } from "../../firebase";
+import { auth } from "../../utils/firebase";
 
 const ProtectedRoute = ({ children, isLoggedIn, ...rest }) => {
 	// const { isLoggedIn } = useContext(AuthContext);

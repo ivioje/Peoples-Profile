@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import apiClient from "../api-client";
+import apiClient from "../utils/api-client";
 import { BsGoogle } from "react-icons/bs";
 import { FaSpinner } from 'react-icons/fa'
 import { AuthContext } from "../context/AuthenticationContext";

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import apiClient from "../api-client";
+import apiClient from "../utils/api-client";
 import { BsGoogle } from "react-icons/bs";
 import { FaSpinner } from "react-icons/fa";
 import toast from "react-hot-toast";

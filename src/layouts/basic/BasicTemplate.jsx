@@ -1,20 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { toast } from 'react-hot-toast';
 import BasicTemplateForm from "./Form";
 import BasicTemplatePreview from "./Preview";
-
-const SOCIAL_ICONS = {
-  github: FaGithub,
-  linkedin: FaLinkedin,
-  twitter: FaTwitter,
-};
-
-const THEME_COLORS = [
-  { name: "Blue", value: "#2563eb" },
-  { name: "Emerald", value: "#10b981" },
-  { name: "Rose", value: "#e11d48" },
-];
+import { createBasicTemplate } from "@/utils/api";
+import { THEME_COLORS } from "@/constants/theme-colors";
+import { SOCIAL_ICONS } from "@/constants";
 
 const BasicTemplate = () => {
   const [editMode, setEditMode] = useState(true);
@@ -43,19 +33,19 @@ const BasicTemplate = () => {
     resumeUrl: "",
     testimonials: [],
     templateType: "basic",
+    themeColor: themeColor
   });
   const fileInputRef = useRef();
   const headerInputRef = useRef();
   
   // Save feature
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
     if (!profile.fullName) {
       toast.error("Full Name is a required field.");
       return;
     }
-    // For now, just log the profile data
-    console.log("Saved profile:", profile);
+    await createBasicTemplate(profile);
     toast.success("Profile saved successfully!");
   };
 
@@ -122,18 +112,7 @@ const BasicTemplate = () => {
   return (
     <div className="min-h-screen font-poppins" style={{ background: '#f9fafb' }}>
       <div className="flex justify-between items-center p-4 gap-2">
-        <div className="flex gap-2">
-          {THEME_COLORS.map((c) => (
-            <button
-              key={c.value}
-              aria-label={`Switch to ${c.name} theme`}
-              className={`w-6 h-6 rounded-full border-2 ${themeColor === c.value ? 'border-black' : 'border-gray-300'}`}
-              style={{ background: c.value }}
-              onClick={() => setThemeColor(c.value)}
-            />
-          ))}
-        </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col-reverse gap-5 fixed right-0">
           <button
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded shadow"
             onClick={handleSave}
@@ -155,6 +134,9 @@ const BasicTemplate = () => {
             profile={profile}
             setProfile={setProfile}
             handleSave={handleSave}
+            themeColor={themeColor}
+            setThemeColor={setThemeColor}
+            THEME_COLORS={THEME_COLORS}
         />
       ) : (
         <BasicTemplatePreview 

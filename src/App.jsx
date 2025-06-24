@@ -61,7 +61,7 @@ const App = () => {
 					element={<Navigate to="/" />}
 				/>
 			</Routes>
-			<Footer />
+			{!isLoggedIn && <Footer />}
 		</div>
 	);
 };
