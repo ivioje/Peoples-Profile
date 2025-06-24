@@ -1,30 +1,5 @@
-import {
-  Twitter,
-  Github,
-  Globe,
-  Mail,
-  Phone,
-  MapPin,
-  ArrowRight,
-  ExternalLink,
-  Quote,
-} from "lucide-react"
+import { Twitter, Github, Globe, Mail, Phone, MapPin, ArrowRight, ExternalLink, Quote } from "lucide-react"
 import { FaLinkedin } from "react-icons/fa"
-
-const SocialIcon = ({ type }) => {
-  switch (type) {
-    case "linkedin":
-      return <FaLinkedin className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
-    case "twitter":
-      return <Twitter className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
-    case "github":
-      return <Github className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
-    case "website":
-      return <Globe className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
-    default:
-      return null
-  }
-}
 
 const BasicTemplatePreview = ({ profile, themeColor }) => {
   const Nav = () => (
@@ -241,3 +216,19 @@ const BasicTemplatePreview = ({ profile, themeColor }) => {
 }
 
 export default BasicTemplatePreview
+
+// Social Icon
+const SocialIcon = ({ type }) => {
+  switch (type) {
+    case "linkedin":
+      return <FaLinkedin className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
+    case "twitter":
+      return <Twitter className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
+    case "github":
+      return <Github className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
+    case "website":
+      return <Globe className="w-5 h-5 text-gray-500 hover:text-black transition-colors" />
+    default:
+      return null
+  }
+}

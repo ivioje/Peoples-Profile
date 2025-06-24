@@ -25,3 +25,16 @@ export const createBasicTemplate = async (templateData) => {
         throw error;
     });
 }
+
+export const getBasicTemplateByUserId = async (userId) => {
+    if(!userId) return Promise.reject(new Error("User ID is required"));
+    return apiClient.get(`/basic-template/user/${userId}`)
+    .then((response) => {
+        console.log("Template fetched successfully:", response.data);
+        return response.data;
+    })
+    .catch((error) => {
+        console.error("Error fetching template:", error);
+        throw error;
+    });
+}

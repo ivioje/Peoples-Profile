@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Camera, Plus, Trash2, GripVertical, Linkedin, Twitter, Github, Globe, Mail, Phone, MapPin, FileText } from "lucide-react"
-import TestimonialSection from "./sections/Testimonial.section"
-import WorkSection from "./sections/Work.section"
+import TestimonialSection from "./sections/TestimonialSection"
+import WorkSection from "./sections/WorkSection"
 
 
 const SortableItem = ({ id, children }) => {
