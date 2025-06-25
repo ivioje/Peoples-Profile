@@ -13,9 +13,13 @@ export const getUserById = (userId) => {
     });
 }
 
-export const createBasicTemplate = async (templateData) => {
+export const logout = async () => {
+    return apiClient.post("/user/logout")
+}
+
+export const createBasicTemplate = async (templateData, userId) => {
     if(!templateData) return Promise.reject(new Error("Template data is required"));
-    return apiClient.post("/basic-template/create", templateData)
+    return apiClient.post(`/basic-template/create/${userId}`, templateData)
     .then((response) => {
         console.log("Template created successfully:", response.data);
         return response.data;
@@ -26,15 +30,14 @@ export const createBasicTemplate = async (templateData) => {
     });
 }
 
-export const getBasicTemplateByUserId = async (userId) => {
+export const getUserTemplates = async (userId) => {
     if(!userId) return Promise.reject(new Error("User ID is required"));
-    return apiClient.get(`/basic-template/user/${userId}`)
+    return apiClient.get(`/user/${userId}/templates`)
     .then((response) => {
-        console.log("Template fetched successfully:", response.data);
+        console.log("Templates fetched successfully:", response.data);
         return response.data;
-    })
-    .catch((error) => {
-        console.error("Error fetching template:", error);
+    }).catch((error) => {
+        console.error("Error fetching templates:", error);
         throw error;
     });
 }

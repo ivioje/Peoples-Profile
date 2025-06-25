@@ -4,6 +4,22 @@ import person2 from "../assets/person2.png";
 import person3 from "../assets/person3.png";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+export const createDefaultProfile = (themeColor) => ({
+	header: '',
+	photo: '',
+	fullName: '',
+	bio: '',
+	about: '',
+	interests: [],
+	contact: { email: '', phone: '', city: '', country: '' },
+	social: { linkedin: '', twitter: '', github: '', website: '' },
+	work: [],           // [{ id, image, title, description, link }]
+	resumeUrl: '',
+	testimonials: [],   // [{ id, name, company, testimonial, link }]
+	templateType: 'basic',
+	themeColor,         // injected when called
+  })
+
 export const SOCIAL_ICONS = {
 	github: FaGithub,
 	linkedin: FaLinkedin,

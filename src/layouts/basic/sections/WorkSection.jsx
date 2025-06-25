@@ -1,6 +1,26 @@
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { DndContext } from '@dnd-kit/core'
+import { SortableContext, useSortable } from '@dnd-kit/sortable'
+import { GripVertical, Plus, Trash2 } from 'lucide-react'
+import { CSS } from "@dnd-kit/utilities"
 import React from 'react'
 
-const WorkSection = ({ profile, addWorkItem, removeWorkItem, handleWorkChange, handleWorkImageChange, accentColor }) => {
+const WorkSection = ({ 
+  profile, 
+  addWorkItem, 
+  removeWorkItem, 
+  handleWorkChange, 
+  handleWorkImageChange, 
+  accentColor, 
+  sensors, 
+  handleDragEnd, 
+  restrictToVerticalAxis, 
+  restrictToWindowEdges, 
+  verticalListSortingStrategy,
+  closestCenter
+}) => {
   return (
     <div className="p-6 border border-gray-200 rounded-lg bg-white">
               <div className="flex items-center justify-between mb-4">
@@ -74,3 +94,20 @@ const WorkSection = ({ profile, addWorkItem, removeWorkItem, handleWorkChange, h
 }
 
 export default WorkSection
+
+// Sortable Item
+const SortableItem = ({ id, children }) => {
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id })
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  }
+
+  return (
+    <div ref={setNodeRef} style={style} {...attributes} className="flex items-start gap-2">
+      <GripVertical className="w-5 h-5 text-gray-400 mt-9 cursor-grab" {...listeners} />
+      {children}
+    </div>
+  )
+}

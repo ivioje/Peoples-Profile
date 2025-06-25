@@ -1,6 +1,5 @@
 import {DndContext, closestCenter, PointerSensor, useSensor, useSensors} from "@dnd-kit/core"
 import {arrayMove, SortableContext, useSortable, verticalListSortingStrategy} from "@dnd-kit/sortable"
-import { CSS } from "@dnd-kit/utilities"
 import { restrictToVerticalAxis, restrictToWindowEdges } from "@dnd-kit/modifiers"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,22 +8,6 @@ import { Camera, Plus, Trash2, GripVertical, Linkedin, Twitter, Github, Globe, M
 import TestimonialSection from "./sections/TestimonialSection"
 import WorkSection from "./sections/WorkSection"
 
-
-const SortableItem = ({ id, children }) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id })
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-  }
-
-  return (
-    <div ref={setNodeRef} style={style} {...attributes} className="flex items-start gap-2">
-      <GripVertical className="w-5 h-5 text-gray-400 mt-9 cursor-grab" {...listeners} />
-      {children}
-    </div>
-  )
-}
 
 const BasicTemplateForm = ({ profile, setProfile, handleSave, themeColor, setThemeColor, THEME_COLORS }) => {
   const sensors = useSensors(useSensor(PointerSensor))
@@ -317,6 +300,12 @@ const BasicTemplateForm = ({ profile, setProfile, handleSave, themeColor, setThe
               handleWorkChange={handleWorkChange}
               handleWorkImageChange={handleWorkImageChange}
               accentColor={accentColor}
+              sensors={sensors}
+              handleDragEnd={handleDragEnd}
+              restrictToVerticalAxis={restrictToVerticalAxis}
+              restrictToWindowEdges={restrictToWindowEdges}
+              verticalListSortingStrategy={verticalListSortingStrategy}
+              closestCenter={closestCenter}
             />
 
             {/* Testimonials Section */}

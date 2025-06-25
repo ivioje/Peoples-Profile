@@ -6,6 +6,8 @@ import { BsCaretDown, BsSearch } from "react-icons/bs";
 import { TemplateContext } from "../../context/TemplateContext";
 import { AuthContext } from "../../context/AuthenticationContext";
 import styles from "../../styles/style";
+import { logout } from "@/utils/api";
+import toast from "react-hot-toast";
 
 const DashboardNav = () => {
 	const { toggle, setToggle } = useContext(TemplateContext);
@@ -21,6 +23,17 @@ const DashboardNav = () => {
 
 	const toggleTemplateList = () => {
 		setOpenTemplatesList(() => !openTemplatesList);
+	};
+
+	const handleLogout = () => {
+		logout()
+		.then(() => {
+			toast.success("Logged out successfully");
+			navigate("/login");
+		})
+		.catch((err) => {
+			toast.error("Error logging out");
+		});
 	};
 
 	return (
@@ -85,7 +98,7 @@ const DashboardNav = () => {
 							</div>
 							{/**user */}
 
-							<button className="font-bold text-gray-900 text-[18px]">
+							<button onClick={handleLogout} className="font-bold text-gray-900 text-[18px] hover:bg-slate-400 p-1">
 								Log out
 							</button>
 						</div>
@@ -123,7 +136,7 @@ const DashboardNav = () => {
 						/>
 					</div>
 
-					<button className="font-bold text-gray-900 text-[18px]">
+					<button onClick={handleLogout} className="font-bold text-gray-900 text-[18px] hover:bg-slate-400 p-1">
 						Log out
 					</button>
 				</div>

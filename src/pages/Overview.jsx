@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsArrowRight, BsClockHistory, BsHeart, BsShareFill } from "react-icons/bs";
 
 import { useContext } from "react";
@@ -6,13 +6,28 @@ import { ProfileContext } from "../context/ProfileContext";
 import { AuthContext } from "../context/AuthenticationContext";
 import styles from "../styles/style";
 import { tempItems } from "../constants";
+import { getUserTemplates } from "@/utils/api";
 
 
 const Overview = () => {
 	const { data } = useContext(ProfileContext);
-	const { user } = useContext(AuthContext)
+	const { user } = useContext(AuthContext);
+	const [templates, setTemplates] = useState([]);
 
 	console.log("User in Overview:", user);
+
+	useEffect(() => {
+		const fetchUserTemplates = async () => {
+			try {
+				const templates = await getUserTemplates(user?._id);
+				console.log("Templates fetched:", templates);
+				setTemplates(templates);
+			} catch (error) {
+				console.error("Error fetching templates:", error);
+			}
+		};
+		fetchUserTemplates();
+	}, [user?._id]);
 
 	return (
 		<section className="font-poppins pl-2 pr-2 min-h-[80vh]">
@@ -40,8 +55,8 @@ const Overview = () => {
 				<div
 					className={`${styles.flexBtw} overflow-x-scroll overflow-y-hidden relative font-[400] overviewScroll`}
 				>
-					{data.length ? (
-						data.map((item, index) => (
+					{templates.length ? (
+						templates.map((item, index) => (
 							<div
 								key={index}
 								className="m-1 h-[120px] flex flex-col bg-center bg-cover bg-no-repeat text-secondary rounded-[15px] cursor-pointer"

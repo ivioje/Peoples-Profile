@@ -1,42 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { toast } from 'react-hot-toast';
 import BasicTemplateForm from "./Form";
 import BasicTemplatePreview from "./Preview";
 import { createBasicTemplate } from "@/utils/api";
 import { THEME_COLORS } from "@/constants/theme-colors";
-import { SOCIAL_ICONS } from "@/constants";
+import { createDefaultProfile, SOCIAL_ICONS } from "@/constants";
+import { AuthContext } from "@/context/AuthenticationContext";
 
 const BasicTemplate = () => {
   const [editMode, setEditMode] = useState(true);
   const [themeColor, setThemeColor] = useState(THEME_COLORS[0].value);
   const [layoutType, setLayoutType] = useState("horizontal")
-  const [profile, setProfile] = useState({
-    header: "",
-    photo: "",
-    fullName: "",
-    bio: "",
-    about: "",
-    interests: [],
-    contact: {
-      email: "",
-      phone: "",
-      city: "",
-      country: "",
-    },
-    social: {
-      linkedin: "",
-      twitter: "",
-      github: "",
-      website: "",
-    },
-    work: [],
-    resumeUrl: "",
-    testimonials: [],
-    templateType: "basic",
-    themeColor: themeColor
-  });
-  const fileInputRef = useRef();
-  const headerInputRef = useRef();
+  const [profile, setProfile] = useState(() => createDefaultProfile(themeColor));
+  const { userId } = useContext(AuthContext)
   
   // Save feature
   const handleSave = async (e) => {
@@ -45,8 +21,20 @@ const BasicTemplate = () => {
       toast.error("Full Name is a required field.");
       return;
     }
-    await createBasicTemplate(profile);
-    toast.success("Profile saved successfully!");
+    if(!userId){
+      toast.error("You must be logged in to save your profile.");
+      return;
+    }
+    console.log("userId", userId)
+    await createBasicTemplate(profile, userId)
+      .then((res) => {
+        console.log("Template created:", res);
+        toast.success("Profile saved successfully!");
+      })
+      .catch((err) => {
+        console.error("Error creating template:", err);
+        toast.error("Error creating template");
+      });
   };
 
   const handlePreview = () => {
